@@ -1,0 +1,14 @@
+<svg width="273" height="32" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="34" width="275" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <text stroke="#2D6862" transform="matrix(1.3307073935569924,0,0,1.2137781900557512,-157.29377365854327,-36.26162768570417) " font-weight="bold" xml:space="preserve" text-anchor="start" font-family="'Courier New', Courier, monospace" font-size="24" id="svg_4" y="49.5" x="119" stroke-opacity="null" stroke-width="0" fill="#56aaff">CSYBER SYSTEMS</text>
+ </g>
+</svg>

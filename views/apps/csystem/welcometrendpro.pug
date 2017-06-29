@@ -1,0 +1,558 @@
+extends shared/layout
+
+block content
+  .header-wrapper.header-wrapper-home
+    // ******HEADER******
+    header#header.header.navbar-fixed-top
+      .container
+        h1.logo
+          a(href='blogs/index.html')
+            span
+              img.home-logo(src='assets/logo-0e0b3214b6e4d2c1a9aec67aa0996c41.png', alt='Logo')
+            |                   
+            span.highlight TrendPro
+            | Systems
+        // //logo
+        nav.main-nav.navbar-right(role='navigation')
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse')
+              span.sr-only Toggle navigation
+              |             
+              span.icon-bar
+              |             
+              span.icon-bar
+              |             
+              span.icon-bar
+            // //nav-toggle
+          // //navbar-header
+          #navbar-collapse.navbar-collapse.collapse
+            ul.nav.navbar-nav
+              li.active.nav-item
+                a(href='web-development-and-mobile-app-design-process-in-kenya.html') Process
+              |             
+              li.nav-item
+                a(href='web-development-and-mobile-apps-development-in-kenya.html') Work
+              |             
+              li.nav-item
+                a(href='http://saapcrm.com', target='_blank') SaapCRM
+              |             
+              |                 
+              li.nav-item
+                a(href='about-trendpro-systems.html') About
+              |             
+              li.nav-item
+                a(href='web-design-blogs.html') Blog
+              |              
+              |                 
+              li.nav-item
+                a(href='contact-trendpro-systems.html') Contact
+              |             
+              li.nav-item.last
+                a(href='users/sign_in.html') Login
+            // //nav
+          // //navabr-collapse
+        // //main-nav
+        br
+        br
+      // //container
+    // //header
+    // Div closed at the yield pages...NOTE
+    p
+    |     
+    .bg-slider-wrapper
+      #bg-slider.flexslider.bg-slider
+        ul.slides
+          li.slide.slide-1
+          |                 
+          li.slide.slide-2
+          |                 
+          li.slide.slide-3
+    // //bg-slider-wrapper
+    section#home-promo.home-promo.section
+      .container.text-center
+        h2.title
+          span.upper We build 
+          |                 
+          span.middle Web and Mobile Apps
+          |                 
+          span.bottom for enterprises
+        |              
+        a.btn.btn-cta.btn-cta-primary(href='contact-trendpro-systems.html')
+          | Talk To Us
+      // //container
+    // //promo
+  // //header-wrapper
+  // ******Why Section******
+  section#who.who.section
+    .container.text-center
+      .row.benefits.text-center
+        .item.col-md-3.col-sm-6.col-xs-12
+          .item-inner
+            .fs1(aria-hidden='true', data-icon='')
+            |                     
+            h3.sub-title Skilled Team
+            |                     
+            .desc
+              p
+                | We have a highly skilled team that can deliver
+                | quality, industry standard applications within a
+                | short period of time.
+                | Our web design and web development experience will
+                | guarantee success for your project.
+        // //item
+        .item.col-md-3.col-sm-6.col-xs-12.sm-break
+          .item-inner
+            .fs1(aria-hidden='true', data-icon='')
+            |                     
+            h3.sub-title Our Approach
+            |                     
+            .desc
+              p
+                | We don&apos;t sell code. We provide business solutions to
+                | our clients that add value to their day to day
+                | operations. We create websites, web applications and
+                | mobile applications that actually solve real client
+                | problems.
+          // //item-inner
+        // //item
+        .item.col-md-3.col-sm-6.col-xs-12
+          .item-inner
+            .fs1(aria-hidden='true', data-icon='')
+            |                     
+            h3.sub-title High Quality Code
+            |                     
+            .desc
+              p
+                | We focus our effort on high quality, tested and
+                | maintainable code. Hence delivering value to our
+                | clients. Our web development and design teams produce
+                | high quality code that is at par with world-class
+                | software houses.
+          // //item-inner
+        // //item
+        .item.col-md-3.col-sm-6.col-xs-12
+          .item-inner
+            .fs1(aria-hidden='true', data-icon='')
+            |                     
+            h3.sub-title No overheads
+            |                     
+            .desc
+              p
+                | We are a lean website design company and deliver projects
+                | with minimum overheads as we understand the resource
+                | contraints that clients normally face. We will atleast
+                | find that something that works  with your budget.
+          // //item-inner
+        // //item
+      // //row
+    // //container
+  // //who
+  // ******Latest work section******
+  section#latest-work.latest-work.section
+    .container-fluid.text-center
+      h2.title.text-center Our Latest Work
+      |         
+      #work-carousel.items.owl-carousel.owl-theme
+        .item.item-3
+          .row
+            figure.figure-container.col-md-6.col-sm-12.col-xs-12
+              a(href='portfolios/3-mwana-guardian-mobile-app.html', target='_blank')
+            |                         
+            .content.col-md-6.col-sm-12.col-xs-12
+              .content-inner
+                h3.project-title Mwana Guardian Mobile app
+                |                                 
+                ul.meta.list-unstyled
+                  li
+                    strong Client:
+                    |  Mwana Systems Limited
+                  |                                     
+                  li
+                    strong What we did:
+                    |  We designed and developed the app. It&rsquo;s an intelligent platform that tracks the school children whereabouts and constantly informs the parent.
+                // //meta
+                .desc
+                  p The Mwana Guardian App
+                // //desc
+                p.link
+                  i.fa.fa-briefcase
+                  |  
+                  a.more-link(href='portfolios/3-mwana-guardian-mobile-app.html') Read full case study
+                |                                 
+                p.link
+                  i.fa.fa-external-link
+                  |  
+                  a.site-link(href='http://mwanasystems.com/', target='_blank') Website link
+              // //content-inner
+            // //content
+          // //row
+        // //item
+        .item.item-13
+          .row
+            figure.figure-container.col-md-6.col-sm-12.col-xs-12
+              a(href='portfolios/13-saapcrm-sales-app-data-collection-crm-in-kenya.html', target='_blank')
+            |                         
+            .content.col-md-6.col-sm-12.col-xs-12
+              .content-inner
+                h3.project-title SaapCRM Sales app data collection crm in Kenya
+                |                                 
+                ul.meta.list-unstyled
+                  li
+                    strong Client:
+                    |  TrendPro Systems Limited
+                  |                                     
+                  li
+                    strong What we did:
+                    |  We designed and developed the SaapCRM platform.  SaapCRM is a tool that provides real-time sales data collection and analytics for FMCG companies.
+                // //meta
+                .desc
+                  p The SaapCRM
+                // //desc
+                p.link
+                  i.fa.fa-briefcase
+                  |  
+                  a.more-link(href='portfolios/13-saapcrm-sales-app-data-collection-crm-in-kenya.html') Read full case study
+                |                                 
+                p.link
+                  i.fa.fa-external-link
+                  |  
+                  a.site-link(href='http://saapcrm.com/', target='_blank') Website link
+              // //content-inner
+            // //content
+          // //row
+        // //item
+        .item.item-2
+          .row
+            figure.figure-container.col-md-6.col-sm-12.col-xs-12
+              a(href='portfolios/2-mastermind-tobbacco-crm.html', target='_blank')
+            |                         
+            .content.col-md-6.col-sm-12.col-xs-12
+              .content-inner
+                h3.project-title Mastermind Tobbacco CRM
+                |                                 
+                ul.meta.list-unstyled
+                  li
+                    strong Client:
+                    |  Mastermind Tobbacco (K) Limited
+                  |                                     
+                  li
+                    strong What we did:
+                    |  Designing and developing a complex CRM for handling the sales process of a large corporation. The tool is designed to handle a large workload and process complex reports.
+                // //meta
+                .desc
+                  p The MTK CRM
+                // //desc
+                p.link
+                  i.fa.fa-briefcase
+                  |  
+                  a.more-link(href='portfolios/2-mastermind-tobbacco-crm.html') Read full case study
+                |                                 
+                p.link
+                  i.fa.fa-external-link
+                  |  
+                  a.site-link(href='blogs/index.html##', target='_blank') Website link
+              // //content-inner
+            // //content
+          // //row
+        // //item
+      // //owl-carousel
+      a.btn.btn-cta.btn-cta-secondary(href='web-development-and-mobile-apps-development-in-kenya.html') View all case studies
+    // container-fluid
+  // //latest-work
+  // ******Testimonials Section******
+  section#testimonials.testimonials.section
+    .container
+      h2.title.text-center Testimonials
+      |         
+      p.intro.text-center Don&rsquo;t just take our word for it &ndash; see what our clients are saying
+      |         
+      .row
+        .item.col-md-6.col-sm-6.col-xs-12
+          .item-inner
+            .quote-container
+              i.fa.fa-quote-left
+              |                         
+              blockquote.quote
+                | Our site has gained much needed visibility within the search engines and general news sites. We appreciate your one-to-one work relationship, you&rsquo;ve got our business for all site work. As always, it&rsquo;s been a real pleasure to work with you, and I am grateful for the attention to detail that you have given us.
+              // //quote
+            // //quote
+            .meta
+              .profile
+                img.img-circle(alt='Application developement in Kenya client', src='assets/users/avatar3-8da9a088369ef58e731b99be45bfdc8a.png')
+                |                             
+                p.name
+                  | Mwangi.
+                  br
+                  |                                 
+                  span.source-title Manager
+                  br
+                  |                                 
+                  span.source-title AHT
+              // //profile
+            // //meta
+          // //item-inner
+        // //item
+        .item.col-md-6.col-sm-6.col-xs-12
+          .item-inner
+            .quote-container
+              i.fa.fa-quote-left
+              |                         
+              blockquote.quote
+                | The website looks great and everyone is very pleased with it. Thank you very much for your hard work and patience getting this completed!
+              // //quote
+            // //quote
+            .meta
+              .profile
+                img.img-circle(alt='Website developement in Kenya client', src='assets/users/avatar3-8da9a088369ef58e731b99be45bfdc8a.png')
+                |                             
+                p.name
+                  | Paul
+                  br
+                  |                                 
+                  span.source-title IT Manager
+                  br
+                  |                                 
+                  span.source-title Swivel Marketing
+              // //profile
+            // //meta
+          // //item-inner
+        // //item
+        .clearfix
+      // //row
+    // //container
+  // //testimonials
+  // ******Logos Section******
+  section#logos.logos.section
+    .container.text-center
+      h2.title Who we have worked with
+      |         
+      p.intro SaaS / Mobile apps / Web Apps / Internal apps/Custom CRM
+      |         
+      ul.logo-list.list-inline.row
+        li.col-md-3.col-sm-3.col-xs-6.xs-break
+          a(href='http://www.mastermindkenya.co.ke/', target='_blank')
+            img.img-responsive(alt='Web Application developement in Nairobi', src='assets/client_/mtk_logo-a4fd1f78dd15fcf5461cde5b90410185.png')
+        |             
+        li.col-md-3.col-sm-3.col-xs-6
+          a(href='http://www.swivel-marketing.com/', target='_blank')
+            img.img-responsive(alt='Website design in Kenya', src='assets/client_/swivel-c914ed5b5d56c76b1654afe98f9017a4.png')
+        |             
+        li.col-md-3.col-sm-3.col-xs-6
+          a(href='http://afriqueclearing.com/', target='_blank')
+            img.img-responsive(alt='SEO in Kenya', src='assets/client_/afrique_logo-2e4995cef7fec3834df421d599d4bcbf.png')
+        |             
+        li.col-md-3.col-sm-3.col-xs-6
+          a(href='http://mwanasystems.com/', target='_blank')
+            img.img-responsive(alt='Software developement in Kenya', src='assets/client_/mwana_logo-e1e69914d2e4dabff16e1e80b5c288df.png')
+      // //logo-list
+    // //container
+  // //logos
+  // ******CTA Section******
+  section#cta-section.cta-section.section.text-center.home-cta-section
+    .container
+      h2.title Want to have a quick chat?
+      |        
+      p.phone.contact-info
+        span.intro We are only a phone call away
+        |            
+        span.info
+          a(href='tel:+254792985380') +254 792 98 53 80
+      // //phone
+      p.email.contact-info
+        span.intro You can also email us
+        |            
+        span.info
+          a(href='mailto:info@trendpro.co.ke') info at trendpro.co.ke
+      // //phone
+    // //container
+  // //cta-section
+  // ******Latest blog Section******
+  section#latest-blog.latest-blog.section
+    .container
+      h2.title.text-center Latest Blog Posts
+      |         
+      .row
+        .item.col-md-6.col-sm-6.col-xs-12
+          .item-inner
+            figure.figure
+              a(href='blogs/14-digitalization-in-business.html')
+                img.img-responsive(alt='Digitalization in business', src='blogs/14-digitalization-in-business/thumb_2')
+            |                         
+            .content-wrapper.text-center
+              h3.sub-title
+                a(href='blogs/14-digitalization-in-business.html') Digitalization in business
+              |                             
+              .desc
+                p
+                  | Digitalization is simply the use of digital technologies to change a business model and provide new revenue and value-producing opportunities.  Just think of how Uber doesn&rsquo;t own any cars yet it is currently the leading taxi company in the world.
+              // //desc
+            // //content-wrapper text-center
+          // //item-inner
+        // //item
+        .item.col-md-6.col-sm-6.col-xs-12
+          .item-inner
+            figure.figure
+              a(href='blogs/11-exceptional-customer-journey.html')
+                img.img-responsive(alt='Exceptional Customer Journey', src='blogs/11-exceptional-customer-journey/thumb_2')
+            |                         
+            .content-wrapper.text-center
+              h3.sub-title
+                a(href='blogs/11-exceptional-customer-journey.html') Exceptional Customer Journey
+              |                             
+              .desc
+                p
+                  | Have you ever visited a newly established grocery store eager to have a new shopping experience? Take that experience, whereby you&rsquo;re looking for a particular product let&rsquo;s say milk and all you see are piles and more piles of cheese despite all the signs in the store! After all that frustration, you may end up deciding to check it out on the same store&rsquo;s website to see if you will be &ldquo;lucky&rdquo; there.
+              // //desc
+            // //content-wrapper text-center
+          // //item-inner
+        // //item
+      // //row
+    // //container
+  // //latest-blog
+  // ******FOOTER******
+  footer.footer
+    .footer-content
+      .container
+        .row
+          .footer-col.col-md-3.col-sm-4.links-col
+            .footer-col-inner
+              h3.sub-title Quick Links
+              |                             
+              ul.list-unstyled
+                li
+                  a(href='about-trendpro-systems.html') About us
+                |                                   
+                li
+                  a(href='web-development-and-mobile-apps-development-in-kenya.html') Our work
+                |                                   
+                li
+                  a(href='contact-trendpro-systems.html') Contact
+                |                                 
+                li
+                  a(href='web-design-blogs.html') Blog
+                |                                 
+                li
+                  a(href='trendpro-systems-privacy-policy.html') Privacy policy
+                |                                 
+                li
+                  a(href='trendpro-systems-terms-and-conditions.html') Terms and  Conditions
+                |                                 
+                li
+                  a(href='trendpro-client-feedback.html') Client Feedback
+            // //footer-col-inner
+          // //foooter-col
+          .footer-col.col-md-6.col-sm-8.blog-col
+            .footer-col-inner
+              h3.sub-title Latest From Our Blog
+              |                                 
+              .item
+                figure.figure
+                  img.img-responsive(alt='Digitalization in business', src='blogs/14-digitalization-in-business/thumb_1')
+                |                                     
+                .content
+                  h4.post-title
+                    a(href='blogs/14-digitalization-in-business.html') Digitalization in business
+                  |                                         
+                  p.intro
+                  p
+                    | Digitalization is simply the use of digital technologies to change a business model and provide new revenue and value-producing opportunities.  Just think of how Uber doesn&rsquo;t own any cars yet it is currently the leading taxi company in the world.
+                  |                                         
+                  p
+                  |                                         
+                  ul.meta.list-inline
+                    li 27 Jun 10:06
+                    |                                             
+                    li TrendPro Admin
+                // //content
+            // //footer-col-inner
+          // //foooter-col
+          .footer-col.col-md-3.col-sm-12.contact-col
+            .footer-col-inner
+              h3.sub-title Get In Touch
+              |                             
+              p.intro
+              |                             
+              .row
+                p.adr.clearfix.col-md-12.col-sm-4
+                  span.fs1(aria-hidden='true', data-icon='')
+                  |                                     
+                  span.adr-group
+                    span.street-address 19th Floor, Hazina Towers,
+                    br
+                    |                                         
+                    span.city Utalii lane, Nairobi
+                    br
+                    |                                         
+                    span.postal-code PO Box 3280-00100
+                    br
+                    |                                         
+                    span.country-name Kenya
+                |                                 
+                p.tel.col-md-12.col-sm-4
+                  span.fs1(aria-hidden='true', data-icon='w')
+                  |                                   
+                  a(href='tel:+254792985380') +254 792 98 53 80
+                |                                 
+                p.email.col-md-12.col-sm-4
+                  span.fs1(aria-hidden='true', data-icon='')
+                  a(href='blogs/index.html#') info@trendpro.co.ke
+            // //footer-col-inner
+          // //foooter-col
+    // //footer-content
+    .bottom-bar
+      .container.center
+        ul.social-icons.list-inline
+          li
+            a.twitter-follow-button(href='https://twitter.com/TrendPro_Kenya', data-show-count='false') Follow @TrendPro_Kenya
+            script.
+              !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+          |                     
+          li
+            // Place this tag where you want the widget to render.
+            .g-follow(data-annotation='bubble', data-height='20', data-href='//plus.google.com/u/0/107434476434684800445', data-rel='publisher')
+          |                     
+          li
+            .fb-like(data-href='https://www.facebook.com/trendprosystems/', data-layout='button_count', data-action='like', data-size='small', data-show-faces='false', data-share='true')
+        |                 
+        small.copyright.text-center
+          | @2017 Powered by 
+          a(href='blogs/index.html') TrendPro Systems Limited
+      // //container
+    // //bottom-bar
+  // //footer
+  // Main Javascript
+  script(src='assets/jquery-1.11.3.min-028b271043962e30bc6731c5da885dd7.js')
+  |     
+  script(src='http://trendpro.co.ke/javascripts/bootstrap.min.js')
+  |     
+  script(src='http://trendpro.co.ke/javascripts/bootstrap-hover-dropdown.min.js')
+  |     
+  script(src='assets/back-to-top-a277d8eedb73c16909245e4aa9077d8f.js')
+  |     
+  script(src='assets/jquery.placeholder-890b2328962b398a4f49cf75a9c4c2a5.js')
+  |     
+  script(src='assets/jquery.matchHeight-min-9404410c23b944bdf29b95ec30e0ad80.js')
+  |     
+  script(src='assets/main-f72217f48e47fe42514acb2c1a6178f0.js')
+  |     
+  script(src='assets/application-87c451e6f105f7163fa4288521be0fae.js')
+  // Flexslider
+  script(src='assets/jquery-1.11.3.min-028b271043962e30bc6731c5da885dd7.js')
+  |     
+  script(src='assets/jquery.flexslider-min-23d271d4a58012cd50a2aaea1e570fb8.js')
+  |     
+  script(src='assets/flexslider-custom-7797ca45eccc2d1c81cea5003611e193.js')
+  // Form iOS fix
+  script(src='assets/isMobile.min-ad6e5e94e579d0287f193e3bcb39ebf6.js')
+  |     
+  script(src='assets/form-mobile-fix-9e875cc165fcc8e1a6ce8605caff91b2.js')
+  // Owl Carousel
+  script(src='assets/owl.carousel-07a85a463291b93c34b639b11cd38ff4.js')
+  |     
+  script(src='assets/owl-custom-6da454ebf8bfccf595d60aa2477d003f.js')
+  |     
+  script(src='assets/imagesloaded.pkgd.min-adf65181e8fcbbbb20b5e9351deb4671.js')
+  |     
+  script(src='http://trendpro.co.ke/javascripts/isotope.pkgd.min.js')
+  |     
+  script(src='assets/isotope-custom-857130c0be6b8c3c4a7b369678e2f48f.js')

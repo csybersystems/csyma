@@ -1,0 +1,35 @@
+if(headless === true)
+    block content
+else
+    doctype html
+    html
+      head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(name='theme-color' content='#4DA5F4')
+        meta(name='csrf-token', content=_csrf)
+        meta(name='generator', content='csyber')
+        meta(name='description', content=description)
+        meta(name='author', content=author)
+        title #{title} - #{appname}
+        link(rel='shortcut icon', href='/favicon.png')
+        link(rel='stylesheet', href='/css/main.css')
+        link(rel='stylesheet', href='/bundle/css/netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/bundle/css/netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
+        link(rel='stylesheet', href='/local/css/main.css') 
+        link(href=authorurl, rel='author')  
+        //style.
+        //  body         { padding-top:80px; }
+      body.hold-transition.skin-red.sidebar-mini
+
+        block background
+        .container
+          include ../flash
+          block content
+
+        include loggedoutfooter
+
+        script(src='/js/lib/jquery-3.1.1.min.js')
+        script(src='/js/lib/bootstrap.min.js')
+        script(src='/js/main.js')

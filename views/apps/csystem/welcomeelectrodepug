@@ -1,0 +1,531 @@
+extends shared/layout
+
+block content    
+  .container-fluid.night-sky
+    .header-content.inverse-colors
+      .row
+        #mobile-logo-text.col-sm-8.col-sm-offset-2.col-xs-10.col-xs-offset-1.logo-text
+          //img(src='img/electrode-logo.svg', alt='')
+          img(src='img/logo-x.svg', alt='')
+      |       
+      .row
+        #mobile-slogan.col-sm-8.col-sm-offset-2.col-xs-10.col-xs-offset-1.slogan
+          | CSYBER SYSTEMS MOTHER APPLICATION
+          br
+          | (CSYMA)
+      |       
+      .row
+        .col-sm-8.col-sm-offset-2.col-xs-10.col-xs-offset-1.header-info
+          p
+            | Welcome to this instance of CSYMA. Really, you will love it inside. It&apos;s super great!
+            | 
+            | 
+            strong
+              i.fa.fa-thumbs-o-up.bamf
+            | 
+            br
+            |  CSYMA is a platform for building web applications with standardized structure, best practices, and modern technologies baked in. CSYMA focuses on performance, component reusability, and simple deployment to multiple cloud providers—so you can focus on what makes your app unique.
+
+
+      |       
+      .row
+        .header-links.col-sm-12.col-xs-12
+          .hidden-xs.col-sm-4.col-sm-offset-2.col-lg-4.col-lg-offset-2
+            a(href='docs/what_is_electrode.html')
+              button.header-button.about-electrode ABOUT ELECTRODE
+          |           
+          .hidden-xs.col-sm-4.col-lg-4
+            a(href='docs/get_started.html')
+              button.header-button.get-started GET STARTED
+          |           
+          .visible-xs-block.col-xs-12
+            a(href='docs/get_started.html')
+              button.header-button.get-started GET STARTED - DEPLOY IN 5 MINUTES
+  |   
+  .container-fluid.night-sky
+    .header-mountains
+      img.hidden-xs(src='img/landscape-only.svg', alt='')
+      |       
+      img.visible-xs(src='img/landscape-with-graphics.svg', alt='')
+  // mobile pillars section only displays in mobile view
+  // togglePillars() loops over child divs under div == pillars-mobile-container
+  .pillars-section-2-mobile.container-fluid
+    #pillars-mobile-container.row
+      .col-xs-4.add-padding-right(onclick="togglePillars('core')")
+        #mobile-core.mobile-header-items core
+      |       
+      .col-xs-4(onclick="togglePillars('modules')")
+        #mobile-modules.mobile-header-items modules
+      |       
+      .col-xs-4.add-padding-left(onclick="togglePillars('tools')")
+        #mobile-tools.mobile-header-items tools
+  |   
+  .mobile-pillar-bar
+  |   
+  #mobile-pillar-content-zone
+    #mobile-core-content
+      .mobile-content-heading
+        p#mobile-header-info
+          | Electrode is a platform for building universal React/Node.js applications with standardized structure, best practices,
+          | and modern technologies baked in.
+      |       
+      #snippet-bubble
+        .row
+          h4 QUICK AND EASY SETUP!
+        |         
+        #code-snippet.row
+          div
+            p $ npm install -g yo xclap-cli generator-electrode
+            |             
+            p $ mkdir my-electrode-app
+            |             
+            p $ cd my-electrode-app
+            |             
+            p $ yo electrode
+            |             
+            p $ clap dev
+        |         
+        .row
+          .snippet-bubble-text.col-md-10.col-md-offset-1 That&apos;s it! Next, deploy, your app to your favorite cloud service.
+        |         
+        .row
+          a(href='docs/what_is_electrode.html')
+            button#details-btn.btn.col-md-offset-1.col-md-3 DETAILS
+          |           
+          a(href='docs/more_deployments.html')
+            button#deploy-btn.btn.col-md-offset-1.col-md-6 DEPLOY
+      |       
+      p
+        | Electrode emphasizes convention over configuration, while focusing on performance, component reusability, and simple
+        | deployment
+      |       
+      p
+        | Get new projects started quickly with a simple, consistent structure that follows modern best practices. Electrode
+        | Core allows you to build a flexible scaffold in minutes, with support for server-side rendering and easy deployment
+        | to multiple cloud providers.
+      |       
+      p
+        | The heart of the platform is Electrode Archetypes, which allow for standardized configurations and structure of the
+        | app and its associated react components. By enforcing a sensible structure and consistency for components, modules
+        | and the entire app, Electrode&rsquo;s Archetype system helps you build scalable applications you can trust while ensuring
+        | streamlined
+    |     
+    #mobile-modules-content
+      table
+        tr.mobile-module-item
+          td.mobile-module-item-text
+            b SSR Profiling &amp; Caching
+            |             
+            br
+            | This module can help you improve your React server-side rendering performance by up to 70% by caching your
+            |             components&apos; render
+            br
+          |           
+          td
+            a(href='docs/server_side_render_cache.html')
+              img(src='img/icn-ssr.svg', alt='')
+        |         
+        tr.mobile-module-item
+          td.mobile-module-item-text
+            b Above-the-Fold Rendering
+            |             
+            br
+            | Instead of side rendering the whole page on the server, this react component enables rendering of *only*
+            |             the components your users see on the screen without scrolling, for improved performance.
+            br
+          |           
+          td
+            a(href='docs/above_fold_rendering.html')
+              img(src='img/icn-atf.svg', alt='')
+        |         
+        tr.mobile-module-item
+          td.mobile-module-item-text
+            b Redux Router Engine
+            |             
+            br
+            | Do you need data from a service to render your component server-side? This module fetches the data asynchronously
+            |             and passes it to React to render your components. Requires Redux.
+            br
+          |           
+          td
+            a(href='docs/redux_router_engine.html')
+              img(src='img/icn-redux.svg', alt='')
+        |         
+        tr.mobile-module-item
+          td.mobile-module-item-text
+            b Confippet
+            |             
+            br
+            | Lets you define, extend, and merge configurations for different environments (such as QA, prod, and staging)
+            |             that get initialized during start up or at runtime.
+            br
+          |           
+          td
+            a(href='docs/confippet.html')
+              img(src='img/icn-confippet.svg', alt='')
+        |         
+        tr.mobile-module-item
+          td.mobile-module-item-text
+            b Stateless CSRF Validation
+            |             
+            br
+            | Validate HTTP requests without a session--for Express and Hapi.
+            br
+          |           
+          td
+            a(href='docs/stateless_csrf_validation.html')
+              img(src='img/icn-csrf.svg', alt='')
+        |         
+        tr.mobile-module-item
+          td.mobile-module-item-text
+            b More Modules Coming Soon!
+            |             
+            br
+            | New module release announcements will be Tweeted on 
+            a(href='https://twitter.com/electrode_io') @electrode_io
+            br
+          |           
+          td
+            a(href='docs/stand_alone_modules.html')
+              img(src='img/icn-more.svg', alt='')
+    |     
+    #mobile-tools-content
+      b
+        | Discover reusable components and optimize your JS bundle with standalone tools. These tools can be used with any React/Node app, but work best with the structure provided by Electrode Core.
+      |       
+      #tools-carousel.carousel.slide.row(data-ride='carousel')
+        .carousel-inner(role='listbox')
+          .item.active
+            .tool-title
+              a(href='https://github.com/electrode-io')
+                img.github-logo(src='img/github-mobile.svg')
+              |               
+              h3 Electrode Explorer
+              |               
+              p Standalone web application that lets you interact with your components.
+            |             
+            img.image(src='img/tools-explorer-screen-mobile@2x.png', alt='')
+            |             
+            br
+            |             
+            .inside-car-title
+              h4 Electrode Explorer Features:
+            |             
+            ul
+              li
+                | allows you to view a Live Demo of all of your components and play with their integration in real time
+              |               
+              li shows the component Documentation and Props
+              |               
+              li shows all of your component dependencies
+              |               
+              li
+                | shows consumers of the component shows component NPM versions, so you can see how they evolved
+              |               
+              li and more
+          |           
+          .item
+            .tool-title
+              a(href='https://github.com/electrode-io')
+                img.github-logo(src='img/github-mobile.svg')
+              |               
+              h3 Electrify
+              |               
+              p
+                | Electrify is a tool for analyzing the module tree of electrode-io/webpack project bundles. It&apos;s especially
+                | handy for catching large and/or duplicate modules which might be either bloating up your bundle or slowing
+                | down the build process.
+            |             
+            img.image(src='img/electrode-electrify-screen-mobile@2x.png', alt='')
+            |             
+            br
+            |             
+            p
+              | The Electrode Bundle Viewer tool is called Electrify, and it&apos;s especially handy for catching large and/or duplicate
+              | modules which might be either bloating up your bundle or slowing down the build process.
+        |         
+        a.left.carousel-control(href='index.html#tools-carousel', role='button', data-slide='prev')
+          span.button-previous(aria-hidden='true')
+          |             
+          span.sr-only Previous
+        |         
+        a.right.carousel-control(href='index.html#tools-carousel', role='button', data-slide='next')
+          span.button-next(aria-hidden='true')
+          |             
+          span.sr-only Next
+  |   
+  .mobile-footer-toggle
+    #mobile-core-footer.elc-icon-icn-core.footer-toggle-items(onclick="togglePillars('core')")
+    |     
+    #mobile-modules-footer.elc-icon-icn-modules.footer-toggle-items(onclick="togglePillars('modules')")
+    |     
+    #mobile-tools-footer.elc-icon-icn-tools.footer-toggle-items(onclick="togglePillars('tools')")
+    |     
+    a(href='docs/get_started.html')
+      button.mobile-footer-getStarted-btn GET STARTED
+  |   
+  .mobile-footer
+    .mobile-footer-text-container.vertical-align-this
+      | Built with &#x2661; by @WalmartLabs, Electrode is maintained by the 
+      a(href='https://github.com/orgs/electrode-io/people') core team
+      |       with help of our contributors. Open Sourced Under Apache-2.0 license.
+  |   
+  .container.pillars-section-2
+    .row
+      .col-xs-4.pillar-grey-border
+        .col-sm-12.pillar-icon
+          img(src='img/core_pillar.svg', alt='')
+        |         
+        .pillar-content
+          h1 core
+          |           
+          p
+            | Build a simple, flexible scaffold in minutes, with support for server-side rendering and easy deployment to multiple
+            | cloud providers. Electrode lets you focus on code, not configuration.
+      |       
+      .col-xs-4.pillar-grey-border
+        .col-sm-12.pillar-icon
+          img(src='img/modules_pillar.svg', alt='')
+        |         
+        .pillar-content
+          h1 modules
+          |           
+          p
+            | Level up your app with features like above-the-fold rendering, server-side render caching, and stateless CSRF validation.
+            | Modules work with your existing React/Node app--no need to migrate to Electrode Core.
+      |       
+      .col-xs-4
+        .col-sm-12.pillar-icon
+          img(src='img/explorer-pillar.svg', alt='')
+        |         
+        .pillar-content
+          h1 tools
+          |           
+          p
+            | Discover reusable components and optimize your JS bundle with standalone tools. These tools can be used with any
+            | React/Node app, but work best with the structure provided by Electrode Core.
+    |     
+    .row.pillar-links
+      .col-sm-4.pillar-grey-border
+        a(href='index.html#electrode-core-logo') LEARN MORE
+      |       
+      .col-sm-4.pillar-grey-border
+        a(href='index.html#modules-section') LEARN MORE
+      |       
+      .col-sm-4
+        a(href='index.html#electrode-tools') LEARN MORE
+  // end of header
+  // begin electrode core
+  .container.electrode-core
+    .row.top-core-content
+      #electrode-core-logo.col-md-12
+        img.grayscale(src='img/core_hex_icon_@1x.png')
+    |     
+    .row
+      .col-md-12
+        h1 electrode core
+        |         
+        h3#core-h3
+          | Electrode emphasizes convention over configuration, following industry best practices for performance, consistency,
+          | and reusability.
+    |     
+    .row
+      .container
+        #electrode-core-text.col-md-6
+          div
+            | Get new projects started quickly with a simple, consistent structure that follows modern best practices. Electrode Core allows
+            | you to build a flexible scaffold in minutes, with support for server-side rendering and easy deployment to multiple
+            | cloud providers.
+          |           
+          div
+            | The heart of the platform is Electrode Archetypes, which allow for standardized configurations and structure of the app and
+            | its associated react components. By enforcing a sensible structure and consistency for components, modules and
+            | the entire app, Electrode&rsquo;s Archetype system helps you build scalable applications you can trust while ensuring
+            | streamlined development and deployment.
+        |         
+        .col-md-6
+          #snippet-bubble
+            .row
+              h4.col-sm-offset-1.col-md-offset-1 QUICK AND EASY SETUP!
+            |             
+            .row
+              #code-snippet.col-sm-offset-1.col-sm-10.col-md-offset-1.col-md-10
+                div
+                  p $ npm install -g yo xclap-cli generator-electrode
+                  |                   
+                  p $ mkdir my-electrode-app
+                  |                   
+                  p $ cd my-electrode-app
+                  |                   
+                  p $ yo electrode
+                  |                   
+                  p $ clap dev
+            |             
+            .row
+              .snippet-bubble-text.col-sm-offset-1.col-md-offset-1.col-md-10 That&apos;s it! Next, deploy, your app to your favorite cloud service.
+            |             
+            .row
+              a(href='docs/what_is_electrode.html')
+                button#details-btn.btn.col-sm-offset-1.col-sm-3.col-md-offset-1.col-md-2 DETAILS
+              |               
+              a(href='docs/more_deployments.html')
+                button#deploy-btn.btn.col-sm-offset-1.col-sm-6.col-md-offset-1.col-md-7 DEPLOY TO YOUR FAVORITE CLOUD
+  // end electrode core
+  // begin electrode newest version modules
+  #modules-section.container
+    .container-fluid
+      #desktop-modules-content
+        #desktop-modules-header.row
+          a(href='index.html#')
+            img.icon-modules.scroll-up(src='img/badge-modules-2.svg')
+          |           
+          h1 electrode modules
+          |           
+          h3 Supercharge your app, with or without Electrode Core
+        |         
+        .row.desktop-module-item
+          .module-box
+            .col-sm-6.col-md-6.desktop-module-text
+              .row.module-testbox
+                .col-sm-12.col-md-12.module-subheader
+                  b Above-the-Fold Rendering
+                |                 
+                .col-sm-10.col-md-10.module-textbox
+                  br
+                  | Instead of side rendering the whole page on the server, this react component enables rendering of *only*
+                  |                   the components your users see on the screen without scrolling, for improved performance.
+                  br
+                |                 
+                .col-sm-2.col-md-2.desktop-module-logo
+                  a(href='docs/above_fold_rendering.html')
+                    img(src='img/icn-atf.svg', alt='')
+          |           
+          .module-box
+            .col-sm-6.col-md-6.desktop-module-text
+              .row.module-testbox
+                .col-sm-12.col-md-12.module-subheader
+                  b Redux Router Engine
+                |                 
+                .col-sm-10.col-md-10.module-textbox
+                  br
+                  | Do you need data from a service to render your component server-side? This module fetches the data
+                  |                   asynchronously and passes it to React to render your components. Requires Redux.
+                  br
+                |                 
+                .col-sm-2.col-md-2.desktop-module-logo
+                  a(href='docs/redux_router_engine.html')
+                    img(src='img/icn-redux.svg', alt='')
+        |         
+        .row.desktop-module-item
+          .module-box
+            .col-sm-6.col-md-6.desktop-module-text
+              .row.module-testbox
+                .col-sm-12.col-md-12.module-subheader
+                  b Confippet
+                |                 
+                .col-sm-10.col-md-10.module-textbox
+                  br
+                  | Lets you define, extend, and merge configurations for different environments (such as QA, prod, and
+                  |                   staging) that get initialized during start up or at runtime.
+                  br
+                |                 
+                .col-sm-2.col-md-2.desktop-module-logo
+                  a(href='docs/confippet.html')
+                    img(src='img/icn-confippet.svg', alt='')
+          |           
+          .module-box
+            .col-sm-6.col-md-6.desktop-module-text
+              .row.module-testbox
+                .col-sm-12.col-md-12.module-subheader
+                  b SSR Profiling &amp; Caching
+                |                 
+                .col-sm-10.col-md-10.module-textbox
+                  br
+                  | This module can help you improve your React server-side rendering performance by up to 70% by caching
+                  |                   your components&apos; render
+                  br
+                |                 
+                .col-sm-2.col-md-2.desktop-module-logo
+                  a(href='docs/server_side_render_cache.html')
+                    img(src='img/icn-ssr.svg', alt='')
+        |         
+        .row.desktop-module-item
+          .module-box
+            .col-sm-6.col-md-6.desktop-module-text
+              .row.module-testbox
+                .col-sm-12.col-md-12.module-subheader
+                  b Stateless CSRF Validation
+                |                 
+                .col-sm-10.col-md-10.module-textbox
+                  br
+                  | Validate HTTP requests without a session--for Express and Hapi.
+                  br
+                |                 
+                .col-sm-2.col-md-2.desktop-module-logo
+                  a(href='docs/stateless_csrf_validation.html')
+                    img(src='img/icn-csrf.svg', alt='')
+          |           
+          .module-box
+            .col-sm-6.col-md-6.desktop-module-text
+              .row.module-testbox
+                .col-sm-12.col-md-12.module-subheader
+                  b More Modules Coming Soon!
+                |                 
+                .col-sm-10.col-md-10.module-textbox
+                  br
+                  | New module release announcements will be Tweeted on 
+                  a(href='https://twitter.com/electrode_io') @electrode_io
+                  br
+                |                 
+                .col-sm-2.col-md-2.desktop-module-logo
+                  a(href='docs/stand_alone_modules.html')
+                    img(src='img/icn-more.svg', alt='')
+  // begin electrode tools
+  .container
+    #electrode-tools.electrode-tools.row
+      a(href='index.html#')
+        img.icon-modules.scroll-up(src='img/badge-tools-2.svg')
+      |       
+      h1 electrode tools
+      |       
+      h3 Optimize your app with standalone tools
+      |       
+      #desktop-tools-carousel.carousel.slide.row(data-ride='carousel')
+        .carousel-inner(role='listbox')
+          .item.active
+            .tool-title.col-lg-offset-2.col-lg-8
+              .github-logo
+                a(href='https://github.com/electrode-io')
+                  img(src='img/social-git-2-b.svg')
+              |               
+              h3.col-md-11.col-lg-11 Electrode Explorer
+              |               
+              p.col-md-11.col-lg-11 Standalone web application that lets you interact with your components.
+            |             
+            .image.image-electrode-explorer
+          |           
+          .item
+            .tool-title.col-lg-offset-2.col-lg-8
+              .github-logo
+                a(href='https://github.com/electrode-io')
+                  img(src='img/social-git-2-b.svg')
+              |               
+              h3.col-md-11.col-lg-11 Electrify
+              |               
+              p.col-md-11.col-lg-11
+                | Electrify is a tool for analyzing the module tree of electrode-io/webpack project bundles. It&apos;s especially
+                | handy for catching large and/or duplicate modules which might be either bloating up your bundle or slowing
+                | down the build process.
+            |             
+            .image.image-electrode-electrify
+        |         
+        a.left.carousel-control(href='index.html#desktop-tools-carousel', role='button', data-slide='prev')
+          span.button-previous(aria-hidden='true')
+          |           
+          span.sr-only Previous
+        |         
+        a.right.carousel-control(href='index.html#desktop-tools-carousel', role='button', data-slide='next')
+          span.button-next(aria-hidden='true')
+          |           
+          span.sr-only Next
+  // end electrode tools

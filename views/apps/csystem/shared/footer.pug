@@ -1,0 +1,24 @@
+footer.main-footer
+    .pull-right
+      a.fa.fa-github(href=builder.github) 
+      |   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      a.fa.fa-facebook(href=builder.facebook) 
+      |   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+      a.fa.fa-twitter(href=builder.twitter) 
+      |       
+      br
+      b Version
+      |  #{version}
+    |     
+    strong
+      | @ 
+      a(href=builder.buildcompanyurl) #{builder.buildcompany}
+      | , #{year} 
+      |
+    br
+    | Open Sourced Under Apache
+    br
+    | Built with &#x2661; by @#{builder.buildcompany}
+    script(src=rooturl+'alertifyjs/alertify.min.js')
+    script(src=rooturl+'apps/csystem/js/csystem.js')
+      

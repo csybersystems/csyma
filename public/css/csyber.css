@@ -1,0 +1,25 @@
+.main-section
+{
+	font-family:"Gotham-Rounded";
+ 	background-position:center 27px;
+ 	/*background-image:url("/img/Laptop-PNG-HD.png");*/
+ 	background-size:100%;background-repeat:no-repeat;
+ 	padding-left: 10px;
+ 	padding-right:10px;
+ 	border-top: 10px solid;
+ 	border-right: 10px solid;
+ 	border-bottom: 10px solid;
+ 	border-left: 10px solid;
+ 	background:white;
+}
+.isln::after{
+	content: "";
+	border-bottom-style: solid;
+	border-width: 1px;
+	width:100px;
+}
+
+.iqsnt
+{
+	color:#0080ff;
+}

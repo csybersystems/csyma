@@ -1,0 +1,15 @@
+Rq
+	At route /
+		System default page
+		Set a default page. System default page is loaded only if default page is missing
+	Load all apps to applist
+
+	If there was an app running,
+		start that app,
+	otherwise 
+		if default app is set
+			start default app
+		otherwise
+			wait for user to start the app s/he wants to use
+
+			app can have default page or not(in which case default page or system default page reigns as may be the case)

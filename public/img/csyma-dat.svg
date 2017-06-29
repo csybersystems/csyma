@@ -1,0 +1,16 @@
+<svg width="626" height="119" xmlns="http://www.w3.org/2000/svg" stroke="null" style="vector-effect: non-scaling-stroke;">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g stroke="null">
+  <title stroke="null">background</title>
+  <rect stroke="null" fill="none" id="canvas_background" height="121" width="628" y="-1" x="-1"/>
+  <g stroke="null" style="vector-effect: non-scaling-stroke;" display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect stroke="null" fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g stroke="null">
+  <title stroke="null">Layer 1</title>
+  <text stroke="#000" font-weight="bold" transform="matrix(2.650178502055053,0,0,3.5798469786900435,384.97406063508384,412.64069262951404) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_1" y="-92.111564" x="-143.029328" stroke-width="0" fill="#56aaff">CSYMA</text>
+  <text stroke="#000" style="vector-effect: non-scaling-stroke;" transform="matrix(14.189695358276367,0,0,1,-3816.3559163212776,0) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_2" y="128.5" x="276" stroke-opacity="null" stroke-width="0" fill="#56aaff"/>
+  <text stroke="#000" transform="matrix(1.0693270818600522,0,0,0.9240313811635019,161.39172269235016,-77.82854126701174) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_3" y="208.006714" x="48.907654" fill-opacity="null" stroke-opacity="null" stroke-width="0" fill="#56aaff">Another one from @CsyberSystems</text>
+ </g>
+</svg>
