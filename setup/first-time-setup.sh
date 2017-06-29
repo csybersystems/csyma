@@ -2,9 +2,13 @@
 
 main()
 {
+	if [ ! -f ../.env ]; then
+		cp .env_sample ../.env
+   		echo "..."
+	fi
 	oldname="vipimo"
 	echo "Todo: still not looking recursively in files..."
-	cp .env.example .env
+	
 	echo "Have already configured your system in config/config.js? This setup will break if you have not done so.(Y/N)"
 	read ans
 	case "$ans" in
