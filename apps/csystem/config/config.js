@@ -20,8 +20,8 @@ const config = {
         15:"Group has been removed"
     },
     name:"csystem",
-    displayname:false,       // || or false   
-	url:"#csyber",
+    displayname:false,      // || or false failse if it should not be shown in app list
+	url:"#!csystem/app/elements",
 	enabled: {
         root:"restricted",
         user:"free",

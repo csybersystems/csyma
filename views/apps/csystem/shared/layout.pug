@@ -9,6 +9,10 @@ if(less === false)
       title #{appname} | #{title}
       // Tell the browser to be responsive to screen width
       meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+      meta(name='generator', content='csyber')
+      meta(name='description', content=elements.description)
+      meta(name='keywords', content=elements.keywords)
+      meta(name='author', content=author)
 
       |   
       //link(rel='stylesheet', href='http://www.electrode.io/css/electrode.css')
@@ -51,6 +55,12 @@ if(less === false)
         script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
       link(rel='stylesheet', href=rooturl+'alertifyjs/css/alertify.min.css')
       link(rel='stylesheet', href=rooturl+'alertifyjs/css/themes/default.min.css')
+
+      script
+        if(elements.defaultapp)
+          | const default_app ='#{elements.defaultapp}'
+        else 
+          | const default_app =false;
 
 
        

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<song>
+	<id>142</id>
+	<eTitle>Angels We Have Heard on High</eTitle>
+	<verses>
+		<verse>
+			Angels we have heard on high,
+			Singing sweetly through the night,
+			And the mountains in reply
+			Echoing their brave delight.
+		</verse>
+		<refrain>
+			Gloria in excelsis Deo,
+			Gloria in excelsis Deo.
+		</refrain>
+		<verse>
+			Shepherds, why this jubilee?
+			Why these songs of happy cheer?
+			What great brightness did you see?
+			What glad tidings did you hear?
+		</verse>
+		<verse>
+			Come to Bethlehem and see
+			Him whose birth the angels sing;
+			Come, adore on bended knee
+			Christ, the Lord, the newborn King.
+		</verse>
+		<verse>
+			See Him in a manger laid
+			Whom the angels praise above;
+			Mary, Joseph, lend your aid,
+			While we raise our hearts in love.
+		</verse>
+	</verses>
+</song>

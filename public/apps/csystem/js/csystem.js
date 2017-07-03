@@ -1,3 +1,10 @@
+/*
+ * configurations. Should go elsewhere
+ */
+//const default_app = "csyma";
+const rootpath = "";				/*What would resolve to this app if proxy were used? */
+const pathsep = "#!"
+
 $(document).ready(function()
 {
 	///
@@ -8,6 +15,7 @@ var csyberlocation = "";
 var csyberstack = [];/////////////////use this to go back...,,,...,,,....
 var maxstacklen = 10;
 var currentapp = null;
+var errpage =false;
 
 var errorhandler = function()
 {
@@ -21,31 +29,55 @@ var loadpreviousapp = function()
 		errpage = false;
 		return;
 	}
-	var prevapp = window.location.href.match(/#!(.*?)(\/)/);
-	if(prevapp == null)prevapp = window.location.href.match(/#!(.*?)/);
-	if(prevapp == null){
-		prevapp = {0:"",1:"csystem"};
-		csyberlocation = window.location.href+"#csyber"
-	}else csyberlocation = window.location.href;
-	console.log(prevapp)
-	alertify.success("...");
-	if(prevapp[1] != undefined)prevapp = prevapp[1];
-	else prevapp = "csyber"
-	prevapp += "app";
-	let obj = "#"+prevapp
+	var prevapp;
+	// prevapp = window.location.href.match(/#(.*?)(\/)/);
+	// console.log(prevapp)
+	// if(prevapp == null)prevapp = window.location.href.match(/#(.*?)/);
+	prevapp = window.location.href.split(pathsep);
+	delete prevapp[0];
+	prevapp = prevapp.join("")
+	// console.log(prevapp)
+	if(prevapp === ""){									//no previous running app
+		console.log("defaulapp:"+default_app)
+		
+		try
+		{
+			if(default_app === false)throw new error("no default app set");
+			prevapp = default_app
 
-	if($(obj).html() == undefined){
-		obj = $("#csyberapp")
-		window.location.href = "#csyber"
+		}catch(error)
+		{
+			//nothing to be done
+			//alertify.error("error getting default app")
+			return;
+		}
+		
 	}
 	try
 	{
-		$(obj).click();
-		$(".applicationsicon").click();
+		// console.log(prevapp)
+		let obj = "#"+prevapp+"app";
+		// console.log(prevapp)
+		// console.log($(obj).html())
+		try
+		{
+			if($(obj).html() == undefined)throw new error("obj).html")
+				//window.location.href =pathsep+prevapp;
+			$(obj).click();
+
+			$(".applicationsicon").click();
+		}catch(err)
+		{
+			loadapp(pathsep+prevapp)
+			$(".applicationsicon").click();
+			//console.log(err)
+		}
 	}catch(err)
-	{
-		console.log(err)
+	{ 
+
 	}
+		
+	
 }
 
 
@@ -69,23 +101,60 @@ var attachUserForm = function() {
     });
 }
 
-
-var loadapp = function(obj)
+var loadapp = function(url)
 {
-	let appname = $(obj).attr("content")
-	console.log("content..."+appname)
-	let newurl = $(obj).attr("href")
-	let objtype = $(obj).attr("type")
-	let url = window.location.href;
-	//console.log("In csyber.js: all apps now reloading if reopened. Loading scripts also. Is this proper???? Choose mode in which to work");
+	// let appname = $(obj).attr("content")
+	// let newurl = $(obj).attr("href")
+	// window.location.href = newurl;
+	// let objtype = $(obj).attr("type")
+	// let url = window.location.href;
+	console.log(url)
+	url = url.split(pathsep);
+	delete url[0];
+	url = url.join("");
+	window.location.href = rootpath+pathsep+url
+	url = rootpath+url+"?headless=true&accepts=json"
+	console.log(url)
 	
-	//applications will load scripts
-	//
+	$.getJSON(url).done(function(innerdata){
+		console.log(innerdata)
+		let datapi1;
+		try{
+		datapi1 = JSON.parse(innerdata)
+		iserror = false;
+		console.log(innerdata)
+			let scripts = {}
+			for(let scriptindex in datapi1)scripts[datapi1[scriptindex]] = datapi1[scriptindex];
+			console.log(scripts)
+			for(let scriptindex in scripts)
+			{
+				$(".dashboardscontainer").append('<script src="/apps/'+appname+'/js/'+scripts[scriptindex]+'.js"></script>');
+			}
+			$(".dashboardscontainer").append('<script>$(".sidea").click(function(){loadapp($(this))})</script>');
+
+
+			//
+	}catch(error)
+	{
+		alertify.error("Unkown error while loading dashboards");
+		iserror = true;
+		$(".dashboardscontainer").append('<script>$(".sidea").click(function(){loadapp($(this))})</script>');
+		$(".applicationsicon").click();
+	}
+		
+	}).fail(function(){
+		alertify.error("Failed to load dashboards.");
+	});
+	/*
+	 * Use this for all urls
+	 */
+	//different types of objects are returned...
+	/*
 	console.log(objtype)
 	if(objtype == "app")
 	{
 		//load page
-		var tmpurlroot = newurl.replace("#", "apps/?app=");
+		var tmpurlroot = newurl.replace("pathsep", "/");
 		var tmpurl = tmpurlroot+"&action=loadpage";
 		$(".applicationsicon").click();
 		console.log("here...")
@@ -103,23 +172,7 @@ var loadapp = function(obj)
 			}
 		  	if(iserror === false)
 		  	{
-
-
-
-
-/*
-		  		$("body").ufModal({
-            sourceUrl: "http://localhost:3000/apps/?app=csyber&action=loadpage&page=sampleform",
-            msgTarget: $("#alerts-page")
-        });
-
-        attachUserForm();
-
-*/
-
-
-		  		
-		  		let tmpurli = tmpurlroot+"&action=loaddashboards";
+	  		let tmpurli = rootpath+tmpurlroot+"&action=loaddashboards";
 		  		$.get(tmpurli).done(function(innerdata){
 		  			let datapi;
 		  			try{
@@ -157,12 +210,6 @@ var loadapp = function(obj)
 						datapi1 = JSON.parse(innerdata)
 						iserror = false;
 						console.log(innerdata)
-  						/*for(let scriptindex in datapi1)
-  						{
-  							$(".dashboardscontainer").append('<script src="/apps/'+appname+'/js/'+datapi1[scriptindex]+'.js"></script>');
-  						}
-  						$(".dashboardscontainer").append('<script>$(".sidea").click(function(){loadapp($(this))})</script>');
-  						*/
   						let scripts = {}
   						for(let scriptindex in datapi1)scripts[datapi1[scriptindex]] = datapi1[scriptindex];
   						console.log(scripts)
@@ -232,6 +279,8 @@ var loadapp = function(obj)
 			alertify.error("Unknown error. Please try again later or contact the administrator.");
 		});
 	}
+
+	*/
 }
 
 
@@ -419,4 +468,4 @@ var loadapplicationslist = () => {
 	});
 }
 //loading applications from applications menu
-$(".sidea").click(function(){loadapp($(this))});
+$(".sidea").click(function(){loadapp($(this).attr("href"))});

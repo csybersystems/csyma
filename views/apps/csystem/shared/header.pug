@@ -8,7 +8,7 @@ header.main-header
       // logo for regular state and mobile devices
       span.logo-lg
         //img(src='http://localhost/assets-raw/core/assets/local/core/images/logo.svg', width='35', alt='')
-        img(src='img/logo-im-small.svg', alt='')
+        img(src=rooturl+'img/logo-im-small.svg', alt='')
         //b #{applogoname}
     // Header Navbar: style can be found in header.less
     nav.navbar.navbar-static-top
@@ -63,14 +63,14 @@ header.main-header
           // User Account: style can be found in dropdown.less
           li.dropdown.user.user-menu
             a.dropdown-toggle(href='#', data-toggle='dropdown')
-              img.user-image(src=user.profile.picture || 'images/4e14f517d239010c439617922dc13543.png', alt='User Image')
+              img.user-image(src=rooturl+user.profile.picture || rooturl+'images/4e14f517d239010c439617922dc13543.png', alt='User Image')
               |               
               span.hidden-xs=user.name || user.profile.name || user.email || user.id
             |             
             ul.dropdown-menu
               // User image
               li.user-header
-                img.img-circle(src=user.profile.picture || 'images/4e14f517d239010c439617922dc13543.png', alt='User Image')
+                img.img-circle(src=rooturl+user.profile.picture || rooturl+'images/4e14f517d239010c439617922dc13543.png', alt='User Image')
                 |         
                 p
                   p= user.name || user.profile.name 

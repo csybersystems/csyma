@@ -33,7 +33,7 @@ const config = {
     appname: 'CSYBER',
     defaulpageloggedout: 'apps/csystem/welcome',
     defaulpageloggedin: 'apps/csystem/welcome',//'/auth/login',
-    defaultapp: 'csystem/home',
+    
     displayappname: 'SSPOC Dashboard',
     year: year,
     applogoname: 'CSWEEPER',      //appears on top left
@@ -52,6 +52,23 @@ const config = {
     guestemail:"guest@cseco.co.ke",
     authorurl:"https://github.com/surgbc",
     description:"Control your IoT devices, LoRa devices, automate your house, home, farm, kitchen using this dashboard, platform. Use this dashboard to visualize your data",
+    elements:
+    {
+        keywords:"keywords go here",
+        description:"Descrition goes here",
+        defaultapp: 'csyma',
+        dashboards:
+        {
+            class: "fa fa-desktop",
+            user:{
+                "home":{                 //add more dashboards here
+                    name: "Home",
+                    url: "#",
+                    default: true
+                },
+            }
+        }
+    },
     sidemenuitems: {
         apps: {
             class: "fa fa-desktop",

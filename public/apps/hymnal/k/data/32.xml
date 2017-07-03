@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<song>
+	<id>32</id>
+	<title>Tangu Kuamini</title>
+	<englishTitle>I have a Song I love to Sing</englishTitle>
+	<verses>
+		<verse>
+			Ninao wimbo mzuri, Tangu kuamini;
+			Wa Mkombozi, Mfalme, Tangu kuamini.
+		</verse>
+		<refrain>
+			Tangu kuamini, Jina lake tasifu,
+			Tangu kuamini, Nitalisifu jina lake.
+		</refrain>
+		<verse>
+			Kristo anitosha kweli, Tangu kuamini,
+			Mapenzi yake napenda, Tangu kuamini. 
+			
+		</verse>
+		<verse>
+			Ninalo shuhuda sawa, Tangu kuamini;
+			Linalofukuza shaka, Tangu kuamini.
+		</verse>
+		<verse>
+			Ninalo kao tayari, Tangu kuamini;
+			Nililorithi kwa Yesu, Tangu kuamini. 
+		</verse>
+	</verses>
+</song>

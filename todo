@@ -2,14 +2,37 @@ Rq
 	At route /
 		System default page
 		Set a default page. System default page is loaded only if default page is missing
-	Load all apps to applist
+	Load all apps to applist..........................*
 
-	If there was an app running,
+	If there was an app running,.............4..................*
 		start that app,
 	otherwise 
-		if default app is set
+		if default app is set.............3.....................*
 			start default app
 		otherwise
-			wait for user to start the app s/he wants to use
+			wait for user to start the app s/he wants to use..............1
+				load app parts
+					some have children, others have no
+						load for html
+							...header elements
+							...| keywords....................1..*
+							...| description.................2..*
+							...|
+								then load elements,,, dashboards & co....
+									elements.left sidde bar
+									elements.others
+									...hidden.....................*
+									combine dashboards............*
+										combine other elements
+											with children, without children
+						load for JSON
+							just add others...
 
-			app can have default page or not(in which case default page or system default page reigns as may be the case)
+					disable app and see
+
+
+			app can have default page or not(in which case default page or system default page reigns as may be the case).............2
+
+
+Help
+	See how to set defaultapp

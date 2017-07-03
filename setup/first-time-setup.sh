@@ -20,7 +20,7 @@ main()
 	
 	echo "Please enter the name of your new database that you've set it in the configuration file"
 	read ans
-	cmd=$(find ./ -type f -exec sed -i -e "s/27017\/$oldname/27017\/$ans/g" {} \;)
+	#cmd=$(find ./ -type f -exec sed -i -e "s/27017\/$oldname/27017\/$ans/g" {} \;)
 	#goodresult=$(echo $cmd)
 	#echo $goodresult
 	nodejs first-time-setup.js

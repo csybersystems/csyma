@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<song>
+	<id>143</id>
+	<eTitle>Silent Night, Holy Night</eTitle>
+	<verses>
+		<verse>
+			Silent night! holy night!
+			All is calm, all is bright
+			Round yon virgin mother and Child,
+			Holy Infant so tender and mild,
+			Sleep in heavenly peace,
+			sleep in heavenly peace.
+		</verse>
+		<verse>
+			Silent night! holy night!
+			Shepherds quake at the sight,
+			glories stream from heaven afar,
+			heavenly hosts sing Alleluia;
+			Christ, the Savior is born,
+			Christ, the Savior is born.
+		</verse>
+		<verse>
+			Silent night! holy night!
+			Son of God, love's pure light,
+			Radiant beams from Thy holy face,
+			with the dawn of redeeming grace,
+			Jesus, Lord, at Thy birth,
+			Jesus, Lord, at Thy birth.
+		</verse>
+	</verses>
+</song>

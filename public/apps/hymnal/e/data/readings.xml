@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>Readings</description>
+<songs>
+	<song>
+		<id>696</id>
+		<eTitle>I WILL EXTOL THE LORD -- Psalm 34, NIV</eTitle>
+	</song>
+	<song>
+		<id>697</id>
+		<eTitle>SHOUT WITH JOY TO GOD, ALL THE EARTH! -- Psalm 66, NIV</eTitle>
+	</song>
+	<song>
+		<id>698</id>
+		<eTitle>HOW LOVELY IS THY DWELLING PLACE  -- Psalm 84, RSV</eTitle>
+	</song>
+	<song>
+		<id>699</id>
+		<eTitle>O COME, LET US SING UNTO THE LORD -- Psalm 95, KJV</eTitle>
+	</song>
+	<song>
+		<id>700</id>
+		<eTitle>OH, SING TO THE LORD A NEW SONG -- Psalm 96, KJV</eTitle>
+	</song>
+	<song>
+		<id>701</id>
+		<eTitle>SHOUT JOYFULLY TO THE LORD -- Psalm 1OO, NASB</eTitle>
+	</song>
+	<song>
+		<id>702</id>
+		<eTitle>GIVE THANKS TO THE LORD -- Psalm 105, NASB</eTitle>
+	</song>
+	<song>
+		<id>703</id>
+		<eTitle>PRAISE THE LORD, YOU THAT ARE HIS SERVANTS -- Psalms 113 and 114, NEB</eTitle>
+	</song>
+	<song>
+		<id>704</id>
+		<eTitle>IF I LIFT UP MY EYES TO THE HILLS -- Psalm 121, NEB</eTitle>
+	</song>
+	<song>
+		<id>705</id>
+		<eTitle>I WILL EXALT YOU, MY GOD THE KING -- Psalm 145, NIV</eTitle>
+	</song>
+	<song>
+		<id>706</id>
+		<eTitle>LET HEAVEN PRAISE THE LORD -- Psalm 148, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>707</id>
+		<eTitle>O PRAISE GOD IN HIS HOLY PLACE -- Psalm 150, NEB</eTitle>
+	</song>
+	<song>
+		<id>708</id>
+		<eTitle>PRAISE AT GOD'S THRONE -- Revelation 4, 15, 9, and 7 NJV</eTitle>
+	</song>
+	<song>
+		<id>709</id>
+		<eTitle>TRINITY -- Ephesians 1, 2, and 4, RSV.</eTitle>
+	</song>
+	<song>
+		<id>710</id>
+		<eTitle>BOW DOWN YOUR EAR, O LORD, HEAR ME -- Psalm 86, NKJV</eTitle>
+	</song>
+	<song>
+		<id>711</id>
+		<eTitle>PRAISE THE LORD, O MY SOUL -- Psalm 103, NIV</eTitle>
+	</song>
+	<song>
+		<id>712</id>
+		<eTitle>HIS LOVE ENDURES -- Psalm 136, NEB</eTitle>
+	</song>
+	<song>
+		<id>713</id>
+		<eTitle>LOVE OF GOD -- 1 John 4 and John 3, NKJV</eTitle>
+	</song>
+	<song>
+		<id>714</id>
+		<eTitle>O LORD, HOW MAJESTIC IS YOUR NAME -- Psalm 8, NJV</eTitle>
+	</song>
+	<song>
+		<id>715</id>
+		<eTitle>I WILL EXTOL THE LORD WITH ALL MY HEART -- Psalm 111, NlV</eTitle>
+	</song>
+	<song>
+		<id>716</id>
+		<eTitle>THE LIBERATING CREATOR -- Isaiah -12. NEB</eTitle>
+	</song>
+	<song>
+		<id>717</id>
+		<eTitle>THE HEAVENS DECLARE THE GLORY OF GOD -- Psalm 19, NJV</eTitle>
+	</song>
+	<song>
+		<id>718</id>
+		<eTitle>REJOICE IN THE LORD -- Psalm 33, NKJV</eTitle>
+	</song>
+	<song>
+		<id>719</id>
+		<eTitle>OUR LORD THE CREATOR -- Isaiah 42 and 45, NIV</eTitle>
+	</song>
+	<song>
+		<id>720</id>
+		<eTitle>GOD IS OUR REFUGE AND STRENGTH -- Psalm 46, NKJV</eTitle>
+	</song>
+	<song>
+		<id>721</id>
+		<eTitle>LORD, YOU HAVE BEEN OUR REFUGE -- Psalm 90, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>722</id>
+		<eTitle>HE THAT DWELLETH IN THE SECRET PLACE -- Psalm 91, KJV</eTitle>
+	</song>
+	<song>
+		<id>723</id>
+		<eTitle>O GIVE THANKS TO THE LORD, FOR HE IS GOOD -- Psalm 107, RSV</eTitle>
+	</song>
+	<song>
+		<id>724</id>
+		<eTitle>O LORD, YOU HAVE SEARCHED ME -- Psalm 139, NKJV</eTitle>
+	</song>
+	<song>
+		<id>725</id>
+		<eTitle>GOD WORKS FOR GOOD -- Romans 8, NJV</eTitle>
+	</song>
+	<song>
+		<id>726</id>
+		<eTitle>THE LORD IS MY SHEPHERD -- Psalm 23, KJV</eTitle>
+	</song>
+	<song>
+		<id>727</id>
+		<eTitle>THE LORD IS MY LIGHT -- Psalm 27, NKJV</eTitle>
+	</song>
+	<song>
+		<id>728</id>
+		<eTitle>LET THE REDEEMED THANK THE LORD -- Psalm 107, RSV</eTitle>
+	</song>
+	<song>
+		<id>729</id>
+		<eTitle>THE SAVIOUR IS COMING -- Isaiah 40, NKJV</eTitle>
+	</song>
+	<song>
+		<id>730</id>
+		<eTitle>THE BIRTH OF CHRIST -- Matthew 1 and Luke 2, NIV</eTitle>
+	</song>
+	<song>
+		<id>731</id>
+		<eTitle>THE VISIT OF THE WISE MEN -- Matthew 2, RSV</eTitle>
+	</song>
+	<song>
+		<id>732</id>
+		<eTitle>JESUS' PRAYER FOR HIS DISCIPLES -- John 17, NIV</eTitle>
+	</song>
+	<song>
+		<id>733</id>
+		<eTitle>CHRIST'S SUFFERINGS AND DEATH  - I -- Isaiah 53, NIV</eTitle>
+	</song>
+	<song>
+		<id>734</id>
+		<eTitle>CHRIST'S SUFFERINGS AND DEATH-II -- Matthew 27, NJV</eTitle>
+	</song>
+	<song>
+		<id>735</id>
+		<eTitle>THE RESURRECTION OF JESUS -- Matthew 28, NJV</eTitle>
+	</song>
+	<song>
+		<id>736</id>
+		<eTitle>THE GLORIFIED CHRIST -- Mark 16,1 Corinthians 15, and Revelation 1, NJV</eTitle>
+	</song>
+	<song>
+		<id>737</id>
+		<eTitle>THE ASCENSION -- Acts 1, NEB</eTitle>
+	</song>
+	<song>
+		<id>738</id>
+		<eTitle>OUR UNDERSTANDING PRIEST -- Hebrews 2, 4, and 6, NIV</eTitle>
+	</song>
+	<song>
+		<id>739</id>
+		<eTitle>CHRIST'S PRIESTHOOD -- Hebrews 8 and 9, RSV</eTitle>
+	</song>
+	<song>
+		<id>740</id>
+		<eTitle>CHRIST THE DELIVERER -- Isaiah 43, NJV</eTitle>
+	</song>
+	<song>
+		<id>741</id>
+		<eTitle>THE SHEPHERD CARES FOR HIS PEOPLE -- Ezekiel 34, NEB</eTitle>
+	</song>
+	<song>
+		<id>742</id>
+		<eTitle>THE LORD WORKS JUSTICE -- Psalm 103, RSV</eTitle>
+	</song>
+	<song>
+		<id>743</id>
+		<eTitle>SEEKING THE LOST -- Luke 15, NASB</eTitle>
+	</song>
+	<song>
+		<id>744</id>
+		<eTitle>THE GOOD SHEPHERD -- John 10, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>745</id>
+		<eTitle>THE CHRISTIAN'S ASSURANCE -- 1 John 5, Colossians 1, Galatians 4, and Romans 8, NJV</eTitle>
+	</song>
+	<song>
+		<id>746</id>
+		<eTitle>SIGNS OF CHRIST'S COMING -- Matthew 24, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>747</id>
+		<eTitle>CHRIST'S SECOND COMING -- John 14, Acts 1, and Matthew 24 KJV</eTitle>
+	</song>
+	<song>
+		<id>748</id>
+		<eTitle>REWARD OF THE SAINTS -- Isaiah 35, NIV</eTitle>
+	</song>
+	<song>
+		<id>749</id>
+		<eTitle>A SONG OF TRIUMPH -- Revelation 7, NIV</eTitle>
+	</song>
+	<song>
+		<id>750</id>
+		<eTitle>REIGNING FOREVER WITH GOD -- Revelation 21 and 22, NKJV</eTitle>
+	</song>
+	<song>
+		<id>751</id>
+		<eTitle>O LORD, THOU ART MY GOD -- Isaiah 25, KJV</eTitle>
+	</song>
+	<song>
+		<id>752</id>
+		<eTitle>THE HOLY SPIRIT -- John 14,15, and 16, RSV</eTitle>
+	</song>
+	<song>
+		<id>753</id>
+		<eTitle>GOD'S WORD -- Psalm 119, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>754</id>
+		<eTitle>THE HOLY SCRIPTURES -- Deuteronomy 29, 2 Peter 1, 2 Timothy 3, John 5, Hebrews 4,and Jeremiah 15, NKJV</eTitle>
+	</song>
+	<song>
+		<id>755</id>
+		<eTitle>THE CALL -- Isaiah 55, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>756</id>
+		<eTitle>HAVE MERCY ON ME, O GOD -- Psalm 51, NJV</eTitle>
+	</song>
+	<song>
+		<id>757</id>
+		<eTitle>RETURNING TO GOD -- Luke 15, NEB</eTitle>
+	</song>
+	<song>
+		<id>758</id>
+		<eTitle>BLESSED IS HE WHOSE TRANSGRESSIONS ARE FORGIVEN -- Psalm 32, NIV</eTitle>
+	</song>
+	<song>
+		<id>759</id>
+		<eTitle>BAPTISM -- John 3,1 Corinthians 12, Romans 6, and Matthew 28, RSV</eTitle>
+	</song>
+	<song>
+		<id>760</id>
+		<eTitle>TIMES OF BEGINNING -- Genesis 1, John 1, Romans 3, 2 Corinthians 5, and Isaiah 65, NIV</eTitle>
+	</song>
+	<song>
+		<id>761</id>
+		<eTitle>RIGHTEOUSNESS BY FAITH -- Romans 3, 8, and 1 Corinthians 1, NIV</eTitle>
+	</song>
+	<song>
+		<id>762</id>
+		<eTitle>JUSTIFICATION -- Romans 4 and 5, NJV</eTitle>
+	</song>
+	<song>
+		<id>763</id>
+		<eTitle>SANCTIFICATION -- 1 Corinthians 6, Hebrews 2, and Titus 3 NJV</eTitle>
+	</song>
+	<song>
+		<id>764</id>
+		<eTitle>RECONCILIATION -- 2 Corinthians 5, TEV</eTitle>
+	</song>
+	<song>
+		<id>765</id>
+		<eTitle>CONVERSION -- Ephesians 2, NEB</eTitle>
+	</song>
+	<song>
+		<id>766</id>
+		<eTitle>THE GREAT CONTROVERSY -- Revelation 12 and 11, RSV</eTitle>
+	</song>
+	<song>
+		<id>767</id>
+		<eTitle>THE BODY OF CHRIST -- Romans 12 and 1 Corinthians 12, NIV</eTitle>
+	</song>
+	<song>
+		<id>768</id>
+		<eTitle>MISSION OF THE CHURCH -- 1 Peter 2, Titus 2, and Matthew 28, NKJV</eTitle>
+	</song>
+	<song>
+		<id>769</id>
+		<eTitle>THE SABBATH-I -- Genesis 2, Colossians 1, Nehemiah 9, Exodus 20, and Mark 2, NKJV</eTitle>
+	</song>
+	<song>
+		<id>770</id>
+		<eTitle>THE SABBATH-2 -- Ezekiel 20, Exodus 31, Isaiah 66, 58, Luke 4, and Matthew 12, NJV</eTitle>
+	</song>
+	<song>
+		<id>771</id>
+		<eTitle>LIVING BREAD -- John 6, NEB</eTitle>
+	</song>
+	<song>
+		<id>772</id>
+		<eTitle>MEMORIAL OF HUMILITY -- John 13, NIV</eTitle>
+	</song>
+	<song>
+		<id>773</id>
+		<eTitle>THE LORD'S SUPPER -- 1 Corinthians 11, NKJV</eTitle>
+	</song>
+	<song>
+		<id>774</id>
+		<eTitle>THE LAW OF THE LORD IS PERFECT -- Psalm 19, NKJV</eTitle>
+	</song>
+	<song>
+		<id>775</id>
+		<eTitle>THE TEN COMMANDMENTS -- Exodus 20, KJV</eTitle>
+	</song>
+	<song>
+		<id>776</id>
+		<eTitle>GIFTS OF THE SPIRIT -- 1 Corinthians 12, NIV</eTitle>
+	</song>
+	<song>
+		<id>777</id>
+		<eTitle>CHRISTIAN UNITY -- Ephesians 4, NIV</eTitle>
+	</song>
+	<song>
+		<id>778</id>
+		<eTitle>OUR ATONING JUDGE -- Romans 14 and 1 John 2, NIV</eTitle>
+	</song>
+	<song>
+		<id>779</id>
+		<eTitle>DAY OF JUDGMENT -- Daniel 7 and Revelation 20 through 22, Jerusalem.</eTitle>
+	</song>
+	<song>
+		<id>780</id>
+		<eTitle>THE THREE ANGELS' MESSAGES -- Revelation 14, KJV</eTitle>
+	</song>
+	<song>
+		<id>781</id>
+		<eTitle>THE RESURRECTION OF GOD'S PEOPLE -- Romans 14, 1 Corinthians 15, and 1 Thessalonians 4, RSV</eTitle>
+	</song>
+	<song>
+		<id>782</id>
+		<eTitle>ASSURANCE OF ETERNAL LIFE -- John 3, 10, and 1 John 5, Jerusalem.</eTitle>
+	</song>
+	<song>
+		<id>783</id>
+		<eTitle>A NEW HEAVEN AND A NEW EARTH -- Revelation 21, NKJV</eTitle>
+	</song>
+	<song>
+		<id>784</id>
+		<eTitle>BLESSED IS THE MAN -- Psalm 1, RSV.</eTitle>
+	</song>
+	<song>
+		<id>785</id>
+		<eTitle>THE EARTH IS THE LORD'S -- Psalm 24, RSV</eTitle>
+	</song>
+	<song>
+		<id>786</id>
+		<eTitle>THE EARTH IS THE LORD'S -- Psalm 24, RSV</eTitle>
+	</song>
+	<song>
+		<id>787</id>
+		<eTitle>CHRISTIANITY IN PRACTICE -- Romans 12, RSV</eTitle>
+	</song>
+	<song>
+		<id>788</id>
+		<eTitle>LOVE -- 1 Corinthians 13, NKJV</eTitle>
+	</song>
+	<song>
+		<id>789</id>
+		<eTitle>GROWING IN CHRIST (SANCTIFICATION) -- Colossians 3, Jerusalem.</eTitle>
+	</song>
+	<song>
+		<id>790</id>
+		<eTitle>THE CHILDREN OF GOD -- 1 John 3, RSV</eTitle>
+	</song>
+	<song>
+		<id>791</id>
+		<eTitle>SET YOUR MIND ON GOD'S KINGDOM -- Matthew 6, NEB</eTitle>
+	</song>
+	<song>
+		<id>792</id>
+		<eTitle>THE PATH OF LIFE -- Psalm 16, NKJV</eTitle>
+	</song>
+	<song>
+		<id>793</id>
+		<eTitle>HAPPY ARE ALL WHO FEAR THE LORD -- Psalm 128, NEB</eTitle>
+	</song>
+	<song>
+		<id>794</id>
+		<eTitle>WISDOM -- Proverbs 3, Jerusalem.</eTitle>
+	</song>
+	<song>
+		<id>795</id>
+		<eTitle>THE CHRISTIAN LIFE -- Matthew 5, NJV</eTitle>
+	</song>
+	<song>
+		<id>796</id>
+		<eTitle>HOPE AND COMFORT -- Isaiah 41, Psalm 33, and Romans 5, 15, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>797</id>
+		<eTitle>MEDITATION -- Joshua 1 and Psalms 119, 19, RSV.</eTitle>
+	</song>
+	<song>
+		<id>798</id>
+		<eTitle>PRAYER -- Matthew 6 and 7, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>799</id>
+		<eTitle>DO NOT WORRY -- Psalm 37, Jerusalem.</eTitle>
+	</song>
+	<song>
+		<id>800</id>
+		<eTitle>UNION WITH CHRIST -- John 15, NASB</eTitle>
+	</song>
+	<song>
+		<id>801</id>
+		<eTitle>I WAITED PATIENTLY FOR THE LORD -- Psalm 40, NIV</eTitle>
+	</song>
+	<song>
+		<id>802</id>
+		<eTitle>GUIDANCE -- Psalms 119, 25, Isaiah 30, Psalm 32, and John 16, RSV</eTitle>
+	</song>
+	<song>
+		<id>803</id>
+		<eTitle>PRAISE IS RIGHTFULLY YOURS -- Psalm 65, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>804</id>
+		<eTitle>A PRAYER OF CONFESSION -- Daniel 9, TEV</eTitle>
+	</song>
+	<song>
+		<id>805</id>
+		<eTitle>HUMILITY -- Philippians 2, NJV</eTitle>
+	</song>
+	<song>
+		<id>806</id>
+		<eTitle>ARISE, SHINE -- Isaiah 60, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>807</id>
+		<eTitle>THE LORD'S WORK -- Isaiah 61, NIV</eTitle>
+	</song>
+	<song>
+		<id>808</id>
+		<eTitle>DOING GOOD TO ALL -- Galatians 6, NIV</eTitle>
+	</song>
+	<song>
+		<id>809</id>
+		<eTitle>CHRISTIAN DUTIES -- 1 Thessalonians 5, NIV</eTitle>
+	</song>
+	<song>
+		<id>810</id>
+		<eTitle>WORK AND DUTY -- Titus 3, 1 Timothy 6, 2 Corinthians 5, and Ecclesiastes 12, RSV</eTitle>
+	</song>
+	<song>
+		<id>811</id>
+		<eTitle>PEACE -- Psalm 133, 1 Corinthians 1, Romans 14, James 3, and 2 Corinthians 13, TEV</eTitle>
+	</song>
+	<song>
+		<id>812</id>
+		<eTitle>CHRISTIAN RELATIONSHIPS -- Colossians 3 , Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>813</id>
+		<eTitle>LORD, WHO MAY DWELL IN YOUR SANCTUARY? -- Psalm 15, NJV</eTitle>
+	</song>
+	<song>
+		<id>814</id>
+		<eTitle>THE REQUIREMENTS OF GOD -- Micah 6 and 7, and Hosea 14, NIV</eTitle>
+	</song>
+	<song>
+		<id>815</id>
+		<eTitle>WATCHFULNESS -- Deuteronomy 4, Colossians 2, 1 Peter 5,2 Thessalonians 2, and Mark 13, NJV</eTitle>
+	</song>
+	<song>
+		<id>816</id>
+		<eTitle>PREPARATION FOR CHRIST'S COMING -- 1 Thessalonians 5, NIV</eTitle>
+	</song>
+	<song>
+		<id>817</id>
+		<eTitle>CHRISTIAN WARFARE -- Ephesians 6, TEV</eTitle>
+	</song>
+	<song>
+		<id>818</id>
+		<eTitle>WHEN THE LORD BROUGHT BACK THE CAPTIVES -- Psalm 126, NIV</eTitle>
+	</song>
+	<song>
+		<id>819</id>
+		<eTitle>I CRY ALOUD TO THE LORD -- Psalm 142, NIV</eTitle>
+	</song>
+	<song>
+		<id>820</id>
+		<eTitle>TITHES AND OFFERINGS -- Leviticus 27 and Malachi 3, NKJV</eTitle>
+	</song>
+	<song>
+		<id>821</id>
+		<eTitle>GENEROSITY -- 2 Corinthians 8 and 9, NIV</eTitle>
+	</song>
+	<song>
+		<id>822</id>
+		<eTitle>OUR DAILY WORK -- Genesis 2, 3, Exodus 20, Ecclesiastes 5, 9, 2 Thessalonians 3, 1 Timothy 5, and Romans 12, NIV</eTitle>
+	</song>
+	<song>
+		<id>823</id>
+		<eTitle>TEMPERANCE -- Titus 2, Proverbs 20, 23, and1 Corinthians 9, RSV</eTitle>
+	</song>
+	<song>
+		<id>824</id>
+		<eTitle>HEALTHFUL LIVING -- 3 John, 1 Corinthians 6, 10, and Philippians 4, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>825</id>
+		<eTitle>OUR CIVIC DUTIES -- Romans 13, NIV</eTitle>
+	</song>
+	<song>
+		<id>826</id>
+		<eTitle>FAMILY LIFE -- Deuteronomy 6 and Ephesians 6, NIV</eTitle>
+	</song>
+	<song>
+		<id>827</id>
+		<eTitle>THE CHRISTIAN HOME -- Ephesians 4 and 5, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>828</id>
+		<eTitle>YOUTH -- Ecclesiastes 12, Proverbs 20, Psalm 119, Proverbs 3, and Psalm 103, NIV</eTitle>
+	</song>
+	<song>
+		<id>829</id>
+		<eTitle>A NOBLE WIFE -- Proverbs 31, NKJV</eTitle>
+	</song>
+	<song>
+		<id>830</id>
+		<eTitle>MARRIAGE -- Genesis 2, Matthew 19, and Ephesians 5, NEB</eTitle>
+	</song>
+	<song>
+		<id>831</id>
+		<eTitle>THE SONG OF MOSES AND OF ISRAEL -- Exodus 15, NKJV</eTitle>
+	</song>
+	<song>
+		<id>832</id>
+		<eTitle>OUT OF THE DEPTHS -- Psalm 130, NKJV (De Profundis)</eTitle>
+	</song>
+	<song>
+		<id>833</id>
+		<eTitle>HOLY, HOLY, HOLY -- Isaiah 6 (the Sanctus) and Mark 11, NKJV</eTitle>
+	</song>
+	<song>
+		<id>834</id>
+		<eTitle>THE LORD'S PRAYER -- Matthew 6, KJV</eTitle>
+	</song>
+	<song>
+		<id>835</id>
+		<eTitle>THE SONG OF MARY * -- Luke 1, NKJV</eTitle>
+	</song>
+	<song>
+		<id>836</id>
+		<eTitle>ZACHARIAS' PROPHECY * -- Luke 1, NKJV</eTitle>
+	</song>
+	<song>
+		<id>837</id>
+		<eTitle>SIMEON'S PRAYER * -- Luke 2, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>838</id>
+		<eTitle>PAUL'S DOXOLOGY -- Romans 11, NIV</eTitle>
+	</song>
+	<song>
+		<id>839</id>
+		<eTitle>SPIRITUAL WISDOM -- 1 Corinthians 2, NKJV</eTitle>
+	</song>
+	<song>
+		<id>840</id>
+		<eTitle>THINGS SEEN AND UNSEEN -- 2 Corinthians 4, NKJV</eTitle>
+	</song>
+	<song>
+		<id>841</id>
+		<eTitle>THE PLAN OF SALVATION -- Ephesians 1, Jerusalem.</eTitle>
+	</song>
+	<song>
+		<id>842</id>
+		<eTitle>ON THE INCARNATION* -- PhiliPpians 2, NKJV</eTitle>
+	</song>
+	<song>
+		<id>843</id>
+		<eTitle>IN PRAISE OF CHRIST -- Colossians 1, RSV</eTitle>
+	</song>
+	<song>
+		<id>844</id>
+		<eTitle>THE INCARNATE WORD -- 1 John 1, Jerusalem</eTitle>
+	</song>
+</songs>

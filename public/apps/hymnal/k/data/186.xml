@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<song>
+	<id>186</id>
+	<title>Hatutaagana Tena</title>
+	<englishTitle>With Friends on Earth</englishTitle>
+	<verses>
+		<refrain>
+			Hatutaagana tena nyumbani mbinguni,
+			Kwenye nchi tamu juu, Hatutaagana.
+		</refrain>
+		<verse>
+			Tuonanapo na rafiki sote twafurahi,
+			Ila tumepaswa mwishowe kuagana tena.
+		</verse>
+		<verse>
+			Twatumaini kwa furaha tutaonana juu
+			Na rafiki tulioaga tuishapo shinda.
+		</verse>
+		<verse>
+			Kule hatutatamka kamwe neno la kuaga,
+			Tutaimba daima tena nyimbo za furaha.
+		</verse>
+	</verses>
+</song>

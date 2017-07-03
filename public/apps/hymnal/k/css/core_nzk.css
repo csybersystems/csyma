@@ -1,0 +1,61 @@
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+	
+}
+@media (min-width: 700px) { 
+	.verse
+	{
+		font-size:330%;
+		font-weight:bolder;
+		margin-top:-10px;
+		/*margin-left:50%;*/
+	}
+	.verse p
+	{
+		text-align:center;
+		line-height:150%;
+		min-height:380px;
+		max-height:400px;
+		margin-top:-20px;
+	}
+}
+pre
+{
+	border:1px dotted #c0c0c0;
+}
+h3 span.page-count
+{
+	color:#000;
+    background-color:#fff;
+    border-radius:10px;
+    padding:4px;
+    display:inline;
+}
+/*body
+{
+	background:transparent url(../images/MaranathaChurch.jpg) repeat left 10px;
+	background-size:60px 30px;
+}
+.myBG
+{
+	background:transparent url(../images/MaranathaChurch.jpg) repeat left 10px;
+	background-size:40px 20px;
+}
+.ui-page { -webkit-backface-visibility: hidden; }
+h1.logo 
+{
+	background:transparent url(../images/MaranathaChurch.jpg) no-repeat left 10px;
+	width:320px;
+	height:45px;
+	margin:-10px auto -150px auto;
+	text-indent:-9999px;
+}
+.logo
+{
+	background-color:#f00;
+	color:#fff;
+}
+body
+{
+	background-image:url(../images/MaranathaChurch.jpg);
+}
+*/

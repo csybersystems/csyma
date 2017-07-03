@@ -1,0 +1,3380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<songs>
+	<song>
+		<id>1</id>
+		<eTitle>Praise to the Lord</eTitle>
+	</song>
+	<song>
+		<id>2</id>
+		<eTitle>All Creatures of Our God and King</eTitle>
+	</song>
+	<song>
+		<id>3</id>
+		<eTitle>God Himself Is With Us</eTitle>
+	</song>
+	<song>
+		<id>4</id>
+		<eTitle>Praise, My Soul, the King of Heaven</eTitle>
+	</song>
+	<song>
+		<id>5</id>
+		<eTitle>All My Hope on God Is Founded</eTitle>
+	</song>
+	<song>
+		<id>6</id>
+		<eTitle>O Worship the Lord</eTitle>
+	</song>
+	<song>
+		<id>7</id>
+		<eTitle>The Lord in Zion Reigneth</eTitle>
+	</song>
+	<song>
+		<id>8</id>
+		<eTitle>We Gather Together</eTitle>
+	</song>
+	<song>
+		<id>9</id>
+		<eTitle>Let All the World in Every Corner Sing</eTitle>
+	</song>
+	<song>
+		<id>10</id>
+		<eTitle>Come, Christians, Join to Sing</eTitle>
+	</song>
+	<song>
+		<id>11</id>
+		<eTitle>The God of Abraham Praise</eTitle>
+	</song>
+	<song>
+		<id>12</id>
+		<eTitle>Joyful, Joyful, We Adore Thee</eTitle>
+	</song>
+	<song>
+		<id>13</id>
+		<eTitle>New Songs of Celebration Render</eTitle>
+	</song>
+	<song>
+		<id>14</id>
+		<eTitle>Let Us Praise the Name of the Lord</eTitle>
+	</song>
+	<song>
+		<id>15</id>
+		<eTitle>My Maker and My King</eTitle>
+	</song>
+	<song>
+		<id>16</id>
+		<eTitle>All People That on Earth Do Dwell</eTitle>
+	</song>
+	<song>
+		<id>17</id>
+		<eTitle>Lord of All Being, Throned Afar</eTitle>
+	</song>
+	<song>
+		<id>18</id>
+		<eTitle>O Morning Star, How Fair and Bright</eTitle>
+	</song>
+	<song>
+		<id>19</id>
+		<eTitle>O Sing a New Song to the Lord</eTitle>
+	</song>
+	<song>
+		<id>20</id>
+		<eTitle>O Praise Ye the Lord</eTitle>
+	</song>
+	<song>
+		<id>21</id>
+		<eTitle>Immortal, Invisible, God Only Wise</eTitle>
+	</song>
+	<song>
+		<id>22</id>
+		<eTitle>God Is Our Song</eTitle>
+	</song>
+	<song>
+		<id>23</id>
+		<eTitle>Now the Joyful Bells A-Ringing</eTitle>
+	</song>
+	<song>
+		<id>24</id>
+		<eTitle>Every Star Shall Sing a Carol</eTitle>
+	</song>
+	<song>
+		<id>25</id>
+		<eTitle>Praise the Lord, His Glories Show</eTitle>
+	</song>
+	<song>
+		<id>26</id>
+		<eTitle>Praise the Lord! You Heavens Adore Him</eTitle>
+	</song>
+	<song>
+		<id>27</id>
+		<eTitle>Rejoice, Ye Pure in Heart!</eTitle>
+	</song>
+	<song>
+		<id>28</id>
+		<eTitle>Praise We the Lord</eTitle>
+	</song>
+	<song>
+		<id>29</id>
+		<eTitle>Sing Praise to God</eTitle>
+	</song>
+	<song>
+		<id>30</id>
+		<eTitle>Holy God, We Praise Your Name</eTitle>
+	</song>
+	<song>
+		<id>31</id>
+		<eTitle>Tell Out, My Soul</eTitle>
+	</song>
+	<song>
+		<id>32</id>
+		<eTitle>When in Our Music God Is Glorified</eTitle>
+	</song>
+	<song>
+		<id>33</id>
+		<eTitle>Sing a New Song to the Lord</eTitle>
+	</song>
+	<song>
+		<id>34</id>
+		<eTitle>Wake the Song</eTitle>
+	</song>
+	<song>
+		<id>35</id>
+		<eTitle>With Songs and Honors</eTitle>
+	</song>
+	<song>
+		<id>36</id>
+		<eTitle>O Thou in Whose Presence</eTitle>
+	</song>
+	<song>
+		<id>37</id>
+		<eTitle>O Sing, My Soul, Your Maker's Praise</eTitle>
+	</song>
+	<song>
+		<id>38</id>
+		<eTitle>Arise, My Soul, Arise!</eTitle>
+	</song>
+	<song>
+		<id>39</id>
+		<eTitle>Lord, in the Morning</eTitle>
+	</song>
+	<song>
+		<id>40</id>
+		<eTitle>The Dawn of God's Dear Sabbath</eTitle>
+	</song>
+	<song>
+		<id>41</id>
+		<eTitle>O Splendor of God's Glory Bright</eTitle>
+	</song>
+	<song>
+		<id>42</id>
+		<eTitle>Now That Daylight Fills the Sky</eTitle>
+	</song>
+	<song>
+		<id>43</id>
+		<eTitle>When Morning Gilds the Skies</eTitle>
+	</song>
+	<song>
+		<id>44</id>
+		<eTitle>Morning Has Broken</eTitle>
+	</song>
+	<song>
+		<id>45</id>
+		<eTitle>Open Now Thy Gates of Beauty</eTitle>
+	</song>
+	<song>
+		<id>46</id>
+		<eTitle>Abide With Me, 'Tis Eventide</eTitle>
+	</song>
+	<song>
+		<id>47</id>
+		<eTitle>God, Who Made the Earth and Heaven</eTitle>
+	</song>
+	<song>
+		<id>48</id>
+		<eTitle>Softly Now the Light of Day</eTitle>
+	</song>
+	<song>
+		<id>49</id>
+		<eTitle>Savior, Breathe an Evening Blessing</eTitle>
+	</song>
+	<song>
+		<id>50</id>
+		<eTitle>Abide With Me</eTitle>
+	</song>
+	<song>
+		<id>51</id>
+		<eTitle>Day Is Dying in the West</eTitle>
+	</song>
+	<song>
+		<id>52</id>
+		<eTitle>Now the Day Is Over</eTitle>
+	</song>
+	<song>
+		<id>53</id>
+		<eTitle>All Praise to Thee</eTitle>
+	</song>
+	<song>
+		<id>54</id>
+		<eTitle>O Gladsome Light</eTitle>
+	</song>
+	<song>
+		<id>55</id>
+		<eTitle>Jesus, Tender Shepherd, Hear Me</eTitle>
+	</song>
+	<song>
+		<id>56</id>
+		<eTitle>The Day Thou Gavest</eTitle>
+	</song>
+	<song>
+		<id>57</id>
+		<eTitle>Now All the Woods Are Sleeping</eTitle>
+	</song>
+	<song>
+		<id>58</id>
+		<eTitle>Hark, the Vesper Hymn Is Stealing</eTitle>
+	</song>
+	<song>
+		<id>59</id>
+		<eTitle>Great Our Joy as Now We Gather</eTitle>
+	</song>
+	<song>
+		<id>60</id>
+		<eTitle>Blessed Jesus, at Thy Word</eTitle>
+	</song>
+	<song>
+		<id>61</id>
+		<eTitle>God Is Here!</eTitle>
+	</song>
+	<song>
+		<id>62</id>
+		<eTitle>How Lovely Is Thy Dwelling Place</eTitle>
+	</song>
+	<song>
+		<id>63</id>
+		<eTitle>O Come, Let Us Sing to the Lord</eTitle>
+	</song>
+	<song>
+		<id>64</id>
+		<eTitle>Lord, Dismiss Us With Thy Blessing</eTitle>
+	</song>
+	<song>
+		<id>65</id>
+		<eTitle>God Be With You</eTitle>
+	</song>
+	<song>
+		<id>66</id>
+		<eTitle>God Be With You</eTitle>
+	</song>
+	<song>
+		<id>67</id>
+		<eTitle>O Lord, Now Let Your Servant</eTitle>
+	</song>
+	<song>
+		<id>68</id>
+		<eTitle>On Our Way Rejoicing</eTitle>
+	</song>
+	<song>
+		<id>69</id>
+		<eTitle>Lord, Make Us More Holy</eTitle>
+	</song>
+	<song>
+		<id>70</id>
+		<eTitle>Praise Ye the Father</eTitle>
+	</song>
+	<song>
+		<id>71</id>
+		<eTitle>Come, Thou Almighty King</eTitle>
+	</song>
+	<song>
+		<id>72</id>
+		<eTitle>Creator of the Stars of Night</eTitle>
+	</song>
+	<song>
+		<id>73</id>
+		<eTitle>Holy, Holy, Holy</eTitle>
+	</song>
+	<song>
+		<id>74</id>
+		<eTitle>Like a River Glorious</eTitle>
+	</song>
+	<song>
+		<id>75</id>
+		<eTitle>The Wonder of It All</eTitle>
+	</song>
+	<song>
+		<id>76</id>
+		<eTitle>O Love That Wilt Not Let Me Go</eTitle>
+	</song>
+	<song>
+		<id>77</id>
+		<eTitle>O Love of God Most Full</eTitle>
+	</song>
+	<song>
+		<id>78</id>
+		<eTitle>For God So Loved Us</eTitle>
+	</song>
+	<song>
+		<id>79</id>
+		<eTitle>O Love of God, How Strong and True!</eTitle>
+	</song>
+	<song>
+		<id>80</id>
+		<eTitle>O World of God</eTitle>
+	</song>
+	<song>
+		<id>81</id>
+		<eTitle>Though I Speak With Tongues</eTitle>
+	</song>
+	<song>
+		<id>82</id>
+		<eTitle>Before Jehovah's Awful Throne</eTitle>
+	</song>
+	<song>
+		<id>83</id>
+		<eTitle>O Worship the King</eTitle>
+	</song>
+	<song>
+		<id>84</id>
+		<eTitle>God the Omnipotent</eTitle>
+	</song>
+	<song>
+		<id>85</id>
+		<eTitle>Eternal Father, Strong to Save</eTitle>
+	</song>
+	<song>
+		<id>86</id>
+		<eTitle>How Great Thou Art</eTitle>
+	</song>
+	<song>
+		<id>87</id>
+		<eTitle>God Who Spoke in the Beginning</eTitle>
+	</song>
+	<song>
+		<id>88</id>
+		<eTitle>I Sing the Mighty Power of God</eTitle>
+	</song>
+	<song>
+		<id>89</id>
+		<eTitle>Let All on Earth Their Voices Raise</eTitle>
+	</song>
+	<song>
+		<id>90</id>
+		<eTitle>Eternal God, Whose Power Upholds</eTitle>
+	</song>
+	<song>
+		<id>91</id>
+		<eTitle>Ye Watchers and Ye Holy Ones</eTitle>
+	</song>
+	<song>
+		<id>92</id>
+		<eTitle>This Is My Father's World</eTitle>
+	</song>
+	<song>
+		<id>93</id>
+		<eTitle>All Things Bright and Beautiful</eTitle>
+	</song>
+	<song>
+		<id>94</id>
+		<eTitle>Nature With Open Volume Stands</eTitle>
+	</song>
+	<song>
+		<id>95</id>
+		<eTitle>Springs Has Now Unwrapped the Flowers</eTitle>
+	</song>
+	<song>
+		<id>96</id>
+		<eTitle>The Spacious Firmament</eTitle>
+	</song>
+	<song>
+		<id>97</id>
+		<eTitle>Lord of the Boundless Curves of Space</eTitle>
+	</song>
+	<song>
+		<id>98</id>
+		<eTitle>Can You Count the Stars?</eTitle>
+	</song>
+	<song>
+		<id>99</id>
+		<eTitle>God Will Take Care of You</eTitle>
+	</song>
+	<song>
+		<id>100</id>
+		<eTitle>Great Is Thy Faithfulness</eTitle>
+	</song>
+	<song>
+		<id>101</id>
+		<eTitle>Children of the Heavenly Father</eTitle>
+	</song>
+	<song>
+		<id>102</id>
+		<eTitle>Unto the Hills</eTitle>
+	</song>
+	<song>
+		<id>103</id>
+		<eTitle>O God, Our Help</eTitle>
+	</song>
+	<song>
+		<id>104</id>
+		<eTitle>My Shepherd Will Supply my Need</eTitle>
+	</song>
+	<song>
+		<id>105</id>
+		<eTitle>Sing to the Great Jehovah's Praise</eTitle>
+	</song>
+	<song>
+		<id>106</id>
+		<eTitle>Give to Our God Immortal Praise</eTitle>
+	</song>
+	<song>
+		<id>107</id>
+		<eTitle>God Moves in a Mysterious Way</eTitle>
+	</song>
+	<song>
+		<id>108</id>
+		<eTitle>Amazing Grace</eTitle>
+	</song>
+	<song>
+		<id>109</id>
+		<eTitle>Marvelous Grace</eTitle>
+	</song>
+	<song>
+		<id>110</id>
+		<eTitle>God's Free Mercy Streameth</eTitle>
+	</song>
+	<song>
+		<id>111</id>
+		<eTitle>It Took a Miracle</eTitle>
+	</song>
+	<song>
+		<id>112</id>
+		<eTitle>Let Us With a Gladsome Mind</eTitle>
+	</song>
+	<song>
+		<id>113</id>
+		<eTitle>As Pants the Hart</eTitle>
+	</song>
+	<song>
+		<id>114</id>
+		<eTitle>There's a Wideness</eTitle>
+	</song>
+	<song>
+		<id>115</id>
+		<eTitle>O Come, O Come, Immanuel</eTitle>
+	</song>
+	<song>
+		<id>116</id>
+		<eTitle>Of the Father's Love Begotten</eTitle>
+	</song>
+	<song>
+		<id>117</id>
+		<eTitle>The Advent of Our God</eTitle>
+	</song>
+	<song>
+		<id>118</id>
+		<eTitle>The First Noel</eTitle>
+	</song>
+	<song>
+		<id>119</id>
+		<eTitle>Angels From the Realms of Glory</eTitle>
+	</song>
+	<song>
+		<id>120</id>
+		<eTitle>There's a Song in the Air</eTitle>
+	</song>
+	<song>
+		<id>121</id>
+		<eTitle>Go, Tell It on the Mountain</eTitle>
+	</song>
+	<song>
+		<id>122</id>
+		<eTitle>Hark! the Herald Angels Sing</eTitle>
+	</song>
+	<song>
+		<id>123</id>
+		<eTitle>As With Gladness Men of Old</eTitle>
+	</song>
+	<song>
+		<id>124</id>
+		<eTitle>Away in a Manger</eTitle>
+	</song>
+	<song>
+		<id>125</id>
+		<eTitle>Joy to the World</eTitle>
+	</song>
+	<song>
+		<id>126</id>
+		<eTitle>In the Bleak Midwinter</eTitle>
+	</song>
+	<song>
+		<id>127</id>
+		<eTitle>Infant Holy, Infant Lowly</eTitle>
+	</song>
+	<song>
+		<id>128</id>
+		<eTitle>Break Forth, O Beauteous Heavenly Light</eTitle>
+	</song>
+	<song>
+		<id>129</id>
+		<eTitle>As It Fell Upon a Night</eTitle>
+	</song>
+	<song>
+		<id>130</id>
+		<eTitle>It Came Upon the Midnight Clear</eTitle>
+	</song>
+	<song>
+		<id>131</id>
+		<eTitle>Lo, How a Rose E'er Blooming</eTitle>
+	</song>
+	<song>
+		<id>132</id>
+		<eTitle>O Come, All Ye Faithful</eTitle>
+	</song>
+	<song>
+		<id>133</id>
+		<eTitle>Now Is Born the Divine Christ Child</eTitle>
+	</song>
+	<song>
+		<id>134</id>
+		<eTitle>O Jesus Sweet</eTitle>
+	</song>
+	<song>
+		<id>135</id>
+		<eTitle>O Little Town of Bethlehem</eTitle>
+	</song>
+	<song>
+		<id>136</id>
+		<eTitle>Good Christians, Now Rejoice</eTitle>
+	</song>
+	<song>
+		<id>137</id>
+		<eTitle>We Three Kings</eTitle>
+	</song>
+	<song>
+		<id>138</id>
+		<eTitle>Rise Up, Shepherd, and Follow</eTitle>
+	</song>
+	<song>
+		<id>139</id>
+		<eTitle>While Shepherds Watched Their Flocks</eTitle>
+	</song>
+	<song>
+		<id>140</id>
+		<eTitle>Thou Didst Leave Thy Throne</eTitle>
+	</song>
+	<song>
+		<id>141</id>
+		<eTitle>What Child Is This?</eTitle>
+	</song>
+	<song>
+		<id>142</id>
+		<eTitle>Angels We Have Heard on High</eTitle>
+	</song>
+	<song>
+		<id>143</id>
+		<eTitle>Silent Night, Holy Night</eTitle>
+	</song>
+	<song>
+		<id>144</id>
+		<eTitle>O Sing a Song of Bethlehem</eTitle>
+	</song>
+	<song>
+		<id>145</id>
+		<eTitle>Songs of Thankfulness and Praise</eTitle>
+	</song>
+	<song>
+		<id>146</id>
+		<eTitle>I Think When I Read That Sweet Story</eTitle>
+	</song>
+	<song>
+		<id>147</id>
+		<eTitle>Christ Upon the Mountain Peak</eTitle>
+	</song>
+	<song>
+		<id>148</id>
+		<eTitle>O Love, How Deep, How Broad</eTitle>
+	</song>
+	<song>
+		<id>149</id>
+		<eTitle>Once in Royal David's City</eTitle>
+	</song>
+	<song>
+		<id>150</id>
+		<eTitle>Who Is He in Yonder Stall?</eTitle>
+	</song>
+	<song>
+		<id>151</id>
+		<eTitle>Jesus Walked This Lonesome Valley</eTitle>
+	</song>
+	<song>
+		<id>152</id>
+		<eTitle>Tell Me the Story of Jesus</eTitle>
+	</song>
+	<song>
+		<id>153</id>
+		<eTitle>Prince of Peace, Control My Will</eTitle>
+	</song>
+	<song>
+		<id>154</id>
+		<eTitle>When I Survey the Wondrous Cross</eTitle>
+	</song>
+	<song>
+		<id>155</id>
+		<eTitle>When I Survey the Wondrous Cross</eTitle>
+	</song>
+	<song>
+		<id>156</id>
+		<eTitle>O Sacred Head Now Wounded</eTitle>
+	</song>
+	<song>
+		<id>157</id>
+		<eTitle>Go to Dark Gethsemane</eTitle>
+	</song>
+	<song>
+		<id>158</id>
+		<eTitle>Were You There?</eTitle>
+	</song>
+	<song>
+		<id>159</id>
+		<eTitle>The Old Rugged Cross</eTitle>
+	</song>
+	<song>
+		<id>160</id>
+		<eTitle>Ride On in Majesty</eTitle>
+	</song>
+	<song>
+		<id>161</id>
+		<eTitle>Throned Upon the Awful Tree</eTitle>
+	</song>
+	<song>
+		<id>162</id>
+		<eTitle>Wondrous Love</eTitle>
+	</song>
+	<song>
+		<id>163</id>
+		<eTitle>At the Cross</eTitle>
+	</song>
+	<song>
+		<id>164</id>
+		<eTitle>There Is a Green Hill Far Away</eTitle>
+	</song>
+	<song>
+		<id>165</id>
+		<eTitle>Look, You Saints! the Sight Is Glorious</eTitle>
+	</song>
+	<song>
+		<id>166</id>
+		<eTitle>Christ the Lord Is Risen Today</eTitle>
+	</song>
+	<song>
+		<id>167</id>
+		<eTitle>Alleluia! Sing to Jesus</eTitle>
+	</song>
+	<song>
+		<id>168</id>
+		<eTitle>And Have the Bright Immensities</eTitle>
+	</song>
+	<song>
+		<id>169</id>
+		<eTitle>Come, You Faithful</eTitle>
+	</song>
+	<song>
+		<id>170</id>
+		<eTitle>Come, You Faithful</eTitle>
+	</song>
+	<song>
+		<id>171</id>
+		<eTitle>Thine Is the Glory</eTitle>
+	</song>
+	<song>
+		<id>172</id>
+		<eTitle>The Strife Is O'er</eTitle>
+	</song>
+	<song>
+		<id>173</id>
+		<eTitle>Good Christian Friends, Rejoice!</eTitle>
+	</song>
+	<song>
+		<id>174</id>
+		<eTitle>Star of Our Hope</eTitle>
+	</song>
+	<song>
+		<id>175</id>
+		<eTitle>Now the Green Blade Rises</eTitle>
+	</song>
+	<song>
+		<id>176</id>
+		<eTitle>Hail the Day That Sees Him Rise</eTitle>
+	</song>
+	<song>
+		<id>177</id>
+		<eTitle>Jesus, Your Blood and Righteousness</eTitle>
+	</song>
+	<song>
+		<id>178</id>
+		<eTitle>The Unveiled Christ</eTitle>
+	</song>
+	<song>
+		<id>179</id>
+		<eTitle>The Wonders of Redeeming Love</eTitle>
+	</song>
+	<song>
+		<id>170</id>
+		<eTitle>O Listen to Our Wondrous Story</eTitle>
+	</song>
+	<song>
+		<id>181</id>
+		<eTitle>Does Jesus Care?</eTitle>
+	</song>
+	<song>
+		<id>182</id>
+		<eTitle>Christ Is Alive</eTitle>
+	</song>
+	<song>
+		<id>183</id>
+		<eTitle>I Will Sing of Jesus' Love</eTitle>
+	</song>
+	<song>
+		<id>184</id>
+		<eTitle>Jesus Paid It All</eTitle>
+	</song>
+	<song>
+		<id>185</id>
+		<eTitle>Jesus Is All the World to Me</eTitle>
+	</song>
+	<song>
+		<id>186</id>
+		<eTitle>I've Found a Friend</eTitle>
+	</song>
+	<song>
+		<id>187</id>
+		<eTitle>Jesus, What a Friend for Sinners</eTitle>
+	</song>
+	<song>
+		<id>188</id>
+		<eTitle>My Song Is Love Unknown</eTitle>
+	</song>
+	<song>
+		<id>189</id>
+		<eTitle>All That Thrills My Soul</eTitle>
+	</song>
+	<song>
+		<id>190</id>
+		<eTitle>Jesus Loves Me</eTitle>
+	</song>
+	<song>
+		<id>191</id>
+		<eTitle>Love Divine</eTitle>
+	</song>
+	<song>
+		<id>192</id>
+		<eTitle>O Shepherd Divine</eTitle>
+	</song>
+	<song>
+		<id>193</id>
+		<eTitle>Savior, Teach Me</eTitle>
+	</song>
+	<song>
+		<id>194</id>
+		<eTitle>Sing We of the Modern City</eTitle>
+	</song>
+	<song>
+		<id>195</id>
+		<eTitle>Showers of Blessing</eTitle>
+	</song>
+	<song>
+		<id>196</id>
+		<eTitle>Tell Me the Old, Old Story</eTitle>
+	</song>
+	<song>
+		<id>197</id>
+		<eTitle>the King of Love My Shepherd Is</eTitle>
+	</song>
+	<song>
+		<id>198</id>
+		<eTitle>And Can It Be?</eTitle>
+	</song>
+	<song>
+		<id>199</id>
+		<eTitle>The Head That Once Was Crowned</eTitle>
+	</song>
+	<song>
+		<id>200</id>
+		<eTitle>The Lord Is Coming</eTitle>
+	</song>
+	<song>
+		<id>201</id>
+		<eTitle>Christ Is Coming</eTitle>
+	</song>
+	<song>
+		<id>202</id>
+		<eTitle>Hail Him the King of Glory</eTitle>
+	</song>
+	<song>
+		<id>203</id>
+		<eTitle>This Is the Threefold Truth</eTitle>
+	</song>
+	<song>
+		<id>204</id>
+		<eTitle>Come, Thou Long Expected Jesus</eTitle>
+	</song>
+	<song>
+		<id>205</id>
+		<eTitle>Gleams of the Golden Morning</eTitle>
+	</song>
+	<song>
+		<id>206</id>
+		<eTitle>Face to Face</eTitle>
+	</song>
+	<song>
+		<id>207</id>
+		<eTitle>It May Be at Morn</eTitle>
+	</song>
+	<song>
+		<id>208</id>
+		<eTitle>There'll Be No Dark Valley</eTitle>
+	</song>
+	<song>
+		<id>209</id>
+		<eTitle>That Glorious Day Is Coming</eTitle>
+	</song>
+	<song>
+		<id>210</id>
+		<eTitle>Wake, Awake, for Night Is Flying</eTitle>
+	</song>
+	<song>
+		<id>211</id>
+		<eTitle>Lo! He Comes</eTitle>
+	</song>
+	<song>
+		<id>212</id>
+		<eTitle>'Tis Almost Time for the Lord to Come</eTitle>
+	</song>
+	<song>
+		<id>213</id>
+		<eTitle>Jesus Is Coming Again</eTitle>
+	</song>
+	<song>
+		<id>214</id>
+		<eTitle>We Have This Hope</eTitle>
+	</song>
+	<song>
+		<id>215</id>
+		<eTitle>The King Shall Come</eTitle>
+	</song>
+	<song>
+		<id>216</id>
+		<eTitle>When the Roll Is Called Up Yonder</eTitle>
+	</song>
+	<song>
+		<id>217</id>
+		<eTitle>The Church Has Waited Long</eTitle>
+	</song>
+	<song>
+		<id>218</id>
+		<eTitle>When He Cometh</eTitle>
+	</song>
+	<song>
+		<id>219</id>
+		<eTitle>When Jesus Comes in Glory</eTitle>
+	</song>
+	<song>
+		<id>220</id>
+		<eTitle>When He Comes</eTitle>
+	</song>
+	<song>
+		<id>221</id>
+		<eTitle>Rejoice, the Lord Is King</eTitle>
+	</song>
+	<song>
+		<id>222</id>
+		<eTitle>Hark! Ten Thousand Harps and Voices</eTitle>
+	</song>
+	<song>
+		<id>223</id>
+		<eTitle>Crown Him With Many Crowns</eTitle>
+	</song>
+	<song>
+		<id>224</id>
+		<eTitle>Seek Ye First the Kingdom</eTitle>
+	</song>
+	<song>
+		<id>225</id>
+		<eTitle>God Is Working His Purpose Out</eTitle>
+	</song>
+	<song>
+		<id>226</id>
+		<eTitle>Lift Up Your Heads</eTitle>
+	</song>
+	<song>
+		<id>227</id>
+		<eTitle>Jesus Shall Reign</eTitle>
+	</song>
+	<song>
+		<id>228</id>
+		<eTitle>A Hymn of Glory Let Us Sing</eTitle>
+	</song>
+	<song>
+		<id>229</id>
+		<eTitle>All Hail the Power of Jesus' Name</eTitle>
+	</song>
+	<song>
+		<id>230</id>
+		<eTitle>All Glory, Laud, and Honor</eTitle>
+	</song>
+	<song>
+		<id>231</id>
+		<eTitle>Blest Be the King</eTitle>
+	</song>
+	<song>
+		<id>232</id>
+		<eTitle>At the Name of Jesus</eTitle>
+	</song>
+	<song>
+		<id>233</id>
+		<eTitle>Christ, Whose Glory Fills the Skies</eTitle>
+	</song>
+	<song>
+		<id>234</id>
+		<eTitle>Christ Is the World's Light</eTitle>
+	</song>
+	<song>
+		<id>235</id>
+		<eTitle>Christ Is Made the Sure Foundation</eTitle>
+	</song>
+	<song>
+		<id>236</id>
+		<eTitle>I Love Thee</eTitle>
+	</song>
+	<song>
+		<id>237</id>
+		<eTitle>In the Cross of Christ I Glory</eTitle>
+	</song>
+	<song>
+		<id>238</id>
+		<eTitle>How Sweet the Name!</eTitle>
+	</song>
+	<song>
+		<id>239</id>
+		<eTitle>Jesus, Priceless Treasure</eTitle>
+	</song>
+	<song>
+		<id>240</id>
+		<eTitle>Fairest Lord Jesus</eTitle>
+	</song>
+	<song>
+		<id>241</id>
+		<eTitle>Jesus, the Very Thought of Thee</eTitle>
+	</song>
+	<song>
+		<id>242</id>
+		<eTitle>Jesus, Thou Joy of Loving Hearts</eTitle>
+	</song>
+	<song>
+		<id>243</id>
+		<eTitle>King of Glory, King of Peace</eTitle>
+	</song>
+	<song>
+		<id>244</id>
+		<eTitle>My Song Shall Be of Jesus</eTitle>
+	</song>
+	<song>
+		<id>245</id>
+		<eTitle>More About Jesus</eTitle>
+	</song>
+	<song>
+		<id>246</id>
+		<eTitle>Worthy, Worthy Is the Lamb</eTitle>
+	</song>
+	<song>
+		<id>247</id>
+		<eTitle>Come, My Way</eTitle>
+	</song>
+	<song>
+		<id>248</id>
+		<eTitle>O, How I Love Jesus</eTitle>
+	</song>
+	<song>
+		<id>249</id>
+		<eTitle>Praise Him! Praise Him!</eTitle>
+	</song>
+	<song>
+		<id>250</id>
+		<eTitle>O for a Thousand Tongues to Sing</eTitle>
+	</song>
+	<song>
+		<id>251</id>
+		<eTitle>He Lives</eTitle>
+	</song>
+	<song>
+		<id>252</id>
+		<eTitle>Come, Let Us Sing</eTitle>
+	</song>
+	<song>
+		<id>253</id>
+		<eTitle>There's No Other Name Like Jesus</eTitle>
+	</song>
+	<song>
+		<id>254</id>
+		<eTitle>The Great Physician Now Is Near</eTitle>
+	</song>
+	<song>
+		<id>255</id>
+		<eTitle>I Cannot Tell Why</eTitle>
+	</song>
+	<song>
+		<id>256</id>
+		<eTitle>Ye Servants of God</eTitle>
+	</song>
+	<song>
+		<id>257</id>
+		<eTitle>Come Down, O Love Divine</eTitle>
+	</song>
+	<song>
+		<id>258</id>
+		<eTitle>Baptize Us Anew</eTitle>
+	</song>
+	<song>
+		<id>259</id>
+		<eTitle>Draw Us in the Spirit's Tether</eTitle>
+	</song>
+	<song>
+		<id>260</id>
+		<eTitle>Hover O'er Me, Holy Spirit</eTitle>
+	</song>
+	<song>
+		<id>261</id>
+		<eTitle>The Spirit of the Lord Revealed</eTitle>
+	</song>
+	<song>
+		<id>262</id>
+		<eTitle>Sweet, Sweet Spirit</eTitle>
+	</song>
+	<song>
+		<id>263</id>
+		<eTitle>Fire of God, Thou Sacred Flame</eTitle>
+	</song>
+	<song>
+		<id>264</id>
+		<eTitle>O for That Flame of Living Fire</eTitle>
+	</song>
+	<song>
+		<id>265</id>
+		<eTitle>Breathe on Me, Breath of God</eTitle>
+	</song>
+	<song>
+		<id>266</id>
+		<eTitle>Spirit of God</eTitle>
+	</song>
+	<song>
+		<id>267</id>
+		<eTitle>Sprit Divine</eTitle>
+	</song>
+	<song>
+		<id>268</id>
+		<eTitle>Holy Spirit, Light Divine</eTitle>
+	</song>
+	<song>
+		<id>269</id>
+		<eTitle>Come, Holy Spirit</eTitle>
+	</song>
+	<song>
+		<id>270</id>
+		<eTitle>O Holy Dove of God Descending</eTitle>
+	</song>
+	<song>
+		<id>271</id>
+		<eTitle>Break Thou the Bread of Life</eTitle>
+	</song>
+	<song>
+		<id>272</id>
+		<eTitle>Give Me the Bible</eTitle>
+	</song>
+	<song>
+		<id>273</id>
+		<eTitle>Lord, I Have Made Thy Word My Choice</eTitle>
+	</song>
+	<song>
+		<id>274</id>
+		<eTitle>O Word of God Incarnate</eTitle>
+	</song>
+	<song>
+		<id>275</id>
+		<eTitle>O God of Light</eTitle>
+	</song>
+	<song>
+		<id>276</id>
+		<eTitle>Thanks to God</eTitle>
+	</song>
+	<song>
+		<id>277</id>
+		<eTitle>For Your Holy Book We Thank You</eTitle>
+	</song>
+	<song>
+		<id>278</id>
+		<eTitle>Lord Jesus, Once You Spoke to Men</eTitle>
+	</song>
+	<song>
+		<id>279</id>
+		<eTitle>Only Trust Him</eTitle>
+	</song>
+	<song>
+		<id>280</id>
+		<eTitle>Come, Ye Sinners</eTitle>
+	</song>
+	<song>
+		<id>281</id>
+		<eTitle>I Gave My Life for Thee</eTitle>
+	</song>
+	<song>
+		<id>282</id>
+		<eTitle>I Hear Thy Welcome Voice</eTitle>
+	</song>
+	<song>
+		<id>283</id>
+		<eTitle>O Jesus, Thou Art Standing</eTitle>
+	</song>
+	<song>
+		<id>284</id>
+		<eTitle>For You I Am Praying</eTitle>
+	</song>
+	<song>
+		<id>285</id>
+		<eTitle>Jesus Calls Us</eTitle>
+	</song>
+	<song>
+		<id>286</id>
+		<eTitle>Wonderful Words of Life</eTitle>
+	</song>
+	<song>
+		<id>287</id>
+		<eTitle>Softly and Tenderly</eTitle>
+	</song>
+	<song>
+		<id>288</id>
+		<eTitle>I Am Going to Calvary</eTitle>
+	</song>
+	<song>
+		<id>289</id>
+		<eTitle>The Savior Is Waiting</eTitle>
+	</song>
+	<song>
+		<id>290</id>
+		<eTitle>Turn Your Eyes Upon Jesus</eTitle>
+	</song>
+	<song>
+		<id>291</id>
+		<eTitle>We Have Not Known Thee</eTitle>
+	</song>
+	<song>
+		<id>292</id>
+		<eTitle>Jesus, I Come</eTitle>
+	</song>
+	<song>
+		<id>293</id>
+		<eTitle>Heavenly Father, Bless Us Now</eTitle>
+	</song>
+	<song>
+		<id>294</id>
+		<eTitle>Power in the Blood</eTitle>
+	</song>
+	<song>
+		<id>295</id>
+		<eTitle>Chief of Sinners</eTitle>
+	</song>
+	<song>
+		<id>296</id>
+		<eTitle>Lord, I'm Coming Home</eTitle>
+	</song>
+	<song>
+		<id>297</id>
+		<eTitle>God Be Merciful to Me</eTitle>
+	</song>
+	<song>
+		<id>298</id>
+		<eTitle>I Lay My Sins on Jesus</eTitle>
+	</song>
+	<song>
+		<id>299</id>
+		<eTitle>Forgive Our Sins as We Forgive</eTitle>
+	</song>
+	<song>
+		<id>300</id>
+		<eTitle>Rock of Ages</eTitle>
+	</song>
+	<song>
+		<id>301</id>
+		<eTitle>Nearer, Still Nearer</eTitle>
+	</song>
+	<song>
+		<id>302</id>
+		<eTitle>Deeper Yet</eTitle>
+	</song>
+	<song>
+		<id>303</id>
+		<eTitle>Beneath the Cross of Jesus</eTitle>
+	</song>
+	<song>
+		<id>304</id>
+		<eTitle>Faith of Our Fathers</eTitle>
+	</song>
+	<song>
+		<id>305</id>
+		<eTitle>Give Me Jesus</eTitle>
+	</song>
+	<song>
+		<id>306</id>
+		<eTitle>Draw Me Nearer</eTitle>
+	</song>
+	<song>
+		<id>307</id>
+		<eTitle>I Am Coming to the Cross</eTitle>
+	</song>
+	<song>
+		<id>308</id>
+		<eTitle>Wholly Thine</eTitle>
+	</song>
+	<song>
+		<id>309</id>
+		<eTitle>I Surrender All</eTitle>
+	</song>
+	<song>
+		<id>310</id>
+		<eTitle>I Would Draw Nearer to Jesus</eTitle>
+	</song>
+	<song>
+		<id>311</id>
+		<eTitle>I Would Be Like Jesus</eTitle>
+	</song>
+	<song>
+		<id>312</id>
+		<eTitle>Near the Cross</eTitle>
+	</song>
+	<song>
+		<id>313</id>
+		<eTitle>Just as I Am</eTitle>
+	</song>
+	<song>
+		<id>314</id>
+		<eTitle>Just as I Am</eTitle>
+	</song>
+	<song>
+		<id>315</id>
+		<eTitle>O for a Closer Walk!</eTitle>
+	</song>
+	<song>
+		<id>316</id>
+		<eTitle>Live Out Thy Life Within Me</eTitle>
+	</song>
+	<song>
+		<id>317</id>
+		<eTitle>Lead Me to Calvary</eTitle>
+	</song>
+	<song>
+		<id>318</id>
+		<eTitle>Whiter Than Snow</eTitle>
+	</song>
+	<song>
+		<id>319</id>
+		<eTitle>Lord, I Want to Be a Christian</eTitle>
+	</song>
+	<song>
+		<id>320</id>
+		<eTitle>Lord of Creation</eTitle>
+	</song>
+	<song>
+		<id>321</id>
+		<eTitle>My Jesus, I Love Thee</eTitle>
+	</song>
+	<song>
+		<id>322</id>
+		<eTitle>Nothing Between</eTitle>
+	</song>
+	<song>
+		<id>323</id>
+		<eTitle>O for a Heart to Praise My God!</eTitle>
+	</song>
+	<song>
+		<id>324</id>
+		<eTitle>Just as I Am, Thine Own to Be</eTitle>
+	</song>
+	<song>
+		<id>325</id>
+		<eTitle>Jesus, I My Cross Have Taken</eTitle>
+	</song>
+	<song>
+		<id>326</id>
+		<eTitle>Open My Eyes That I May See</eTitle>
+	</song>
+	<song>
+		<id>327</id>
+		<eTitle>I'd Rather Have Jesus</eTitle>
+	</song>
+	<song>
+		<id>328</id>
+		<eTitle>Must Jesus Bear the Cross Alone</eTitle>
+	</song>
+	<song>
+		<id>329</id>
+		<eTitle>Take the World, but Give Me Jesus</eTitle>
+	</song>
+	<song>
+		<id>330</id>
+		<eTitle>Take My Life and Let It Be</eTitle>
+	</song>
+	<song>
+		<id>331</id>
+		<eTitle>O Jesus, I Have Promised</eTitle>
+	</song>
+	<song>
+		<id>332</id>
+		<eTitle>The Cleansing Wave</eTitle>
+	</song>
+	<song>
+		<id>333</id>
+		<eTitle>On Jordan's Banks the Baptist's Cry</eTitle>
+	</song>
+	<song>
+		<id>334</id>
+		<eTitle>Come, Thou Fount of Every Blessing</eTitle>
+	</song>
+	<song>
+		<id>335</id>
+		<eTitle>What a Wonderful Savior</eTitle>
+	</song>
+	<song>
+		<id>336</id>
+		<eTitle>There Is a Fountain</eTitle>
+	</song>
+	<song>
+		<id>337</id>
+		<eTitle>Redeemed!</eTitle>
+	</song>
+	<song>
+		<id>338</id>
+		<eTitle>Redeemed!</eTitle>
+	</song>
+	<song>
+		<id>339</id>
+		<eTitle>God Is My Strong Salvation</eTitle>
+	</song>
+	<song>
+		<id>340</id>
+		<eTitle>Jesus Saves</eTitle>
+	</song>
+	<song>
+		<id>341</id>
+		<eTitle>To God Be the Glory</eTitle>
+	</song>
+	<song>
+		<id>342</id>
+		<eTitle>Is This a Day of New Beginnings?</eTitle>
+	</song>
+	<song>
+		<id>343</id>
+		<eTitle>I Will Sing of My Redeemer</eTitle>
+	</song>
+	<song>
+		<id>344</id>
+		<eTitle>I Love Your Kingdom, Lord</eTitle>
+	</song>
+	<song>
+		<id>345</id>
+		<eTitle>Christ Is the World's True Light</eTitle>
+	</song>
+	<song>
+		<id>346</id>
+		<eTitle>Lord, Who Dost Give to Thy Church</eTitle>
+	</song>
+	<song>
+		<id>347</id>
+		<eTitle>Built on the Rock</eTitle>
+	</song>
+	<song>
+		<id>348</id>
+		<eTitle>The Church Has One Foundation</eTitle>
+	</song>
+	<song>
+		<id>349</id>
+		<eTitle>God Is Love</eTitle>
+	</song>
+	<song>
+		<id>350</id>
+		<eTitle>Blest Be the Tie That Binds</eTitle>
+	</song>
+	<song>
+		<id>351</id>
+		<eTitle>Thy Hand, O God Has Guided</eTitle>
+	</song>
+	<song>
+		<id>352</id>
+		<eTitle>This Is My Will</eTitle>
+	</song>
+	<song>
+		<id>353</id>
+		<eTitle>Father, Help Your People</eTitle>
+	</song>
+	<song>
+		<id>354</id>
+		<eTitle>Thy Love, O God</eTitle>
+	</song>
+	<song>
+		<id>355</id>
+		<eTitle>Where Cross the Crowded Ways of Life</eTitle>
+	</song>
+	<song>
+		<id>356</id>
+		<eTitle>All Who Love and Serve Your City</eTitle>
+	</song>
+	<song>
+		<id>357</id>
+		<eTitle>Come, Labor On</eTitle>
+	</song>
+	<song>
+		<id>358</id>
+		<eTitle>Far and Near the Fields Are Teeming</eTitle>
+	</song>
+	<song>
+		<id>359</id>
+		<eTitle>Hark! the Voice of Jesus Calling</eTitle>
+	</song>
+	<song>
+		<id>360</id>
+		<eTitle>From the Eastern Mountains</eTitle>
+	</song>
+	<song>
+		<id>361</id>
+		<eTitle>Hark! 'Tis the Shepherd's Voice I Hear</eTitle>
+	</song>
+	<song>
+		<id>362</id>
+		<eTitle>Lift High the Cross</eTitle>
+	</song>
+	<song>
+		<id>363</id>
+		<eTitle>Lord, Whose Love in Humble Service</eTitle>
+	</song>
+	<song>
+		<id>364</id>
+		<eTitle>O Jesus Christ, to You</eTitle>
+	</song>
+	<song>
+		<id>365</id>
+		<eTitle>O Zion, Haste</eTitle>
+	</song>
+	<song>
+		<id>366</id>
+		<eTitle>O Where Are the Reapers?</eTitle>
+	</song>
+	<song>
+		<id>367</id>
+		<eTitle>Rescue the Perishing</eTitle>
+	</song>
+	<song>
+		<id>368</id>
+		<eTitle>Watchman, Blow the Gospel Trumpet</eTitle>
+	</song>
+	<song>
+		<id>369</id>
+		<eTitle>Bringing in the Sheaves</eTitle>
+	</song>
+	<song>
+		<id>370</id>
+		<eTitle>Christ for the World</eTitle>
+	</song>
+	<song>
+		<id>371</id>
+		<eTitle>Lift Him Up</eTitle>
+	</song>
+	<song>
+		<id>372</id>
+		<eTitle>How Beauteous Are Their Feet</eTitle>
+	</song>
+	<song>
+		<id>373</id>
+		<eTitle>Seeking the Lost</eTitle>
+	</song>
+	<song>
+		<id>374</id>
+		<eTitle>Jesus, With Thy Church Abide</eTitle>
+	</song>
+	<song>
+		<id>375</id>
+		<eTitle>Work, for the Night Is Coming</eTitle>
+	</song>
+	<song>
+		<id>376</id>
+		<eTitle>All Things Are Thine</eTitle>
+	</song>
+	<song>
+		<id>377</id>
+		<eTitle>Go Forth, Go Forth With Christ</eTitle>
+	</song>
+	<song>
+		<id>378</id>
+		<eTitle>Go, Preach My Gospel</eTitle>
+	</song>
+	<song>
+		<id>379</id>
+		<eTitle>We Give This Child to You</eTitle>
+	</song>
+	<song>
+		<id>380</id>
+		<eTitle>Welcome, Day of Sweet Repose</eTitle>
+	</song>
+	<song>
+		<id>381</id>
+		<eTitle>Holy Sabbath Day of Rest</eTitle>
+	</song>
+	<song>
+		<id>382</id>
+		<eTitle>O Day of Rest and Gladness</eTitle>
+	</song>
+	<song>
+		<id>383</id>
+		<eTitle>O Day of Rest and Gladness</eTitle>
+	</song>
+	<song>
+		<id>384</id>
+		<eTitle>Safely Through Another Week</eTitle>
+	</song>
+	<song>
+		<id>385</id>
+		<eTitle>Crowing Jewel of Creation</eTitle>
+	</song>
+	<song>
+		<id>386</id>
+		<eTitle>The Sacred Anthem</eTitle>
+	</song>
+	<song>
+		<id>387</id>
+		<eTitle>Come, O Sabbath Day</eTitle>
+	</song>
+	<song>
+		<id>388</id>
+		<eTitle>Don't Forget the Sabbath</eTitle>
+	</song>
+	<song>
+		<id>389</id>
+		<eTitle>Light of Light, Enlighten Me</eTitle>
+	</song>
+	<song>
+		<id>390</id>
+		<eTitle>We Love Thy Sabbath, Lord</eTitle>
+	</song>
+	<song>
+		<id>391</id>
+		<eTitle>Welcome, Welcome, Day of Rest</eTitle>
+	</song>
+	<song>
+		<id>392</id>
+		<eTitle>Dear Lord, We Come at Set of Sun</eTitle>
+	</song>
+	<song>
+		<id>393</id>
+		<eTitle>Lord of the Sabbath</eTitle>
+	</song>
+	<song>
+		<id>394</id>
+		<eTitle>Far From All Care</eTitle>
+	</song>
+	<song>
+		<id>395</id>
+		<eTitle>As Birds Unto the Genial Homeland</eTitle>
+	</song>
+	<song>
+		<id>396</id>
+		<eTitle>Lord God, Your Love Has Called Us Here</eTitle>
+	</song>
+	<song>
+		<id>397</id>
+		<eTitle>An Upper Room</eTitle>
+	</song>
+	<song>
+		<id>398</id>
+		<eTitle>Bread of the World</eTitle>
+	</song>
+	<song>
+		<id>399</id>
+		<eTitle>Beneath the Forms of Outward Rite</eTitle>
+	</song>
+	<song>
+		<id>400</id>
+		<eTitle>I Come With Joy</eTitle>
+	</song>
+	<song>
+		<id>401</id>
+		<eTitle>In Imitation, Lord of Thee</eTitle>
+	</song>
+	<song>
+		<id>402</id>
+		<eTitle>By Christ Redeemed</eTitle>
+	</song>
+	<song>
+		<id>403</id>
+		<eTitle>Let Us Break Bread Together</eTitle>
+	</song>
+	<song>
+		<id>404</id>
+		<eTitle>Now Let Us From This Table Rise</eTitle>
+	</song>
+	<song>
+		<id>405</id>
+		<eTitle>O God, Unseen, Yet Ever Near</eTitle>
+	</song>
+	<song>
+		<id>406</id>
+		<eTitle>Love Consecrates the Humblest Act</eTitle>
+	</song>
+	<song>
+		<id>407</id>
+		<eTitle>Sent Forth by God's Blessing</eTitle>
+	</song>
+	<song>
+		<id>408</id>
+		<eTitle>Lord, Enthroned in Heavenly Splendor</eTitle>
+	</song>
+	<song>
+		<id>409</id>
+		<eTitle>Jesus Invites His Saints</eTitle>
+	</song>
+	<song>
+		<id>410</id>
+		<eTitle>Thy Broken Body, Gracious Lord</eTitle>
+	</song>
+	<song>
+		<id>411</id>
+		<eTitle>The Son of God Proclaim</eTitle>
+	</song>
+	<song>
+		<id>412</id>
+		<eTitle>Cover With His Life</eTitle>
+	</song>
+	<song>
+		<id>413</id>
+		<eTitle>God Has Spoken by His Prophets</eTitle>
+	</song>
+	<song>
+		<id>414</id>
+		<eTitle>Fruitful Trees, the Spirit's Sowing</eTitle>
+	</song>
+	<song>
+		<id>415</id>
+		<eTitle>Christ the Lord, All Power Possessing</eTitle>
+	</song>
+	<song>
+		<id>416</id>
+		<eTitle>The Judgment Has Set</eTitle>
+	</song>
+	<song>
+		<id>417</id>
+		<eTitle>O Solemn Thought</eTitle>
+	</song>
+	<song>
+		<id>418</id>
+		<eTitle>Day of Judgment, Day of Wonders!</eTitle>
+	</song>
+	<song>
+		<id>419</id>
+		<eTitle>Soon Shall the Trump of God</eTitle>
+	</song>
+	<song>
+		<id>420</id>
+		<eTitle>Jerusalem, My Happy Home</eTitle>
+	</song>
+	<song>
+		<id>421</id>
+		<eTitle>For All the Saints</eTitle>
+	</song>
+	<song>
+		<id>422</id>
+		<eTitle>Marching to Zion</eTitle>
+	</song>
+	<song>
+		<id>423</id>
+		<eTitle>Glorious Things of Thee Are Spoken</eTitle>
+	</song>
+	<song>
+		<id>424</id>
+		<eTitle>For Thee, O Dear, Dear Country</eTitle>
+	</song>
+	<song>
+		<id>425</id>
+		<eTitle>Holy, Holy, Is What the Angels Sing</eTitle>
+	</song>
+	<song>
+		<id>426</id>
+		<eTitle>I Shall See the King</eTitle>
+	</song>
+	<song>
+		<id>427</id>
+		<eTitle>No Night There</eTitle>
+	</song>
+	<song>
+		<id>428</id>
+		<eTitle>Sweet By and By</eTitle>
+	</song>
+	<song>
+		<id>429</id>
+		<eTitle>Jerusalem the Golden</eTitle>
+	</song>
+	<song>
+		<id>430</id>
+		<eTitle>Joy By and By</eTitle>
+	</song>
+	<song>
+		<id>431</id>
+		<eTitle>Over Yonder</eTitle>
+	</song>
+	<song>
+		<id>432</id>
+		<eTitle>Shall We Gather at the River</eTitle>
+	</song>
+	<song>
+		<id>433</id>
+		<eTitle>Ten Thousand Times Ten Thousand</eTitle>
+	</song>
+	<song>
+		<id>434</id>
+		<eTitle>We Speak of the Realms</eTitle>
+	</song>
+	<song>
+		<id>435</id>
+		<eTitle>The Glory Song</eTitle>
+	</song>
+	<song>
+		<id>436</id>
+		<eTitle>The Homeland</eTitle>
+	</song>
+	<song>
+		<id>437</id>
+		<eTitle>I'm Going Home</eTitle>
+	</song>
+	<song>
+		<id>438</id>
+		<eTitle>You Will See Your Lord A-Coming</eTitle>
+	</song>
+	<song>
+		<id>439</id>
+		<eTitle>How Far From Home?</eTitle>
+	</song>
+	<song>
+		<id>440</id>
+		<eTitle>How Cheering Is the Christian's Hope</eTitle>
+	</song>
+	<song>
+		<id>441</id>
+		<eTitle>I Saw One Weary</eTitle>
+	</song>
+	<song>
+		<id>442</id>
+		<eTitle>How Sweet Are the Tidings</eTitle>
+	</song>
+	<song>
+		<id>443</id>
+		<eTitle>There'll Be No Sorrow There</eTitle>
+	</song>
+	<song>
+		<id>444</id>
+		<eTitle>I'm a Pilgrim</eTitle>
+	</song>
+	<song>
+		<id>445</id>
+		<eTitle>I'm But a Stranger Here</eTitle>
+	</song>
+	<song>
+		<id>446</id>
+		<eTitle>Lo, What a Glorious Sight Appears</eTitle>
+	</song>
+	<song>
+		<id>447</id>
+		<eTitle>Long Upon the Mountains</eTitle>
+	</song>
+	<song>
+		<id>448</id>
+		<eTitle>O, When Shall I See Jesus</eTitle>
+	</song>
+	<song>
+		<id>449</id>
+		<eTitle>Never Part Again</eTitle>
+	</song>
+	<song>
+		<id>450</id>
+		<eTitle>Beautiful Zion</eTitle>
+	</song>
+	<song>
+		<id>451</id>
+		<eTitle>Together Let Us Sweetly Live</eTitle>
+	</song>
+	<song>
+		<id>452</id>
+		<eTitle>What Heavenly Music</eTitle>
+	</song>
+	<song>
+		<id>453</id>
+		<eTitle>We Have Heard</eTitle>
+	</song>
+	<song>
+		<id>454</id>
+		<eTitle>Don't You See My Jesus Coming?</eTitle>
+	</song>
+	<song>
+		<id>455</id>
+		<eTitle>Immortal Love, Forever Full</eTitle>
+	</song>
+	<song>
+		<id>456</id>
+		<eTitle>My Lord and I</eTitle>
+	</song>
+	<song>
+		<id>457</id>
+		<eTitle>I Love to Tell the Story</eTitle>
+	</song>
+	<song>
+		<id>458</id>
+		<eTitle>More Love to Thee</eTitle>
+	</song>
+	<song>
+		<id>459</id>
+		<eTitle>As the Bridegroom to His Chosen</eTitle>
+	</song>
+	<song>
+		<id>460</id>
+		<eTitle>As Water to the Thirsty</eTitle>
+	</song>
+	<song>
+		<id>461</id>
+		<eTitle>Be Still, My Soul</eTitle>
+	</song>
+	<song>
+		<id>462</id>
+		<eTitle>Blessed Assurance, Jesus Is Mine!</eTitle>
+	</song>
+	<song>
+		<id>463</id>
+		<eTitle>Peace, Perfect Peace</eTitle>
+	</song>
+	<song>
+		<id>464</id>
+		<eTitle>When I Can Read My Title Clear</eTitle>
+	</song>
+	<song>
+		<id>465</id>
+		<eTitle>I Heard the Voice of Jesus</eTitle>
+	</song>
+	<song>
+		<id>466</id>
+		<eTitle>Wonderful Peace</eTitle>
+	</song>
+	<song>
+		<id>467</id>
+		<eTitle>Life Is Great! So Sing About It</eTitle>
+	</song>
+	<song>
+		<id>468</id>
+		<eTitle>A Child of the King</eTitle>
+	</song>
+	<song>
+		<id>469</id>
+		<eTitle>Leaning on the Everlasting Arms</eTitle>
+	</song>
+	<song>
+		<id>470</id>
+		<eTitle>There's Sunshine in My Soul Today</eTitle>
+	</song>
+	<song>
+		<id>471</id>
+		<eTitle>Grant Us Your Peace</eTitle>
+	</song>
+	<song>
+		<id>472</id>
+		<eTitle>A Song of Heaven and Homeland</eTitle>
+	</song>
+	<song>
+		<id>473</id>
+		<eTitle>Nearer My God, to Thee</eTitle>
+	</song>
+	<song>
+		<id>474</id>
+		<eTitle>Take the Name of Jesus With You</eTitle>
+	</song>
+	<song>
+		<id>475</id>
+		<eTitle>Balm in Gilead</eTitle>
+	</song>
+	<song>
+		<id>476</id>
+		<eTitle>Burdens Are Lifted at Calvary</eTitle>
+	</song>
+	<song>
+		<id>477</id>
+		<eTitle>Come, Ye Disconsolate</eTitle>
+	</song>
+	<song>
+		<id>478</id>
+		<eTitle>Sweet Hour of Prayer</eTitle>
+	</song>
+	<song>
+		<id>479</id>
+		<eTitle>Tread Softly</eTitle>
+	</song>
+	<song>
+		<id>480</id>
+		<eTitle>Dear Lord and Father</eTitle>
+	</song>
+	<song>
+		<id>481</id>
+		<eTitle>Dear Lord and Father</eTitle>
+	</song>
+	<song>
+		<id>482</id>
+		<eTitle>Father, Lead Me Day by Day</eTitle>
+	</song>
+	<song>
+		<id>483</id>
+		<eTitle>I Need Thee Every Hour</eTitle>
+	</song>
+	<song>
+		<id>484</id>
+		<eTitle>I Need Thee, Precious Jesus</eTitle>
+	</song>
+	<song>
+		<id>485</id>
+		<eTitle>I Must Tell Jesus</eTitle>
+	</song>
+	<song>
+		<id>486</id>
+		<eTitle>I Do Believe</eTitle>
+	</song>
+	<song>
+		<id>487</id>
+		<eTitle>In the Garden</eTitle>
+	</song>
+	<song>
+		<id>488</id>
+		<eTitle>At First I Prayed for Light</eTitle>
+	</song>
+	<song>
+		<id>489</id>
+		<eTitle>Jesus, Lover of My Soul</eTitle>
+	</song>
+	<song>
+		<id>490</id>
+		<eTitle>Jesus, Lover of My Soul</eTitle>
+	</song>
+	<song>
+		<id>491</id>
+		<eTitle>In the Hour of Trial</eTitle>
+	</song>
+	<song>
+		<id>492</id>
+		<eTitle>Like Jesus</eTitle>
+	</song>
+	<song>
+		<id>493</id>
+		<eTitle>Fill My Cup, Lord</eTitle>
+	</song>
+	<song>
+		<id>494</id>
+		<eTitle>We Would See Jesus</eTitle>
+	</song>
+	<song>
+		<id>495</id>
+		<eTitle>Near the Heart of God</eTitle>
+	</song>
+	<song>
+		<id>496</id>
+		<eTitle>Eternal Love, We Have No Good</eTitle>
+	</song>
+	<song>
+		<id>497</id>
+		<eTitle>O Gracious Father of Mankind</eTitle>
+	</song>
+	<song>
+		<id>498</id>
+		<eTitle>Still, Still With Thee</eTitle>
+	</song>
+	<song>
+		<id>499</id>
+		<eTitle>What a Friend We Have in Jesus</eTitle>
+	</song>
+	<song>
+		<id>500</id>
+		<eTitle>Take Time to Be Holy</eTitle>
+	</song>
+	<song>
+		<id>501</id>
+		<eTitle>'Tis the Blessed Hour of Prayer</eTitle>
+	</song>
+	<song>
+		<id>502</id>
+		<eTitle>Sun of My Soul</eTitle>
+	</song>
+	<song>
+		<id>503</id>
+		<eTitle>A Quiet Place</eTitle>
+	</song>
+	<song>
+		<id>504</id>
+		<eTitle>Lord Jesus, Think on Me</eTitle>
+	</song>
+	<song>
+		<id>505</id>
+		<eTitle>I Need the Prayers</eTitle>
+	</song>
+	<song>
+		<id>506</id>
+		<eTitle>A Mighty Fortress</eTitle>
+	</song>
+	<song>
+		<id>507</id>
+		<eTitle>Moment by Moment</eTitle>
+	</song>
+	<song>
+		<id>508</id>
+		<eTitle>Anywhere With Jesus</eTitle>
+	</song>
+	<song>
+		<id>509</id>
+		<eTitle>How Firm a Foundation</eTitle>
+	</song>
+	<song>
+		<id>510</id>
+		<eTitle>If You But Trust in God to Guide You</eTitle>
+	</song>
+	<song>
+		<id>511</id>
+		<eTitle>I Know Whom I Have Believed</eTitle>
+	</song>
+	<song>
+		<id>512</id>
+		<eTitle>Just When I Need Him Most</eTitle>
+	</song>
+	<song>
+		<id>513</id>
+		<eTitle>In Heavenly Love Abiding</eTitle>
+	</song>
+	<song>
+		<id>514</id>
+		<eTitle>Lord of Our Life</eTitle>
+	</song>
+	<song>
+		<id>515</id>
+		<eTitle>The Lord Is My Light</eTitle>
+	</song>
+	<song>
+		<id>516</id>
+		<eTitle>All the Way</eTitle>
+	</song>
+	<song>
+		<id>517</id>
+		<eTitle>My Faith Looks Up to Thee</eTitle>
+	</song>
+	<song>
+		<id>518</id>
+		<eTitle>Standing on the Promises</eTitle>
+	</song>
+	<song>
+		<id>519</id>
+		<eTitle>Give to the Winds Your Fears</eTitle>
+	</song>
+	<song>
+		<id>520</id>
+		<eTitle>He Hideth My Soul</eTitle>
+	</song>
+	<song>
+		<id>521</id>
+		<eTitle>Depth of Mercy</eTitle>
+	</song>
+	<song>
+		<id>522</id>
+		<eTitle>My Hope Is Built on Nothing Less</eTitle>
+	</song>
+	<song>
+		<id>523</id>
+		<eTitle>My Faith Has Found a Resting Place</eTitle>
+	</song>
+	<song>
+		<id>524</id>
+		<eTitle>'Tis So Sweet to Trust in Jesus</eTitle>
+	</song>
+	<song>
+		<id>525</id>
+		<eTitle>Hiding in Thee</eTitle>
+	</song>
+	<song>
+		<id>526</id>
+		<eTitle>Because He Lives</eTitle>
+	</song>
+	<song>
+		<id>527</id>
+		<eTitle>From Every Stormy Wind</eTitle>
+	</song>
+	<song>
+		<id>528</id>
+		<eTitle>A Shelter in the Time of Storm</eTitle>
+	</song>
+	<song>
+		<id>529</id>
+		<eTitle>Under His Wings</eTitle>
+	</song>
+	<song>
+		<id>530</id>
+		<eTitle>It Is Well With My Soul</eTitle>
+	</song>
+	<song>
+		<id>531</id>
+		<eTitle>We'll Build on the Rock</eTitle>
+	</song>
+	<song>
+		<id>532</id>
+		<eTitle>Day by Day</eTitle>
+	</song>
+	<song>
+		<id>533</id>
+		<eTitle>O for a Faith</eTitle>
+	</song>
+	<song>
+		<id>534</id>
+		<eTitle>Will Your Anchor Hold?</eTitle>
+	</song>
+	<song>
+		<id>535</id>
+		<eTitle>I Am Trusting Thee, Lord Jesus</eTitle>
+	</song>
+	<song>
+		<id>536</id>
+		<eTitle>God, Who Stretched the Spangled Heavens</eTitle>
+	</song>
+	<song>
+		<id>537</id>
+		<eTitle>He Leadeth Me</eTitle>
+	</song>
+	<song>
+		<id>538</id>
+		<eTitle>Guide Me, O Thou Great Jehovah</eTitle>
+	</song>
+	<song>
+		<id>539</id>
+		<eTitle>I Will Early Seek the Savior</eTitle>
+	</song>
+	<song>
+		<id>540</id>
+		<eTitle>Gentle Jesus, Meek and Mild</eTitle>
+	</song>
+	<song>
+		<id>541</id>
+		<eTitle>Lord, Speak to Me</eTitle>
+	</song>
+	<song>
+		<id>542</id>
+		<eTitle>Jesus, Friend So Kind</eTitle>
+	</song>
+	<song>
+		<id>543</id>
+		<eTitle>Jesus, Friend of Little Children</eTitle>
+	</song>
+	<song>
+		<id>544</id>
+		<eTitle>Jesus, Son of Blessed Mary</eTitle>
+	</song>
+	<song>
+		<id>545</id>
+		<eTitle>Savior, Like a Shepherd</eTitle>
+	</song>
+	<song>
+		<id>546</id>
+		<eTitle>The Lord's My Shepherd</eTitle>
+	</song>
+	<song>
+		<id>547</id>
+		<eTitle>Be Thou My Vision</eTitle>
+	</song>
+	<song>
+		<id>548</id>
+		<eTitle>Now Praise the Hidden God of Love</eTitle>
+	</song>
+	<song>
+		<id>549</id>
+		<eTitle>Loving Shepherd of Thy Sheep</eTitle>
+	</song>
+	<song>
+		<id>550</id>
+		<eTitle>Every Flower That Grows</eTitle>
+	</song>
+	<song>
+		<id>551</id>
+		<eTitle>Jesus, Savior, Pilot Me</eTitle>
+	</song>
+	<song>
+		<id>552</id>
+		<eTitle>The Lord's My Shepherd</eTitle>
+	</song>
+	<song>
+		<id>553</id>
+		<eTitle>Jesus, Guide Our Way</eTitle>
+	</song>
+	<song>
+		<id>554</id>
+		<eTitle>O Let Me Walk With Thee</eTitle>
+	</song>
+	<song>
+		<id>555</id>
+		<eTitle>Shepherd of Tender Youth</eTitle>
+	</song>
+	<song>
+		<id>556</id>
+		<eTitle>As Saints of Old</eTitle>
+	</song>
+	<song>
+		<id>557</id>
+		<eTitle>Come, Ye Thankful People</eTitle>
+	</song>
+	<song>
+		<id>558</id>
+		<eTitle>For the Fruits of His Creation</eTitle>
+	</song>
+	<song>
+		<id>559</id>
+		<eTitle>Now Thank We All Our God</eTitle>
+	</song>
+	<song>
+		<id>560</id>
+		<eTitle>Let All Things Now Living</eTitle>
+	</song>
+	<song>
+		<id>561</id>
+		<eTitle>We Plow the Fields</eTitle>
+	</song>
+	<song>
+		<id>562</id>
+		<eTitle>Come, Sing a&nbsp; Song of Harvest</eTitle>
+	</song>
+	<song>
+		<id>563</id>
+		<eTitle>Praise and Thanksgiving</eTitle>
+	</song>
+	<song>
+		<id>564</id>
+		<eTitle>For Sunrise Hope and Sunset Calm</eTitle>
+	</song>
+	<song>
+		<id>565</id>
+		<eTitle>For the Beauty of the Earth</eTitle>
+	</song>
+	<song>
+		<id>566</id>
+		<eTitle>Father, We Thank You</eTitle>
+	</song>
+	<song>
+		<id>567</id>
+		<eTitle>Have Thine Own Way, Lord</eTitle>
+	</song>
+	<song>
+		<id>568</id>
+		<eTitle>Make Me a Captive, Lord</eTitle>
+	</song>
+	<song>
+		<id>569</id>
+		<eTitle>Pass Me Not, O Gentle Savior</eTitle>
+	</song>
+	<song>
+		<id>570</id>
+		<eTitle>Not I, but Christ</eTitle>
+	</song>
+	<song>
+		<id>571</id>
+		<eTitle>What Does the Lord Require?</eTitle>
+	</song>
+	<song>
+		<id>572</id>
+		<eTitle>Give of Your Best to the Master</eTitle>
+	</song>
+	<song>
+		<id>573</id>
+		<eTitle>I'll Go Where You Want Me to Go</eTitle>
+	</song>
+	<song>
+		<id>574</id>
+		<eTitle>O Master, Let Me Walk With Thee</eTitle>
+	</song>
+	<song>
+		<id>575</id>
+		<eTitle>Let Your Heart Be Broken</eTitle>
+	</song>
+	<song>
+		<id>576</id>
+		<eTitle>Awake, Awake to Love and Work</eTitle>
+	</song>
+	<song>
+		<id>577</id>
+		<eTitle>In the Heart of Jesus</eTitle>
+	</song>
+	<song>
+		<id>578</id>
+		<eTitle>So Send I You</eTitle>
+	</song>
+	<song>
+		<id>579</id>
+		<eTitle>'Tis Love That Makes Us Happy</eTitle>
+	</song>
+	<song>
+		<id>580</id>
+		<eTitle>This Little Light of Mine</eTitle>
+	</song>
+	<song>
+		<id>581</id>
+		<eTitle>When the Church of Jesus</eTitle>
+	</song>
+	<song>
+		<id>582</id>
+		<eTitle>Working, O Christ, With Thee</eTitle>
+	</song>
+	<song>
+		<id>583</id>
+		<eTitle>You That Know the Lord</eTitle>
+	</song>
+	<song>
+		<id>584</id>
+		<eTitle>There's a Spirit in the Air</eTitle>
+	</song>
+	<song>
+		<id>585</id>
+		<eTitle>When Christ Was Lifted From the Earth</eTitle>
+	</song>
+	<song>
+		<id>586</id>
+		<eTitle>What Joy It Is to Worship Here</eTitle>
+	</song>
+	<song>
+		<id>587</id>
+		<eTitle>In Christ There Is No East nor West</eTitle>
+	</song>
+	<song>
+		<id>588</id>
+		<eTitle>Lord of All Nations</eTitle>
+	</song>
+	<song>
+		<id>589</id>
+		<eTitle>Holy Spirit, Gracious Guest</eTitle>
+	</song>
+	<song>
+		<id>590</id>
+		<eTitle>Trust and Obey</eTitle>
+	</song>
+	<song>
+		<id>591</id>
+		<eTitle>In Our Work and in Our Play</eTitle>
+	</song>
+	<song>
+		<id>592</id>
+		<eTitle>Watchman, Tell Us of the Night</eTitle>
+	</song>
+	<song>
+		<id>593</id>
+		<eTitle>In Times Like These</eTitle>
+	</song>
+	<song>
+		<id>594</id>
+		<eTitle>Heir of the Kingdom</eTitle>
+	</song>
+	<song>
+		<id>595</id>
+		<eTitle>Let Every Lamp Be Burning</eTitle>
+	</song>
+	<song>
+		<id>596</id>
+		<eTitle>Look for the Waymarks</eTitle>
+	</song>
+	<song>
+		<id>597</id>
+		<eTitle>Ye Servants of the Lord</eTitle>
+	</song>
+	<song>
+		<id>598</id>
+		<eTitle>Watch, Ye Saints</eTitle>
+	</song>
+	<song>
+		<id>599</id>
+		<eTitle>Rejoice, Rejoice, Believers</eTitle>
+	</song>
+	<song>
+		<id>600</id>
+		<eTitle>Hold Fast Till I Come</eTitle>
+	</song>
+	<song>
+		<id>601</id>
+		<eTitle>Watchmen, on the Walls of Zion</eTitle>
+	</song>
+	<song>
+		<id>602</id>
+		<eTitle>O Brother, Be Faithful</eTitle>
+	</song>
+	<song>
+		<id>603</id>
+		<eTitle>Christian, Seek Not Repose</eTitle>
+	</song>
+	<song>
+		<id>604</id>
+		<eTitle>We Know Not the Hour</eTitle>
+	</song>
+	<song>
+		<id>605</id>
+		<eTitle>My Soul, Be on Thy Guard</eTitle>
+	</song>
+	<song>
+		<id>606</id>
+		<eTitle>Once to Every Man and Nation</eTitle>
+	</song>
+	<song>
+		<id>607</id>
+		<eTitle>God of Grace and God of Glory</eTitle>
+	</song>
+	<song>
+		<id>608</id>
+		<eTitle>Faith Is the Victory</eTitle>
+	</song>
+	<song>
+		<id>609</id>
+		<eTitle>Am I a Soldier of the Cross?</eTitle>
+	</song>
+	<song>
+		<id>610</id>
+		<eTitle>Stand Like the Brave</eTitle>
+	</song>
+	<song>
+		<id>611</id>
+		<eTitle>Awake, My Soul!</eTitle>
+	</song>
+	<song>
+		<id>612</id>
+		<eTitle>Onward, Christian Soldiers!</eTitle>
+	</song>
+	<song>
+		<id>613</id>
+		<eTitle>Fight the Good Fight</eTitle>
+	</song>
+	<song>
+		<id>614</id>
+		<eTitle>Sound the Battle Cry</eTitle>
+	</song>
+	<song>
+		<id>615</id>
+		<eTitle>Rise Up, O Church of God</eTitle>
+	</song>
+	<song>
+		<id>616</id>
+		<eTitle>Soldiers of Christ, Arise</eTitle>
+	</song>
+	<song>
+		<id>617</id>
+		<eTitle>We Are Living, We Are Dwelling</eTitle>
+	</song>
+	<song>
+		<id>618</id>
+		<eTitle>Stand Up! Stand Up for Jesus!</eTitle>
+	</song>
+	<song>
+		<id>619</id>
+		<eTitle>Lead On, O King Eternal</eTitle>
+	</song>
+	<song>
+		<id>620</id>
+		<eTitle>On Jordan's Stormy Banks</eTitle>
+	</song>
+	<song>
+		<id>621</id>
+		<eTitle>Gracious Father, Guard Thy Children</eTitle>
+	</song>
+	<song>
+		<id>622</id>
+		<eTitle>Come, Come, Ye Saints</eTitle>
+	</song>
+	<song>
+		<id>623</id>
+		<eTitle>I Will Follow Thee</eTitle>
+	</song>
+	<song>
+		<id>624</id>
+		<eTitle>I Want Jesus to Walk With Me</eTitle>
+	</song>
+	<song>
+		<id>625</id>
+		<eTitle>Higher Ground</eTitle>
+	</song>
+	<song>
+		<id>626</id>
+		<eTitle>In a Little While We're Going Home</eTitle>
+	</song>
+	<song>
+		<id>627</id>
+		<eTitle>Jacob's Ladder</eTitle>
+	</song>
+	<song>
+		<id>628</id>
+		<eTitle>As Jacob With Travel Was Weary</eTitle>
+	</song>
+	<song>
+		<id>629</id>
+		<eTitle>O Happy Band of Pilgrims</eTitle>
+	</song>
+	<song>
+		<id>630</id>
+		<eTitle>Rise, My Soul, and Stretch Thy Wings</eTitle>
+	</song>
+	<song>
+		<id>631</id>
+		<eTitle>When on Life a Darkness Falls</eTitle>
+	</song>
+	<song>
+		<id>632</id>
+		<eTitle>Until Then</eTitle>
+	</song>
+	<song>
+		<id>633</id>
+		<eTitle>When We All Get to Heaven</eTitle>
+	</song>
+	<song>
+		<id>634</id>
+		<eTitle>Come, All Christians, Be Committed</eTitle>
+	</song>
+	<song>
+		<id>635</id>
+		<eTitle>Lord of All Good</eTitle>
+	</song>
+	<song>
+		<id>636</id>
+		<eTitle>God, Whose Giving Knows No Ending</eTitle>
+	</song>
+	<song>
+		<id>637</id>
+		<eTitle>Son of God, Eternal Savior</eTitle>
+	</song>
+	<song>
+		<id>638</id>
+		<eTitle>The Wise May Bring Their Learning</eTitle>
+	</song>
+	<song>
+		<id>639</id>
+		<eTitle>A Diligent and Grateful Heart</eTitle>
+	</song>
+	<song>
+		<id>640</id>
+		<eTitle>For Beauty of Meadows</eTitle>
+	</song>
+	<song>
+		<id>641</id>
+		<eTitle>God in His Love for Us</eTitle>
+	</song>
+	<song>
+		<id>642</id>
+		<eTitle>We Praise Thee With Our Minds</eTitle>
+	</song>
+	<song>
+		<id>643</id>
+		<eTitle>Father, Who on Us Do Shower</eTitle>
+	</song>
+	<song>
+		<id>644</id>
+		<eTitle>O God, Whose Will Is Life and Good</eTitle>
+	</song>
+	<song>
+		<id>645</id>
+		<eTitle>God of Our Fathers</eTitle>
+	</song>
+	<song>
+		<id>646</id>
+		<eTitle>To the Name That Brings Salvation</eTitle>
+	</song>
+	<song>
+		<id>647</id>
+		<eTitle>Mine Eyes Have Seen the Glory</eTitle>
+	</song>
+	<song>
+		<id>648</id>
+		<eTitle>I Vow to Thee, My Country</eTitle>
+	</song>
+	<song>
+		<id>649</id>
+		<eTitle>Lord, While for All Mankind</eTitle>
+	</song>
+	<song>
+		<id>650</id>
+		<eTitle>Our Father, by Whose Name</eTitle>
+	</song>
+	<song>
+		<id>651</id>
+		<eTitle>Happy the Home That Welcomes You</eTitle>
+	</song>
+	<song>
+		<id>652</id>
+		<eTitle>Love at Home</eTitle>
+	</song>
+	<song>
+		<id>653</id>
+		<eTitle>Lead Them, My God, to Thee</eTitle>
+	</song>
+	<song>
+		<id>654</id>
+		<eTitle>Lord, Bless Our Homes</eTitle>
+	</song>
+	<song>
+		<id>655</id>
+		<eTitle>Happy the Home</eTitle>
+	</song>
+	<song>
+		<id>656</id>
+		<eTitle>O Perfect Love</eTitle>
+	</song>
+	<song>
+		<id>657</id>
+		<eTitle>O God, From Whom Mankind</eTitle>
+	</song>
+	<song>
+		<id>658</id>
+		<eTitle>Heavenly Father, Hear Our Prayer</eTitle>
+	</song>
+	<song>
+		<id>659</id>
+		<eTitle>May the Grace of Christ Our Savior</eTitle>
+	</song>
+	<song>
+		<id>660</id>
+		<eTitle>Glory Be to the Father</eTitle>
+	</song>
+	<song>
+		<id>661</id>
+		<eTitle>Holy, Holy, Holy</eTitle>
+	</song>
+	<song>
+		<id>662</id>
+		<eTitle>Let All Mortals Flesh Keep Silence</eTitle>
+	</song>
+	<song>
+		<id>663</id>
+		<eTitle>Amens</eTitle>
+	</song>
+	<song>
+		<id>664</id>
+		<eTitle>Sevenfold Amen</eTitle>
+	</song>
+	<song>
+		<id>665</id>
+		<eTitle>All Things Come of Thee</eTitle>
+	</song>
+	<song>
+		<id>666</id>
+		<eTitle>Cast Thy Burden Upon the Lord</eTitle>
+	</song>
+	<song>
+		<id>667</id>
+		<eTitle>Lord, Bless Thy Word to Every Heart</eTitle>
+	</song>
+	<song>
+		<id>668</id>
+		<eTitle>O Thou Who Hearest</eTitle>
+	</song>
+	<song>
+		<id>669</id>
+		<eTitle>The Lord Bless You and Keep You</eTitle>
+	</song>
+	<song>
+		<id>670</id>
+		<eTitle>We Give Thee But Thine Own</eTitle>
+	</song>
+	<song>
+		<id>671</id>
+		<eTitle>As We Come to You in Prayer</eTitle>
+	</song>
+	<song>
+		<id>672</id>
+		<eTitle>Spirit of the Living God</eTitle>
+	</song>
+	<song>
+		<id>673</id>
+		<eTitle>May God Be With You</eTitle>
+	</song>
+	<song>
+		<id>674</id>
+		<eTitle>Shalom</eTitle>
+	</song>
+	<song>
+		<id>675</id>
+		<eTitle>May the Lord Bless and Keep You</eTitle>
+	</song>
+	<song>
+		<id>676</id>
+		<eTitle>Thy Word Is a Lantern</eTitle>
+	</song>
+	<song>
+		<id>677</id>
+		<eTitle>Heavenly Father, to Thee We Pray</eTitle>
+	</song>
+	<song>
+		<id>678</id>
+		<eTitle>God Be in My Head</eTitle>
+	</song>
+	<song>
+		<id>679</id>
+		<eTitle>God Be in My Head</eTitle>
+	</song>
+	<song>
+		<id>680</id>
+		<eTitle>Holy Spirit, Hear Us</eTitle>
+	</song>
+	<song>
+		<id>681</id>
+		<eTitle>This Is the Day the Lord Hath Made</eTitle>
+	</song>
+	<song>
+		<id>682</id>
+		<eTitle>As You Have Promised, Lord</eTitle>
+	</song>
+	<song>
+		<id>683</id>
+		<eTitle>Jesus, Stand Among Us</eTitle>
+	</song>
+	<song>
+		<id>684</id>
+		<eTitle>Hear Our Prayer, O Lord</eTitle>
+	</song>
+	<song>
+		<id>685</id>
+		<eTitle>Cause Me to Hear</eTitle>
+	</song>
+	<song>
+		<id>686</id>
+		<eTitle>Bless Thou the Gifts</eTitle>
+	</song>
+	<song>
+		<id>687</id>
+		<eTitle>The Lord Is in His Holy Temple</eTitle>
+	</song>
+	<song>
+		<id>688</id>
+		<eTitle>Surely, Surely</eTitle>
+	</song>
+	<song>
+		<id>689</id>
+		<eTitle>Day by Day, Dear Lord</eTitle>
+	</song>
+	<song>
+		<id>690</id>
+		<eTitle>Dismiss Us, Lord, With Blessing</eTitle>
+	</song>
+	<song>
+		<id>691</id>
+		<eTitle>Lead Me, Lord</eTitle>
+	</song>
+	<song>
+		<id>692</id>
+		<eTitle>The Lord Is in His Holy Temple</eTitle>
+	</song>
+	<song>
+		<id>693</id>
+		<eTitle>Almighty Father</eTitle>
+	</song>
+	<song>
+		<id>694</id>
+		<eTitle>Praise God, From Whom All Blessings</eTitle>
+	</song>
+	<song>
+		<id>695</id>
+		<eTitle>Praise God, Form Whom All Blessings</eTitle>
+	</song>
+<songs>
+	<song>
+		<id>696</id>
+		<eTitle>I WILL EXTOL THE LORD -- Psalm 34, NIV</eTitle>
+	</song>
+	<song>
+		<id>697</id>
+		<eTitle>SHOUT WITH JOY TO GOD, ALL THE EARTH! -- Psalm 66, NIV</eTitle>
+	</song>
+	<song>
+		<id>698</id>
+		<eTitle>HOW LOVELY IS THY DWELLING PLACE  -- Psalm 84, RSV</eTitle>
+	</song>
+	<song>
+		<id>699</id>
+		<eTitle>O COME, LET US SING UNTO THE LORD -- Psalm 95, KJV</eTitle>
+	</song>
+	<song>
+		<id>700</id>
+		<eTitle>OH, SING TO THE LORD A NEW SONG -- Psalm 96, KJV</eTitle>
+	</song>
+	<song>
+		<id>701</id>
+		<eTitle>SHOUT JOYFULLY TO THE LORD -- Psalm 1OO, NASB</eTitle>
+	</song>
+	<song>
+		<id>702</id>
+		<eTitle>GIVE THANKS TO THE LORD -- Psalm 105, NASB</eTitle>
+	</song>
+	<song>
+		<id>703</id>
+		<eTitle>PRAISE THE LORD, YOU THAT ARE HIS SERVANTS -- Psalms 113 and 114, NEB</eTitle>
+	</song>
+	<song>
+		<id>704</id>
+		<eTitle>IF I LIFT UP MY EYES TO THE HILLS -- Psalm 121, NEB</eTitle>
+	</song>
+	<song>
+		<id>705</id>
+		<eTitle>I WILL EXALT YOU, MY GOD THE KING -- Psalm 145, NIV</eTitle>
+	</song>
+	<song>
+		<id>706</id>
+		<eTitle>LET HEAVEN PRAISE THE LORD -- Psalm 148, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>707</id>
+		<eTitle>O PRAISE GOD IN HIS HOLY PLACE -- Psalm 150, NEB</eTitle>
+	</song>
+	<song>
+		<id>708</id>
+		<eTitle>PRAISE AT GOD'S THRONE -- Revelation 4, 15, 9, and 7 NJV</eTitle>
+	</song>
+	<song>
+		<id>709</id>
+		<eTitle>TRINITY -- Ephesians 1, 2, and 4, RSV.</eTitle>
+	</song>
+	<song>
+		<id>710</id>
+		<eTitle>BOW DOWN YOUR EAR, O LORD, HEAR ME -- Psalm 86, NKJV</eTitle>
+	</song>
+	<song>
+		<id>711</id>
+		<eTitle>PRAISE THE LORD, O MY SOUL -- Psalm 103, NIV</eTitle>
+	</song>
+	<song>
+		<id>712</id>
+		<eTitle>HIS LOVE ENDURES -- Psalm 136, NEB</eTitle>
+	</song>
+	<song>
+		<id>713</id>
+		<eTitle>LOVE OF GOD -- 1 John 4 and John 3, NKJV</eTitle>
+	</song>
+	<song>
+		<id>714</id>
+		<eTitle>O LORD, HOW MAJESTIC IS YOUR NAME -- Psalm 8, NJV</eTitle>
+	</song>
+	<song>
+		<id>715</id>
+		<eTitle>I WILL EXTOL THE LORD WITH ALL MY HEART -- Psalm 111, NlV</eTitle>
+	</song>
+	<song>
+		<id>716</id>
+		<eTitle>THE LIBERATING CREATOR -- Isaiah -12. NEB</eTitle>
+	</song>
+	<song>
+		<id>717</id>
+		<eTitle>THE HEAVENS DECLARE THE GLORY OF GOD -- Psalm 19, NJV</eTitle>
+	</song>
+	<song>
+		<id>718</id>
+		<eTitle>REJOICE IN THE LORD -- Psalm 33, NKJV</eTitle>
+	</song>
+	<song>
+		<id>719</id>
+		<eTitle>OUR LORD THE CREATOR -- Isaiah 42 and 45, NIV</eTitle>
+	</song>
+	<song>
+		<id>720</id>
+		<eTitle>GOD IS OUR REFUGE AND STRENGTH -- Psalm 46, NKJV</eTitle>
+	</song>
+	<song>
+		<id>721</id>
+		<eTitle>LORD, YOU HAVE BEEN OUR REFUGE -- Psalm 90, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>722</id>
+		<eTitle>HE THAT DWELLETH IN THE SECRET PLACE -- Psalm 91, KJV</eTitle>
+	</song>
+	<song>
+		<id>723</id>
+		<eTitle>O GIVE THANKS TO THE LORD, FOR HE IS GOOD -- Psalm 107, RSV</eTitle>
+	</song>
+	<song>
+		<id>724</id>
+		<eTitle>O LORD, YOU HAVE SEARCHED ME -- Psalm 139, NKJV</eTitle>
+	</song>
+	<song>
+		<id>725</id>
+		<eTitle>GOD WORKS FOR GOOD -- Romans 8, NJV</eTitle>
+	</song>
+	<song>
+		<id>726</id>
+		<eTitle>THE LORD IS MY SHEPHERD -- Psalm 23, KJV</eTitle>
+	</song>
+	<song>
+		<id>727</id>
+		<eTitle>THE LORD IS MY LIGHT -- Psalm 27, NKJV</eTitle>
+	</song>
+	<song>
+		<id>728</id>
+		<eTitle>LET THE REDEEMED THANK THE LORD -- Psalm 107, RSV</eTitle>
+	</song>
+	<song>
+		<id>729</id>
+		<eTitle>THE SAVIOUR IS COMING -- Isaiah 40, NKJV</eTitle>
+	</song>
+	<song>
+		<id>730</id>
+		<eTitle>THE BIRTH OF CHRIST -- Matthew 1 and Luke 2, NIV</eTitle>
+	</song>
+	<song>
+		<id>731</id>
+		<eTitle>THE VISIT OF THE WISE MEN -- Matthew 2, RSV</eTitle>
+	</song>
+	<song>
+		<id>732</id>
+		<eTitle>JESUS' PRAYER FOR HIS DISCIPLES -- John 17, NIV</eTitle>
+	</song>
+	<song>
+		<id>733</id>
+		<eTitle>CHRIST'S SUFFERINGS AND DEATH  - I -- Isaiah 53, NIV</eTitle>
+	</song>
+	<song>
+		<id>734</id>
+		<eTitle>CHRIST'S SUFFERINGS AND DEATH-II -- Matthew 27, NJV</eTitle>
+	</song>
+	<song>
+		<id>735</id>
+		<eTitle>THE RESURRECTION OF JESUS -- Matthew 28, NJV</eTitle>
+	</song>
+	<song>
+		<id>736</id>
+		<eTitle>THE GLORIFIED CHRIST -- Mark 16,1 Corinthians 15, and Revelation 1, NJV</eTitle>
+	</song>
+	<song>
+		<id>737</id>
+		<eTitle>THE ASCENSION -- Acts 1, NEB</eTitle>
+	</song>
+	<song>
+		<id>738</id>
+		<eTitle>OUR UNDERSTANDING PRIEST -- Hebrews 2, 4, and 6, NIV</eTitle>
+	</song>
+	<song>
+		<id>739</id>
+		<eTitle>CHRIST'S PRIESTHOOD -- Hebrews 8 and 9, RSV</eTitle>
+	</song>
+	<song>
+		<id>740</id>
+		<eTitle>CHRIST THE DELIVERER -- Isaiah 43, NJV</eTitle>
+	</song>
+	<song>
+		<id>741</id>
+		<eTitle>THE SHEPHERD CARES FOR HIS PEOPLE -- Ezekiel 34, NEB</eTitle>
+	</song>
+	<song>
+		<id>742</id>
+		<eTitle>THE LORD WORKS JUSTICE -- Psalm 103, RSV</eTitle>
+	</song>
+	<song>
+		<id>743</id>
+		<eTitle>SEEKING THE LOST -- Luke 15, NASB</eTitle>
+	</song>
+	<song>
+		<id>744</id>
+		<eTitle>THE GOOD SHEPHERD -- John 10, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>745</id>
+		<eTitle>THE CHRISTIAN'S ASSURANCE -- 1 John 5, Colossians 1, Galatians 4, and Romans 8, NJV</eTitle>
+	</song>
+	<song>
+		<id>746</id>
+		<eTitle>SIGNS OF CHRIST'S COMING -- Matthew 24, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>747</id>
+		<eTitle>CHRIST'S SECOND COMING -- John 14, Acts 1, and Matthew 24 KJV</eTitle>
+	</song>
+	<song>
+		<id>748</id>
+		<eTitle>REWARD OF THE SAINTS -- Isaiah 35, NIV</eTitle>
+	</song>
+	<song>
+		<id>749</id>
+		<eTitle>A SONG OF TRIUMPH -- Revelation 7, NIV</eTitle>
+	</song>
+	<song>
+		<id>750</id>
+		<eTitle>REIGNING FOREVER WITH GOD -- Revelation 21 and 22, NKJV</eTitle>
+	</song>
+	<song>
+		<id>751</id>
+		<eTitle>O LORD, THOU ART MY GOD -- Isaiah 25, KJV</eTitle>
+	</song>
+	<song>
+		<id>752</id>
+		<eTitle>THE HOLY SPIRIT -- John 14,15, and 16, RSV</eTitle>
+	</song>
+	<song>
+		<id>753</id>
+		<eTitle>GOD'S WORD -- Psalm 119, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>754</id>
+		<eTitle>THE HOLY SCRIPTURES -- Deuteronomy 29, 2 Peter 1, 2 Timothy 3, John 5, Hebrews 4,and Jeremiah 15, NKJV</eTitle>
+	</song>
+	<song>
+		<id>755</id>
+		<eTitle>THE CALL -- Isaiah 55, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>756</id>
+		<eTitle>HAVE MERCY ON ME, O GOD -- Psalm 51, NJV</eTitle>
+	</song>
+	<song>
+		<id>757</id>
+		<eTitle>RETURNING TO GOD -- Luke 15, NEB</eTitle>
+	</song>
+	<song>
+		<id>758</id>
+		<eTitle>BLESSED IS HE WHOSE TRANSGRESSIONS ARE FORGIVEN -- Psalm 32, NIV</eTitle>
+	</song>
+	<song>
+		<id>759</id>
+		<eTitle>BAPTISM -- John 3,1 Corinthians 12, Romans 6, and Matthew 28, RSV</eTitle>
+	</song>
+	<song>
+		<id>760</id>
+		<eTitle>TIMES OF BEGINNING -- Genesis 1, John 1, Romans 3, 2 Corinthians 5, and Isaiah 65, NIV</eTitle>
+	</song>
+	<song>
+		<id>761</id>
+		<eTitle>RIGHTEOUSNESS BY FAITH -- Romans 3, 8, and 1 Corinthians 1, NIV</eTitle>
+	</song>
+	<song>
+		<id>762</id>
+		<eTitle>JUSTIFICATION -- Romans 4 and 5, NJV</eTitle>
+	</song>
+	<song>
+		<id>763</id>
+		<eTitle>SANCTIFICATION -- 1 Corinthians 6, Hebrews 2, and Titus 3 NJV</eTitle>
+	</song>
+	<song>
+		<id>764</id>
+		<eTitle>RECONCILIATION -- 2 Corinthians 5, TEV</eTitle>
+	</song>
+	<song>
+		<id>765</id>
+		<eTitle>CONVERSION -- Ephesians 2, NEB</eTitle>
+	</song>
+	<song>
+		<id>766</id>
+		<eTitle>THE GREAT CONTROVERSY -- Revelation 12 and 11, RSV</eTitle>
+	</song>
+	<song>
+		<id>767</id>
+		<eTitle>THE BODY OF CHRIST -- Romans 12 and 1 Corinthians 12, NIV</eTitle>
+	</song>
+	<song>
+		<id>768</id>
+		<eTitle>MISSION OF THE CHURCH -- 1 Peter 2, Titus 2, and Matthew 28, NKJV</eTitle>
+	</song>
+	<song>
+		<id>769</id>
+		<eTitle>THE SABBATH-I -- Genesis 2, Colossians 1, Nehemiah 9, Exodus 20, and Mark 2, NKJV</eTitle>
+	</song>
+	<song>
+		<id>770</id>
+		<eTitle>THE SABBATH-2 -- Ezekiel 20, Exodus 31, Isaiah 66, 58, Luke 4, and Matthew 12, NJV</eTitle>
+	</song>
+	<song>
+		<id>771</id>
+		<eTitle>LIVING BREAD -- John 6, NEB</eTitle>
+	</song>
+	<song>
+		<id>772</id>
+		<eTitle>MEMORIAL OF HUMILITY -- John 13, NIV</eTitle>
+	</song>
+	<song>
+		<id>773</id>
+		<eTitle>THE LORD'S SUPPER -- 1 Corinthians 11, NKJV</eTitle>
+	</song>
+	<song>
+		<id>774</id>
+		<eTitle>THE LAW OF THE LORD IS PERFECT -- Psalm 19, NKJV</eTitle>
+	</song>
+	<song>
+		<id>775</id>
+		<eTitle>THE TEN COMMANDMENTS -- Exodus 20, KJV</eTitle>
+	</song>
+	<song>
+		<id>776</id>
+		<eTitle>GIFTS OF THE SPIRIT -- 1 Corinthians 12, NIV</eTitle>
+	</song>
+	<song>
+		<id>777</id>
+		<eTitle>CHRISTIAN UNITY -- Ephesians 4, NIV</eTitle>
+	</song>
+	<song>
+		<id>778</id>
+		<eTitle>OUR ATONING JUDGE -- Romans 14 and 1 John 2, NIV</eTitle>
+	</song>
+	<song>
+		<id>779</id>
+		<eTitle>DAY OF JUDGMENT -- Daniel 7 and Revelation 20 through 22, Jerusalem.</eTitle>
+	</song>
+	<song>
+		<id>780</id>
+		<eTitle>THE THREE ANGELS' MESSAGES -- Revelation 14, KJV</eTitle>
+	</song>
+	<song>
+		<id>781</id>
+		<eTitle>THE RESURRECTION OF GOD'S PEOPLE -- Romans 14, 1 Corinthians 15, and 1 Thessalonians 4, RSV</eTitle>
+	</song>
+	<song>
+		<id>782</id>
+		<eTitle>ASSURANCE OF ETERNAL LIFE -- John 3, 10, and 1 John 5, Jerusalem.</eTitle>
+	</song>
+	<song>
+		<id>783</id>
+		<eTitle>A NEW HEAVEN AND A NEW EARTH -- Revelation 21, NKJV</eTitle>
+	</song>
+	<song>
+		<id>784</id>
+		<eTitle>BLESSED IS THE MAN -- Psalm 1, RSV.</eTitle>
+	</song>
+	<song>
+		<id>785</id>
+		<eTitle>THE EARTH IS THE LORD'S -- Psalm 24, RSV</eTitle>
+	</song>
+	<song>
+		<id>786</id>
+		<eTitle>THE EARTH IS THE LORD'S -- Psalm 24, RSV</eTitle>
+	</song>
+	<song>
+		<id>787</id>
+		<eTitle>CHRISTIANITY IN PRACTICE -- Romans 12, RSV</eTitle>
+	</song>
+	<song>
+		<id>788</id>
+		<eTitle>LOVE -- 1 Corinthians 13, NKJV</eTitle>
+	</song>
+	<song>
+		<id>789</id>
+		<eTitle>GROWING IN CHRIST (SANCTIFICATION) -- Colossians 3, Jerusalem.</eTitle>
+	</song>
+	<song>
+		<id>790</id>
+		<eTitle>THE CHILDREN OF GOD -- 1 John 3, RSV</eTitle>
+	</song>
+	<song>
+		<id>791</id>
+		<eTitle>SET YOUR MIND ON GOD'S KINGDOM -- Matthew 6, NEB</eTitle>
+	</song>
+	<song>
+		<id>792</id>
+		<eTitle>THE PATH OF LIFE -- Psalm 16, NKJV</eTitle>
+	</song>
+	<song>
+		<id>793</id>
+		<eTitle>HAPPY ARE ALL WHO FEAR THE LORD -- Psalm 128, NEB</eTitle>
+	</song>
+	<song>
+		<id>794</id>
+		<eTitle>WISDOM -- Proverbs 3, Jerusalem.</eTitle>
+	</song>
+	<song>
+		<id>795</id>
+		<eTitle>THE CHRISTIAN LIFE -- Matthew 5, NJV</eTitle>
+	</song>
+	<song>
+		<id>796</id>
+		<eTitle>HOPE AND COMFORT -- Isaiah 41, Psalm 33, and Romans 5, 15, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>797</id>
+		<eTitle>MEDITATION -- Joshua 1 and Psalms 119, 19, RSV.</eTitle>
+	</song>
+	<song>
+		<id>798</id>
+		<eTitle>PRAYER -- Matthew 6 and 7, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>799</id>
+		<eTitle>DO NOT WORRY -- Psalm 37, Jerusalem.</eTitle>
+	</song>
+	<song>
+		<id>800</id>
+		<eTitle>UNION WITH CHRIST -- John 15, NASB</eTitle>
+	</song>
+	<song>
+		<id>801</id>
+		<eTitle>I WAITED PATIENTLY FOR THE LORD -- Psalm 40, NIV</eTitle>
+	</song>
+	<song>
+		<id>802</id>
+		<eTitle>GUIDANCE -- Psalms 119, 25, Isaiah 30, Psalm 32, and John 16, RSV</eTitle>
+	</song>
+	<song>
+		<id>803</id>
+		<eTitle>PRAISE IS RIGHTFULLY YOURS -- Psalm 65, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>804</id>
+		<eTitle>A PRAYER OF CONFESSION -- Daniel 9, TEV</eTitle>
+	</song>
+	<song>
+		<id>805</id>
+		<eTitle>HUMILITY -- Philippians 2, NJV</eTitle>
+	</song>
+	<song>
+		<id>806</id>
+		<eTitle>ARISE, SHINE -- Isaiah 60, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>807</id>
+		<eTitle>THE LORD'S WORK -- Isaiah 61, NIV</eTitle>
+	</song>
+	<song>
+		<id>808</id>
+		<eTitle>DOING GOOD TO ALL -- Galatians 6, NIV</eTitle>
+	</song>
+	<song>
+		<id>809</id>
+		<eTitle>CHRISTIAN DUTIES -- 1 Thessalonians 5, NIV</eTitle>
+	</song>
+	<song>
+		<id>810</id>
+		<eTitle>WORK AND DUTY -- Titus 3, 1 Timothy 6, 2 Corinthians 5, and Ecclesiastes 12, RSV</eTitle>
+	</song>
+	<song>
+		<id>811</id>
+		<eTitle>PEACE -- Psalm 133, 1 Corinthians 1, Romans 14, James 3, and 2 Corinthians 13, TEV</eTitle>
+	</song>
+	<song>
+		<id>812</id>
+		<eTitle>CHRISTIAN RELATIONSHIPS -- Colossians 3 , Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>813</id>
+		<eTitle>LORD, WHO MAY DWELL IN YOUR SANCTUARY? -- Psalm 15, NJV</eTitle>
+	</song>
+	<song>
+		<id>814</id>
+		<eTitle>THE REQUIREMENTS OF GOD -- Micah 6 and 7, and Hosea 14, NIV</eTitle>
+	</song>
+	<song>
+		<id>815</id>
+		<eTitle>WATCHFULNESS -- Deuteronomy 4, Colossians 2, 1 Peter 5,2 Thessalonians 2, and Mark 13, NJV</eTitle>
+	</song>
+	<song>
+		<id>816</id>
+		<eTitle>PREPARATION FOR CHRIST'S COMING -- 1 Thessalonians 5, NIV</eTitle>
+	</song>
+	<song>
+		<id>817</id>
+		<eTitle>CHRISTIAN WARFARE -- Ephesians 6, TEV</eTitle>
+	</song>
+	<song>
+		<id>818</id>
+		<eTitle>WHEN THE LORD BROUGHT BACK THE CAPTIVES -- Psalm 126, NIV</eTitle>
+	</song>
+	<song>
+		<id>819</id>
+		<eTitle>I CRY ALOUD TO THE LORD -- Psalm 142, NIV</eTitle>
+	</song>
+	<song>
+		<id>820</id>
+		<eTitle>TITHES AND OFFERINGS -- Leviticus 27 and Malachi 3, NKJV</eTitle>
+	</song>
+	<song>
+		<id>821</id>
+		<eTitle>GENEROSITY -- 2 Corinthians 8 and 9, NIV</eTitle>
+	</song>
+	<song>
+		<id>822</id>
+		<eTitle>OUR DAILY WORK -- Genesis 2, 3, Exodus 20, Ecclesiastes 5, 9, 2 Thessalonians 3, 1 Timothy 5, and Romans 12, NIV</eTitle>
+	</song>
+	<song>
+		<id>823</id>
+		<eTitle>TEMPERANCE -- Titus 2, Proverbs 20, 23, and1 Corinthians 9, RSV</eTitle>
+	</song>
+	<song>
+		<id>824</id>
+		<eTitle>HEALTHFUL LIVING -- 3 John, 1 Corinthians 6, 10, and Philippians 4, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>825</id>
+		<eTitle>OUR CIVIC DUTIES -- Romans 13, NIV</eTitle>
+	</song>
+	<song>
+		<id>826</id>
+		<eTitle>FAMILY LIFE -- Deuteronomy 6 and Ephesians 6, NIV</eTitle>
+	</song>
+	<song>
+		<id>827</id>
+		<eTitle>THE CHRISTIAN HOME -- Ephesians 4 and 5, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>828</id>
+		<eTitle>YOUTH -- Ecclesiastes 12, Proverbs 20, Psalm 119, Proverbs 3, and Psalm 103, NIV</eTitle>
+	</song>
+	<song>
+		<id>829</id>
+		<eTitle>A NOBLE WIFE -- Proverbs 31, NKJV</eTitle>
+	</song>
+	<song>
+		<id>830</id>
+		<eTitle>MARRIAGE -- Genesis 2, Matthew 19, and Ephesians 5, NEB</eTitle>
+	</song>
+	<song>
+		<id>831</id>
+		<eTitle>THE SONG OF MOSES AND OF ISRAEL -- Exodus 15, NKJV</eTitle>
+	</song>
+	<song>
+		<id>832</id>
+		<eTitle>OUT OF THE DEPTHS -- Psalm 130, NKJV (De Profundis)</eTitle>
+	</song>
+	<song>
+		<id>833</id>
+		<eTitle>HOLY, HOLY, HOLY -- Isaiah 6 (the Sanctus) and Mark 11, NKJV</eTitle>
+	</song>
+	<song>
+		<id>834</id>
+		<eTitle>THE LORD'S PRAYER -- Matthew 6, KJV</eTitle>
+	</song>
+	<song>
+		<id>835</id>
+		<eTitle>THE SONG OF MARY * -- Luke 1, NKJV</eTitle>
+	</song>
+	<song>
+		<id>836</id>
+		<eTitle>ZACHARIAS' PROPHECY * -- Luke 1, NKJV</eTitle>
+	</song>
+	<song>
+		<id>837</id>
+		<eTitle>SIMEON'S PRAYER * -- Luke 2, Jerusalem</eTitle>
+	</song>
+	<song>
+		<id>838</id>
+		<eTitle>PAUL'S DOXOLOGY -- Romans 11, NIV</eTitle>
+	</song>
+	<song>
+		<id>839</id>
+		<eTitle>SPIRITUAL WISDOM -- 1 Corinthians 2, NKJV</eTitle>
+	</song>
+	<song>
+		<id>840</id>
+		<eTitle>THINGS SEEN AND UNSEEN -- 2 Corinthians 4, NKJV</eTitle>
+	</song>
+	<song>
+		<id>841</id>
+		<eTitle>THE PLAN OF SALVATION -- Ephesians 1, Jerusalem.</eTitle>
+	</song>
+	<song>
+		<id>842</id>
+		<eTitle>ON THE INCARNATION* -- PhiliPpians 2, NKJV</eTitle>
+	</song>
+	<song>
+		<id>843</id>
+		<eTitle>IN PRAISE OF CHRIST -- Colossians 1, RSV</eTitle>
+	</song>
+	<song>
+		<id>844</id>
+		<eTitle>THE INCARNATE WORD -- 1 John 1, Jerusalem</eTitle>
+	</song>
+</songs>

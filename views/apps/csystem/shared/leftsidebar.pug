@@ -5,7 +5,7 @@ aside.main-sidebar
     // Sidebar user panel
     .user-panel
       .pull-left.image
-        img.img-circle(src=user.profile.picture || 'images/4e14f517d239010c439617922dc13543.png', alt='User Image')
+        img.img-circle(src=rooturl+user.profile.picture || rooturl+'images/4e14f517d239010c439617922dc13543.png', alt='User Image')
       |         
       .pull-left.info
         p= user.name || user.profile.name || user.email || user.id
@@ -35,9 +35,10 @@ aside.main-sidebar
               if(element.displayname !== false) 
                 li
                   if(element.url != '#')
-                    a.sidea(href=rooturl+element.url  content= element.name type="app" id=element.name+"app")
+                    a.sidease(href=rooturl+element.url)
+                    a.sidea(href=rooturl+'#!'+element.url type="app" id=element.name+"app")
                       i.fa.fa-circle-o
-                      |  #{element.name}
+                      |  #{element.displayname}
                       |
                     |
                   else 
@@ -48,30 +49,61 @@ aside.main-sidebar
                     |
               |
       |
-      ul.sidebar-menu
-      |
-      li.treeview
-        a(href='#')
-          i(class= sidemenuitems.dashboards.class+ " dashboardsicon")
-          |  
-          span Dashboards
-          |             
-          span.pull-right-container
-            i.fa.fa-angle-left.pull-right
-          ul.treeview-menu.dashboardscontainer
-            each element in sidemenuitems.dashboards.dashboards    
-              li
-                if(element.url != '#')
-                  a.sidea(href=rooturl+element.url content= element.name type="dash")
-                    i.fa.fa-circle-o
-                    |  #{element.name}
+      if(elements.dashboards.class)
+        ul.sidebar-menu
+        |
+        li.treeview
+          a(href='#')
+            i(class= elements.dashboards.class+ " dashboardsicon")
+            |  
+            span Dashboards
+            |             
+            span.pull-right-container
+              i.fa.fa-angle-left.pull-right
+            ul.treeview-menu.dashboardscontainer
+              each element in elements.dashboards.dashboards    
+                li
+                  if(element.url != '#')
+                    a.sidea(href=rooturl+element.url content= element.name type="dash")
+                      i.fa.fa-circle-o
+                      |  #{element.name}
+                      |
                     |
-                  |
-                else 
-                  a.sidea(href='#' content= element.name type="dash")
-                    i.fa.fa-circle-o
-                    |  #{element.name}
+                  else 
+                    a.sidea(href='#' content= element.name type="dash")
+                      i.fa.fa-circle-o
+                      |  #{element.name}
+                      |
                     |
-                  |
-              |
+                |
       |
+      if(elements.others)
+        each element in elements.others
+            |
+            li.treeview
+              a(href=element.url)
+                i(class= element.class+ " dashboardsicon")
+                |  
+                span #{element.name}
+                | 
+                if(element.children)            
+                  span.pull-right-container
+                    i.fa.fa-angle-left.pull-right
+                  ul.treeview-menu.dashboardscontainer
+                    each elem in element.children   
+                      li
+                        if(elem.url != '#')
+                          a.sidea(href=rooturl+elem.url content= elem.name type="dash")
+                            i.fa.fa-circle-o
+                            |  #{elem.name}
+                            |
+                          |
+                        else 
+                          a.sidea(href='#' content= elem.name type="dash")
+                            i.fa.fa-circle-o
+                            |  #{elem.name}
+                            |
+                          |
+                    |
+
+      

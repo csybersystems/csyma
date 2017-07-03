@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<songs>
+	<song>
+		<id>501</id>
+		<eTitle>'Tis the Blessed Hour of Prayer</eTitle>
+	</song>
+	<song>
+		<id>502</id>
+		<eTitle>Sun of My Soul</eTitle>
+	</song>
+	<song>
+		<id>503</id>
+		<eTitle>A Quiet Place</eTitle>
+	</song>
+	<song>
+		<id>504</id>
+		<eTitle>Lord Jesus, Think on Me</eTitle>
+	</song>
+	<song>
+		<id>505</id>
+		<eTitle>I Need the Prayers</eTitle>
+	</song>
+	<song>
+		<id>506</id>
+		<eTitle>A Mighty Fortress</eTitle>
+	</song>
+	<song>
+		<id>507</id>
+		<eTitle>Moment by Moment</eTitle>
+	</song>
+	<song>
+		<id>508</id>
+		<eTitle>Anywhere With Jesus</eTitle>
+	</song>
+	<song>
+		<id>509</id>
+		<eTitle>How Firm a Foundation</eTitle>
+	</song>
+	<song>
+		<id>510</id>
+		<eTitle>If You But Trust in God to Guide You</eTitle>
+	</song>
+	<song>
+		<id>511</id>
+		<eTitle>I Know Whom I Have Believed</eTitle>
+	</song>
+	<song>
+		<id>512</id>
+		<eTitle>Just When I Need Him Most</eTitle>
+	</song>
+	<song>
+		<id>513</id>
+		<eTitle>In Heavenly Love Abiding</eTitle>
+	</song>
+	<song>
+		<id>514</id>
+		<eTitle>Lord of Our Life</eTitle>
+	</song>
+	<song>
+		<id>515</id>
+		<eTitle>The Lord Is My Light</eTitle>
+	</song>
+	<song>
+		<id>516</id>
+		<eTitle>All the Way</eTitle>
+	</song>
+	<song>
+		<id>517</id>
+		<eTitle>My Faith Looks Up to Thee</eTitle>
+	</song>
+	<song>
+		<id>518</id>
+		<eTitle>Standing on the Promises</eTitle>
+	</song>
+	<song>
+		<id>519</id>
+		<eTitle>Give to the Winds Your Fears</eTitle>
+	</song>
+	<song>
+		<id>520</id>
+		<eTitle>He Hideth My Soul</eTitle>
+	</song>
+	<song>
+		<id>521</id>
+		<eTitle>Depth of Mercy</eTitle>
+	</song>
+	<song>
+		<id>522</id>
+		<eTitle>My Hope Is Built on Nothing Less</eTitle>
+	</song>
+	<song>
+		<id>523</id>
+		<eTitle>My Faith Has Found a Resting Place</eTitle>
+	</song>
+	<song>
+		<id>524</id>
+		<eTitle>'Tis So Sweet to Trust in Jesus</eTitle>
+	</song>
+	<song>
+		<id>525</id>
+		<eTitle>Hiding in Thee</eTitle>
+	</song>
+	<song>
+		<id>526</id>
+		<eTitle>Because He Lives</eTitle>
+	</song>
+	<song>
+		<id>527</id>
+		<eTitle>From Every Stormy Wind</eTitle>
+	</song>
+	<song>
+		<id>528</id>
+		<eTitle>A Shelter in the Time of Storm</eTitle>
+	</song>
+	<song>
+		<id>529</id>
+		<eTitle>Under His Wings</eTitle>
+	</song>
+	<song>
+		<id>530</id>
+		<eTitle>It Is Well With My Soul</eTitle>
+	</song>
+	<song>
+		<id>531</id>
+		<eTitle>We'll Build on the Rock</eTitle>
+	</song>
+	<song>
+		<id>532</id>
+		<eTitle>Day by Day</eTitle>
+	</song>
+	<song>
+		<id>533</id>
+		<eTitle>O for a Faith</eTitle>
+	</song>
+	<song>
+		<id>534</id>
+		<eTitle>Will Your Anchor Hold?</eTitle>
+	</song>
+	<song>
+		<id>535</id>
+		<eTitle>I Am Trusting Thee, Lord Jesus</eTitle>
+	</song>
+	<song>
+		<id>536</id>
+		<eTitle>God, Who Stretched the Spangled Heavens</eTitle>
+	</song>
+	<song>
+		<id>537</id>
+		<eTitle>He Leadeth Me</eTitle>
+	</song>
+	<song>
+		<id>538</id>
+		<eTitle>Guide Me, O Thou Great Jehovah</eTitle>
+	</song>
+	<song>
+		<id>539</id>
+		<eTitle>I Will Early Seek the Savior</eTitle>
+	</song>
+	<song>
+		<id>540</id>
+		<eTitle>Gentle Jesus, Meek and Mild</eTitle>
+	</song>
+	<song>
+		<id>541</id>
+		<eTitle>Lord, Speak to Me</eTitle>
+	</song>
+	<song>
+		<id>542</id>
+		<eTitle>Jesus, Friend So Kind</eTitle>
+	</song>
+	<song>
+		<id>543</id>
+		<eTitle>Jesus, Friend of Little Children</eTitle>
+	</song>
+	<song>
+		<id>544</id>
+		<eTitle>Jesus, Son of Blessed Mary</eTitle>
+	</song>
+	<song>
+		<id>545</id>
+		<eTitle>Savior, Like a Shepherd</eTitle>
+	</song>
+	<song>
+		<id>546</id>
+		<eTitle>The Lord's My Shepherd</eTitle>
+	</song>
+	<song>
+		<id>547</id>
+		<eTitle>Be Thou My Vision</eTitle>
+	</song>
+	<song>
+		<id>548</id>
+		<eTitle>Now Praise the Hidden God of Love</eTitle>
+	</song>
+	<song>
+		<id>549</id>
+		<eTitle>Loving Shepherd of Thy Sheep</eTitle>
+	</song>
+	<song>
+		<id>550</id>
+		<eTitle>Every Flower That Grows</eTitle>
+	</song>
+	<song>
+		<id>551</id>
+		<eTitle>Jesus, Savior, Pilot Me</eTitle>
+	</song>
+	<song>
+		<id>552</id>
+		<eTitle>The Lord's My Shepherd</eTitle>
+	</song>
+	<song>
+		<id>553</id>
+		<eTitle>Jesus, Guide Our Way</eTitle>
+	</song>
+	<song>
+		<id>554</id>
+		<eTitle>O Let Me Walk With Thee</eTitle>
+	</song>
+	<song>
+		<id>555</id>
+		<eTitle>Shepherd of Tender Youth</eTitle>
+	</song>
+	<song>
+		<id>556</id>
+		<eTitle>As Saints of Old</eTitle>
+	</song>
+	<song>
+		<id>557</id>
+		<eTitle>Come, Ye Thankful People</eTitle>
+	</song>
+	<song>
+		<id>558</id>
+		<eTitle>For the Fruits of His Creation</eTitle>
+	</song>
+	<song>
+		<id>559</id>
+		<eTitle>Now Thank We All Our God</eTitle>
+	</song>
+	<song>
+		<id>560</id>
+		<eTitle>Let All Things Now Living</eTitle>
+	</song>
+	<song>
+		<id>561</id>
+		<eTitle>We Plow the Fields</eTitle>
+	</song>
+	<song>
+		<id>562</id>
+		<eTitle>Come, Sing a&nbsp; Song of Harvest</eTitle>
+	</song>
+	<song>
+		<id>563</id>
+		<eTitle>Praise and Thanksgiving</eTitle>
+	</song>
+	<song>
+		<id>564</id>
+		<eTitle>For Sunrise Hope and Sunset Calm</eTitle>
+	</song>
+	<song>
+		<id>565</id>
+		<eTitle>For the Beauty of the Earth</eTitle>
+	</song>
+	<song>
+		<id>566</id>
+		<eTitle>Father, We Thank You</eTitle>
+	</song>
+	<song>
+		<id>567</id>
+		<eTitle>Have Thine Own Way, Lord</eTitle>
+	</song>
+	<song>
+		<id>568</id>
+		<eTitle>Make Me a Captive, Lord</eTitle>
+	</song>
+	<song>
+		<id>569</id>
+		<eTitle>Pass Me Not, O Gentle Savior</eTitle>
+	</song>
+	<song>
+		<id>570</id>
+		<eTitle>Not I, but Christ</eTitle>
+	</song>
+	<song>
+		<id>571</id>
+		<eTitle>What Does the Lord Require?</eTitle>
+	</song>
+	<song>
+		<id>572</id>
+		<eTitle>Give of Your Best to the Master</eTitle>
+	</song>
+	<song>
+		<id>573</id>
+		<eTitle>I'll Go Where You Want Me to Go</eTitle>
+	</song>
+	<song>
+		<id>574</id>
+		<eTitle>O Master, Let Me Walk With Thee</eTitle>
+	</song>
+	<song>
+		<id>575</id>
+		<eTitle>Let Your Heart Be Broken</eTitle>
+	</song>
+	<song>
+		<id>576</id>
+		<eTitle>Awake, Awake to Love and Work</eTitle>
+	</song>
+	<song>
+		<id>577</id>
+		<eTitle>In the Heart of Jesus</eTitle>
+	</song>
+	<song>
+		<id>578</id>
+		<eTitle>So Send I You</eTitle>
+	</song>
+	<song>
+		<id>579</id>
+		<eTitle>'Tis Love That Makes Us Happy</eTitle>
+	</song>
+	<song>
+		<id>580</id>
+		<eTitle>This Little Light of Mine</eTitle>
+	</song>
+	<song>
+		<id>581</id>
+		<eTitle>When the Church of Jesus</eTitle>
+	</song>
+	<song>
+		<id>582</id>
+		<eTitle>Working, O Christ, With Thee</eTitle>
+	</song>
+	<song>
+		<id>583</id>
+		<eTitle>You That Know the Lord</eTitle>
+	</song>
+	<song>
+		<id>584</id>
+		<eTitle>There's a Spirit in the Air</eTitle>
+	</song>
+	<song>
+		<id>585</id>
+		<eTitle>When Christ Was Lifted From the Earth</eTitle>
+	</song>
+	<song>
+		<id>586</id>
+		<eTitle>What Joy It Is to Worship Here</eTitle>
+	</song>
+	<song>
+		<id>587</id>
+		<eTitle>In Christ There Is No East nor West</eTitle>
+	</song>
+	<song>
+		<id>588</id>
+		<eTitle>Lord of All Nations</eTitle>
+	</song>
+	<song>
+		<id>589</id>
+		<eTitle>Holy Spirit, Gracious Guest</eTitle>
+	</song>
+	<song>
+		<id>590</id>
+		<eTitle>Trust and Obey</eTitle>
+	</song>
+	<song>
+		<id>591</id>
+		<eTitle>In Our Work and in Our Play</eTitle>
+	</song>
+	<song>
+		<id>592</id>
+		<eTitle>Watchman, Tell Us of the Night</eTitle>
+	</song>
+	<song>
+		<id>593</id>
+		<eTitle>In Times Like These</eTitle>
+	</song>
+	<song>
+		<id>594</id>
+		<eTitle>Heir of the Kingdom</eTitle>
+	</song>
+	<song>
+		<id>595</id>
+		<eTitle>Let Every Lamp Be Burning</eTitle>
+	</song>
+	<song>
+		<id>596</id>
+		<eTitle>Look for the Waymarks</eTitle>
+	</song>
+	<song>
+		<id>597</id>
+		<eTitle>Ye Servants of the Lord</eTitle>
+	</song>
+	<song>
+		<id>598</id>
+		<eTitle>Watch, Ye Saints</eTitle>
+	</song>
+	<song>
+		<id>599</id>
+		<eTitle>Rejoice, Rejoice, Believers</eTitle>
+	</song>
+	<song>
+		<id>600</id>
+		<eTitle>Hold Fast Till I Come</eTitle>
+	</song>
+</songs>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<song>
+	<id>123</id>
+	<title>Yesu Kwa Imani</title>
+	<englishTitle>My Faith Looks Up To Thee</englishTitle>
+	<verses>
+		<verse>
+			Yesu kwa imani, nakutumaini, pke yako;
+			Nisikie sasa, na kunitakasa, ni wako kabisa
+			Tangu leo.
+		</verse>
+		<verse>
+			Nipe nguvu pia za kusaidia moyo wangu;
+			Ulikufa wewe, wokovu nipewe, nakupenda wewe,
+			Bwana wangu.
+		</verse>
+		<verse>
+			Hapa nazunguka katika mashaka, na matata;
+			Palip na giza utaniongoza, hivi nitaweza
+			Kufuata.
+		</verse>
+	</verses>
+</song>

@@ -13,7 +13,9 @@ router.get('/', function (req, res) {
 	let defaultpage;
 	if (!req.isAuthenticated())defaultpage = Config.get("/defaulpageloggedout");
 	 else defaultpage = Config.get("/defaulpageloggedin");
-  	csystem.showPage(false, "title",500, defaultpage, req, res, function(err, results){
+	let elements = Config.get("/elements")
+	//elements.defaultapp = Config.get("/defaultapp") || false;
+  	csystem.showPage(false, "title",500, defaultpage, req, res, elements, function(err, results){
 		return next()
 	})
 		//res.send('Home page..')
