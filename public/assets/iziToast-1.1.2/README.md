@@ -1,13 +1,13 @@
-# [iziToast](http://izitoast.dolce.ninja)
+# [iziToast](https://izitoast.dolce.ninja)
 Elegant, responsive, flexible and lightweight notification plugin with no dependencies.
 
-[**izitoast**.marcelodolce.com](http://izitoast.marcelodolce.com)
+[**izitoast**.marcelodolce.com](https://izitoast.marcelodolce.com)
 
-![capa](http://i.imgur.com/NKk7Rxm.png)
+![capa](https://i.imgur.com/NKk7Rxm.png)
 
-[logo]: http://i.imgur.com/hCYIhep.png "Check icon"
-[new]: http://i.imgur.com/41zuVDk.png "New label"
-[bug]: http://i.imgur.com/92lu4ln.png "Bug label"
+[logo]: https://i.imgur.com/hCYIhep.png "Check icon"
+[new]: https://i.imgur.com/41zuVDk.png "New label"
+[bug]: https://i.imgur.com/92lu4ln.png "Bug label"
 
 Fast | Responsive | Animated | Lightweight | Customizable | No dependencies | Retina
 :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: 
@@ -19,11 +19,11 @@ Fast | Responsive | Animated | Lightweight | Customizable | No dependencies | Re
 
 
 ___
-- ### [Changelog](http://izitoast.marcelodolce.com/#Changelog)
-- ### [Options](http://izitoast.marcelodolce.com/#Options)
-- ### [Methods](http://izitoast.marcelodolce.com/#Methods)
-- ### [Events](http://izitoast.marcelodolce.com/#Events)
-- ### [Use](http://izitoast.marcelodolce.com/#Start)
+- ### [Changelog](https://izitoast.marcelodolce.com/#Changelog)
+- ### [Options](https://izitoast.marcelodolce.com/#Options)
+- ### [Methods](https://izitoast.marcelodolce.com/#Methods)
+- ### [Events](https://izitoast.marcelodolce.com/#Events)
+- ### [Use](https://izitoast.marcelodolce.com/#Start)
 ___
 #### [npm](https://www.npmjs.com/package/izitoast)
 ```

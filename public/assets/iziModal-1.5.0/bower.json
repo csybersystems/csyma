@@ -9,7 +9,7 @@
     {
       "name": "Marcelo Dolce",
       "email": "dolcemarcelo@gmail.com",
-      "homepage": "http://marcelodolce.com"
+      "homepage": "https://marcelodolce.com"
     }
   ],
   "license": "Apache-2.0",
@@ -23,7 +23,7 @@
     "javascript",
     "js"
   ],
-  "homepage": "http://izimodal.marcelodolce.com",
+  "homepage": "https://izimodal.marcelodolce.com",
   "ignore": [
     "**/.*",
     "node_modules",

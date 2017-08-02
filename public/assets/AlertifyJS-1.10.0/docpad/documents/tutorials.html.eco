@@ -33,7 +33,7 @@ hljs: 	'light'
             <p> Webucator provides onsite and online training on technologies such as Microsoft ASP.NET, XML, Windows, Java, Adobe Flash, HTML5, <a href="https://www.webucator.com/webdesign/javascript.cfm" target="_blank">JavaScript</a>, Dreamweaver, and much more.</p>
 
             <div class="video">
-                <iframe width="100%" height="750" src="//www.youtube.com/embed/GODhPuM5cEE?origin=http://www.alertifyjs.com" frameborder="0" allowfullscreen></iframe>
+                <iframe width="100%" height="750" src="//www.youtube.com/embed/GODhPuM5cEE?origin=https://www.alertifyjs.com" frameborder="0" allowfullscreen></iframe>
             </div>
 
         </div>

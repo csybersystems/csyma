@@ -64,8 +64,8 @@ const config = {
         keywords:"keywords go here",
         description:"Descrition goes here",
         // defaultapp: 'csyma',//'construction',
-        // defaultapp: 'csymaconstruction',//'construction',
-        defaultapp: false,
+        defaultapp: 'csymaconstruction',//'construction',
+        // defaultapp: false,
         dashboards:
         {
             class: "fa fa-desktop",

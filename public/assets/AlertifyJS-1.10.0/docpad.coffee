@@ -16,8 +16,8 @@ docpadConfig = {
 		# Specify some site properties
 		site:
 			# The production url of our website
-			# If not set, will default to the calculated site URL (e.g. http://localhost:9778)
-			url: "http://alertifyjs.com"
+			# If not set, will default to the calculated site URL (e.g. https://localhost:9778)
+			url: "https://alertifyjs.com"
 
 			# Here are some old site urls that you would like to redirect from
 			oldUrls: [
@@ -44,8 +44,8 @@ docpadConfig = {
 				'/css/normalize.min.css'
 				'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'
 				'/css/semantic.min.css'
-				'http://fonts.googleapis.com/earlyaccess/droidarabickufi.css'
-				'http://fonts.googleapis.com/css?family=Droid+Sans:400,700'
+				'https://fonts.googleapis.com/earlyaccess/droidarabickufi.css'
+				'https://fonts.googleapis.com/css?family=Droid+Sans:400,700'
 				'/css/site.min.css',
                 '/styles/style.css'
 			]
@@ -153,7 +153,7 @@ docpadConfig = {
 	# creating a live collection out of it
 	# A live collection is a collection that constantly stays up to date
 	# You can learn more about live collections and querying via
-	# http://bevry.me/queryengine/guide
+	# https://bevry.me/queryengine/guide
 			
 	collections:
 

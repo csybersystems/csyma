@@ -1,6 +1,6 @@
 /*
 * iziModal | v1.5.0
-* http://izimodal.marcelodolce.com
+* https://izimodal.marcelodolce.com
 * by Marcelo Dolce.
 */
 (function (factory) {

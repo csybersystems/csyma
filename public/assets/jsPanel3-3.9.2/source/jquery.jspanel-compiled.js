@@ -2686,7 +2686,7 @@ var jsPanel = {
     },
     remMinReplacement: function remMinReplacement(panel) {
         jQuery('[id^="' + panel.prop('id') + '-min"]').remove();
-        // see http://stackoverflow.com/questions/22755867/javascript-call-remove-twice-to-remove-element
+        // see https://stackoverflow.com/questions/22755867/javascript-call-remove-twice-to-remove-element
     },
     reposition: function reposition(panel) {
         var position = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : panel.option.position;

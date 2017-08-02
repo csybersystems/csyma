@@ -112,6 +112,7 @@ var loadpage = function(url)
 	// window.location.href = rootpath+pathsep+url_r
 
 	url = rootpath+url_r+"?headless=true&accepts=html"			//first load the page
+	console.log("loadpage()")
 	console.log(url)
 	$.get(url).done(function(preinnerdata){
 		$(".content").html(preinnerdata);

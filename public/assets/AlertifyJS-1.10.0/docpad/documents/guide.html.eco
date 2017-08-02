@@ -104,7 +104,7 @@ hljs: 	'light'
 
 <div class="segment">
     <h2 id="cdn">AlertifyJS CDN</h2>
-    <p>Latest compiled and minified JavaScript and CSS files are hosted on <a href="http://www.jsdelivr.com/#!alertifyjs" target="_blank">cdn.jsdelivr.net</a> </p>
+    <p>Latest compiled and minified JavaScript and CSS files are hosted on <a href="https://www.jsdelivr.com/#!alertifyjs" target="_blank">cdn.jsdelivr.net</a> </p>
  
 <pre>
 <code class="html">

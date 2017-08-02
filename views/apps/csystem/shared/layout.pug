@@ -4,7 +4,7 @@ if(less === false)
     head
       meta(charset='utf-8')
       |   
-      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+      meta(https-equiv='X-UA-Compatible', content='IE=edge')
       |   
       title #{appname} | #{title}
       // Tell the browser to be responsive to screen width
@@ -66,7 +66,7 @@ if(less === false)
 
       script
         if(elements.defaultapp)
-          | const default_app ='#{elements.defaultapp}'
+          | const default_app ='#{elements.defaultapp}';
         else 
           | const default_app =false;
         | const appname = '#{appname}';

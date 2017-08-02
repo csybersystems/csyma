@@ -1,6 +1,6 @@
-[![GitHub version](https://badge.fury.io/gh/MohammadYounes%2FAlertifyJS.svg)](http://badge.fury.io/gh/MohammadYounes%2FAlertifyJS)
-[![NuGet version](https://badge.fury.io/nu/AlertifyJS.svg)](http://badge.fury.io/nu/AlertifyJS)
-[![npm version](https://badge.fury.io/js/alertifyjs.svg)](http://badge.fury.io/js/alertifyjs)
+[![GitHub version](https://badge.fury.io/gh/MohammadYounes%2FAlertifyJS.svg)](https://badge.fury.io/gh/MohammadYounes%2FAlertifyJS)
+[![NuGet version](https://badge.fury.io/nu/AlertifyJS.svg)](https://badge.fury.io/nu/AlertifyJS)
+[![npm version](https://badge.fury.io/js/alertifyjs.svg)](https://badge.fury.io/js/alertifyjs)
 
 AlertifyJS
 ==========
@@ -9,7 +9,7 @@ AlertifyJS
 
 AlertifyJS is a javascript framework for developing pretty browser dialogs and notifications.
 
-> AlertifyJS is an extreme makeover of <a href="http://www.github.com/fabien-d/alertify.js">alertify.js</a> by <a href="http://www.github.com/fabien-d">@fabien-d</a>
+> AlertifyJS is an extreme makeover of <a href="https://www.github.com/fabien-d/alertify.js">alertify.js</a> by <a href="https://www.github.com/fabien-d">@fabien-d</a>
 
 
 
@@ -28,9 +28,9 @@ npm install alertifyjs --save
 
 Documentation
 ==========
-Check out the interactive documentation at http://alertifyjs.com
+Check out the interactive documentation at https://alertifyjs.com
 
-[![alertifyjs-dialog](https://cloud.githubusercontent.com/assets/4712046/4170670/0d50b04c-3535-11e4-87a7-1ce62dd0d77e.png)](http://alertifyjs.com)
+[![alertifyjs-dialog](https://cloud.githubusercontent.com/assets/4712046/4170670/0d50b04c-3535-11e4-87a7-1ce62dd0d77e.png)](https://alertifyjs.com)
 
 
 Browser support
@@ -60,7 +60,7 @@ grunt
 ```
 docpad run
 ```
-* Open your browser to http://localhost:9778/
+* Open your browser to https://localhost:9778/
 
 Community Contribution
 ==========
@@ -71,7 +71,7 @@ Community Contribution
 Bugs & Questions
 ==========
 Please review the guidelines for [contributing](https://github.com/MohammadYounes/AlertifyJS/blob/master/CONTRIBUTING.md).
->You can fork this [codepen](http://codepen.io/anon/pen/raohK) or this [jsfiddle](http://jsfiddle.net/g2o52zq7/) to get started.
+>You can fork this [codepen](https://codepen.io/anon/pen/raohK) or this [jsfiddle](https://jsfiddle.net/g2o52zq7/) to get started.
 
 
 ------
