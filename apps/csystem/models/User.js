@@ -19,7 +19,6 @@ const userSchema = new Schema({
         unique: true 
     },
     username: String,
-    password: String,
     name:{
         first: String, 
         middle:String,  

@@ -103,9 +103,17 @@ class User extends MongoModels {
         self.collection = "apps";
         self.findById(id, function(err, results){
             if(err) return callback(err)
-            // console.log(results)
             self.collection = collection
-            callback(null, results.apps)
+            
+            try
+            {
+                let tmp = results.apps
+                callback(null, results.apps)
+
+            }catch(error)
+            {
+                return callback("I think there is no more data")
+            }
         })
         
     }
@@ -246,6 +254,8 @@ class User extends MongoModels {
 
         const self = this;
         let useremail,firstname,middlename,lastname;
+        console.log("is email....")
+        console.log(email)
         if(email.email != undefined)
             useremail = email.email
         else useremail = email
@@ -297,6 +307,7 @@ class User extends MongoModels {
                // self.schema = allappsSchema;
                 self.insertOne(document, function(err, results){
                     // console.log(results)
+                    console.log(err)
                     done(null, results)
                 });
             }]
@@ -305,11 +316,119 @@ class User extends MongoModels {
             if (err) {
                 return callback(err);
             }
-
-            results.newUser[0].password = results.passwordHash.password;
-
-            callback(null, results.newUser[0]);
+            try
+            {
+                results.newUser[0].password = results.passwordHash.password;
+                callback(null, results.newUser[0]);
+            }catch(error)
+            {
+                callback("unknown error in csyberuser");
+            }
+            
         });
+    }
+
+    static changepwd(req, res, callback) {
+
+        const self = this;
+        let pass, olpass;
+        Async.auto({
+          hash: this.generatePasswordHash.bind(this, req.params.password),
+          start: function (done) {
+            req.query.password = req.params.password;
+            req.query.confirmPassword = req.params.confirmpassword;
+            req.query.passwordOld = req.params.oldpassword;
+            req.assert('password', 'Password must be at least 6 characters long').len(6);
+
+            //this still fails
+            // req.assert('confirmPassword', 'Passwords do not match').equals(req.query.confirmPassword);
+
+            let reterrors = [];
+            var errors = req.validationErrors();
+            if(req.params.password !== req.params.confirmpassword)
+              errors = "Passwords do not match";
+            if (errors) {
+              let errorindex;
+              for(errorindex in errors)reterrors.push(errors[errorindex].msg)
+              
+            }
+            done(reterrors.pop()); 
+          },
+          correctpwd: ['start', function (results, done) {
+            Async.auto({
+                start: function (dones) {
+                    olpass = JSON.parse(JSON.stringify(req.user)).password;
+                    Bcrypt.compare(req.query.passwordOld, JSON.parse(JSON.stringify(req.user)).password,dones);
+                }
+            }, (err, results) => {
+
+                if (results.start == false) done("You have provided a wrong password.")
+                else 
+                  done()
+            });
+            
+          }],
+          checkuser: ['correctpwd','hash', function (results, done) {
+            const thisUser = require('../models/User');
+            thisUser.findById(req.user.id, (err, user) => {
+              if (err) done(err)
+              else
+              {
+                console.log(results.hash)//surgbcx1@gmail.com
+                user.password = results.hash.hash;
+                pass = results.hash.hash;
+                Async.auto({
+                    start: function (dones) {
+
+                        Bcrypt.compare(req.params.password, user.password, dones);
+                    }
+                }, (err, results) => {
+                    
+                    if (results.start == false) done("You have provided a wrong password.")
+                    else 
+                    {
+                        
+                        let updateObj = {
+                            $set:{
+                                password:pass  
+                            }
+                        };    
+                        let collection = self.collection;
+                        self.collection = Usercollection;
+                        self.findByIdAndUpdate(req.user.id, {$set:{password:pass}},{new:false},function(err, results){
+                            self.collection = collection;
+                            console.log(results)
+                            console.log("is updated")
+                            console.log(req.params.password)
+                            console.log(err)
+                            done(err)
+                        });
+                    }
+                });
+
+                
+              }
+            });
+          }],
+          // login: ['checkuser', function (results, done) {
+          //   let user = JSON.parse(JSON.stringify(req.user))
+          //   req.logIn(user, (err) => {
+          //       done(err)
+          //     }); 
+          // }],
+        }, (err, results) => {
+            if (err) {
+                console.log("is err")
+                console.log(err)
+               // res.setHeader('Content-Type', 'application/json');
+                res.send(JSON.stringify({"err":""+err}))
+                return callback(err);
+            }
+            //res.setHeader('Content-Type', 'application/json');
+            res.send(JSON.stringify({"msg":"Password successfully changed"}))
+            callback(null, results);
+        });
+        
     }
 
     static socialcreate(data, callback) {

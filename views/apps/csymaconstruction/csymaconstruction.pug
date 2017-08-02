@@ -1,0 +1,24 @@
+include ../csyma/csymahome
+	a.csymaconstructionload(href='#').sidase 
+	// Modal structure
+	script
+		|	//$("#modal").iziModal();
+		|	$(document).on('click', '.csymaconstructionload', function (event) {
+		|	event.preventDefault();
+		|	$("#modal").iziModal({openFullscreen: false,iframe: true,iframeHeight: 800,iframeURL: "http://localhost:3000/csyma/page/csymaconstruction/csymaconstruction_1?headless=true"});
+		|	$('#modal').iziModal('open');
+		|	//$("#modal").iziModal();
+		|	
+		|	});
+
+script
+	| //load ajax content
+	|let url = "/csyma/page/csymaconstruction/csymaconstruction_1?headless=true"
+	| console.log(url)
+	| //$("#modal-default").iziModal({iframe: true,iframeHeight: 20,iframeURL: url,openFullscreen: true});
+	| //$("#modal-default").iziModal();
+	| 
+	| //$(document).ready(function(){setTimeout(function(){$(".csymaconstructionload").click();},10)})
+	| $(document).ready(function(){setTimeout(function(){$("#modal").iziModal({openFullscreen: true,iframe: true,zindex: 2000,closeOnEscape: false,iframeHeight: 800, bodyOverflow: true,iframeURL: "http://localhost:3000/csyma/page/csymaconstruction/csymaconstruction_1?headless=true"});$('#modal').iziModal('open');$("#modal").iziModal();},10)})
+
+	

@@ -1,0 +1,145 @@
+//This is left here for historical purposes
+// Left side column. contains the logo and sidebar
+aside.main-sidebar
+  // sidebar: style can be found in sidebar.less
+  section.sidebar
+    // Sidebar user panel
+    .user-panel
+      .pull-left.image
+        img.img-circle(src=user.profile.picture || rooturl+'images/4e14f517d239010c439617922dc13543.png', alt='User Image')
+      |         
+      .pull-left.info
+        p= user.name || user.profile.name || user.email || user.id
+        |           
+    // search form
+    form.sidebar-form(action='#', method='get')
+      .input-group
+        input.form-control(type='text', name='q', placeholder='Search...')
+        |               
+        span.input-group-btn
+          button#search-btn.btn.btn-flat(type='submit', name='search')
+            i.fa.fa-search
+    // /.search form
+    // sidebar menu: : style can be found in sidebar.less
+    ul.sidebar-menu.leftsidebarcontainer
+      li.header MAIN NAVIGATION
+      |
+      li.treeview.appstree
+        a(href='#')
+          i(class= sidemenuitems.apps.class+ " applicationsicon")
+          |  
+          span Applications
+          |             
+          span.pull-right-container
+            i.fa.fa-angle-left.pull-right
+          ul.treeview-menu.appscontainer
+            each element in sidemenuitems.apps.apps   
+              if(element.displayname !== false) 
+                li
+                  if(element.url != '#')
+                    a.sidease(href=rooturl+element.url)
+                    a.sidea(href=rooturl+'#!'+element.url type="app" id=element.name+"app")
+                      i(class=element.class || "fa fa-circle-o")
+                      |  #{element.displayname}
+                      |
+                    |
+                  else 
+                    a.sidea(href='#'  content= element.name type="app")
+                      i.fa.fa-circle-o
+                      |  #{element.name}
+                      |
+                    |
+              |
+      |
+      if(elements.dashboards.class)
+        ul.sidebar-menu.fordashboards
+        |
+        li.treeview
+          a(href='#')
+            i(class= elements.dashboards.class+ " dashboardsicon")
+            |  
+            span Dashboards
+            |             
+            span.pull-right-container
+              i.fa.fa-angle-left.pull-right
+          ul.treeview-menu.dashboardscontainer
+            each element in elements.dashboards.dashboards    
+              li
+                if(element.url != '#')
+                  a.sidea(href=rooturl+element.url content= element.name type="dash")
+                    i.fa.fa-circle-o
+                    |  #{element.name}
+                    |
+                  |
+                else 
+                  a.sidea(href='#' content= element.name type="dash")
+                    i.fa.fa-circle-o
+                    |  #{element.name}
+                    |
+                  |
+              |
+      else
+        li.treeview.dashtree
+          a(href='#')
+            i(class= "fa fa-dashboard dashboardsicon")
+            |  
+            span Dashboards
+            |             
+            span.pull-right-container
+              i.fa.fa-angle-left.pull-right
+          ul.treeview-menu.dashboardscontainer
+        
+      if(elements.others)
+        each element in elements.others
+            |
+            li.treeview
+              a(href=element.url)
+                i(class= element.class+ " dashboardsicon")
+                |  
+                span #{element.name}
+                | 
+                if(element.children)            
+                  span.pull-right-container
+                    i.fa.fa-angle-left.pull-right
+                  ul.treeview-menu.dashboardscontainer
+                    each elem in element.children   
+                      li
+                        if(elem.url != '#')
+                          a.sidea(href=rooturl+elem.url content= elem.name type="dash")
+                            i.fa.fa-circle-o
+                            |  #{elem.name}
+                            |
+                          |
+                        else 
+                          a.sidea(href='#' content= elem.name type="dash")
+                            i.fa.fa-circle-o
+                            |  #{elem.name}
+                            |
+                          |
+                    |
+      |
+    ul.sidebar-menu
+      if(elements.isguest)
+        li.treeview
+          a(href="#").pregloginbtn
+            i.fa.fa-sign-in.text-primary
+            span &nbsp;Login
+        li.treeview.presignupbtn
+          a(href="#")
+            i.fa.fa-fw.fa-user-plus.text-success
+            span &nbsp;Register
+        
+
+      else
+        li.treeview
+          a.sideap(href="#!/csyma/page/csyma/csyma_profile")
+            i.fa.fa-user
+            span My Profile
+        li.treeview
+          a(href="/auth/logout")
+            i.fa.fa-sign-out.text-danger
+            span &nbsp;Log out
+        
+
+                   
+      

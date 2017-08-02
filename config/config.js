@@ -17,6 +17,7 @@ var year = dateObj.getUTCFullYear();
 const config = {
     $meta: 'This file configures the plot device.',
     title: 'CSYBER',
+    name:"csyma",                       //name of this instance of csyma
     company: 'CSYBER SYSTEMS',
     builder:
     {
@@ -29,12 +30,18 @@ const config = {
     companyurl: '#',
     applogoref: '#',
     rooturl: '/',
+    urls:
+    {
+        "login":"",
+        "left":"",
+
+    },
     appwebsite: '#',
     appname: 'CSYBER',
     defaulpageloggedout: 'apps/csystem/welcome',
     defaulpageloggedin: 'apps/csystem/welcome',//'/auth/login',
     
-    displayappname: 'SSPOC Dashboard',
+    displayappname: 'CSYMA Apps',      //appears on login page
     year: year,
     applogoname: 'CSWEEPER',      //appears on top left
     teamname: 'SSPOC Team',
@@ -56,7 +63,9 @@ const config = {
     {
         keywords:"keywords go here",
         description:"Descrition goes here",
-        defaultapp: 'csyma',
+        // defaultapp: 'csyma',//'construction',
+        // defaultapp: 'csymaconstruction',//'construction',
+        defaultapp: false,
         dashboards:
         {
             class: "fa fa-desktop",

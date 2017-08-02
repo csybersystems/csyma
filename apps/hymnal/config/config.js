@@ -166,28 +166,30 @@ const config = {
                                 english:{
                                     name: "SDAH",
                                     url: "hymnal/home/h/k",
-                                    application:"SDAH"
+                                    application:"SDAH",
+                                    class:"fa fa-book",
                                     },
                                 kiswahili:{
                                     name: "NZK",
                                     url: "hymnal/home/h/e",
-                                    application:"NZK"
+                                    application:"NZK",
+                                    class:"fa fa-book",
                                     }
                             },
                         },
-                    english:
-                        {
-                            class:"fa fa-book",
-                            url: "/hymnal/home/h/k",
-                            name:"SDAH",
-                        },
-                    kiswahili:
-                        {
-                            class:"fa fa-book",
-                            url: "/hymnal/home/h/e",
-                            name:"NZK",
+                    // english:
+                    //     {
+                    //         class:"fa fa-book",
+                    //         url: "/hymnal/home/h/k",
+                    //         name:"SDAH",
+                    //     },
+                    // kiswahili:
+                    //     {
+                    //         class:"fa fa-book",
+                    //         url: "/hymnal/home/h/e",
+                    //         name:"NZK",
                             
-                        }
+                    //     }
                     
                 },
         defaultpage: "apps/hymnal/hymnalhome", 

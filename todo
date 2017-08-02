@@ -36,3 +36,193 @@ Rq
 
 Help
 	See how to set defaultapp
+
+
+Tuesday
+	finish csyma applications
+		profile man
+		user man
+		etc....
+		Build apps...
+			upload code and build... and restart application
+	Add menu items also...
+
+	More systems applications
+		User manual
+		developper manual
+		Introduction...explanation
+
+	When application is first installed....
+		Which page comes up first?....construction
+
+		Then csyma learn
+			user
+			developer
+
+		then csyma
+			all elements...
+
+		combine csyma with csyma learn
+		dont load csyma construction
+
+working with it...........................
+In Jspanel.js
+	change z-base and z-counter to 2000
+
+............................................
+	When happens when dashboard/equivalent is selected? is clicked????..load page...
+
+		have functions to handle these...
+
+.................................................
+	continuing with csyma
+		...
+
+
+ord
+	csyma components
+		log in
+		log out
+		profile
+
+		apps
+			users
+
+
+Wednesday
+	Loading exact previous app
+
+--------------------------------TODO-------------------------------------------------------------------------
+Construction page....
+
+--------------------------------------------------------------------------------------------------------------
+DESIRED
+	Go to exact page when reloading
+
+
+
+..............................................................................................................
+	1. Sign Up
+	2. Log in
+	3. Log out
+	More________
+
+
+.......................................Ord....................................................................
+Account management..............................See what Aqua has to say, and userfrosting also...............
+	Personal
+		Login/logout buttons + sign up buttons........................*
+		sign up 
+		log in 
+		log out
+	Admin account management
+
+App management...
+
+
+Docs
+	Check Aqua, userfrosting, odoo, odoo equivalents....
+
+
+Ord
+	Add rooturl to all rqs
+	Form is dropping......................................1.....................*
+	
+	Sign up...............................................2.....................
+		local sign up..............................................................*
+		local sign up from inside....
+	Account management
+		link accounts
+		Manage personal account
+			change pwd
+			drop social, local, etc
+			change name,,,
+		Modify other accounts...
+
+
+
+	csyma
+		home --- load home page
+		users --- (inclusing self)
+			list users
+			Add more users
+			Remove users
+			Change your account
+		Apps
+			list apps
+			Install
+			Enable
+			Disable
+			Add to users
+
+
+Issues
+	There are pages that an outsider is not allowed to see. Page permissions...,,,
+	Finish profile data...
+
+
+ORD
+	fix headers issue..........................*
+	fix firefox issues.........................*
+
+
+----------------------------------
+	Profile
+		Change profile..............*
+		Change pwd
+		Link accounts..*
+		Unlink accounts..*
+		Drop accounts..*
+				signup....remove emails from pwd...........*
+				change pwd,,check,,,,
+						.......................some funny thing happens so that the password is not saved as given, but change in some way. Find out why in csyberuser.js 395
+
+
+		More function
+			sign up from inside...
+			drop from inside......
+			change from inside....
+
+
+	Applications
+
+
+
+	CSRF
+
+Ord
+	Sort out layout of things in left side bar.....................*
+	Dashboards icon showing even when there are no dashboards
+	Build applications
+	Build pages.....
+	Test application so far.... root url...
+
+
+Thursday
+	=> Permissions for others.................................*
+	=> Move dashboards to others..............................*
+	=> Add more items for each applications...
+		csyma
+			sections
+				site
+				About
+				documentation
+					subsections
+						Check user frosting....
+			pages
+
+
+
+			Dashboards
+
+
+			Application default page.........................1
+			Load Section
+				Section elements... 
+				Section default page....
+
+Friday
+	Finish sorting the sidebar
+		How they look,
+		What they do,
+		

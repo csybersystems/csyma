@@ -10,8 +10,47 @@ router.use(function timeLog (req, res, next) {
   next()
 })
 // define the home page route
-router.get('/', function (req, res) {
-		res.send('is csyma endpoints')
+router.get('/', function (req, res) {                 //load the app here...
+    csyma.init_child(req,res, function(err, results){
+      csyma.settitle("page titled");
+      csyma.setpage(false);//clear selection if any
+      csyma.getelements(req,res, function(err, results){ })
+      
+    })
+})
+
+
+router.get('/page/:app/:page', function (req, res) {                 //loading static pages...
+    const app = require(__dirname+"/../apps/"+req.params.app+"/index");
+    app.init_child(req,res, function(err, results){
+      app.settitle(req.params.page);
+      // app.setdescription("site under construction");
+      // app.setkeywords("site under construction");
+      app.setpage("apps/"+req.params.app+"/"+req.params.page);
+      // app.setpage("apps/csyma/csyma_about");
+      // app.setpage("apps/csyma/csyma_about_splash");
+      // app.setpage("apps/csyma/csyma_home");
+      // app.setpage("apps/csystem/welcome");
+      // app.setpage("apps/csyma/welcome");
+      //app.setpage(false);
+      app.getelements(req,res, function(err, results){ })
+      
+    })
+})
+
+router.get('/section/:app/:section', function (req, res) {                 //loading sections...
+    const app = require(__dirname+"/../apps/"+req.params.app+"/index");
+		app.init_child(req,res, function(err, results){
+      app.settitle(req.params.section);
+      // app.setdescription("site under construction");
+      // app.setkeywords("site under construction");
+      //app.setpage("apps/"+req.params.app+"/"+req.params.section);
+      app.setpage(false);
+      app.setsections(req.params.section);
+      app.getelements(req,res, function(err, results){ })
+      //each section has its own stuff, more like when loading an app...
+      
+    })
 })
 
 // define the about route

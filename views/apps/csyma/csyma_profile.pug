@@ -1,0 +1,216 @@
+
+
+.row
+  .col-lg-6
+    .box.box-primary
+      form#profile-settings
+        .box-header.ui-sortable-handle(style='cursor: move;')
+          i.fa.fa-user.fa-fw
+          |               
+          h3.box-title Profile settings
+          |               
+          .box-tools.pull-right
+            button.btn.bg-teal.btn-sm(type='button', data-widget='collapse')
+              i.fa.fa-minus
+            |                 
+            button.btn.bg-teal.btn-sm(type='button', data-widget='remove')
+              i.fa.fa-times     
+        .box-body
+          |                     
+          label.control-label(for='input-first-name') Name
+          |             
+          .row
+            .col-sm-4
+              .form-group
+                input#input-first-name.form-control(type='text', name='first_name', value=user.names.first, placeholder='First name')
+            |                 
+            .col-sm-4
+              .form-group
+                input#input-middle-name.form-control(type='text', name='middle_name', value=user.names.middle, placeholder='Middle name')
+            .col-sm-4
+              .form-group
+                input#input-last-name.form-control(type='text', name='last_name', value=user.names.last, placeholder='Last name')
+          |             
+          .form-group
+            label.control-label(for='input-locale') Locale
+            |                 
+            select#input-locale.form-control.js-select2.select2-hidden-accessible(name='locale', tabindex='-1', aria-hidden='true')
+              option(value='en_US', selected='') English
+              |                                         
+              option(value='ar') &#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629;
+              |                                         
+              option(value='fr_FR') Fran&ccedil;ais
+              |                                         
+              option(value='pt_PT') Portugu&ecirc;s
+              |                                         
+              option(value='de_DE') Deutsch
+              |                                         
+              option(value='th_TH') &#xE20;&#xE32;&#xE29;&#xE32;&#xE44;&#xE17;&#xE22;
+              |                                         
+              option(value='ks_KS') Kiswahili
+                       
+            p.help-block The language and locale to use for your account.
+            .form-group
+            label.control-label(for='input-locale') Gender
+            |                 
+            select#input-gender.form-control.js-select2.select2-hidden-accessible(name='locale', tabindex='-1', aria-hidden='true') 
+              if(user.profile.gender == 'Male')
+                option(value='Male', selected='') Male
+                |                                         
+                option(value='Female') Female
+                |  
+              else
+                if(user.profile.gender == 'Female')
+                  option(value='Male') Male
+                  |                                         
+                  option(value='Female', selected='') Female
+                  |  
+                else
+                  option(value='Male', selected='') Male
+                  |                                         
+                  option(value='Female') Female
+                  |                                                       
+        |     
+        .box-footer.text-center
+          button.btn.btn-default(type='reset') Reset
+          |         
+          button.btn.btn-primary.js-submit(type='button' id='saveprofilename') Save
+  |         
+  .col-lg-6
+    .box.box-primary
+      form#account-settings(role='form', action='#', method='post', novalidate='novalidate')
+        .box-header.ui-sortable-handle(style='cursor: move;')
+          i.fa.fa-gear.fa-fw
+          |               
+          h3.box-title Account settings
+          |               
+          .box-tools.pull-right
+            button.btn.bg-teal.btn-sm(type='button', data-widget='collapse')
+              i.fa.fa-minus
+            |                 
+            button.btn.bg-teal.btn-sm(type='button', data-widget='remove')
+              i.fa.fa-times   
+
+        .box-body
+          // Prevent browsers from trying to autofill the password field.  See http://stackoverflow.com/a/23234498/2970321
+          input(type='text', style='display:none')
+          |         
+          input(type='password', style='display:none')
+          |                     
+          .form-group.has-success.has-feedback
+            //label.ccontrol-label(for='input-email') Email
+            //|                 
+            //input#input-email.form-control(type='text', name='email', value=user.email, autocomplete='off', placeholder='Your email address', aria-required='true', aria-invalid='false', aria-describedby='input-email-error')
+            //i.fa.fa-check.form-control-feedback(aria-hidden='true')
+          |                             
+          .form-group
+            label.control-label(for='input-password') New Password
+            |                     
+            input#input-password.form-control(type='password', name='password', placeholder='Between 12-100 characters (Optional)')
+          |                 
+          .form-group
+            label.control-label(for='input-passwordc') Confirm New Password
+            |                     
+            input#input-passwordc.form-control(type='password', name='passwordc', placeholder='Required only if selecting a new password')
+          |                 
+          hr
+          |                 
+          .form-group
+            label.control-label(for='input-passwordcheck') Current Password
+            |                     
+            input#input-passwordcheck.form-control(type='password', name='passwordcheck', placeholder='You must confirm your current password to make changes')
+        |     
+        .box-footer.text-center
+          button.btn.btn-default(type='reset') Reset
+          |         
+          button.btn.btn-primary.js-submit(type='button' id='saveprofilepwd') Save
+  .col-lg-6
+    .box.box-primary
+      .box-header.ui-sortable-handle(style='cursor: move;')
+        i.fa.fa-gear.fa-fw
+        |               
+        h3.box-title Link Your Accounts
+        |               
+        .box-tools.pull-right
+          button.btn.bg-teal.btn-sm(type='button', data-widget='collapse')
+            i.fa.fa-minus
+          |                 
+          button.btn.bg-teal.btn-sm(type='button', data-widget='remove')
+            i.fa.fa-times   
+      .box-body(style="color:#fff") 
+        a.btn.btn-block.btn-facebook.btn-social.linkbtn(href='/auth/facebook' style="color:#fff")
+          i.fa.fa-facebook
+          | Link your Facebook account
+        a.btn.btn-block.btn-twitter.btn-social.linkbtn(href='/auth/twitter' style="color:#fff")
+          i.fa.fa-twitter
+          | Link your Twitter account
+        a.btn.btn-block.btn-google.btn-social.linkbtn(href='/auth/google' style="color:#fff")
+          i.fa.fa-google-plus
+          | Link your Google account
+        a.btn.btn-block.btn-github.btn-social.linkbtn(href='/auth/github' style="color:#fff")
+          i.fa.fa-github
+          | Link your GitHub account
+        a.btn.btn-block.btn-linkedin.btn-social.linkbtn(href='/auth/linkedin'  style="color:#fff")
+          i.fa.fa-linkedin
+          | Link your LinkedIn account
+        a.btn.btn-block.btn-instagram.btn-social.linkbtn(href='/auth/instagram' style="color:#fff")
+          i.fa.fa-instagram
+          | Link your Instagram account
+  .col-lg-6
+    .box.box-primary
+      .box-header.ui-sortable-handle(style='cursor: move;')
+        i.fa.fa-gear.fa-fw
+        |               
+        h3.box-title Unlink Your Accounts
+        |               
+        .box-tools.pull-right
+          button.btn.bg-teal.btn-sm(type='button', data-widget='collapse')
+            i.fa.fa-minus
+          |                 
+          button.btn.bg-teal.btn-sm(type='button', data-widget='remove')
+            i.fa.fa-times   
+      .box-body 
+        button.btn.btn-block.btn-facebook.btn-social.unlinkbtn(href='#facebook')
+          i.fa.fa-facebook
+          | Unlink your Facebook account
+        button.btn.btn-block.btn-twitter.btn-social.unlinkbtn(href='#twitter')
+          i.fa.fa-twitter
+          | Unlink your Twitter account
+        button.btn.btn-block.btn-google.btn-social.unlinkbtn(href='#google')
+          i.fa.fa-google-plus
+          | Unlink your Google account
+        button.btn.btn-block.btn-github.btn-social.unlinkbtn(href='#github')
+          i.fa.fa-github
+          | Unlink your GitHub account
+        button.btn.btn-block.btn-linkedin.btn-social.unlinkbtn(href='#linkedin')
+          i.fa.fa-linkedin
+          | Unlink your LinkedIn account
+        button.btn.btn-block.btn-instagram.btn-social.unlinkbtn(href='#instagram')
+          i.fa.fa-instagram
+          | Unlink your Instagram account
+  .col-lg-6
+    .box.box-primary
+      .box-header.ui-sortable-handle(style='cursor: move;')
+        i.fa.fa-gear.fa-fw
+        |               
+        h3.box-title Delete Your Account
+        |               
+        .box-tools.pull-right
+          button.btn.bg-teal.btn-sm(type='button', data-widget='collapse')
+            i.fa.fa-minus
+          |                 
+          button.btn.bg-teal.btn-sm(type='button', data-widget='remove')
+            i.fa.fa-times   
+      .box-body 
+        .form-group
+          p You can delete your account, but keep in mind this action is irreversible
+          button.btn.btn-danger#deleteaccount(type='button')
+            i.fa.fa-trash
+            |  Delete my account
+
+
+script.
+  $("#saveprofilepwd").click(function(){postchangepwd();})
+  $("#saveprofilename").click(function(){postchangeusername();})
+  $("#deleteaccount").click(function(){deleteaccount();})
+  $(".unlinkbtn").click(function(){unlinkaccounts($(this).attr("href"));})

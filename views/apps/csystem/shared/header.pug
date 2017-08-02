@@ -63,26 +63,39 @@ header.main-header
           // User Account: style can be found in dropdown.less
           li.dropdown.user.user-menu
             a.dropdown-toggle(href='#', data-toggle='dropdown')
-              img.user-image(src=rooturl+user.profile.picture || rooturl+'images/4e14f517d239010c439617922dc13543.png', alt='User Image')
+              img.user-image(src=user.profile.picture || rooturl+'images/4e14f517d239010c439617922dc13543.png', alt='User Image')
               |               
               span.hidden-xs=user.name || user.profile.name || user.email || user.id
             |             
             ul.dropdown-menu
               // User image
               li.user-header
-                img.img-circle(src=rooturl+user.profile.picture || rooturl+'images/4e14f517d239010c439617922dc13543.png', alt='User Image')
+                img.img-circle(src=user.profile.picture || rooturl+'images/4e14f517d239010c439617922dc13543.png', alt='User Image')
                 |         
                 p
                   p= user.name || user.profile.name 
                   small= user.email
               // Menu Footer
               li.user-footer
-                //if(isroot !== false)
-                //  a.btn.btn-default.btn-flat.btn-block(href=rooturl+"admin/dashboard") Admin panel
-                //|                       
-                a.btn.btn-default.btn-flat.btn-block(href=rooturl+"account/settings") My Account
-                |               
-                a.btn.btn-default.btn-flat.btn-block(href=rooturl+"auth/logout") Logout
+                if(elements.isguest)
+                  a.btn.btn-default.btn-flat.btn-block(href="#").pregloginbtn
+                    i(class="fa fa-lock")
+                    span Login
+                  a.btn.btn-default.btn-flat.btn-block(href="#").presignupbtn
+                    i(class="fa fa-user-plus")
+                    span Register
+                  |
+                else
+                  //if(isroot !== false)
+                  //  a.btn.btn-default.btn-flat.btn-block(href=rooturl+"admin/dashboard") Admin panel
+                  //|                       
+                  a.btn.btn-default.btn-flat.btn-block.sideap(href=rooturl+"#!/csyma/page/csyma/csyma_profile")
+                    i.fa.fa-user
+                    span My Profile
+                  |               
+                  a.btn.btn-default.btn-flat.btn-block(href=rooturl+"auth/logout") 
+                    i.fa.fa-sign-out
+                    span Logout
           // Control Sidebar Toggle Button
           //li
           //  a(href='#', data-toggle='control-sidebar')

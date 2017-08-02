@@ -19,7 +19,216 @@ footer.main-footer
     | Open Sourced Under Apache
     br
     | Built with &#x2661; by @#{builder.buildcompany}
-    script(src=rooturl+'alertifyjs/alertify.min.js')
-    //script(src=rooturl+'apps/csystem/js/config.js')
-    script(src=rooturl+'apps/csystem/js/csystem.js')
-      
+    
+
+
+ 
+    #modal-default(data-izimodal-fullscreen='true', data-izimodal-title='Welcome to the iziModal', data-izimodal-subtitle='Elegant, responsive, flexible and lightweight modal plugin with jQuery.', data-izimodal-icon='icon-home')
+        header
+        a#signin(href='#') Sign in
+        |             
+        a.active(href='#') New Account
+        p
+          | You have several possibilities to use the easy Modal, with options, and also data-attributes. Click below for see some examples.
+        |         
+        h4
+          span Ajax/Fetch
+        |         
+        footer
+          button.btn.btn-ajax Load Ajax
+          |             
+          button.btn.btn-fetch Load Fetch
+          |             
+          h4
+            span Group
+          |             
+          button.btn(data-izimodal-prev='') Prev Modal
+          |             
+          button.btn(data-izimodal-next='') Next Modal
+          |             
+          h4
+            span Data-Attributes
+          |             
+          button.btn(data-izimodal-close='') Close
+          |             
+          button.btn(data-izimodal-fullscreen='') Fullscreen
+          |             
+          button(data-izimodal-open='#modal-custom', data-izimodal-transitionin='fadeInDown', data-izimodal-transitionout='fadeOutDown') Open other Modal
+          .sections
+          section.hide
+            input.form-control(type='text', placeholder='Username')
+            |                     
+            input(type='password', placeholder='Password')
+            |                     
+            footer
+              button(data-izimodal-close='') Cancel
+              |                         
+              button.submit Log in
+          |                 
+          section
+            input(type='text', placeholder='Username')
+            |                     
+            input(type='text', placeholder='Email')
+            |                     
+            input(type='password', placeholder='Password')
+            |                     
+            label(for='check')
+              input#check(type='checkbox', name='checkbox', value='1')
+              |  I agree to the 
+              u Terms
+              | .
+          |                     
+          footer
+            button(data-izimodal-close='', data-izimodal-transitionout='bounceOutDown') Cancel
+            |                         
+            button.submit Create Account
+          .container
+            .jumbotron.text-center
+              h1
+                span.fa.fa-lock
+                |  !{displayappname}
+              |         
+              p Please log in to access your account
+              |         
+              a.btn.btn-default(href='/auth/loginlocal')
+                span.fa.fa-user
+                |  Local Login
+              |         
+              a.btn.btn-primary(href='/auth/facebook')
+                span.fa.fa-facebook
+                |  Facebook
+              |         
+              a.btn.btn-info(href='/auth/twitter')
+                span.fa.fa-twitter
+                |  Twitter
+              |         
+              a.btn.btn-danger(href='/auth/google')
+                span.fa.fa-google-plus
+                |  Google+
+              |         
+              a.btn.btn-github(href='/auth/github')
+                span.fa.fa-github
+                |  Github
+              |         
+              a.btn.btn-default(href='/auth/signup')
+                span.fa.fa-user
+                |  Local Signup
+            |    
+          p.text-center You can go 
+            a(href=appwebsite) here
+            |
+            | to explore and find more about 
+            a(href=applogoref) #{appname}
+
+    |     
+    |     
+    #modal-custom(data-izimodal-group='grupo1')
+      button.icon-close(data-izimodal-close='')
+      |         
+      header
+        a#signin.regheader(href='#')
+          i.fa.fa-user-plus
+            span   New Account
+        |             
+        a.active.loginheader(href='#')
+          i.fa.fa-sign-in
+            span  Login
+        a.active.localloginheader.hide(href='#')
+          i.fa.fa-lock
+            span  local Login
+      |         
+      .sections
+        section
+          .containere
+            .text-center
+              span.fa.fa-user-plus
+                |  !{displayappname}
+            legend.text-center Create New Account
+              input(type='hidden', name='_csrf', value=_csrf)
+              .form-group
+                label.col-sm-3.control-label(for='email') Email
+                .col-sm-7
+                  input.sigupemail(type='email', name='email', id='email', placeholder='Email', autofocus, required)
+              .form-group
+                label.col-sm-3.control-label(for='password') Password
+                .col-sm-7
+                  input.signuppwd(type='password', name='password', id='password', placeholder='Password', required)
+              .form-group
+                label.col-sm-3.control-label(for='confirmPassword') Confirm Password
+                .col-sm-7
+                  input.signuppwdcnf(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password', required)
+              .form-group
+                .col-sm-offset-3.col-sm-7
+                  button.signupcancel(data-izimodal-close='') Cancel
+                  button.btn.btn-primary.signupsubmit(type='submit')
+                    i.fa.fa-user-plus
+                    | &nbsp;&nbsp;&nbsp;&nbsp;Signup&nbsp;&nbsp;&nbsp;&nbsp;
+        |                 
+        section
+          .containere
+            .jumbotron.text-center(style="background:#FFF")
+              span.fa.fa-lock
+                |  !{displayappname}
+              |         
+              p Please log in to access your account
+              |         
+              a.btn.btn-default.tolocallogicbtn(href='#' style="color:#000")
+                span.fa.fa-user
+                |  Local Login
+              |         
+              a.btn.btn-primary(href='/auth/facebook' style="color:#FFF")
+                span.fa.fa-facebook
+                |  Facebook
+              |         
+              a.btn.btn-info(href='/auth/twitter' style="color:#FFF")
+                span.fa.fa-twitter
+                |  Twitter
+              |         
+              a.btn.btn-danger(href='/auth/google' style="color:#FFF")
+                span.fa.fa-google-plus
+                |  Google+
+              |         
+              a.btn.btn-github(href='/auth/github' style="color:#FFF")
+                span.fa.fa-github
+                |  Github
+              |         
+            |   
+        section
+          .containere
+            .text-center
+              span.fa.fa-lock
+                |  !{displayappname}
+            legend.text-center Login
+              input(type='hidden', name='_csrf', value='6zaAXNeLzZqF6iV0/6zD7cLmNQGMwX1s+iZhk=')
+              .form-group
+                label.col-sm-3.control-label(for='email') Email
+                .col-sm-7
+                  input#email.localloginemail(type='email', name='email', placeholder='Email', autofocus='', required='')
+              .form-group
+                label.col-sm-3.control-label(for='password') Password
+                .col-sm-7
+                  input#password.localloginpwd(type='password', name='password', placeholder='Password', required='')
+              .form-group
+                .col-sm-offset-3.col-sm-7
+                  button.locallogincancel
+                    i.fa.fa-arrow-left
+                      span &nbsp;&nbsp;&nbsp;&nbsp;Back
+                  button.btn.btn-primary.loginsubmit(type='submit')
+                    i.fa.fa-sign-in
+                    | &nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;
+              
+                  a.btn.btn-link(href='/auth/reset') Forgot your password?
+                  |  
+                  a.btn.btn-primar
+              .form-group
+                .col-sm-offset-3.col-sm-7
+                  hr
+
+
+//izimodal
+script(src=rooturl+'assets/iziModal-1.5.0/js/iziModal.js')
+script(src=rooturl+'assets/izi/js/demo.js')
+script(src=rooturl+'alertifyjs/alertify.min.js')
+//script(src=rooturl+'apps/csystem/js/config.js')
+script(src=rooturl+'apps/csystem/js/csystem.js')
+

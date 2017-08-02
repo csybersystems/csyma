@@ -5,24 +5,53 @@ const Async = require('async');
 
 class csystem extends csyberUser
 {
+
 	static init(req,res, done)
 	{
 
 		let self = this;
-		if(!req.user)
+
+		self.sections = false;
+		if(self.app === undefined)self.app = "csystem";
+		self.isguest = req.isAuthenticated() === true? false:1;
+		if (req.isUnauthenticated()) 
 		{
 			//console.log("is collection")
 			//console.log(self.collection)
 			self.collection = "users"
 			self.findOne({email:Config.get("/guestemail")}, function(err, docs){
 				self.user = docs;	//Assume to error
-				done();
-			})
+				Async.auto({
+			      loadconfig: function (dones) {
+			        self.loadconfig(function(err, _results){
+			          dones(err);
+			        });
+			      },
+			      whoami: ['loadconfig', function (_results, dones) {
+			        self.whoami(function(err, _results){
+			          dones(err, _results);
+			        });
+			      }]
+			 	}, (err, _results) => {done();})
+					
+				})
 		}
 		else
 		{
 			self.user = req.user.toObject();
-			done();
+			Async.auto({
+			      loadconfig: function (dones) {
+			        self.loadconfig(function(err, _results){
+			          dones(err);
+			        });
+			      },
+			      whoami: ['loadconfig', function (_results, dones) {
+			        self.whoami(function(err, _results){
+			          dones(err, _results);
+			        });
+			      }]
+			 	}, (err, _results) => {done();})
+					
 		}
 	}
 
@@ -48,7 +77,7 @@ class csystem extends csyberUser
 				}catch(err){
 
 					//console.log(err)
-					throw new error(err)
+					throw new Error(err)
 					//dones(err)
 				}
             },
@@ -87,10 +116,6 @@ class csystem extends csyberUser
 					let collection = self.collection;
 					self.collection = "apps";
 					csyberUser.getusersapps(user._id, function(err, apps){
-						//let apps = JSON.parse(JSON.stringify(user.apps));
-						// // console.log("////whoami")
-						// // console.log("apps")
-						// // console.log(apps)
 						var mygroup = {}
 						let ind = 0;
 						for(let index in apps)
@@ -105,13 +130,20 @@ class csystem extends csyberUser
 						// console.log(mygroup)
 						if(ind == 0)mygroup[0] = {"name":"nobody"};
 						self.mygroups = mygroup;
-						dones(null, mygroup)
+						try
+						{
+							dones(null, mygroup)
+						}catch(err){}
 					})
 					
 
 				}catch(err){
 					self.send(err)
-					dones(err)
+					try
+					{
+						dones(err)
+					}catch(err){}
+					
 				}
 			}
         }, (err, _results) => {
@@ -166,8 +198,14 @@ class csystem extends csyberUser
 		this.init(req, res, function(err){
 
 		let user = JSON.parse(JSON.stringify(self.user));
-		var name = user.name.first + ' ' + user.name.middle + ' ' + user.name.last;
-		user.name = name;
+		var name;
+		try
+		{
+			name = user.name.first + ' ' + user.name.middle + ' ' + user.name.last;
+		}catch(error){}
+		
+		user.names = user.name;
+		user.name = name || "";
 		let appstoload = {}
 		let apptoloadtest = []
 
@@ -220,8 +258,10 @@ class csystem extends csyberUser
 		              appstoload[tmpapp] = {};
 		              appstoload[tmpapp]["name"] = appdata["name"];
 		              appstoload[tmpapp]["url"] = appdata["url"];
+		              appstoload[tmpapp]["class"] = appdata["class"];
 		              appstoload[tmpapp]["urloriginal"] = appdata["url"].split("#").join("/");
 		              appstoload[tmpapp]["displayname"] = appdata["displayname"];
+		             // class_a = appdata["sidemenuitems"]["apps"]["class"];
 		              
 		          }
 
@@ -237,6 +277,8 @@ class csystem extends csyberUser
 		      let sidemenuitems = {}// Config.get('/sidemenuitems');
 		      sidemenuitems.apps = {}
 			  sidemenuitems.apps.apps = appstoload;
+			  sidemenuitems.apps.class = "fa fa-pencil fa-fw";
+
 			  let tmp;
 			  for( tmp in sidemenuitems.apps.apps)if(sidemenuitems.apps.apps[tmp]['default'] === false)delete sidemenuitems.apps.apps[tmp]
 			  // for( tmp in sidemenuitems.others)if(sidemenuitems.others[tmp]['default'] === false)delete sidemenuitems.others[tmp]
@@ -247,13 +289,16 @@ class csystem extends csyberUser
 			  
 			 // console.log("are paps")
 			 // console.log("is root url..")
-			 elements = self.getdashboards(elements)
-			 elements = self.getothersideelemitems(elements)
-			 console.log(elements)
+			 // elements = self.getdashboards(elements)
+			 elements = self.setelements(elements);
+			 // console.log("page elements")
+			 // console.log(elements)
 			 // console.log(Config.get('/rooturl'))
+			 console.log("page................................")
+			 console.log(self.page)
+			 console.log(ipage)
 			  res.render(self.page||ipage, {
 			    title: self.title||title,
-			    application: 'Application',
 			    company: Config.get('/company'),
 			    companyurl: Config.get('/companyurl'),
 			    appname:Config.get('/appname'),
@@ -264,7 +309,9 @@ class csystem extends csyberUser
 			    version:Config.get('/version'),
 			    rooturl:Config.get('/rooturl'),
 			    skin:Config.get('/skin/siteuser'),
-			    section:title,
+			    application: elements.app||Config.get("/name"),
+			    section:elements.section||"home",
+			    subsection: elements.subsection || "index",
 			    teamname:Config.get('/teamname'),
 			    sidemenuitems:sidemenuitems,
 			    apps:apps,
@@ -282,21 +329,61 @@ class csystem extends csyberUser
 		  
 		
 	}
+	static setelements(elements)
+	{
+		try
+		{
+			let self = this;
+			// console.log("elements...")
+			let config = require(__dirname+"/../"+self.app+"/config/config")
+			// console.log("config path: "+__dirname+"/../"+self.app+"/config/config")
+	    	// if(JSON.stringify(elements).length == 2)				//empty object
+	    	if(elements === false)
+	    	{
+	    		elements = config.get("/elements")
+	    	}
+	    	console.log("testing situation....")
+	    	console.log(self.sections)
+	    	console.log("tested situation....")
+	    	if(!self.sections || self.sections === false)
+			{
+				console.log("met condition")
+				console.log(elements)
+				delete elements.csections
+				console.log(elements)
+			}
+	    	elements.meta = self.pagemeta;
+	    	elements = self.getdashboards(elements)
+	    	elements = self.getothersideelemitems(elements)
+	    	if(self.section !== undefined)elements.section = self.section
+	    	if(self.subsection !== undefined)elements.subsection = self.subsection
+	    	if(self.app !== undefined)elements.app = self.app
+	    	if(self.isguest !== undefined)elements.isguest = self.isguest
+	    	// console.log("are elements")
+	    	// console.log(elements)
+	    	return elements
+	    }catch(error)
+	    {
+	    	if(elements === false) return {}
+	    	return elements
+	    }
+	}
+
+
 
 	static getelements(req, res, callback){
-		
 		let self = this;
 		
 		let accepts;
 		if(req.query.accepts!==undefined)
 				accepts = req.query.accepts;
 				else accepts = false;
+		let config = require(__dirname+"/../"+self.app+"/config/config")
+		let elements = self.setelements(false)
 		Async.auto({
 
             start: function (dones) {
-            	let config = require(__dirname+"/../"+self.app+"/config/config")
-            	let elements = config.get("/elements")
-            	// console.log(elements)
+            	
 
             	if(accepts !== false)
             	{
@@ -307,7 +394,7 @@ class csystem extends csyberUser
             				self.showjsonpage(elements, res)						//for JSON
             				break;
             			default:
-            				res.send("non Json data")											//for html
+            				self.showhtmlpage(elements, config, req, res)				//for html
             			;
             		}
             	}else{
@@ -341,7 +428,6 @@ class csystem extends csyberUser
 		let self = this
 		let headless = req.query.headless || false;
 		let title = this.pagetitle;
-		elements.meta = this.pagemeta;
 		let status = 200;
 		this.showPage(headless, title, status, elements.defaultpage, req, res, elements)
 		//headless, title, status, page, req, res, elements
@@ -361,22 +447,102 @@ class csystem extends csyberUser
 		this.meta = meta;
 	}
 
+	static setdescription(description)
+	{
+		this.description = description;
+	}
+
+	static setkeywords(keywords)
+	{
+		this.keywords = keywords;
+	}
+
 	static setheadless(headless)
 	{
 		this.headless = headless;
 	}
 
+	static setsections(sections)
+	{
+		this.sections = sections;
+	}
+
 	static getothersideelemitems(elements)
 	{
 		let self = this
-		let others = self.config.get("/elements/others")
-		console.log(others)
-		elements.others = others
+		let others = {}
+		let path = "../"+self.app+"/config/config.js";
+		self.config = require(path);
+
+		// console.log(others)
+		let i = 0;
+		let sections;
+		(this.sections!=undefined && this.sections !== false)?sections="/"+this.sections:sections="";
+		if(sections !== "")
+		{
+			for(let index in self.mygroups[self.app])
+			{
+				let group = self.mygroups[self.app][index];
+				let tmp = self.config.get("/elements/csections/"+group+sections)
+				tmp == undefined?others[i++] = {}:others[i++] = tmp;
+				self.page = self.config.get("/elements/csections/"+group+sections+"/defaultpage") || self.page;
+			}
+		}else
+		{
+			for(let index in self.mygroups[self.app])
+			{
+				let group = self.mygroups[self.app][index];
+				let tmp = self.config.get("/elements/others/"+group)
+				tmp == undefined?others[i++] = {}:others[i++] = tmp;
+
+			}
+		}
+		
+
+		let sendothers = {};
+		let j;
+
+		let ii
+		let tmp = others;
+		for(ii in tmp)
+		{
+			others = tmp[ii];
+			for(i in others)
+			{	
+				if(others[i].name === undefined)continue;
+				if(sendothers[others[i].name] === undefined)sendothers[others[i].name] = others[i]
+				else
+				{
+					j = sendothers[others[i].name].length;
+					try
+					{
+						if(sendothers[others[i].name].children === undefined)sendothers[others[i].name].children = {}
+						sendothers[others[i].name].children = Object.assign(others[i].children, sendothers[others[i].name].children)
+					}catch(error)
+					{
+						sendothers[others[i].name] = Object.assign(others[i], sendothers[others[i].name])
+					}
+				}
+			}
+		}
+
+		elements.others = sendothers
+		try
+		{
+			elements.title = self.title || self.app;
+			elements.description = self.description ||elements.description;
+			elements.keywords = self.keywords ||elements.keywords;
+		}
+		catch(error){}
 		return elements;
 
 	}
 	static getdashboards(elements)
 	{
+		/*
+		 * everything below is still just kept here to keep the system from breaking. See how to remove it
+		 */
+		// return elements;	//everything below is only left for historical purposes.
 		let self = this;
 		let path = "../"+self.app+"/config/config.js";
 		self.config = require(path);
@@ -386,9 +552,6 @@ class csystem extends csyberUser
 		{
 			let group = self.mygroups[self.app][index];
 			let tmp = self.config.get("/elements/dashboards/"+group)
-			//console.log(tmp)
-			//console.log(self.mygroups)
-			//console.log("has temp")
 			tmp == undefined?dashboards[i++] = {}:dashboards[i++] = tmp;
 		}
 		let alldashboards = {dashboards:{dashboards:{}}};
@@ -402,16 +565,13 @@ class csystem extends csyberUser
 			{
 				alldashboards.dashboards.dashboards[j] = dashboards[i].dashboards.dashboards[j]
 			}
-
-			//console.log(dashboards[i])
-			/**/
 		}
-		//dashboards[0] != undefined?dashboards = dashboards[0]:false;
 		dashboards = alldashboards;
-		//console.log(dashboards)
 		elements.dashboards = dashboards.dashboards
 		return elements;
 	}
 }
+
+
 
 module.exports = csystem
