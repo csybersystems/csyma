@@ -32,3 +32,4 @@ bower_components
 Thumbs.db
 tmp
 todo
+config/config.js
