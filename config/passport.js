@@ -35,6 +35,9 @@ passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, don
     if (!user) {
       return done(null, false, { msg: `Email ${email} not found.` });
     }
+    let isActive = user.isActive
+    if(isActive === false)
+      return done(null, false, { msg: `Email ${email} not Active. Please activate.` });
     user.comparePassword(password, (err, isMatch) => {
       if (err) { return done(err); }
       if (isMatch) {

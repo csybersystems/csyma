@@ -44,7 +44,7 @@ class appsConfig extends MongoModels
     {
         let self = this;
         let _root = __dirname+"/../../";
-        console.log("setting up all apps")
+        //console.log("setting up all apps")
 
         self.collection = 'allapps';
         self.schema = allappsSchema;

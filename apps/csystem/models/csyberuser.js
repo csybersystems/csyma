@@ -72,6 +72,17 @@ class User extends MongoModels {
         });
     }
 
+    static whichorganization()
+    {
+        let owner = this.owner || "csystem";
+        return owner;
+    }
+
+    static setowner(owner)
+    {
+        this.owner = owner;
+    }
+
     static clear(callback){
         const self = this;
         let collection = self.collection;
@@ -120,6 +131,7 @@ class User extends MongoModels {
 
     static installapp(id, app, perm, callback){
         const self = this;
+        let owner = self.whichorganization();
         let singleappConfig = require(__dirname + "/../../"+app+"/config/config")
         let usergroups = singleappConfig.get("/"+perm);
         usergroups == undefined?usergroups = {}:false
@@ -140,7 +152,12 @@ class User extends MongoModels {
                 let gid = results.getappid;
                 var apps = {}
                 let groups = {}
-                for(let group in usergroups)groups[gid++] = {name: usergroups[group]}
+                for(let group in usergroups)
+                {
+                    groups[gid++] ={}
+                    // console.log()
+                    groups[gid-1][owner]=usergroups[group]
+                }
                 apps[app] = groups;
                 //  var updateObj = {
                 //         $push:{
@@ -148,8 +165,8 @@ class User extends MongoModels {
                         
                 //         }
                 //     };    
-                // // console.log("........=========================================1111111111111111111111111111")
-                // // console.log(apps)
+                // // //console.log("........=========================================1111111111111111111111111111")
+                // // //console.log(apps)
 
                 const document = {
                     _id: id,
@@ -160,7 +177,7 @@ class User extends MongoModels {
                 self.collection = 'apps';
                // self.schema = userappsSchema;
                //   self.findById(id, function(err, results){
-               //      // console.log(results)
+               //      // //console.log(results)
                // })
 
                try
@@ -177,30 +194,30 @@ class User extends MongoModels {
                                     
                                     }
                                 };    
-                            // console.log(id)
+                            // //console.log(id)
                             self.findByIdAndUpdate(id, updateObj,{new:true},function(err, results){
-                                // console.log(err)
-                                // console.log(results)
+                                // //console.log(err)
+                                // //console.log(results)
                                 done()
                             });
                             // self.findById(id,function(err, results){
-                            //   //  // console.log(err)
-                            //     // console.log(results)
-                            //     // console.log(results.apps.push({}))
+                            //   //  // //console.log(err)
+                            //     // //console.log(results)
+                            //     // //console.log(results.apps.push({}))
                             //     done()
                             // });
 
                           //  done();
                         // }else
                         // {
-                        //     // console.log(results)
+                        //     // //console.log(results)
                         //     done(null, results)                        
                         // }
                         
                     });
                }catch(error)
                {
-                    // console.log("an error occured")
+                    // //console.log("an error occured")
                     done()
                }
                 
@@ -226,10 +243,10 @@ class User extends MongoModels {
     static installallapps(id, perm, callback){
         let self = this;
         appsConfig.getallapps(function(err, allapps){
-            // console.log("............................................all apps")
+            // //console.log("............................................all apps")
 
-            // console.log(allapps)
-            // console.log(allapps)
+            // //console.log(allapps)
+            // //console.log(allapps)
             let app;
             Async.eachSeries(Object.keys(allapps), function (i, next){ 
                 app = allapps[i].appname
@@ -248,14 +265,21 @@ class User extends MongoModels {
        
     }
 
+    static setaccountType(accType)
+    {
+        this.accountType = accType;
+    }
+
 
 
     static create(username, password, email, callback) {
 
         const self = this;
         let useremail,firstname,middlename,lastname;
-        console.log("is email....")
-        console.log(email)
+        let owner = self.owner || "csystem";
+        let accountType = self.accountType || "user";
+        //console.log("is email....")
+        //console.log(email)
         if(email.email != undefined)
             useremail = email.email
         else useremail = email
@@ -297,6 +321,9 @@ class User extends MongoModels {
                         other:""
                     },
                     gender:"",
+                    owner: {0: owner},
+                    acctype: accountType,
+                    isActive:self.isActive(),
                     profile:{
                         picture: "images/4e14f517d239010c439617922dc13543.png",
                     },
@@ -306,11 +333,15 @@ class User extends MongoModels {
                 self.collection = Usercollection;
                // self.schema = allappsSchema;
                 self.insertOne(document, function(err, results){
-                    // console.log(results)
-                    console.log(err)
+                    // //console.log(results)
+                    //console.log(err)
                     done(null, results)
                 });
-            }]
+            }],
+            addowner: ['newUser', (results, done) => { 
+              const id = results.newUser[0]._id;
+              self.addowner(id,done) 
+            }],
         }, (err, results) => {
 
             if (err) {
@@ -374,7 +405,7 @@ class User extends MongoModels {
               if (err) done(err)
               else
               {
-                console.log(results.hash)//surgbcx1@gmail.com
+                //console.log(results.hash)//surgbcx1@gmail.com
                 user.password = results.hash.hash;
                 pass = results.hash.hash;
                 Async.auto({
@@ -397,10 +428,10 @@ class User extends MongoModels {
                         self.collection = Usercollection;
                         self.findByIdAndUpdate(req.user.id, {$set:{password:pass}},{new:false},function(err, results){
                             self.collection = collection;
-                            console.log(results)
-                            console.log("is updated")
-                            console.log(req.params.password)
-                            console.log(err)
+                            //console.log(results)
+                            //console.log("is updated")
+                            //console.log(req.params.password)
+                            //console.log(err)
                             done(err)
                         });
                     }
@@ -418,8 +449,8 @@ class User extends MongoModels {
           // }],
         }, (err, results) => {
             if (err) {
-                console.log("is err")
-                console.log(err)
+                //console.log("is err")
+                //console.log(err)
                // res.setHeader('Content-Type', 'application/json');
                 res.send(JSON.stringify({"err":""+err}))
                 return callback(err);
@@ -431,9 +462,17 @@ class User extends MongoModels {
         
     }
 
+    static isActive()
+    {
+        if(this.isActive === false)return false;
+        return true;
+    }
+
     static socialcreate(data, callback) {
 
         const self = this;
+        let owner = self.owner || "csystem";
+        let accountType = self.accountType || "user";
         Async.auto({
             newUser:  (done) =>{
 
@@ -445,6 +484,9 @@ class User extends MongoModels {
                         other:""
                     },
                     gender:"",
+                    owner: {0: owner},
+                    acctype: accountType,
+                    isActive:self.isActive(),
                     profile:{
                         picture: "",
                     },
@@ -473,9 +515,13 @@ class User extends MongoModels {
                self.insertOne(document, done);
                //done()
             },
-            installapps: ['newUser', (results, done) => { 
+            installapps: ['addowner', (results, done) => { 
               const id = results.newUser[0]._id;
               self.installallapps(id, "free",done) 
+            }],
+            addowner: ['newUser', (results, done) => { 
+              const id = results.newUser[0]._id;
+              self.addowner(id,done) 
             }],
         }, (err, results) => {
 
@@ -485,6 +531,43 @@ class User extends MongoModels {
             callback(null, results.newUser[0]._id)
            // callback(null, results.newUser[0]);
         });
+    }
+
+    static addowner(id, callback)
+    {
+        let self = this;
+       try
+       {
+             self.findById(id, function(err, results){
+                try
+                {
+                    let owners = results.owner;
+                    let newowners ={};
+                    let i;
+                    for(i in owners)
+                        newowners[i] = owners[i];
+                    i++;
+                    newowners[i] = id.toString()
+                    // newowners[1] = id.toString();
+                    let updateObj = {
+                        $set:{owner:newowners}
+                        }   
+                    self.findByIdAndUpdate(id, updateObj,{new:true},function(err, results){
+                        callback()
+                    });
+                }catch(error)
+                {
+                    callback();
+                }
+                
+                    
+                
+            });
+       }catch(error)
+       {
+            callback()
+       }
+                
     }
 
     static findByCredentials(username, password, callback) {
@@ -633,6 +716,11 @@ User.schema = Joi.object().keys({
     }),
     gender: Joi.string(), 
     locale: Joi.string(), 
+    owners: Joi.object().keys({
+            _id: Joi.string().required(),
+             name: Joi.string().required()
+         }),
+    acctype: Joi.string(),
     roles: Joi.object().keys({
         admin: Joi.object().keys({
             id: Joi.string().required(),
@@ -663,7 +751,7 @@ User.indexes = [
     { key: { email: 1, unique: 1 } }
 ];
 
-User.db = 'mongodb://localhost:27017/'+Config.get("/database/name");
+User.db = Config.get("/database/uri") ;
 Mongodb.MongoClient.connect(User.db, function(err, db) {
   User.db = db;
   MongoModels.db = db;

@@ -10,7 +10,7 @@ class errohandler extends csystem
 	{
 		//this.init(req, res);
 		let headless = req.query.headless || false;
-		console.log(headless)
+		//console.log(headless)
 		if (! req.accepts('html')) {    //if (req.accepts('json'))
 	      res.status(404).send({ error: 'Not found', code: '404' });
 	      return;
@@ -26,7 +26,7 @@ class errohandler extends csystem
 
 	static error500(err, req, res, env, next)
 	{
-		console.log(err)
+		//console.log(err)
 		let headless = req.query.headless || false;
 		if(env === 'developmente')
 		{
@@ -126,8 +126,8 @@ class errohandler extends csystem
 		      }]
 		  }, (err, _results) => {
 		      if (err);
-		      console.log("appstoload")
-		      console.log(appstoload)
+		      //console.log("appstoload")
+		      //console.log(appstoload)
 
 		      let sidemenuitems = Config.get('/sidemenuitems');
 			  sidemenuitems.apps.apps = appstoload;
@@ -136,8 +136,8 @@ class errohandler extends csystem
 			  for( tmp in sidemenuitems.others)if(sidemenuitems.others[tmp]['default'] === false)delete sidemenuitems.others[tmp]
 			    for( tmp in sidemenuitems.dashboards.dashboards)if(sidemenuitems.dashboards.dashboards[tmp]['application'] != "home")delete sidemenuitems.dashboards.dashboards[tmp]
 			  let apps = {}
-			  console.log(sidemenuitems.apps.apps)
-			  console.log(user.profile)
+			  //console.log(sidemenuitems.apps.apps)
+			  //console.log(user.profile)
 			  
 			  res.render(page, {
 			    title: title,

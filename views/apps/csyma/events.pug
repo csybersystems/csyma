@@ -1,2 +1,12 @@
 script.
-	$(".csection").click(function(){loadsection($(this).attr("href"), $(this))});
+	
+
+	function willattach()
+	{
+		if(handlers["appload"] === undefined)	/*don't bind multiple*/
+			handlers["appload"] = true;
+		else return;
+		$("body").on("click", ".csection", function(){loadsection($(this).attr("href"), $(this))});
+	}
+
+	willattach();

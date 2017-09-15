@@ -1,0 +1,91 @@
+- var users = fromchild.users
+.row
+  .col-lg-3.col-xs-6
+    // small box
+    .small-box.bg-yellow
+      .inner
+        h3 #{fromchild.numusers}
+        |               
+        if fromchild.numusers > 1
+          p  Users
+        else
+          p  User 
+        |  
+      |             
+      .icon
+        i.ion.ion-person-add.tocreateuser
+      |             
+      a.small-box-footer.tocreateuser(href='#')
+        | Create New User 
+        i.fa.fa-arrow-circle-right
+  // ./col
+  //apps
+  // ./col
+.row
+  .col-lg-12
+    .box.box-primary
+      .box-header.ui-sortable-handle(style='cursor: move;')
+        i.fa.fa-user.fa-fw
+        |               
+        h3.box-title Manage Users
+        |               
+        .box-tools.pull-right
+          button.btn.bg-teal.btn-sm(type='button', data-widget='collapse')
+            i.fa.fa-minus
+          |                 
+          button.btn.bg-teal.btn-sm(type='button', data-widget='remove')
+            i.fa.fa-times   
+      .box-body 
+        table.table.table-condensed
+          tbody
+            tr
+              th Email
+              |                   
+              th Name
+              |                   
+              th Gender
+              |                   
+              th Status
+              |
+              th
+            | 
+            each singleuser in users
+              tr(id=singleuser._id)
+                if(singleuser.email)
+                  td
+                    .tomoduser.usertr(chref=singleuser._id href="#") #{singleuser.email}
+                  |
+                else
+                  td 
+                    a.tomoduser(chref=singleuser._id href="#")
+                  |
+                |                   
+                if(singleuser.profile.name)
+                  td
+                    .tomoduser.usertr(chref=singleuser._id href="#") #{singleuser.profile.name}
+                  |
+                else
+                  td 
+                    .tomoduser.usertr(chref=singleuser._id href="#") #{singleuser.name.first}
+                  |
+                | 
+                td=singleuser.profile.gender || singleuser.gender || '...'
+                if(singleuser.isActive===true) 
+                  td Active
+                else
+                  td Deactivated
+                |                   
+                td.image
+                  img.direct-chat-img.tomoduser(src=singleuser.profile.picture || 'images/4e14f517d239010c439617922dc13543.png', alt='User Image' chref=singleuser._id)
+                  //sup(style='font-size: 20px;')
+                |                  
+            |                 
+      // /.box-body
+  
+    //.box
+
+script.
+  $(".tocreateuser").click(function(){createuser();})
+  $(".tomoduser").click(function(){moduser($(this).attr("chref"));})
+  $(".tomanageapp").click(function(){manageapp();})
+  $(".applistman").click(function(){manageapp();})

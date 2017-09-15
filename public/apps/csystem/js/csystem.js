@@ -62,7 +62,7 @@ var loadpreviousapp = function()
 		// console.log($(obj).html())
 		try
 		{
-			if($(obj).html() == undefined)throw new error("obj).html")
+			if($(obj).html() == undefined)throw new error("obj.html")
 				//window.location.href =pathsep+prevapp;
 			$(obj).click();
 
@@ -115,12 +115,17 @@ var loadpage = function(url)
 	console.log("loadpage()")
 	console.log(url)
 	$.get(url).done(function(preinnerdata){
+		console.log("be called..............")
+		$(".content").remove();			//remove previously attached scripts...
+		$(".content-wrapper").html("<div class='content'></div>");
+		// console.log(preinnerdata)
 		$(".content").html(preinnerdata);
 	}).fail(function(){
 		alertify.error("Failed to load page.");
 	});
 }
-var loadapp = function(url)
+
+var loadapp = function(url, skipclicking)
 {
 	let url_r = url;
 	url_r = url_r.split(pathsep);
@@ -146,6 +151,8 @@ var loadapp = function(url)
 				let elem;
 				let d_class = dashboards.class;
 
+				$(".otherstree").html('');
+				$( ".sectionscontainer").html( "");
 				$(".dashtree").attr("style","display:none")
 
 				console.log("now loading dashboards")
@@ -154,7 +161,7 @@ var loadapp = function(url)
 				for(elem in dashboards.dashboards)
 				{
 					$(".dashboardscontainer").html('');
-					$(".dashtree").attr("style","display:block")
+					$(".dashtree").attr("style","display:block").html("")
 					break;
 				}
 				
@@ -164,14 +171,16 @@ var loadapp = function(url)
 					// console.log(element)
 					$(".dashboardscontainer").append('<li><a href="#"></a><a class = "sidea" href="/'+element.url+'"type="dash"><i class="'+element.class+'"></i> '+element.name+'</a></li>');
 				}
-				 $(".applicationsicon").click();
+				if(!skipclicking) $(".applicationsicon").click();
 				// $(".dashboardsicon").click();
 
-				$(".otherstree").detach('');
+				$(".otherstree").detach();
 				let others = innerdata.others;
 				console.log(others)
+				let level = innerdata.level||"1";
 				for(elem in others)
 				{
+					$("."+elem+"container").html("")
 					let element = others[elem]
 					if(element.children !== undefined)
 					{
@@ -183,20 +192,26 @@ var loadapp = function(url)
 							let element_i = element.children[inneritem]
 							// console.log(element_i)
 							let tmp = element_i.classi||"sidea";
-							$("."+elem+"container").append('<li><a href="#"></a><a class = "'+tmp+'" href="/'+element_i.url+'"type="dash"><i class="'+element_i.class+'"></i> '+element_i.name+'</a></li>');
-							// $("body")append('<script>$(".csection").click(function(){alert("to load")});</script>')
+
+							let tmptype = element_i.type===undefined?"page":element_i.type;
+							$("."+elem+"container").append('<li><a href="#"></a><a class = "'+tmp+'" href="/'+element_i.url+'" type="'+tmptype+'"'+'" level="'+level+'"><i class="'+element_i.class+'"></i> '+element_i.name+'</a></li>');
 						}
 						$("."+elem+"icon").click();
 					}
 					else 
 					{
-						newelem = $( '<li class="treeview otherstree"><a href="'+element.url+'"><i class="'+element.class+' '+elem+'icon"></i> <span>'+element.name+'</span></a><ul class="treeview-menu dashboardscontainer menu-open" style="display: block;"></ul></li>' )
+						let tmptype = element.type===undefined?"page":element.type;
+						let tmp = element.classi||"sideb";
+						newelem = $( '<li class="treeview otherstree"><a class = "'+tmp+'"href="'+element.url+'" type="'+tmptype+'"'+'" level="'+level+'"><i class="'+element.class+' '+elem+'icon"></i> <span>'+element.name+'</span></a><ul class="treeview-menu dashboardscontainer menu-open" style="display: block;"></ul></li>' )
 						$( ".leftsidebarcontainer" ).append( newelem);
 					}
 
 					
 					
 				}
+
+				$(".lfbclevel1").detach();
+				$( ".leftsidebarcontainer").append("<span class = 'lfbclevel1 sidebar-menu'></span>")
 				if(innerdata.title !== undefined)
 				{
 					document.title = appname+" | "+innerdata.title;
@@ -233,6 +248,27 @@ var loadapp = function(url)
 
 var loadsection = function(url, obj)
 {
+	/*
+
+		load app or just a single page...
+			an app will have more components attached to it....
+	*/
+	let i;
+
+	let level = obj.attr("level");
+
+	switch(obj.attr("type"))
+	{
+		case "app":			
+			break;
+		default:
+			loadpage(url);
+			console.log(url)
+			$(obj).parent().parent().parent().children("a").click();
+			return;		//stop at this point.
+
+	}
+	// return;
 	let url_r = url;
 	url_r = url_r.split(pathsep);
 	delete url_r[0];
@@ -241,81 +277,75 @@ var loadsection = function(url, obj)
 	url = rootpath+url_r+"?headless=true&accepts=json"
 	
 	url = rootpath+url_r+"?headless=true&accepts=html"			//first load the page
-	console.log("page url...")
 	console.log(url)
 	$.get(url).done(function(preinnerdata){
 		url = rootpath+url_r+"?headless=true&accepts=json"
 		$.getJSON(url).done(function(innerdata){
-			console.log(innerdata)
+			// console.log(innerdata)
+
+			
+
+			////////////////////loading child elements....
+
 			let datapi1;
 			try{
-				let dashboards = innerdata.dashboards
-				console.log(dashboards)
-				let elem;
-				let d_class = dashboards.class;
-
-				// $(".dashtree").attr("style","display:none")
-
-				// console.log("now loading dashboards")
-				// console.log(dashboards.dashboards)
-
-				// for(elem in dashboards.dashboards)
-				// {
-				// 	$(".dashboardscontainer").html('');
-				// 	$(".dashtree").attr("style","display:block")
-				// 	break;
-				// }
-				
-				// for(elem in dashboards.dashboards)
-				// {
-				// 	let element = dashboards.dashboards[elem]
-				// 	// console.log(element)
-				// 	$(".dashboardscontainer").append('<li><a href="#"></a><a class = "sidea" href="/'+element.url+'"type="dash"><i class="'+element.class+'"></i> '+element.name+'</a></li>');
-				// }
-				//  $(obj).parent().parent().parent().children("a").click();
-
-				$(".sectiontree").detach('');
-				let others = innerdata.others;
-				console.log(others)
+				let others = innerdata.csections;
+				let i;
+				let level = innerdata.level||"1";
+				console.log(innerdata)
+				for(i in innerdata)console.log(i)
+					console.log(innerdata.level)
+				let childelem = childsection(level)
+				$(childelem).html("");
 				for(elem in others)
 				{
+					$("."+elem+"container").html("")
 					let element = others[elem]
 					if(element.children !== undefined)
 					{
 						newelem = $( '<li class="treeview sectiontree"><a href="#"><i class="'+element.class+' '+elem+'icon"></i> <span>'+element.name+'</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a><ul class="treeview-menu '+elem+'container menu-open" style="display: block;"></ul></li>' )
-						$( ".sectionscontainer").append( newelem);
+						// $( ".lfbclevel1").append( newelem);
+						childelem.append( newelem);
 						let inneritem;
 						for(inneritem in element.children)
 						{
 							let element_i = element.children[inneritem]
-							// console.log(element_i)
 							let tmp = element_i.classi||"sidea"+" "+elem+'icon';
-							$("."+elem+"container").append('<li><a href="#"></a><a class = "'+tmp+'" href="/'+element_i.url+'"type="dash"><i class="'+element_i.class+'"></i> '+element_i.name+'</a></li>');
+							let tmptype = element_i.type===undefined?"page":element_i.type;
+							$("."+elem+"container").append('<li><a href="#"></a>  <a class = "'+tmp+'" href="/'+element_i.url+'"type="'+tmptype+'"><i class="'+element_i.class+'"></i> '+element_i.name+'</a>  </li>');
 						}
 						$("."+elem+"icon").click();
 
 					}
 					else 
 					{
-						newelem = $( '<li class="treeview sectiontree"><a href="'+element.url+'"><i class="'+element.class+' '+elem+'icon"></i> <span>'+element.name+'</span></a><ul class="treeview-menu dashboardscontainer menu-open" style="display: block;"></ul></li>' )
-						$( ".sectionscontainer" ).append( newelem);
+						if(element.name !== undefined)
+						{
+							let tmp = element.classi||"sidea";
+							newelem = $( '<li class="treeview sectiontree"><a class = "'+tmp+'" href="'+element.url+'"><i class="'+element.class+' '+elem+'icon"></i> <span>'+element.name+'</span></a><ul class="treeview-menu dashboardscontainer menu-open" style="display: block;"></ul></li>' )
+							// $( ".lfbclevel1" ).append( newelem);
+							childelem.append( newelem);
+						}
 					}	
 					
 				}
-				if(innerdata.title !== undefined)
-				{
-					document.title = appname+" | "+innerdata.title;
-				}
-				if(innerdata.keywords !== undefined)
-					$('meta[name="keywords"]').attr("content", innerdata.keywords);
-				if(innerdata.description !== undefined)
-					$('meta[name="description"]').attr("content", innerdata.description);
-				if(innerdata.app !== undefined)
-					$(".thisapp").html('<i class="fa fa-desktop"></i>'+innerdata.app);
-				if(innerdata.section !== undefined)
-					$(".thissection").html(innerdata.section);	
-				if(innerdata.subsection !== undefined)
-					$(".thisdashboard").html(innerdata.subsection);
+
+
+
+				// if(innerdata.title !== undefined)
+				// {
+				// 	document.title = appname+" | "+innerdata.title;
+				// }
+				// if(innerdata.keywords !== undefined)
+				// 	$('meta[name="keywords"]').attr("content", innerdata.keywords);
+				// if(innerdata.description !== undefined)
+				// 	$('meta[name="description"]').attr("content", innerdata.description);
+				// if(innerdata.app !== undefined)
+				// 	$(".thisapp").html('<i class="fa fa-desktop"></i>'+innerdata.app);
+				// if(innerdata.section !== undefined)
+				// 	$(".thissection").html(innerdata.section);	
+				// if(innerdata.subsection !== undefined)
+				// 	$(".thisdashboard").html(innerdata.subsection);
 			$(".content").html(preinnerdata);
 			$(obj).parent().parent().parent().children("a").click();
 		}catch(error)
@@ -335,6 +365,21 @@ var loadsection = function(url, obj)
 	
 	
 	
+}
+
+
+var childsection = function(level)
+{
+	console.log(level)
+	level = parseInt(level)
+	if(level === 1)
+		return $(".lfbclevel"+level);
+
+	let prelevel = level-1;
+	$(".lfbclevel"+level).detach();
+	$( ".lfbclevel"+prelevel).append("<span class = 'lfbclevel"+level+" sidebar-menu'></span>");
+	return $(".lfbclevel"+level);
+
 }
 
 
@@ -571,71 +616,63 @@ var loadapplicationslist = () => {
 
 $(".presignupbtn").click(function(){
 
-	// $("#modal-default").iziModal({
-	//     overlayClose: false,
-	//     width: 600,
-	//     overlayColor: 'rgba(0, 0, 0, 0.6)',
-	//     transitionIn: 'bounceInDown',
-	//     transitionOut: 'bounceOutDown',
-	//     navigateCaption: true,
-	//     navigateArrows: 'closeScreenEdge',
-	//     onOpened: function() {
-	//         //console.log('onOpened');
-	//     },
-	//     onClosed: function() {
-	//         //console.log('onClosed');  
-	//     }
-	// });
-	// $('#modal-default').iziModal('open');
-
-	console.log("open modal-custom");
-	// $('#modal-custom').iziModal('open');
-	setTimeout(function(){ $('#modal-custom').iziModal('open');}, 200);
-	$(".regheader").click();
-	
-// 	setTimeout(function(){ $(".regheader").click();}, 200);
-// 	setTimeout(function(){ $(".loginheader").click();
-// 		setTimeout(function(){ $(".regheader").click();}, 200);
-
-// }, 200);
-	
-	//setTimeout(function(){ $(".regheader").click();}, 100);
+	presignupbtnfunc()
 });
 
 $(".pregloginbtn").click(function(){
+  setTimeout(function(){ downloadmodal($('#modal-custom'), "/csyma/page/csyma/frontformlogin?headless=true&accepts=html")}, 200);
+  
+  });
 
-	// $("#modal-default").iziModal({
- //    // top: 50,
- //    // bottom: 50,
- //    width: '60%',
- //    padding: 20,
- //    restoreDefaultContent: true,
- //    group: 'grupo1',
- //    loop: true,
- //    fullscreen: true,
- //    openFullscreen: true,
- //    onResize: function(modal){
- //        console.log(modal.modalHeight);
- //    }
-	// });
-	// $('#modal-default').iziModal('open');
+let presignupbtnfunc = function()
+{
+	console.log("open modal-custom");
+	// $('#modal-custom').iziModal('open');
+	// setTimeout(function(){ $('#modal-custom').iziModal('open');}, 200);
+	// $(".regheader").click();
+	downloadmodal($('#modal-custom'), "/csyma/page/csyma/frontform?headless=true&accepts=html")
+}
+
+let presignupbtnfunc1 = function(accType)
+{
+	let page;
+	switch(accType)
+	{
+		case "user":
+			page = "insidesignup";
+			break;
+		default:
+			page = "insidesignuporg";
+	}
+	downloadmodal($('#modal-custom'), "/csyma/page/csyma/"+page+"/"+accType+"?headless=true&accepts=html")
+}
+
+let downloadmodal = function(modal, url)
+{
+	//download...
+	// setTimeout(function(){ 
+
+	// 	$(modal).html($('#modal-custom').html())
+	// 	$('#modal-custom-1').iziModal('open');
+	// 	// $('#modal-custom-1').html("$('#modal-custom').html()<br><br><br><br><br><br><br><br><br><br><br><br>asdhkahdjkas")
+	// 	$('#modal-custom-1').iziModal('setTop', 100);;
+
+	// }, 200);
+	$.get(url).done(function(preinnerdata){
+		
+		setTimeout(function(){ 
+		    modal.iziModal('open');
+			// modal.iziModal('setTop', 200);
+			// modal.iziModal('setWidth', 900);
+			modal.html(preinnerdata)
+		}, 200);
+
+	}).fail(function(){
+		alertify.error("Failed to load page.");
+	});
+}
 
 
-	// console.log("open modal-custom");
-	
-	setTimeout(function(){ $('#modal-custom').iziModal('open');}, 200);
-	$(".loginheader").click();
-// 	setTimeout(function(){ $(".regheader").click();
-// 			setTimeout(function(){ $(".loginheader").click();}, 2000);
-// }, 2000);
-	
-
-
-
-	
-
-
-});
 
 var initmodals = function()
 {
@@ -677,17 +714,13 @@ var initmodals = function()
 //loading applications from applications menu
 $(".sidea").click(function(){loadapp($(this).attr("href"))});
 $(".sideap").click(function(){loadpage($(this).attr("href"))});
-// $(".csection").click(function(){alert("to load")});
 
-$(".signupsubmit").click(function(){createusersubmit();});
-$(".loginsubmit").click(function(){localloginsubmit();});
 
-$(".tolocallogicbtn").click(function(){$(".localloginheader").click();});
-$(".locallogincancel").click(function(){$(".loginheader").click();});
 // $(".locallogincancel").click(function(){$(".loginheader").click();});
 
 
-var createusersubmit = function(){
+var createusersubmit = function(accType, reload){
+	accType = accType === "organization"?"organization":"user";
 	let email = $(".sigupemail").val()
 	let pwd = $(".signuppwd").val()
 	let pwdc = $(".signuppwdcnf").val()
@@ -702,7 +735,7 @@ var createusersubmit = function(){
 			throw new Error("Password is shorter than "+pwdlen+" characters");
 		let tmpdata = "email="+email+"&password="+pwd+"&confirmPassword="+pwdc;
 		console.log(tmpdata);
-		let tmpurlipcsubmit = "auth/signupinside"+"?"+tmpdata;
+		let tmpurlipcsubmit = "auth/signupinside/"+accType+"/?"+tmpdata;
 		console.log(tmpurlipcsubmit)
 		$.post(tmpurlipcsubmit).done(function(innerdata){
   			let datapi;
@@ -722,6 +755,11 @@ var createusersubmit = function(){
   					$(".signuppwdcnf").val("")
   					// $(".signupcancel").click();
   					$(".localloginheader").click();
+  					if(reload === 1)
+  						loadpage("/#!/csyma/page/csyma/users")
+  					else
+  						if(reload === 2)
+  							loadpage("/#!/csyma/page/csyma/organizations")
   					// addtostack(".")
   					// loadlastpage();
   				}
@@ -804,6 +842,7 @@ var localloginsubmit = function(){
 	//createusercancelbtn
 }
 
+var whichmodal;
 var refusesignupsubmission = function()
 {
 	var fx = "wobble";
@@ -906,3 +945,49 @@ var postchangepwd = function(){
 		$("#input-passwordcheck").val("");
 	}
 }	
+
+
+$('.tour-btn').click(function(){
+		setTimeout(function(){
+			$("#modal").iziModal({
+				openFullscreen: true,
+				iframe: true,
+				zindex: 2000,
+				closeOnEscape: false,
+				iframeHeight: 800, 
+				bodyOverflow: true,
+				iframeURL: "/csyma/page/csymaconstruction/csymatour?headless=true",
+				// headerColor: '#000',
+			    title: 'CSYMA Tour',
+			    // subtitle: '...',
+			    // icon: 'icon-settings_system_daydream',
+			    overlayClose: true,
+			    fullscreen: true,
+			    borderBottom: false,
+			    group: 'grupo1',
+			    navigateArrows: false,
+			    onFullscreen: function(modal){
+			        console.log(modal.isFullscreen);
+			    }
+			});
+			$('#modal').iziModal('open');
+			$("#modal").iziModal();
+		},250)
+})
+
+
+$(".homebtn").click(function(){
+	loadapp($(this).attr("href"), true);
+})
+
+
+let handlers  = {};
+
+let createuser = function()
+{
+	presignupbtnfunc1("user");
+}
+let createorg = function()
+{
+	presignupbtnfunc1("organization");
+}

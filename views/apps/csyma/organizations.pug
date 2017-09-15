@@ -1,0 +1,101 @@
+- var users = fromchild.users
+
+.row
+  .col-lg-3.col-xs-6
+    // small box
+    .small-box.bg-yellow
+      .inner
+        h3 #{fromchild.numusers}
+        |               
+        if fromchild.numusers > 1
+          p  Organizations
+        else
+          p  Organization 
+        |  
+      |             
+      .icon
+        i.ion.ion-person-add.tocreateorg
+      |             
+      a.small-box-footer.tocreateorg(href='#')
+        | Create New Organization 
+        i.fa.fa-arrow-circle-right
+  // ./col
+  //apps
+  // ./col
+.row
+  .col-lg-12
+    .box.box-primary
+      .box-header.ui-sortable-handle(style='cursor: move;')
+        i.fa.fa-user.fa-fw
+        |               
+        h3.box-title Manage Organizations
+        |               
+        .box-tools.pull-right
+          button.btn.bg-teal.btn-sm(type='button', data-widget='collapse')
+            i.fa.fa-minus
+          |                 
+          button.btn.bg-teal.btn-sm(type='button', data-widget='remove')
+            i.fa.fa-times   
+      .box-body 
+        table.table.table-responsive
+          tbody
+            tr
+              th
+              |
+              th Email
+              |                   
+              th Name
+              |    
+              th Status
+              |
+              th 
+            include ../csystem/shared/tablehead            
+              
+            | 
+            each singleuser in users
+              - var userscl
+              if(singleuser.isActive===true) 
+                - var userscl="text-success"
+              else
+                - var userscl="text-danger"
+              endif
+              tr(id=singleuser._id class=userscl)
+                td.image
+                  img.direct-chat-img.tomoduser(src=singleuser.profile.picture || 'images/4e14f517d239010c439617922dc13543.png', alt='User Image' chref=singleuser._id)
+                  //sup(style='font-size: 20px;')
+                |   
+                if(singleuser.email)
+                  td
+                    .tomoduser.usertr(chref=singleuser._id href="#") #{singleuser.email}
+                  |
+                else
+                  td 
+                    a.tomoduser(chref=singleuser._id href="#")
+                  |
+                |                   
+                if(singleuser.profile.name)
+                  td
+                    .tomoduser.usertr(chref=singleuser._id href="#") #{singleuser.profile.name}
+                  |
+                else
+                  td 
+                    .tomoduser.usertr(chref=singleuser._id href="#") #{singleuser.name.first}
+                  |
+                if(singleuser.isActive===true) 
+                  td.text-success Active
+                else
+                  td.text-danger Deactivated
+                |  
+                td View
+                |                   
+                               
+            |                 
+      // /.box-body
+  
+    //.box
+
+script.
+  $(".tocreateorg").click(function(){createorg();})
+  $(".tomoduser").click(function(){moduser($(this).attr("chref"));})
+  $(".tomanageapp").click(function(){manageapp();})
+  $(".applistman").click(function(){manageapp();})

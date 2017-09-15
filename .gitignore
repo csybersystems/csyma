@@ -33,3 +33,6 @@ Thumbs.db
 tmp
 todo
 config/config.js
+try/
+*.bac
+/*.bac

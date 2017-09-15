@@ -1,0 +1,27 @@
+
+
+
+.wrapper
+{
+	overflow: scroll;
+}
+
+body
+{
+	overflow: scroll;
+}
+
+.treeview-menu
+{
+	z-index:1;
+}
+
+.usertr
+{
+	cursor:pointer;
+}
+
+/*.row
+{
+	overflow-x: scroll;
+}*/

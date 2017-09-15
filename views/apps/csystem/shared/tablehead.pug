@@ -1,0 +1,13 @@
+- var thispage = page || 1
+- var allpages = pages || 1
+div 
+	| Page 
+	button.gobackintable.fa.fa-fw.fa-arrow-circle-left
+	textarea(type = "text" value=thispage class="col-sm-3 tmpclass")
+	button.gobackintable.fa.fa-fw.fa-arrow-circle-right
+	| of 
+	b #{allpages}. 
+	| Go to page
+	| Elements per page..
+	button GO
+	button Next

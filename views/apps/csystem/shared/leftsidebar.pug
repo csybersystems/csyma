@@ -17,9 +17,14 @@ aside.main-sidebar
       li.header Main Navigation
       |
       li.treeview
-        a(href="#")
-          i.fa.fa-home
-          span &nbsp;Home 
+        if(elements.defaultapp !== false && elements.defaultapp !== undefined)
+          a(href='#!'+elements.defaultapp class="homebtn")
+            i.fa.fa-home
+            span &nbsp;Home 
+        else if(elements.defaultapp === false || elements.defaultapp === undefined)
+          a(href='#')
+            i.fa.fa-home
+            span &nbsp;Home 
       |
       li.treeview.appstree
         a(href='#')
@@ -147,7 +152,3 @@ aside.main-sidebar
         a(href="#")
           i.fa.fa-github
           span &nbsp;Github 
-        
-
-                   
-      

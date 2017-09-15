@@ -1,0 +1,109 @@
+.iziModal-wrap
+  .iziModal-content(style='padding: 0px;')
+    button.icon-close(data-izimodal-close='')
+    |         
+    header
+      a#signin.regheader(href='#')
+        i.fa.fa-user-plus
+          span   New Account
+      |             
+      a.active.loginheader(href='#')
+        i.fa.fa-sign-in
+          span  Login
+      a.active.localloginheader.hide(href='#')
+        i.fa.fa-lock
+          span  local Login
+    |         
+    .sections
+      section
+        .containere
+          .text-center
+            span.fa.fa-user-plus  CSYMA Apps
+          legend.text-center
+            | Create New Account
+            input(type='hidden', name='_csrf')
+            .form-group
+              label.col-sm-3.control-label(for='email') Email
+              .col-sm-7
+                input#email.sigupemail(type='email', name='email', placeholder='Email', autofocus='', required='')
+            .form-group
+              label.col-sm-3.control-label(for='password') Password
+              .col-sm-7
+                input#password.signuppwd(type='password', name='password', placeholder='Password', required='')
+            .form-group
+              label.col-sm-3.control-label(for='confirmPassword') Confirm Password
+              .col-sm-7
+                input#confirmPassword.signuppwdcnf(type='password', name='confirmPassword', placeholder='Confirm Password', required='')
+            .form-group
+              .col-sm-offset-3.col-sm-7
+                button.signupcancel(data-izimodal-close='') Cancel
+                button.btn.btn-primary.signupsubmit(type='submit')
+                  i.fa.fa-user-plus
+                  | &nbsp;&nbsp;&nbsp;&nbsp;Signup
+      |                 
+      section
+        .containere
+          .jumbotron.text-center(style='background:#FFF;')
+            span.fa.fa-lock  CSYMA Apps
+            |         
+            p Please log in to access your account
+            |         
+            a.btn.btn-default.tolocallogicbtn(href='#', style='color:#000;')
+              span.fa.fa-user
+              |  Local Login
+            |         
+            a.btn.btn-primary(href='/auth/facebook', style='color:#FFF;')
+              span.fa.fa-facebook
+              |  Facebook
+            |         
+            a.btn.btn-info(href='/auth/twitter', style='color:#FFF;')
+              span.fa.fa-twitter
+              |  Twitter
+            |         
+            a.btn.btn-danger(href='/auth/google', style='color:#FFF;')
+              span.fa.fa-google-plus
+              |  Google+
+            |         
+            a.btn.btn-github(href='/auth/github', style='color:#FFF;')
+              span.fa.fa-github
+              |  Github
+      section
+        .containere
+          .text-center
+            span.fa.fa-lock  CSYMA Apps
+          legend.text-center
+            | Login
+            input(type='hidden', name='_csrf', value='6zaAXNeLzZqF6iV0/6zD7cLmNQGMwX1s+iZhk=')
+            .form-group
+              label.col-sm-3.control-label(for='email') Email
+              .col-sm-7
+                input#email.localloginemail(type='email', name='email', placeholder='Email', autofocus='', required='')
+            .form-group
+              label.col-sm-3.control-label(for='password') Password
+              .col-sm-7
+                input#password.localloginpwd(type='password', name='password', placeholder='Password', required='')
+            .form-group
+              .col-sm-offset-3.col-sm-7
+                button.locallogincancel
+                  i.fa.fa-arrow-left
+                    span &nbsp;&nbsp;&nbsp;&nbsp;Back
+                button.btn.btn-primary.loginsubmit(type='submit')
+                  i.fa.fa-sign-in
+                  | &nbsp;&nbsp;&nbsp;&nbsp;Login
+                a.btn.btn-link(href='/auth/reset') Forgot your password?
+                |  
+                a.btn.btn-primar
+            .form-group
+              .col-sm-offset-3.col-sm-7
+                hr
+script.
+  setTimeout(function(){ 
+    $(".loginheader").click();
+  }, 200);
+  
+  $(".signupsubmit").click(function(){createusersubmit();});
+  $(".loginsubmit").click(function(){localloginsubmit();});
+
+  $(".tolocallogicbtn").click(function(){$(".localloginheader").click();});
+  $(".locallogincancel").click(function(){$(".loginheader").click();});
+  whichmodal = $("#modal-custom")

@@ -1,0 +1,15 @@
+[Unit]
+Description=Csyma Server
+
+[Service]
+User=nobody
+Group=nogroup
+WorkingDirectory=/home/brian/Code/usermanagement/csyma
+ExecStart=/home/brian/Code/usermanagement/csyma/service.sh
+SyslogIdentifier=csyma
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+

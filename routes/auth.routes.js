@@ -18,7 +18,7 @@ router.use(passport.session());
  */
  let returnto = "/#"
 router.get('/logout', userController.logout);
-router.post('/signupinside', userController.postSignupinside);
+router.post('/signupinside/:type?', userController.postSignupinside);
 router.post('/signininside', userController.postSignininside);
 router.post('/unlink/:account', userController.postUnlink);
 router.post('/drop/', userController.postDeleteAccountInside);

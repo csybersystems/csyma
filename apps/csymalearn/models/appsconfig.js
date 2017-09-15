@@ -66,7 +66,7 @@ class appsConfig extends MongoModels
     {
         let self = this;
         let _root = __dirname+"/../../";
-        console.log("setting up all apps")
+        //console.log("setting up all apps")
 
         self.collection = 'allapps';
         self.schema = allappsSchema;
@@ -78,20 +78,20 @@ class appsConfig extends MongoModels
             },
             create:["drop", function(results, done){
                 let items = fse.readdirSync(_root);
-                // console.log(__dirname)
+                // //console.log(__dirname)
 
                 for (let i=0; i<items.length; i++) {
-                    //console.log(items[i])
+                    ////console.log(items[i])
                     if(items[i] == "." || items[i] == "..")continue;
                     if(items[i].split(".").length > 1)continue;
                     let appname = items[i];
 
                     let thisappconfig = require(_root + appname+"/config/config.js")
-                    console.log(items[i])
+                    //console.log(items[i])
                     let enabled = thisappconfig.get("/enabled")
                     let displayname = thisappconfig.get("/displayname")
-                    console.log(enabled)
-                    console.log(displayname)
+                    //console.log(enabled)
+                    //console.log(displayname)
 
                     //create appentry...
                     const document = {
@@ -99,12 +99,12 @@ class appsConfig extends MongoModels
                             enabled: enabled,
                             timeCreated: new Date()
                         };
-                   // console.log(document)
-                   // console.log("setting results...")
+                   // //console.log(document)
+                   // //console.log("setting results...")
                     self.insertOne(document, function(err, results){
-                     //   console.log("setting results...")
-                       // console.log(err)
-                        //console.log(results)
+                     //   //console.log("setting results...")
+                       // //console.log(err)
+                        ////console.log(results)
                         done()
                     });
                 }
@@ -126,7 +126,7 @@ class appsConfig extends MongoModels
         self.collection = 'allapps';
         self.schema = allappsSchema;
         self.find(function(err, results){
-            console.log("......................gor results")
+            //console.log("......................gor results")
             callback(err, results)
         });
 

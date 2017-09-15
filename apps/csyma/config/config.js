@@ -97,32 +97,9 @@ const config = {
     class:"fa fa-cog",        //fa fa-cog fa-spin fa-3x fa-fw     //icon that appears for app in menu...
     elements:{
         others:{
-                "user":
+                "user":                 //this is the user...
                 {
-                    // dashboards: {
-                    //     class: "fa fa-dashboard",
-                    //     name:"Dashboards",
-                    //     children: {
-                    //         users:{
-                    //             name: "Users",
-                    //             url: "#csyber/dashboards/home",
-                    //             application:"Users",
-                    //             class: "fa fa-desktop",
-                    //         },
-                    //         profile:{
-                    //             name: "Profile",
-                    //             url: "#csyber/dashboards/home",
-                    //             application:"profile",
-                    //             class: "fa fa-dashboard",
-                    //         },
-                    //         applications:{
-                    //             name: "Applications",
-                    //             url: "#csyber/dashboards/home",
-                    //             application:"Applications",
-                    //             class: "fa fa-dashboard",
-                    //         }
-                    //     },
-                    // },
+
                     "sections":
                     {
                         class:"fa fa-reorder",
@@ -130,30 +107,62 @@ const config = {
                         name:"Sections",
                         children:
                         {
-                            user_site:
-                            {
-                                name:"Site",
-                                url:"#!/csyma/section/csyma/site",
+                            users:{
+                                name:"Users",
+                                url:"#!/csyma/page/csyma/users",
+                                application:"app page",
+                                class:"fa fa-user",
+                                classi:"csection",
+                                type:"app",
+
+                            },
+                            organizations:{
+                                name:"Organizations",
+                                url:"#!/csyma/page/csyma/organizations",
                                 application:"app page",
                                 class:"fa fa-tv",
                                 classi:"csection",
+                                type:"app",
+
                             },
-                             user_about:
-                            {
-                                name:"About",
-                                url:"#!/csyma/section/csyma/about",
+                            apps:{
+                                name:"users",
+                                url:"#!/csyma/page/csyma/apps",
                                 application:"app page",
-                                class:"fa fa-info-circle",
+                                class:"fa fa-tv",
                                 classi:"csection",
+                                type:"app",
+
                             },
-                            user_doc:
+                            
+                        },
+                        
+                    },
+                    "dashboards":
+                    {
+                        class:"fa fa-dashboard",
+                        url:"#",
+                        name:"Dashboards",
+                        children:
+                        {
+                            users:
                             {
-                                    name: "Documentation",
-                                    url: "#!/csyma/section/csyma/documentation",
-                                    application:"NZK",
-                                    class:"fa fa-book",
-                                    classi:"csection",
-                            }
+                                name:"Users",
+                                url:"#!/csyma/page/csyma/users",
+                                application:"app page",
+                                class:"fa fa-user",
+                                classi:"csection",
+                                type:"app"
+                            },
+                            user_apps:
+                            {
+                                name:"Apps",
+                                url:"#!/csyma/section/csyma/apps",
+                                application:"app page",
+                                class:"fa fa-tv",
+                                classi:"csection",
+                                type:"app"
+                            },
                         },
                         
                     }
@@ -164,10 +173,35 @@ const config = {
                     
                 },
         },
-        csections:  //keyword
+        csections:  //keyword.      //extends the main section (others) for recursive child elements
         {
             "user":
             {
+                "users":
+                {
+                    create:
+                    {
+                        name: "New User",
+                        url: "#",
+                        application:"NZK",
+                        class:"fa fa-fw fa-user-plus text-success",
+                        classi:"csectionp tocreateuser",
+
+                    },
+                    defaultpage:"apps/csyma/sections/site/site_home",
+                },
+                "organizations":
+                {
+                    create:
+                    {
+                        name: "New Organization",
+                        url: "#",
+                        class:"fa fa-fw fa-user-plus text-success",
+                        classi:"csectionp tocreateorg",
+
+                    },
+                    defaultpage:"apps/csyma/sections/site/site_home",
+                },
                 "site":
                 {
                     user_doc:
@@ -206,18 +240,67 @@ const config = {
                             },
                             user_doc:
                             {
-                                    name: "Documentation",
-                                    url: "#!/csyma/section/csyma/documentation",
-                                    application:"NZK",
-                                    class:"fa fa-book",
-                                    classi:"csection",
+                                name: "Documentation",
+                                url: "#!/csyma/section/csyma/documentation",
+                                application:"NZK",
+                                class:"fa fa-book",
+                                classi:"csection",
                             }
                         }
                     }
                 }
+                // ,"csyma_profile":
+                // {
+                //     user_doc:
+                //     {
+                //         name: "DOCUMENTATION1",
+                //         url: "#!/csyma/section/csyma/documentation",
+                //         application:"NZK",
+                //         class:"fa fa-book",
+                //         classi:"csection",
+
+                //     },
+                //     level:2,
+                //     defaultpage:"apps/csyma/sections/site/site_home",
+                //     pages1:
+                //     {
+                //         name: "Pages1",
+                //         url: "#",
+                //         class:"fa fa-book",
+                //         classi:"csection",
+                //         children:
+                //         {
+                //              user_site:
+                //             {
+                //                 name:"Site1",
+                //                 url:"#!/csyma/section/csyma/site",
+                //                 application:"app page",
+                //                 class:"fa fa-tv",
+                //                 classi:"csection",
+                //             },
+                //              user_about:
+                //             {
+                //                 name:"About1",
+                //                 url:"#!/csyma/section/csyma/about",
+                //                 application:"app page",
+                //                 class:"fa fa-info-circle",
+                //                 classi:"csection",
+                //             },
+                //             user_doc:
+                //             {
+                //                 name: "Documentation1",
+                //                 url: "#!/csyma/section/csyma/documentation",
+                //                 application:"NZK",
+                //                 class:"fa fa-book",
+                //                 classi:"csection",
+                //             }
+                //         }
+                //     }
+                // },
+
             }
         },
-        defaultpage: "apps/csyma/csymahome", 
+        defaultpage: "apps/csyma/csymahome_default",        //you should change this after installation 
         keywords:"keywords...",
         description:"description...is description"
     }

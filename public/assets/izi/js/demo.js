@@ -287,6 +287,27 @@ $(document).on('click', '.trigger-custom', function (event) {
 });
 
 
+$("#modal-custom-1").iziModal({
+    overlayClose: false,
+    width: 600,
+    overlayColor: 'rgba(0, 0, 0, 0.6)',
+    transitionIn: 'bounceInDown',
+    transitionOut: 'bounceOutDown',
+    navigateCaption: true,
+    navigateArrows: false,
+    onOpened: function() {
+        //console.log('onOpened');
+    },
+    onClosed: function() {
+        //console.log('onClosed');  
+    }
+});
+$(document).on('click', '.trigger-custom', function (event) {
+    event.preventDefault();
+    $('#modal-custom').iziModal('open');
+});
+
+
 // $("#modal-welcome").iziModal({
 //     title: "Welcome to CSYMA",
 //     icon: 'icon-star',

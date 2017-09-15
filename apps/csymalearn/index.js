@@ -64,19 +64,19 @@ class csystem extends User
         });
 	}
 	static whoami(done){
-		console.log("////whoami")
+		//console.log("////whoami")
 		let self = this;
 		Async.auto({
             start: function (dones) {
-            	console.log("////whoami")
+            	//console.log("////whoami")
             	try{
 		            let path = "../"+self.app+"/config/config.js";
 					let user = self.user;
-					console.log(user)
+					//console.log(user)
 					let apps = JSON.parse(JSON.stringify(user.apps));
-					console.log("////whoami")
-					console.log("apps")
-					console.log(apps)
+					//console.log("////whoami")
+					//console.log("apps")
+					//console.log(apps)
 					var mygroup = {}
 					let ind = 0;
 					for(let index in apps)
@@ -84,22 +84,22 @@ class csystem extends User
 					     // if(app == self.app)
 					      	for(let ca in apps[index][app])mygroup[ind++] = apps[index][app][ca]["name"];
 					
-					console.log("apps")
+					//console.log("apps")
 					consle.log()
 					if(ind == 0)mygroup[0] = {"name":"nobody"};
 					self.mygroups = mygroup;
-					console.log("////whoami")
+					//console.log("////whoami")
 					dones()
 
 				}catch(err){
 					self.send(err)
-					console.log("////whoami")
+					//console.log("////whoami")
 					dones(err)
 				}
 			}
         }, (err, _results) => {
             if (err) ;
-            console.log("////whoami")
+            //console.log("////whoami")
             done(err);
         });
 		/**/

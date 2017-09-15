@@ -123,7 +123,7 @@ exports.postSignininside = (req, res, next) => {
     let errmsg = "";
     for(errcount in errors)
       errmsg += errors[errcount].msg+", "
-      //console.log(errors[errcount])
+      ////console.log(errors[errcount])
     res.send({"err":errmsg});
      // next(errors);
      return next();
@@ -131,7 +131,8 @@ exports.postSignininside = (req, res, next) => {
 
   const user = new User({
     email: req.query.email,
-    password: req.query.password
+    password: req.query.password,
+    isActive:true,
   });
   passport.authenticate('local', (err, user, info) => {
 
@@ -242,6 +243,17 @@ exports.postSignup = (req, res, next) => {
 
 
 exports.postSignupinside = (req, res, next) => {
+  let accountType = req.params.type === "organization"? "organization":"user";
+  let owner; //current user.
+  try
+  {
+    owner = req.user.id.toString();
+    console.log(req.user)
+    console.log(owner)
+  }catch(error)
+  {
+    owner = "csystem";
+  }
   req.assert('email', 'Email is not valid').isEmail();
   req.assert('password', 'Password must be at least 4 characters long').len(4);
   req.assert('confirmPassword', 'Passwords do not match').equals(req.query.password);
@@ -256,7 +268,7 @@ exports.postSignupinside = (req, res, next) => {
     let errmsg = "";
     for(errcount in errors)
       errmsg += errors[errcount].msg+", "
-      //console.log(errors[errcount])
+      ////console.log(errors[errcount])
     res.send({"err":errmsg});
      // next(errors);
      return next();
@@ -284,10 +296,13 @@ exports.postSignupinside = (req, res, next) => {
 
     Async.auto({
     create:  (done) => {
+        csyberUser.setaccountType(accountType);
+        csyberUser.setowner(owner);
         csyberUser.create(username, password, email,  function(err, result){done(err, result) });
     },
     installapps: ['create', (results, done) => { 
-      const id = results.create._id;
+      const id = results.create._id
+      console.log("will install apps for this user......"+id)
       csyberUser.installallapps(id, "free",done) 
     }],
    }, (err, results) => {
@@ -295,7 +310,7 @@ exports.postSignupinside = (req, res, next) => {
     if (err) { 
       try{
         res.send({"err":""+err});
-        console.log("test point")
+        //console.log("test point")
         return next();
       }catch(error){
         return next()
