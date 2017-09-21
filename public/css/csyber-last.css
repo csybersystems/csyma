@@ -1,27 +1,73 @@
 
-
-
-.wrapper
-{
-	overflow: scroll;
+.main-header .cslogo {
+  -webkit-transition: width 0.3s ease-in-out;
+  -o-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  display: none;
+  float: left;
+  height: 50px;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  width: 230px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0 15px;
+  font-weight: 300;
+  overflow: hidden;
+}
+.main-header .cslogo .cslogo-lg {
+  display: none;
+}
+.main-header .cslogo .cslogo-mini {
+  display: none;
 }
 
-body
-{
-	overflow: scroll;
+/*
+ * Component: Sidebar Mini
+ */
+@media (min-width: 768px) {
+  .sidebar-mini.sidebar-collapse .main-header .cslogo {
+    display: block;
+    margin-left: -15px;
+    margin-right: -15px;
+    font-size: 18px;
+  }
+  .sidebar-mini.sidebar-collapse .main-header .cslogo {
+    display: block;
+  }
+
+  .main-header .logo {
+  	/*display: none;*/
+  }
 }
 
-.treeview-menu
-{
-	z-index:1;
+
+@media (max-width: 767px) {
+  .main-header .logo {
+    display: none;
+  }
+  .main-header .cslogo {
+    display: block;
+    width:110px;
+  }
+  
 }
 
-.usertr
-{
-	cursor:pointer;
+/*
+ * Unhide header which we don't know why it is hiding
+ */
+@media (min-width: 991px) {
+  .content {
+    margin-top:15px;
+  }
 }
-
-/*.row
-{
-	overflow-x: scroll;
-}*/
+@media (max-width: 767px) {
+  .content-header {
+    background-color : red;
+    top:0px;
+  }
+  .fixed .content-wrapper,
+  .fixed .right-side {
+  	padding-top: 50px;
+  }
+}

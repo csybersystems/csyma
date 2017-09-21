@@ -10,7 +10,7 @@ class csystem extends csyberUser
 	{
 
 		let self = this;
-
+		// self.Usermod = User;
 		self.sections = false;
 		self.csubsection = false;
 		if(self.app === undefined)self.app = "csystem";
@@ -79,11 +79,11 @@ class csystem extends csyberUser
 				try
 				{
 					self.config = require(path);
-					dones(null, true);
+					return dones(null, true);
 				}catch(err){
 
-					////console.log(err)
-					throw new Error(err)
+					console.log(err)
+					//throw new Error(err)
 					//dones(err)
 				}
             },
@@ -366,8 +366,7 @@ class csystem extends csyberUser
 		let app = require(__dirname+"/../"+self.app+"/index")
 		try
 		{
-			app.getresults(self.req, self.pagename, function(err, results){
-			console.log(results)
+			app.getresults(self.req, self.res, self.pagename, function(err, results){
 			callback(null, results)
 			})
 			

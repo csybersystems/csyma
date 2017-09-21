@@ -1,13 +1,7 @@
 .iziModal-wrap
   .iziModal-content(style='padding: 0px;')
     button.icon-close(data-izimodal-close='')
-    |         
-    header
-      a#signin.regheader(href='#')
-        i.fa.fa-user-plus
-          span   Add New Organizations
-      |            
-    |         
+    |        
     .sections
       section
         .containere
@@ -15,6 +9,7 @@
             span.fa.fa-user-plus  CSYMA Apps
           legend.text-center
             | Add New Organization
+          form.ajform(method= "post")
             input(type='hidden', name='_csrf')
             .form-group
               label.col-sm-3.control-label(for='email') Email
@@ -34,6 +29,7 @@
                 button.btn.btn-primary.signuporgsubmit(type='submit')
                   i.fa.fa-user-plus
                   | &nbsp;&nbsp;&nbsp;&nbsp;Create
+          hr
       
 script.
   setTimeout(function(){ 
@@ -49,3 +45,7 @@ script.
   $(".tolocallogicbtn").click(function(){$(".localloginheader").click();});
   $(".locallogincancel").click(function(){$(".loginheader").click();});
   whichmodal = $("#modal-custom")
+  $(".ajform").submit(function(e){
+    e.preventDefault();
+    return false;
+  });

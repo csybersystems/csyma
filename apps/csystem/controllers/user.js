@@ -9,6 +9,7 @@ const GConfig = require(__dirname+'/../../../config/config');
 var mongoose = require('mongoose');
 const Async = require('async');
 const Bcrypt = require('bcrypt');
+let csyma = require("../../csyma")
 
 
 mongoose.Promise = global.Promise;
@@ -389,9 +390,8 @@ exports.postUpdateProfile = (req, res, next) => {
  * Update current password.
  */
 exports.postUpdatePassword = (req, res, callback) => {
-
   if (!req.isAuthenticated()) {
-    res.send(JSON.stringify({"err":"Your are not logged in.","redirect":GConfig.get("/rooturl")+GConfig.get("/urls/login")}))
+    return res.send(JSON.stringify({"err":"Your are not logged in.","redirect":GConfig.get("/rooturl")+GConfig.get("/urls/login")}))
 
     return res.redirect(GConfig.get("/rooturl")+GConfig.get("/urls/login"));
   }
@@ -418,13 +418,93 @@ exports.postDeleteAccount = (req, res, next) => {
 
 
 exports.postDeleteAccountInside = (req, res, next) => {
-  User.remove({ _id: req.user.id }, (err) => {
-    if (err) { 
-      res.send(JSON.stringify({"err":"Problems experienced deleting you account. Please try again"}))
+  
+  try
+  {
+    let id = req.params.uid
+    if(id === undefined)
+    {
+      // res.send(JSON.stringify({"err":"Problems experienced deleting account. Please try again"}))
+      throw new Error("Unknown id")
+     // return ;
     }
-    req.logout();
-   res.send(JSON.stringify({"msg":"Sad to see you go. Your account had been deleted.","redirect":GConfig.get("/rooturl")+GConfig.get("/urls/left")}))
-  });
+    let myid = id
+    User.remove({ _id:  myid}, (err) => {
+      if (err) { 
+        //res.send(JSON.stringify({"err":"Problems experienced deleting account. Please try again"}))
+        //console.log(err)
+        throw new Error (err)
+
+      }
+      if(id === 0 || id === '0')
+      {
+        req.logout();
+        res.send(JSON.stringify({"msg":"Sad to see you go. Your account had been deleted.","redirect":GConfig.get("/rooturl")+GConfig.get("/urls/left")}))
+     }
+     else 
+        res.send(JSON.stringify({"msg":"Account had been deleted.","reloadpage":1}))
+
+      //remove with all children...
+      //check all users(if they have other children,,, if not,,,,)
+      csyma.deletechildren(myid,function(err, results){
+        let i;
+        for(i in results)
+        {
+          User.remove({ _id:  results[i]}, (err) => {});
+        }
+      })
+      return ;
+    });
+  }catch(error)
+  {
+    console.log(error)
+    res.send(JSON.stringify({"err":"Problems experienced deleting account. Please try again"}))
+    return;
+  }
+};
+
+exports.postDisableAccountInside = (req, res, next) => {
+  
+  try
+  {
+    let id = req.params.uid
+    let status;
+    if(req.params.status === '0' || req.params.status === 0)
+      status = false
+    else status = true;
+    if(id === undefined)
+    {
+      // res.send(JSON.stringify({"err":"Problems experienced deleting account. Please try again"}))
+      throw new Error("Unknown id")
+     // return ;
+    }
+    let myid = id
+
+    let action = status===false?"dis":"en"
+
+    User.findById(myid, (err, user) => {
+      if (err) { throw new Error("Unknown id") }
+      user.isActive = status;
+      user.save((err, results) => {
+        if (err) {
+          res.send(JSON.stringify({"err":"Error "+action+"abling account. Please try again."}))
+        }else
+        {
+
+          res.send(JSON.stringify({"msg":"Account has been "+action+"abled","reloadpage":1}))
+        }
+        return
+      });
+    });
+
+
+    
+  }catch(error)
+  {
+    console.log(error)
+    res.send(JSON.stringify({"err":"Problems experienced disabling account. Please try again"}))
+    return;
+  }
 };
 
 /**

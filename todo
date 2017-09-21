@@ -374,3 +374,91 @@ ORD
 					create
 					delete
 					etc...
+
+-------------start-----------------
+	Top bar
+	Side bar
+	etc...
+
+===========================================================
+Tables
+Page contents
+Header......name of page in the header.....
+
+
+Delete account with all children
+Change password
+Manage user
+	apps
+	permissions
+
+Permissions for performing these actions,,,
+Social integration
+
+Bulding apps
+	Fetching.......
+	Compiling......
+	Enabling.......
+	Disabling......
+
+Ord
+	Change pwd
+	...................................................
+	1. Manage user
+		apps
+			remove apps
+			add apps
+				app groups....
+		permissions
+
+
+		Rq
+			list all apps
+			list all app groups
+
+			list my apps
+			list his apps
+
+
+		list apps his apps in table
+
+			csystem
+				Uninstall
+					root remove
+					user remove
+					nobody add
+
+			New Apps
+				List all apps
+					Install
+
+			Ord
+				remove group...................*
+				add group......................*
+
+				........................................................
+				uninstall app.............start.........................*
+				install app.............................................*
+
+				Apps information
+					help...........................
+
+
+
+	2. Managing apps(think real hard about this......)
+		....
+			download from github...
+			Meaning that we need a store......
+				read from store....
+
+		build
+		disable
+		install for all users
+		groups...
+
+	3. Permissions for performing stuff
+
+	4. Get down to building apps
+		vipimo
+		school
+		ssb

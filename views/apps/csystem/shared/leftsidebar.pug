@@ -2,8 +2,6 @@
 aside.main-sidebar
   // sidebar: style can be found in sidebar.less
   section.sidebar
-    // Sidebar user panel
-    
     form.sidebar-form(action='#', method='get')
       .input-group
         input.form-control(type='text', name='q', placeholder='Search...')
@@ -13,7 +11,7 @@ aside.main-sidebar
             i.fa.fa-search
     // /.search form
     // sidebar menu: : style can be found in sidebar.less
-    ul.sidebar-menu.leftsidebarcontainer
+    ul.sidebar-menu.leftsidebarcontainer(data-widget='tree')
       li.header Main Navigation
       |
       li.treeview
@@ -85,9 +83,9 @@ aside.main-sidebar
                     |
       |
     |
-    ul.sidebar-menu.sectionscontainer
+    ul.sidebar-menu.sectionscontainer(data-widget='tree')
     |
-    ul.sidebar-menu
+    ul.sidebar-menu(data-widget='tree')
       li.header My Account
       if(elements.isguest)
         li.treeview
@@ -110,7 +108,7 @@ aside.main-sidebar
             i.fa.fa-sign-out.text-danger
             span &nbsp;Log out
     |
-    ul.sidebar-menu
+    ul.sidebar-menu(data-widget='tree')
       li.header Resources
       li.treeview
         a(href="#")
@@ -146,7 +144,7 @@ aside.main-sidebar
     |
 
     |
-    ul.sidebar-menu
+    ul.sidebar-menu(data-widget='tree')
       li.header Contribute
       li.treeview
         a(href="#")

@@ -21,8 +21,9 @@ router.get('/logout', userController.logout);
 router.post('/signupinside/:type?', userController.postSignupinside);
 router.post('/signininside', userController.postSignininside);
 router.post('/unlink/:account', userController.postUnlink);
-router.post('/drop/', userController.postDeleteAccountInside);
-router.post('/password/:password/:confirmpassword/:oldpassword', userController.postUpdatePassword);
+router.post('/drop/:uid', userController.postDeleteAccountInside);
+router.post('/disable/:uid/:status', userController.postDisableAccountInside);
+router.post('/password/:password/:confirmpassword/:oldpassword/:id?', userController.postUpdatePassword);
 
 //
 router.post('/profile', passportConfig.isAuthenticated, userController.postUpdateProfile);

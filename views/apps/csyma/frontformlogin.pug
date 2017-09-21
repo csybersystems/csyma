@@ -21,6 +21,7 @@
             span.fa.fa-user-plus  CSYMA Apps
           legend.text-center
             | Create New Account
+          form.ajform(method= "post")
             input(type='hidden', name='_csrf')
             .form-group
               label.col-sm-3.control-label(for='email') Email
@@ -72,7 +73,8 @@
           .text-center
             span.fa.fa-lock  CSYMA Apps
           legend.text-center
-            | Login
+            | Login 
+          form.ajform(method= "post")
             input(type='hidden', name='_csrf', value='6zaAXNeLzZqF6iV0/6zD7cLmNQGMwX1s+iZhk=')
             .form-group
               label.col-sm-3.control-label(for='email') Email
@@ -95,7 +97,7 @@
                 a.btn.btn-primar
             .form-group
               .col-sm-offset-3.col-sm-7
-                hr
+                  hr
 script.
   setTimeout(function(){ 
     $(".loginheader").click();
@@ -107,3 +109,7 @@ script.
   $(".tolocallogicbtn").click(function(){$(".localloginheader").click();});
   $(".locallogincancel").click(function(){$(".loginheader").click();});
   whichmodal = $("#modal-custom")
+  $(".ajform").submit(function(e){
+    e.preventDefault();
+    return false;
+  });

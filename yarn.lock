@@ -2482,6 +2482,10 @@ object-component@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/object-component/-/object-component-0.0.3.tgz#f0c69aa50efc95b866c186f400a33769cb2f1291"
 
+object-length@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/object-length/-/object-length-0.2.0.tgz#126a601757dbb8162b2fd9cd4b905e67dac345f4"
+
 on-finished@^2.3.0, on-finished@~2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"

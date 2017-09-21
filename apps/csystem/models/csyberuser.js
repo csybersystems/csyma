@@ -139,7 +139,7 @@ class User extends MongoModels {
         Async.auto({
             getappid:  (done) => {
                 let gid =0;
-                self.findById(id, function (err, count) {//
+                self.findById(id, function (err, count) {
                     if(count.apps != undefined)
                     {
                         if(count.apps[app] == undefined)gid = 0;
@@ -150,7 +150,8 @@ class User extends MongoModels {
             },
              update:  ['getappid', (results, done) => {
                 let gid = results.getappid;
-                var apps = {}
+               
+                let apps = {}
                 let groups = {}
                 for(let group in usergroups)
                 {
@@ -159,14 +160,6 @@ class User extends MongoModels {
                     groups[gid-1][owner]=usergroups[group]
                 }
                 apps[app] = groups;
-                //  var updateObj = {
-                //         $push:{
-                //             apps:apps
-                        
-                //         }
-                //     };    
-                // // //console.log("........=========================================1111111111111111111111111111")
-                // // //console.log(apps)
 
                 const document = {
                     _id: id,
@@ -175,11 +168,6 @@ class User extends MongoModels {
                 };
 
                 self.collection = 'apps';
-               // self.schema = userappsSchema;
-               //   self.findById(id, function(err, results){
-               //      // //console.log(results)
-               // })
-
                try
                {
                      self.insertOne(document, function(err, results){
@@ -195,10 +183,47 @@ class User extends MongoModels {
                                     }
                                 };    
                             // //console.log(id)
+                            // console.log(apps)
                             self.findByIdAndUpdate(id, updateObj,{new:true},function(err, results){
-                                // //console.log(err)
-                                // //console.log(results)
-                                done()
+                                if(err)
+                                {
+                                    self.findById(id, function (err, count) {
+                                        let iapps = count.apps;
+                                        let finapps = {}
+                                        let k = 0;
+                                        let i
+                                        for(i in iapps)
+                                            finapps[k++] = iapps[i];
+                                        finapps[k++] = apps
+                                        // console.log(finapps)
+                                        let updateObj = {
+                                            $set:{
+                                                apps:finapps
+                                                    
+                                                    }
+                                        };   
+                                        self.findByIdAndUpdate(id, updateObj,{new:true},function(err, results){
+                                            done();
+                                        });
+                                    }); 
+                                    // console.log(err)
+                                    // let myapps = {}
+                                    // myapps[0] = apps
+
+                                    // let updateObj = {
+                                    // $set:{
+                                    //     apps:myapps
+                                            
+                                    //         }
+                                    //     };   
+                                    // self.findByIdAndUpdate(id, updateObj,{new:true},function(err, results){
+                                    //     done();
+                                    // });
+                                }else
+                                    done()
+                                // console.log(err)
+                                // console.log(results)
+                                
                             });
                             // self.findById(id,function(err, results){
                             //   //  // //console.log(err)
@@ -363,6 +388,8 @@ class User extends MongoModels {
 
         const self = this;
         let pass, olpass;
+        let otheruser = req.params.id;
+
         Async.auto({
           hash: this.generatePasswordHash.bind(this, req.params.password),
           start: function (done) {
@@ -393,29 +420,32 @@ class User extends MongoModels {
                 }
             }, (err, results) => {
 
-                if (results.start == false) done("You have provided a wrong password.")
-                else 
-                  done()
+                if(otheruser !== undefined && otheruser !== null)done()
+                else
+                {
+                    if (results.start == false) done("You have provided a wrong password."+otheruser)
+                    else 
+                        done()
+                }
+                
             });
             
           }],
           checkuser: ['correctpwd','hash', function (results, done) {
             const thisUser = require('../models/User');
-            thisUser.findById(req.user.id, (err, user) => {
+            let userid = (otheruser !== undefined && otheruser !== null)?otheruser:req.user.id; 
+            thisUser.findById(userid, (err, user) => {
               if (err) done(err)
               else
               {
-                //console.log(results.hash)//surgbcx1@gmail.com
                 user.password = results.hash.hash;
                 pass = results.hash.hash;
-                Async.auto({
-                    start: function (dones) {
-
+                Async.auto({            
+                    start: function (dones) {           //superflous
                         Bcrypt.compare(req.params.password, user.password, dones);
                     }
                 }, (err, results) => {
-                    
-                    if (results.start == false) done("You have provided a wrong password.")
+                    if (results.start == false) done("You have provided a wrong passworde.")
                     else 
                     {
                         
@@ -426,12 +456,8 @@ class User extends MongoModels {
                         };    
                         let collection = self.collection;
                         self.collection = Usercollection;
-                        self.findByIdAndUpdate(req.user.id, {$set:{password:pass}},{new:false},function(err, results){
+                        self.findByIdAndUpdate(userid, {$set:{password:pass}},{new:false},function(err, results){
                             self.collection = collection;
-                            //console.log(results)
-                            //console.log("is updated")
-                            //console.log(req.params.password)
-                            //console.log(err)
                             done(err)
                         });
                     }

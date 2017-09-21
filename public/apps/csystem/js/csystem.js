@@ -102,7 +102,7 @@ var attachUserForm = function() {
     });
 }
 
-var loadpage = function(url)
+var loadpage = function(url, reload)
 {
 	//.sidea
 	let url_r = url;
@@ -117,9 +117,17 @@ var loadpage = function(url)
 	$.get(url).done(function(preinnerdata){
 		console.log("be called..............")
 		$(".content").remove();			//remove previously attached scripts...
-		$(".content-wrapper").html("<div class='content'></div>");
+		$(".content-wrapper").append("<section class='content'></div>");
 		// console.log(preinnerdata)
 		$(".content").html(preinnerdata);
+		if(reload ===true)
+		{
+			// let urli = window.location.href.split("#!")[0]
+			// window.location.href = urli+url.split("?")[0];
+			let urli = rootpath+pathsep+url_r
+			urli = url.split("?")[0];
+			window.location.href = rootpath+pathsep+url_r.split("?")[0]
+		}
 	}).fail(function(){
 		alertify.error("Failed to load page.");
 	});
@@ -507,16 +515,17 @@ var postrequest = (url, goback, callback) => {
 				alertify.error(""+datapi.err)
 				if(datapi.redirect)
 					setTimeout(function(){window.top.location.href = datapi.redirect;},3000);
-				callback(false);
+				callback(true);
 			}
 			else 
 				if(datapi.msg != undefined){
 					alertify.success(""+datapi.msg)
 					if(datapi.redirect)
 						setTimeout(function(){window.top.location.href = datapi.redirect;},3000);
-  						
+  					if(datapi.reloadpage !== undefined)
+  						loadpage(window.location.href)
 					if(goback ===true)loadlastpage();
-					callback(true);
+					callback(false);
 				}
 				else {
 					alertify.error("Unkown error in result. Please try again.")
@@ -641,10 +650,19 @@ let presignupbtnfunc1 = function(accType)
 		case "user":
 			page = "insidesignup";
 			break;
+		case "changepwduser":
+			console.log(".........pwd")
+			page = "changeuserpwd";
+			break;
+		case "changepwdorg":
+			page = "changeorgpwd";
+			break;
 		default:
 			page = "insidesignuporg";
 	}
-	downloadmodal($('#modal-custom'), "/csyma/page/csyma/"+page+"/"+accType+"?headless=true&accepts=html")
+	page = "/csyma/page/csyma/"+page+"/"+accType+"?headless=true&accepts=html"
+	console.log(page)
+	downloadmodal($('#modal-custom'), page)
 }
 
 let downloadmodal = function(modal, url)
@@ -890,32 +908,45 @@ var postchangeusername = function(){
 	
 }
 
-var deleteaccount = function()
+var deleteaccount = function(whichaccount)
 {
+	whichaccount = whichaccount || 0;
 	console.log("deleting account...")
-	alertify.prompt("Delete Account","Are you sure you want to delete your account?(Yes/No)", "No",
+	let pronoun = whichaccount===0? "Your":"This";
+	let pronounsmall = whichaccount===0? "your":"this";
+	alertify.prompt("Delete Account","Are you sure you want to delete "+pronounsmall+" account?(Yes/No)", "No",
 	  function(evt, value ){
 	    //alertify.success('Ok: ' + value);
 	    if(value.toLowerCase()  != 'yes' && value.toLowerCase()  != 'y')
-	    	alertify.success('Your account stays safe');
+	    	alertify.success(pronoun+' account stays safe');
 		else
 	    {
-	    	alertify.confirm("Delete Account","Your account is set to be removed. Click Cancel to cancel this operation",
+	    	alertify.confirm("Delete Account",pronoun+" account is set to be removed. Click Cancel to cancel this operation",
 			function(){
 
 				alertify.warning('Deleting account');
-				let url = "auth/drop/"
+				let url = "auth/drop/"+whichaccount
 				postrequest(url, false, function(err){})
 			},
 			function(){
 
-				 alertify.success('Your account stays safe');
+				 alertify.success(pronoun+' account stays safe');
 			});
 	    }
 	  },
 	  function(){
-	    alertify.success('Your account stays safe');
+	    alertify.success(pronoun+' account stays safe');
 	});
+}
+
+
+var disableaccount = function(whichaccount, disable)
+{
+
+	let status = disable===undefined?"0":"1";
+	whichaccount = whichaccount || 0;
+	let url = "auth/disable/"+whichaccount+"/"+status
+	postrequest(url, false, function(err){	})
 }
 
 var postchangepwd = function(){
@@ -935,6 +966,35 @@ var postchangepwd = function(){
 		let tmpurlipc = "auth/password/"+pwd+"/"+pwdc+"/"+oldpwd;
 		console.log(tmpurlipc)
 		postrequest(tmpurlipc, false, function(err){})
+	
+	}catch(err)
+	{
+		alertify.error(""+err);
+		$("#input-password").val("");
+		$("#input-passwordc").val("");
+		$("#input-password").focus();
+		$("#input-passwordcheck").val("");
+	}
+}	
+
+let ouid;
+var postchangepwdinside = function(){
+	
+	var pwd = $("#password").val();
+	var pwdc = $("#confirmPassword").val();
+	
+	try{
+		if(pwd == "" || pwdc == "")throw new Error("Password not entered");
+		if(pwd != pwdc)throw new Error("Password's don't match");
+		let pwdlen = 6;
+		if(pwd.length < pwdlen ||pwdc.length < pwdlen)
+			alertify.warning("Warning: Password seems shorter than expected.");
+		let tmpdata = "password="+pwd+"&confirmPassword="+"&passwordOld="+pwdc+"&id="+ouid;//passwordOld is just a placeholder
+		let tmpurlipc = "auth/password/"+pwd+"/"+pwdc+"/"+pwdc+"/"+ouid;
+		console.log(tmpurlipc)
+		postrequest(tmpurlipc, false, function(err){
+			if(err === false || !err)$(".signupcancel").click();		//get this to work
+		})
 	
 	}catch(err)
 	{
@@ -991,3 +1051,41 @@ let createorg = function()
 {
 	presignupbtnfunc1("organization");
 }
+
+let changeinnerpwd =function(section, ouidval)
+{
+	ouid = ouidval;
+	switch(section)
+	{
+		case "user":
+			presignupbtnfunc1("changepwduser");
+			break;
+		default: //org
+			presignupbtnfunc1("changepwdorg");
+			break;
+	}
+	
+}
+
+
+let appaction = function(appaction, appid, uid, group)
+{
+	let url = "csyma/app/"+appaction+"/"+appid+"/"+uid+"/"+group
+	postrequest(url, false, function(err){})
+}
+ 
+
+$('.anch').click(function(event){
+    event.preventDefault();
+  });
+
+// $('.content').on("click", ".pgload", function(event){
+//     event.preventDefault();
+//     loadpage($(this).attr("href"), true)
+//     return;
+//   });
+// $('.content').on("click", ".backbtn", function(event){
+//     event.preventDefault();
+//     loadpage($(this).data("href"), true)
+//     return;
+// });

@@ -108,24 +108,24 @@ $(document).ready(function($){
 
 
 
-$("#modal-iframe").iziModal({
-    // top: 50,
-    headerColor: '#000',
-    title: 'iziModal with iframe',
-    // subtitle: 'Video example using the Vimeo embed.',
-    icon: 'icon-settings_system_daydream',
-    overlayClose: true,
-    iframe : true,
-    iframeURL: 'https://player.vimeo.com/video/22439234?autoplay=1',
-    fullscreen: true,
-    openFullscreen: false,
-    borderBottom: false,
-    navigateArrows: false,
-    group: 'grupo1',
-    onFullscreen: function(modal){
-        console.log(modal.isFullscreen);
-    }
-});
+// $("#modal-iframe").iziModal({
+//     // top: 50,
+//     headerColor: '#000',
+//     title: 'iziModal with iframe',
+//     // subtitle: 'Video example using the Vimeo embed.',
+//     icon: 'icon-settings_system_daydream',
+//     overlayClose: true,
+//     iframe : true,
+//     iframeURL: 'https://player.vimeo.com/video/22439234?autoplay=1',
+//     fullscreen: true,
+//     openFullscreen: false,
+//     borderBottom: false,
+//     navigateArrows: false,
+//     group: 'grupo1',
+//     onFullscreen: function(modal){
+//         console.log(modal.isFullscreen);
+//     }
+// });
 
 $(document).on('click', '.trigger-iframe', function (event) {
     event.preventDefault();
@@ -135,38 +135,38 @@ $(document).on('click', '.trigger-iframe', function (event) {
 
 
 
-$("#modal-alert").iziModal({
-    title: "Your message has been sent successfully",
-    icon: 'icon-check',
-    headerColor: '#00af66',
-    width: 600,
-    timeout: 10000,
-    timeoutProgressbar: true,
-    transitionIn: 'fadeInUp',
-    transitionOut: 'fadeOutDown',
-    navigateArrows: false,
-    bottom: 0,
-    loop: true,
-    pauseOnHover: true
-});
+// $("#modal-alert").iziModal({
+//     title: "Your message has been sent successfully",
+//     icon: 'icon-check',
+//     headerColor: '#00af66',
+//     width: 600,
+//     timeout: 10000,
+//     timeoutProgressbar: true,
+//     transitionIn: 'fadeInUp',
+//     transitionOut: 'fadeOutDown',
+//     navigateArrows: false,
+//     bottom: 0,
+//     loop: true,
+//     pauseOnHover: true
+// });
 $(document).on('click', '.trigger-alert', function (event) {
     event.preventDefault();
     $('#modal-alert').iziModal('open');
 });
 
-$("#modal-alert2").iziModal({
-    title: "Attention",
-    subtitle: 'you are being disconnected..',
-    icon: 'icon-power_settings_new',
-    headerColor: '#BD5B5B',
-    width: 600,
-    timeout: 5000,
-    timeoutProgressbar: true,
-    transitionIn: 'fadeInDown',
-    transitionOut: 'fadeOutDown',
-    navigateArrows: false,
-    pauseOnHover: true
-});
+// $("#modal-alert2").iziModal({
+//     title: "Attention",
+//     subtitle: 'you are being disconnected..',
+//     icon: 'icon-power_settings_new',
+//     headerColor: '#BD5B5B',
+//     width: 600,
+//     timeout: 5000,
+//     timeoutProgressbar: true,
+//     transitionIn: 'fadeInDown',
+//     transitionOut: 'fadeOutDown',
+//     navigateArrows: false,
+//     pauseOnHover: true
+// });
 $(document).on('click', '.trigger-alert2', function (event) {
     event.preventDefault();
     $('#modal-alert2').iziModal('open');
@@ -327,33 +327,33 @@ $(document).on('click', '.trigger-custom', function (event) {
 
 
 
-$("#modal-large").iziModal({
-    title: "Welcome to the iziModalWelcome to the iziModalWelcome to the iziModalWelcome to the iziModalWelcome to the iziModal",
-    // subtitle: "Simple, complete and lightweight modal plugin with jquery.",
-    icon: 'icon-chat',
-    // overlayColor: 'rgba(255, 255, 255, 0.4)',
-    // headerColor: '#334c7b',
-    iconColor: 'white',
-    // fullscreen: true,
-    width: 700,
-    padding: 20,
-    // rtl: true,
-    bodyOverflow: true,
-    // closeButton: false,
-    top: 50,
-    bottom: 50,
-    navigateArrows: false,
-    onClosed: function(modal){
-        console.info(modal)
-        //modal.destroy();
-    },
-    onOpening: function(modal){
-        modal.startLoading();
-    },
-    onOpened: function(modal){
-        modal.stopLoading();
-    }
-});
+// $("#modal-large").iziModal({
+//     title: "Welcome to the iziModalWelcome to the iziModalWelcome to the iziModalWelcome to the iziModalWelcome to the iziModal",
+//     // subtitle: "Simple, complete and lightweight modal plugin with jquery.",
+//     icon: 'icon-chat',
+//     // overlayColor: 'rgba(255, 255, 255, 0.4)',
+//     // headerColor: '#334c7b',
+//     iconColor: 'white',
+//     // fullscreen: true,
+//     width: 700,
+//     padding: 20,
+//     // rtl: true,
+//     bodyOverflow: true,
+//     // closeButton: false,
+//     top: 50,
+//     bottom: 50,
+//     navigateArrows: false,
+//     onClosed: function(modal){
+//         console.info(modal)
+//         //modal.destroy();
+//     },
+//     onOpening: function(modal){
+//         modal.startLoading();
+//     },
+//     onOpened: function(modal){
+//         modal.stopLoading();
+//     }
+// });
 
 $(document).on('click', '.trigger-large', function (event) {
     event.preventDefault();

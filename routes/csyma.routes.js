@@ -36,7 +36,7 @@ router.get('/', function (req, res) {                 //load the app here...
 //     })
 // })
 
-router.get('/page/:app/:page/:action?/', function (req, res) {                 //loading static pages...
+router.get('/page/:app/:page/:action?/:uid?', function (req, res) {                 //loading static pages...
     const app = require(__dirname+"/../apps/"+req.params.app+"/index");
     app.init_child(req,res, function(err, results){
       app.settitle(req.params.page);
@@ -68,18 +68,44 @@ router.get('/section/:app/:section', function (req, res) {                 //loa
     })
 })
 
-router.get('/app/:action', function (req, res) {
+// router.get('/app/:action/:appid/:uid/:group?', function (req, res) {
+//     ///csyma/app/add    /   59/hjhkj/root
+//   // console.log(req.params)
+//   //
+//   //csyma.init_child()
+//   csyma.init_child(req,res, function(err, results){
+//       // csyma.settitle("page titled");
+//       //other head elements....
+//       // csyma.setmeta("this is teh meta data");
+//       // csyma.getelements(req,res, function(err, results){
+//       // // console.log(results)
+      
+//     //   })
+//     csyma.exec(req,res,function(err, results){
+
+//     })
+      
+//   })
+//   //
+  
+// })
+
+router.post('/app/:action/:appid/:uid/:group?', function (req, res) {
+    ///csyma/app/add    /   59/hjhkj/root
   // console.log(req.params)
   //
   //csyma.init_child()
   csyma.init_child(req,res, function(err, results){
-  		csyma.settitle("page titled");
+  		// csyma.settitle("page titled");
   		//other head elements....
-  		csyma.setmeta("this is teh meta data");
-  		csyma.getelements(req,res, function(err, results){
-  		// console.log(results)
+  		// csyma.setmeta("this is teh meta data");
+  		// csyma.getelements(req,res, function(err, results){
+  		// // console.log(results)
   		
-  })
+    //   })
+    csyma.exec(req,res,function(err, results){
+
+    })
   		
   })
   //
