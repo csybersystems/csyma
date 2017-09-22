@@ -90,7 +90,7 @@ router.get('/section/:app/:section', function (req, res) {                 //loa
   
 // })
 
-router.post('/app/:action/:appid/:uid/:group?', function (req, res) {
+router.post('/app/:action/:appid?/:uid?/:group?', function (req, res) {
     ///csyma/app/add    /   59/hjhkj/root
   // console.log(req.params)
   //

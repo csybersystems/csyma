@@ -257,14 +257,23 @@ class User extends MongoModels {
     }
 
     
-    static setupallapps(callback)
+    static setuponeapps(app, callback)
     {
-        appsConfig.setupallapps(function(){
+        appsConfig.setuponeapps(app, function(){
 
             callback()
         });
        // callback();
     }
+    static sysinstallnewapps(callback)
+    {
+        appsConfig.sysinstallnewapps(function(){
+
+            callback()
+        });
+      
+    }
+    
     static installallapps(id, perm, callback){
         let self = this;
         appsConfig.getallapps(function(err, allapps){

@@ -126,10 +126,10 @@ const config = {
 
                             },
                             apps:{
-                                name:"users",
+                                name:"Apps",
                                 url:"#!/csyma/page/csyma/apps",
                                 application:"app page",
-                                class:"fa fa-tv",
+                                class:"fa fa-pencil",
                                 classi:"csection",
                                 type:"app",
 

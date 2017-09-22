@@ -2,6 +2,7 @@ const User = require(__dirname+'/models/User')
 const csyberUser = require('./models/csyberuser');
 const Config = require(__dirname+'/../../config/config');
 const Async = require('async');
+const  Objlen = require('object-length');
 
 class csystem extends csyberUser
 {
@@ -136,6 +137,8 @@ class csystem extends csyberUser
 					//get his apps
 					let collection = self.collection;
 					self.collection = "apps";
+					let len = Objlen(owners)
+					owners[len] = "csystem";
 					csyberUser.getusersapps(user._id, function(err, apps){
 						var mygroup = {}
 						let ind = 0;
@@ -150,7 +153,8 @@ class csystem extends csyberUser
 						      		// for(let ca in apps[index][app])
 						      		// 	console.log(apps[index][app][ca])
 						      		let ownindex;
-						      		let z
+						      		let z;
+						      		
 						      		for(ownindex in owners)
 						      		{
 						      			owner = owners[ownindex]
@@ -187,12 +191,7 @@ class csystem extends csyberUser
 
 	static appisEnabled(app, installing, url)			//in user.apps and is enabled
 	{
-		/*const appsConfig = require('../installedapps');
-		let installedapps = appsConfig.get("/");
-		let uninstalledapp = [];
-		let appEnabled = false;
-		return installedapps[app].enabled || false;
-		*/
+		
 		let enabled = false;
 		//// //console.log(this.mygroups)
 		try
@@ -207,11 +206,12 @@ class csystem extends csyberUser
 			}
 			for(let i in this.mygroups[app])groups.push(this.mygroups[app][i])
 
+			// console.log(this.mygroups)
 			while(groups.length > 0)
 			{
 				let tmp = groups.pop();
 				test = config.get("/enabled/"+tmp)
-				if(false !==  test && undefined != test)enabled = test;
+				if(false !==  test && undefined !== test)enabled = test;
 			}
 			if(enabled !== false && url === true)enabled = config.get("/url")
 			
@@ -277,8 +277,7 @@ class csystem extends csyberUser
 						while(tmpapp = apptoloadtest.pop()){
 						 // //console.log(tmpapp)
 						  let tmpi = self.appisEnabled(tmpapp)
-						  // //console.log(tmpi)
-						  if(tmpi !== false && tmpi != undefined)
+						  if(tmpi !== false && tmpi !== undefined)
 						  {
 						    let myconfig = require(__dirname+'/../'+tmpapp+'/config/config.js'); 
 						    let appdata = myconfig.get("/");
@@ -289,11 +288,20 @@ class csystem extends csyberUser
 						      appstoload[tmpapp]["urloriginal"] = appdata["url"].split("#").join("/");
 						      appstoload[tmpapp]["displayname"] = appdata["displayname"];
 						     // class_a = appdata["sidemenuitems"]["apps"]["class"];
+						     // console.log(tmpi+"........."+tmpapp)
+						     // console.log(appstoload)
 						      
 						  }
 
 						}
-						done(); 
+
+						self.installedapps(appstoload, function(err, ret){
+							appstoload = ret;
+							
+							done();
+						})
+						// console.log(appstoload)
+						// done(); 
 
 					    }]
 					}, (err, _results) => {
@@ -308,9 +316,6 @@ class csystem extends csyberUser
 						  let tmp;
 						  for( tmp in sidemenuitems.apps.apps)if(sidemenuitems.apps.apps[tmp]['default'] === false)delete sidemenuitems.apps.apps[tmp]
 						  let apps = {}
-						console.log("...................to remdernnnnnnnnnn.....................")
-						console.log(self.page)
-						console.log(ipage)
 						 elements = self.setelements(elements);
 						  res.render(self.page||ipage, {
 						    title: self.title||title,
@@ -350,9 +355,44 @@ class csystem extends csyberUser
 		}catch(error)
 		{
 
-		}
-		  
-		  
+		}	
+	}
+
+	static installedapps(appslist, callback)
+	{
+
+		let self = this;
+		let collection = self.collection;
+		self.collection = "allapps";
+
+		let appsi = [];
+		let i;
+		for(i in appslist)appsi.push(appslist[i].name)
+		Async.eachSeries(Object.keys(appsi), function (i, next){ 
+			let item = appsi[i]
+			
+			self.find({appname:item}, (err, app) => {
+		      if (err);
+		      if(app.length === 0 )
+		      {
+		      	delete appslist[item]
+		      }
+		      // console.log("item:"+app)
+		      next();
+			});
+         }, function(err) {
+
+           callback(null, appslist);
+        }); 
+		// Async.
+		// self.find({appname:app}, (err, userapps) => {
+		//       if (err);
+		      
+
+		// });
+
+		// self.find({})
+		// console.log(appslist)
 		
 	}
 
@@ -411,7 +451,7 @@ class csystem extends csyberUser
 			{
 				//look for this in config
 				let csubsections = elements.csections
-				console.log(csubsections)
+				// console.log(csubsections)
 			}
 	    	// //console.log("are elements")
 	    	// //console.log(elements)
@@ -544,7 +584,7 @@ class csystem extends csyberUser
 			{
 				let group = self.mygroups[self.app][index];
 				let tmp = self.config.get("/elements/csections/"+group+"/"+sections)
-				console.log("/elements/csections/"+group+"/"+sections)
+				// console.log("/elements/csections/"+group+"/"+sections)
 				//tmp == undefined?others[i++] = {}:others[i++] = tmp;
 				if(tmp !== undefined)
 				{

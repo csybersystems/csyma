@@ -1,4 +1,5 @@
 const Config = require(__dirname+'/../../config/config');
+const fse = require('fs-extra');
 const Async = require('async');
 const csystem = require(__dirname+"/../csystem/index");
 const csyberUser = require(__dirname+"/../csystem/models/csyberuser");
@@ -41,7 +42,9 @@ class csyma extends csystem
 				case "manageorg":
 					self.appsfunction(req, callback)
 					break;
-
+				case "apps":
+					self.listapps(callback)
+					break;
 				default:
 					callback(null, {})
 					;
@@ -51,6 +54,69 @@ class csyma extends csystem
 			console.log(error)
 			return callback(error)
 		}
+	}
+
+	static listapps(callback)
+	{
+		let self = this;
+        let _root = __dirname+"/../";
+
+
+        Async.auto({//
+            drop: function(done){
+               done()
+            },
+            create:["drop", function(results, done){
+                let items = fse.readdirSync(_root);
+                let allapps = {}
+                let allappsind = 0;
+                let numapps = 0;
+                Async.eachSeries(Object.keys(items), function (i, next){ 
+                    if(items[i] == "." || items[i] == "..")next();
+                    if(items[i].split(".").length > 1)next();
+                    let appname = items[i];
+
+                    let thisappconfig = require(_root + appname+"/config/config.js")
+                    let enabled = thisappconfig.get("/enabled")
+                    let displayname = thisappconfig.get("/displayname")
+
+                    if(appname !== "csyma" && appname !== "csystem")
+                    {
+                    	allapps[appname] = {enabled:enabled, ins:0};
+                    	numapps++;
+                    }
+                    // console.log(numapps)
+                    next();
+                 }, function(err) {
+                 	let collection = self.collection
+                 	self.collection = 'allapps';
+
+                 	self.find({}, (err, results) => {
+						let i,j;
+						for(i in results)
+						{
+							let appname = results[i].appname
+							if(allapps[appname] !== undefined)
+							{
+								allapps[appname]["ins"] = 1;		//installed
+								allapps[appname]["id"] = results[i]._id;		//installed
+							}//else allapps[appname]["ins"] = 0;	//not installed
+							
+						}
+						done(null, {allapps:allapps,numapps:numapps});
+					})
+                 	// console.log(allapps)
+                  //  done();
+                }); 
+            }]
+        }, (err, results) => {
+            if (err) {
+                return callback(err);
+            }
+
+            // console.log({listapps:results.create.allapps})
+            callback(null, {listapps:results.create});
+        });
 	}
 
 	static usersfunc(acctype, callback)
@@ -322,6 +388,7 @@ class csyma extends csystem
 
 		try
 		{
+			console.log(req.params)
 			let action = req.params.action;
 			let appid = req.params.appid
 			let uid = req.params.uid;
@@ -354,6 +421,18 @@ class csyma extends csystem
 	                	callback();
 					})
 					break;;
+				case "sysuninstall":
+					self.sysuninstall(req.params.appid, function(err, results){
+						self.res.send(JSON.stringify({"msg":self.appaction_action+" successful.","reloadpage":1}))
+	                	callback();
+					})
+					break;
+				case "sysinstall":
+					self.sysinstall(req.params.appid, function(err, results){
+						self.res.send(JSON.stringify({"msg":self.appaction_action+" successful.","reloadpage":1}))
+	                	callback();
+					})
+					break;
 				default:
 					callback();
 				
@@ -364,6 +443,26 @@ class csyma extends csystem
 			res.send({"err":'Unable to '+action+'. Please try later'});
 		}
 		
+	}
+
+	static sysinstall(appname, callback)
+	{
+		let self = this
+		self.setuponeapps(appname, callback)
+		console.log("install app..." + appname)
+	}
+
+	static sysuninstall(appid, callback)
+	{
+		console.log("uninstall app")
+		let self = this;
+		let collection = self.collection
+		self.collection = "allapps"
+
+		self.deleteOne({_id:safeObjectId(appid)}, function(err, results){
+			//assume to error..
+			callback();
+		})
 	}
 
 	static uninstallapp(callback)

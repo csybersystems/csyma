@@ -1073,6 +1073,12 @@ let appaction = function(appaction, appid, uid, group)
 	let url = "csyma/app/"+appaction+"/"+appid+"/"+uid+"/"+group
 	postrequest(url, false, function(err){})
 }
+
+let appactionsys = function(appaction, appid)
+{
+	let url = "csyma/app/"+appaction+"/"+appid
+	postrequest(url, false, function(err){})
+}
  
 
 $('.anch').click(function(event){
