@@ -79,19 +79,23 @@ app.use(session({
     clear_interval: 3600
   })
 }));
-//app.use(passport.initialize());
-//app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash());
+
 
 app.use((req, res, next) => {                           /////////////////////////////.....................check
   if (req.path === '/api/upload') {
     next();
   } else 
-  if (req.path === '/auth/password' || req.path === "/account/profile"  || req.path === "/account/delete" ||
-    req.path === "/auth/signupinside" || /*spoc*/req.path === "/spoc/upload"  || req.path === "/spoc/uploadcsv"  || req.path === "/spoc/uploaddwg" /*spoc*/
-    ) next();
+  if (req.path === '/auth/password' || req.path === "/auth/profile"  || req.path === "/account/delete" ||
+    req.path === "/auth/signupinside" || /*spoc*/req.path === "/auth/unlink/"  || req.path === "/spoc/uploadcsv"  || req.path === "/spoc/uploaddwg" /*spoc*/
+    ){
+     next();
+  }
   else{
-    lusca.csrf()(req, res, next);
+   // lusca.csrf()(req, res, next);
+   next();
   }
 });
 app.use(lusca.xframe('SAMEORIGIN'));
@@ -138,8 +142,6 @@ app.use(express.static('uploads'));
 
   for(let route in routes)console.log("route: "+'/'+route)
 }
-
-
 
 /**
  * 404

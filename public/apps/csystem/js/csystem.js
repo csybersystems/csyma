@@ -9,6 +9,7 @@ $(document).ready(function()
 {
 	///
 	loadpreviousapp();
+	initmodals();
 })
 
 var csyberlocation = "";
@@ -61,7 +62,7 @@ var loadpreviousapp = function()
 		// console.log($(obj).html())
 		try
 		{
-			if($(obj).html() == undefined)throw new error("obj).html")
+			if($(obj).html() == undefined)throw new error("obj.html")
 				//window.location.href =pathsep+prevapp;
 			$(obj).click();
 
@@ -101,186 +102,292 @@ var attachUserForm = function() {
     });
 }
 
-var loadapp = function(url)
+var loadpage = function(url, reload)
 {
-	// let appname = $(obj).attr("content")
-	// let newurl = $(obj).attr("href")
-	// window.location.href = newurl;
-	// let objtype = $(obj).attr("type")
-	// let url = window.location.href;
+	//.sidea
+	let url_r = url;
+	url_r = url_r.split(pathsep);
+	delete url_r[0];
+	url_r = url_r.join("");
+	// window.location.href = rootpath+pathsep+url_r
+
+	url = rootpath+url_r+"?headless=true&accepts=html"			//first load the page
+	console.log("loadpage()")
 	console.log(url)
-	url = url.split(pathsep);
-	delete url[0];
-	url = url.join("");
-	window.location.href = rootpath+pathsep+url
-	url = rootpath+url+"?headless=true&accepts=json"
+	$.get(url).done(function(preinnerdata){
+		console.log("be called..............")
+		$(".content").remove();			//remove previously attached scripts...
+		$(".content-wrapper").append("<section class='content'></div>");
+		// console.log(preinnerdata)
+		$(".content").html(preinnerdata);
+		if(reload ===true)
+		{
+			// let urli = window.location.href.split("#!")[0]
+			// window.location.href = urli+url.split("?")[0];
+			let urli = rootpath+pathsep+url_r
+			urli = url.split("?")[0];
+			window.location.href = rootpath+pathsep+url_r.split("?")[0]
+		}
+	}).fail(function(){
+		alertify.error("Failed to load page.");
+	});
+}
+
+var loadapp = function(url, skipclicking)
+{
+	let url_r = url;
+	url_r = url_r.split(pathsep);
+	delete url_r[0];
+	url_r = url_r.join("");
+	window.location.href = rootpath+pathsep+url_r
+	url = rootpath+url_r+"?headless=true&accepts=json"
 	console.log(url)
+
+	url = rootpath+url_r+"?headless=true&accepts=html"			//first load the page
+	console.log(url)
+	$.get(url).done(function(preinnerdata){
 	
-	$.getJSON(url).done(function(innerdata){
-		console.log(innerdata)
-		let datapi1;
-		try{
-		datapi1 = JSON.parse(innerdata)
-		iserror = false;
-		console.log(innerdata)
-			let scripts = {}
-			for(let scriptindex in datapi1)scripts[datapi1[scriptindex]] = datapi1[scriptindex];
-			console.log(scripts)
-			for(let scriptindex in scripts)
-			{
-				$(".dashboardscontainer").append('<script src="/apps/'+appname+'/js/'+scripts[scriptindex]+'.js"></script>');
-			}
-			$(".dashboardscontainer").append('<script>$(".sidea").click(function(){loadapp($(this))})</script>');
 
+		//console.log(innerdata)
+		url = rootpath+url_r+"?headless=true&accepts=json"
+		$.getJSON(url).done(function(innerdata){
+			console.log(innerdata)
+			let datapi1;
+			try{
+				let dashboards = innerdata.dashboards
+				console.log(dashboards)
+				let elem;
+				let d_class = dashboards.class;
 
-			//
-	}catch(error)
-	{
-		alertify.error("Unkown error while loading dashboards");
-		iserror = true;
-		$(".dashboardscontainer").append('<script>$(".sidea").click(function(){loadapp($(this))})</script>');
-		$(".applicationsicon").click();
-	}
+				$(".otherstree").html('');
+				$( ".sectionscontainer").html( "");
+				$(".dashtree").attr("style","display:none")
+
+				console.log("now loading dashboards")
+				console.log(dashboards.dashboards)
+
+				for(elem in dashboards.dashboards)
+				{
+					$(".dashboardscontainer").html('');
+					$(".dashtree").attr("style","display:block").html("")
+					break;
+				}
+				
+				for(elem in dashboards.dashboards)
+				{
+					let element = dashboards.dashboards[elem]
+					// console.log(element)
+					$(".dashboardscontainer").append('<li><a href="#"></a><a class = "sidea" href="/'+element.url+'"type="dash"><i class="'+element.class+'"></i> '+element.name+'</a></li>');
+				}
+				if(!skipclicking) $(".applicationsicon").click();
+				// $(".dashboardsicon").click();
+
+				$(".otherstree").detach();
+				let others = innerdata.others;
+				console.log(others)
+				let level = innerdata.level||"1";
+				for(elem in others)
+				{
+					$("."+elem+"container").html("")
+					let element = others[elem]
+					if(element.children !== undefined)
+					{
+						newelem = $( '<li class="treeview otherstree"><a href="#"><i class="'+element.class+' '+elem+'icon"></i> <span>'+element.name+'</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a><ul class="treeview-menu '+elem+'container menu-open" style="display: block;"></ul></li>' )
+						$( ".leftsidebarcontainer").append( newelem);
+						let inneritem;
+						for(inneritem in element.children)
+						{
+							let element_i = element.children[inneritem]
+							// console.log(element_i)
+							let tmp = element_i.classi||"sidea";
+
+							let tmptype = element_i.type===undefined?"page":element_i.type;
+							$("."+elem+"container").append('<li><a href="#"></a><a class = "'+tmp+'" href="/'+element_i.url+'" type="'+tmptype+'"'+'" level="'+level+'"><i class="'+element_i.class+'"></i> '+element_i.name+'</a></li>');
+						}
+						$("."+elem+"icon").click();
+					}
+					else 
+					{
+						let tmptype = element.type===undefined?"page":element.type;
+						let tmp = element.classi||"sideb";
+						newelem = $( '<li class="treeview otherstree"><a class = "'+tmp+'"href="'+element.url+'" type="'+tmptype+'"'+'" level="'+level+'"><i class="'+element.class+' '+elem+'icon"></i> <span>'+element.name+'</span></a><ul class="treeview-menu dashboardscontainer menu-open" style="display: block;"></ul></li>' )
+						$( ".leftsidebarcontainer" ).append( newelem);
+					}
+
+					
+					
+				}
+
+				$(".lfbclevel1").detach();
+				$( ".leftsidebarcontainer").append("<span class = 'lfbclevel1 sidebar-menu'></span>")
+				if(innerdata.title !== undefined)
+				{
+					document.title = appname+" | "+innerdata.title;
+				}
+				if(innerdata.keywords !== undefined)
+					$('meta[name="keywords"]').attr("content", innerdata.keywords);
+				if(innerdata.description !== undefined)
+					$('meta[name="description"]').attr("content", innerdata.description);
+				if(innerdata.app !== undefined)
+					$(".thisapp").html('<i class="fa fa-desktop"></i>'+innerdata.app);
+				if(innerdata.section !== undefined)
+					$(".thissection").html(innerdata.section);	
+				if(innerdata.subsection !== undefined)
+					$(".thisdashboard").html(innerdata.subsection);
+			$(".content").html(preinnerdata);
+		}catch(error)
+		{
+			alertify.error("Unkown error while loading application");
+			
+		}
+		}).fail(function(){
+			alertify.error("Failed to load application.");
+			$(".applicationsicon").click();
+		});
 		
 	}).fail(function(){
-		alertify.error("Failed to load dashboards.");
-	});
-	/*
-	 * Use this for all urls
-	 */
-	//different types of objects are returned...
-	/*
-	console.log(objtype)
-	if(objtype == "app")
-	{
-		//load page
-		var tmpurlroot = newurl.replace("pathsep", "/");
-		var tmpurl = tmpurlroot+"&action=loadpage";
 		$(".applicationsicon").click();
-		console.log("here...")
-		$.get( tmpurl).done(function( data ) {
-
-			var iserror;
-			try{
-				let datap = JSON.parse(data)		//if error, data will come as JSON 
-				iserror = true;
-				if(datap.code != undefined)alertify.error(datap.code);
-				else alertify.error(data);
-			}catch(error)
-			{
-				iserror = false;
-			}
-		  	if(iserror === false)
-		  	{
-	  		let tmpurli = rootpath+tmpurlroot+"&action=loaddashboards";
-		  		$.get(tmpurli).done(function(innerdata){
-		  			let datapi;
-		  			try{
-						datapi = JSON.parse(innerdata)		//if error, data will come as JSON 
-						iserror = false;
-						console.log(datapi)
-						console.log(innerdata)
-						$(".thisapp").html(appname);
-  						$(".content").html(data);
-  						console.log("........................data")
-  						console.log(data)
-  						$(".dashboardscontainer").html('<a href="#"></a>')
-  						for(let dashboard in datapi.dashboards.dashboards)
-  						{
-  							console.log(dashboard)
-  							console.log(datapi.dashboards.dashboards)
-  							console.log(datapi.dashboards.dashboards[dashboard])
-  							$(".dashboardscontainer").append('<li><a href="#"></a><a class = "sidea" href="/'+datapi.dashboards.dashboards[dashboard].url+'" content="'+datapi.dashboards.dashboards[dashboard].name+'" type="dash"><i class="fa fa-circle-o"></i> '+datapi.dashboards.dashboards[dashboard].name+'</a></li>');
-  						}
-  						//
-					}catch(error)
-					{
-						alertify.error("Unkown error while loading dashboards");
-						iserror = true;
-					}
-		  			
-		  		}).fail(function(){
-		  			alertify.error("Failed to load dashboards.");
-		  		});
-
-		  		let tmpurli1 = tmpurlroot+"&action=loadscripts";
-		  		$.get(tmpurli1).done(function(innerdata){
-		  			let datapi1;
-		  			try{
-						datapi1 = JSON.parse(innerdata)
-						iserror = false;
-						console.log(innerdata)
-  						let scripts = {}
-  						for(let scriptindex in datapi1)scripts[datapi1[scriptindex]] = datapi1[scriptindex];
-  						console.log(scripts)
-  						for(let scriptindex in scripts)
-  						{
-  							$(".dashboardscontainer").append('<script src="/apps/'+appname+'/js/'+scripts[scriptindex]+'.js"></script>');
-  						}
-  						$(".dashboardscontainer").append('<script>$(".sidea").click(function(){loadapp($(this))})</script>');
-
-
-  						//
-					}catch(error)
-					{
-						alertify.error("Unkown error while loading dashboards");
-						iserror = true;
-						$(".dashboardscontainer").append('<script>$(".sidea").click(function(){loadapp($(this))})</script>');
-					}
-		  			
-		  		}).fail(function(){
-		  			alertify.error("Failed to load dashboards.");
-		  		});
-				
-		  	}
-		}).fail(function(err){
-			alertify.error("Unknown error. Please try again later or contact the administrator.");
-		});
-
-		
-	}
-	else if(objtype == "dash"){
-		$(".thisdashboard").html(appname);
-		$(".dashboardsicon").click();
-		var prevapp = window.location.href.match(/#(.*?)(\/)/);
-		if(prevapp == null)prevapp = window.location.href.match(/#(.*?)/);
-		if(prevapp == null){
-			prevapp = {0:"",1:"csyber"};
-			csyberlocation = window.location.href+"#csyber"
-		}else csyberlocation = window.location.href;
+		alertify.error("Failed to load page.");
+	});
 	
-		console.log("csyberlocation")
-		console.log(csyberlocation)
-		var tmpurl = csyberlocation+"&action=loadpage&page="+appname;
-		console.log("here...")
-		console.log(tmpurl)
-		tmpurl = tmpurl.replace("#", "apps/?app=");
-		console.log(tmpurl)
-		$.get( tmpurl).done(function( data ) {
-			var iserror;
-			try{
-				let datap = JSON.parse(data)		//if error, data will come as JSON 
-				iserror = true;
-				if(datap.code != undefined)alertify.error(datap.code);
-				else alertify.error(data);
-				$(".dashboardscontainer").append('<script>$(".sidea").click(function(){loadapp($(this))})</script>');
-			}catch(error)
-			{
-				iserror = false;
-			}
-		  	if(iserror === false)
-		  	{
-		  		
-  				$(".content").html(data);	
-  				$(".dashboardscontainer").append('<script>$(".sidea").click(function(){loadapp($(this))})</script>');	
-  				addtostack(tmpurl);	
-		  	}
-		}).fail(function(err){
-			alertify.error("Unknown error. Please try again later or contact the administrator.");
-		});
-	}
+	
+	
+}
 
+var loadsection = function(url, obj)
+{
+	/*
+
+		load app or just a single page...
+			an app will have more components attached to it....
 	*/
+	let i;
+
+	let level = obj.attr("level");
+
+	switch(obj.attr("type"))
+	{
+		case "app":			
+			break;
+		default:
+			loadpage(url);
+			console.log(url)
+			$(obj).parent().parent().parent().children("a").click();
+			return;		//stop at this point.
+
+	}
+	// return;
+	let url_r = url;
+	url_r = url_r.split(pathsep);
+	delete url_r[0];
+	url_r = url_r.join("");
+	window.location.href = rootpath+pathsep+url_r
+	url = rootpath+url_r+"?headless=true&accepts=json"
+	
+	url = rootpath+url_r+"?headless=true&accepts=html"			//first load the page
+	console.log(url)
+	$.get(url).done(function(preinnerdata){
+		url = rootpath+url_r+"?headless=true&accepts=json"
+		$.getJSON(url).done(function(innerdata){
+			// console.log(innerdata)
+
+			
+
+			////////////////////loading child elements....
+
+			let datapi1;
+			try{
+				let others = innerdata.csections;
+				let i;
+				let level = innerdata.level||"1";
+				console.log(innerdata)
+				for(i in innerdata)console.log(i)
+					console.log(innerdata.level)
+				let childelem = childsection(level)
+				$(childelem).html("");
+				for(elem in others)
+				{
+					$("."+elem+"container").html("")
+					let element = others[elem]
+					if(element.children !== undefined)
+					{
+						newelem = $( '<li class="treeview sectiontree"><a href="#"><i class="'+element.class+' '+elem+'icon"></i> <span>'+element.name+'</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a><ul class="treeview-menu '+elem+'container menu-open" style="display: block;"></ul></li>' )
+						// $( ".lfbclevel1").append( newelem);
+						childelem.append( newelem);
+						let inneritem;
+						for(inneritem in element.children)
+						{
+							let element_i = element.children[inneritem]
+							let tmp = element_i.classi||"sidea"+" "+elem+'icon';
+							let tmptype = element_i.type===undefined?"page":element_i.type;
+							$("."+elem+"container").append('<li><a href="#"></a>  <a class = "'+tmp+'" href="/'+element_i.url+'"type="'+tmptype+'"><i class="'+element_i.class+'"></i> '+element_i.name+'</a>  </li>');
+						}
+						$("."+elem+"icon").click();
+
+					}
+					else 
+					{
+						if(element.name !== undefined)
+						{
+							let tmp = element.classi||"sidea";
+							newelem = $( '<li class="treeview sectiontree"><a class = "'+tmp+'" href="'+element.url+'"><i class="'+element.class+' '+elem+'icon"></i> <span>'+element.name+'</span></a><ul class="treeview-menu dashboardscontainer menu-open" style="display: block;"></ul></li>' )
+							// $( ".lfbclevel1" ).append( newelem);
+							childelem.append( newelem);
+						}
+					}	
+					
+				}
+
+
+
+				// if(innerdata.title !== undefined)
+				// {
+				// 	document.title = appname+" | "+innerdata.title;
+				// }
+				// if(innerdata.keywords !== undefined)
+				// 	$('meta[name="keywords"]').attr("content", innerdata.keywords);
+				// if(innerdata.description !== undefined)
+				// 	$('meta[name="description"]').attr("content", innerdata.description);
+				// if(innerdata.app !== undefined)
+				// 	$(".thisapp").html('<i class="fa fa-desktop"></i>'+innerdata.app);
+				// if(innerdata.section !== undefined)
+				// 	$(".thissection").html(innerdata.section);	
+				// if(innerdata.subsection !== undefined)
+				// 	$(".thisdashboard").html(innerdata.subsection);
+			$(".content").html(preinnerdata);
+			$(obj).parent().parent().parent().children("a").click();
+		}catch(error)
+		{
+			alertify.error("Unkown error while loading application");
+			
+		}
+		}).fail(function(){
+			alertify.error("Failed to load application.");
+			$(obj).parent().parent().parent().children("a").click();
+		});
+		
+	}).fail(function(){
+		$(obj).parent().parent().parent().children("a").click();
+		alertify.error("Failed to load page.");
+	});
+	
+	
+	
+}
+
+
+var childsection = function(level)
+{
+	console.log(level)
+	level = parseInt(level)
+	if(level === 1)
+		return $(".lfbclevel"+level);
+
+	let prelevel = level-1;
+	$(".lfbclevel"+level).detach();
+	$( ".lfbclevel"+prelevel).append("<span class = 'lfbclevel"+level+" sidebar-menu'></span>");
+	return $(".lfbclevel"+level);
+
 }
 
 
@@ -351,7 +458,7 @@ var loadlastpage = () => {
 				if(datapi.err != undefined)alertify.error(datapi.err);
 			}catch(error)
 			{
-				console.log("error occured,, will reaload")
+				// console.log("error occured,, will reaload")
 				$(".content").html(innerdata);
 				addtostack(url);
 			}
@@ -385,12 +492,58 @@ var installapp = (action) =>{
 	
 }
 
-var unlinkaccounts = (app) => {
-	let url = "apps/?app=csyber&action=unlinkaccounts&account="+app;
+var unlinkaccounts = (socialaccount) => {
+	let url = "/auth/unlink/"+socialaccount;
 	url = url.replace("#", "");
-	sendrequest(url)
+	postrequest(url, false, function(err){})
 }
 
+var postrequest = (url, goback, callback) => {
+	console.log(url)
+	$.post(url).done(function(innerdata){
+		let datapi;
+			console.log(typeof innerdata)
+			// console.log(innerdata)
+			try{
+			if(typeof innerdata != "object")
+				datapi = JSON.parse(innerdata);
+			else datapi = innerdata;
+			// console.log("is datapi...")
+			// console.log(datapi)
+			if(datapi.err != undefined)
+			{
+				alertify.error(""+datapi.err)
+				if(datapi.redirect)
+					setTimeout(function(){window.top.location.href = datapi.redirect;},3000);
+				callback(true);
+			}
+			else 
+				if(datapi.msg != undefined){
+					alertify.success(""+datapi.msg)
+					if(datapi.redirect)
+						setTimeout(function(){window.top.location.href = datapi.redirect;},3000);
+  					if(datapi.reloadpage !== undefined)
+  						loadpage(window.location.href)
+					if(goback ===true)loadlastpage();
+					callback(false);
+				}
+				else {
+					alertify.error("Unkown error in result. Please try again.")
+					callback(false);
+				}
+		}catch(error)
+		{
+			// console.log(innerdata)
+			alertify.error("Unkown error while making request....");
+			callback(false);
+		}
+		
+	}).fail(function(err){
+		console.log("There is an error....")
+		alertify.error("Error while making request.");
+		callback(false);
+	});
+}
 var sendrequest = (url, goback, callback) => {
 	console.log(url)
 	$.get(url).done(function(innerdata){
@@ -467,5 +620,478 @@ var loadapplicationslist = () => {
 		alertify.error("Error while making request.");
 	});
 }
+
+
+
+$(".presignupbtn").click(function(){
+
+	presignupbtnfunc()
+});
+
+$(".pregloginbtn").click(function(){
+  setTimeout(function(){ downloadmodal($('#modal-custom'), "/csyma/page/csyma/frontformlogin?headless=true&accepts=html")}, 200);
+  
+  });
+
+let presignupbtnfunc = function()
+{
+	console.log("open modal-custom");
+	// $('#modal-custom').iziModal('open');
+	// setTimeout(function(){ $('#modal-custom').iziModal('open');}, 200);
+	// $(".regheader").click();
+	downloadmodal($('#modal-custom'), "/csyma/page/csyma/frontform?headless=true&accepts=html")
+}
+
+let presignupbtnfunc1 = function(accType)
+{
+	let page;
+	switch(accType)
+	{
+		case "user":
+			page = "insidesignup";
+			break;
+		case "changepwduser":
+			console.log(".........pwd")
+			page = "changeuserpwd";
+			break;
+		case "changepwdorg":
+			page = "changeorgpwd";
+			break;
+		default:
+			page = "insidesignuporg";
+	}
+	page = "/csyma/page/csyma/"+page+"/"+accType+"?headless=true&accepts=html"
+	console.log(page)
+	downloadmodal($('#modal-custom'), page)
+}
+
+let downloadmodal = function(modal, url)
+{
+	//download...
+	// setTimeout(function(){ 
+
+	// 	$(modal).html($('#modal-custom').html())
+	// 	$('#modal-custom-1').iziModal('open');
+	// 	// $('#modal-custom-1').html("$('#modal-custom').html()<br><br><br><br><br><br><br><br><br><br><br><br>asdhkahdjkas")
+	// 	$('#modal-custom-1').iziModal('setTop', 100);;
+
+	// }, 200);
+	$.get(url).done(function(preinnerdata){
+		
+		setTimeout(function(){ 
+		    modal.iziModal('open');
+			// modal.iziModal('setTop', 200);
+			// modal.iziModal('setWidth', 900);
+			modal.html(preinnerdata)
+		}, 200);
+
+	}).fail(function(){
+		alertify.error("Failed to load page.");
+	});
+}
+
+
+
+var initmodals = function()
+{
+	// $("#modal-custom").iziModal({
+	//     overlayClose: false,
+	//     width: 600,
+	//     overlayColor: 'rgba(0, 0, 0, 0.6)',
+	//     transitionIn: 'bounceInDown',
+	//     transitionOut: 'bounceOutDown',
+	//     navigateCaption: true,
+	//     navigateArrows: false,
+	//     onOpened: function() {
+	//         //console.log('onOpened');
+	//     },
+	//     onClosed: function() {
+	//         //console.log('onClosed');  
+	//     }
+	// });
+
+	// $("#modal-default").iziModal({
+ //    // top: 50,
+ //    // bottom: 50,
+ //    width: '60%',
+ //    padding: 20,
+ //    restoreDefaultContent: true,
+ //    group: 'grupo1',
+ //    loop: true,
+ //    fullscreen: true,
+ //    openFullscreen: true,
+ //    onResize: function(modal){
+ //        console.log(modal.modalHeight);
+ //    }
+	// });
+	// $('#modal-default').iziModal('open');
+}
+// $(".sidea").on("click",function(){loadapp($(this).attr("href"))});
+
+
 //loading applications from applications menu
 $(".sidea").click(function(){loadapp($(this).attr("href"))});
+$(".sideap").click(function(){loadpage($(this).attr("href"))});
+
+
+// $(".locallogincancel").click(function(){$(".loginheader").click();});
+
+
+var createusersubmit = function(accType, reload){
+	accType = accType === "organization"?"organization":"user";
+	let email = $(".sigupemail").val()
+	let pwd = $(".signuppwd").val()
+	let pwdc = $(".signuppwdcnf").val()
+
+	try{
+		if(email == "")throw new Error("Please enter email");
+		if(pwd == "" || pwdc == "")throw new Error("Please enter password");
+		if(pwd != pwdc)throw new Error("Password's don't match");
+
+		let pwdlen = 6;
+		if(pwd.length < pwdlen ||pwdc.length < pwdlen)
+			throw new Error("Password is shorter than "+pwdlen+" characters");
+		let tmpdata = "email="+email+"&password="+pwd+"&confirmPassword="+pwdc;
+		console.log(tmpdata);
+		let tmpurlipcsubmit = "auth/signupinside/"+accType+"/?"+tmpdata;
+		console.log(tmpurlipcsubmit)
+		$.post(tmpurlipcsubmit).done(function(innerdata){
+  			let datapi;
+  			console.log(innerdata)
+  			try{
+  				if(typeof innerdata != "object")
+					datapi = JSON.parse(innerdata);
+				else datapi = innerdata;
+  				if(datapi.err != undefined)
+  					{
+  						refusesignupsubmission();
+  						alertify.error(""+datapi.err)}
+  				else{
+  					alertify.success(""+datapi.msg)
+  					$(".sigupemail").val("")
+  					$(".signuppwd").val("")
+  					$(".signuppwdcnf").val("")
+  					// $(".signupcancel").click();
+  					$(".localloginheader").click();
+  					if(reload === 1)
+  						loadpage("/#!/csyma/page/csyma/users")
+  					else
+  						if(reload === 2)
+  							loadpage("/#!/csyma/page/csyma/organizations")
+  					// addtostack(".")
+  					// loadlastpage();
+  				}
+			}catch(error)
+			{
+				alertify.error("Unknown error. Please try again later")
+			}
+			  			
+		}).fail(function(){
+			refusesignupsubmission();
+			alertify.error("Failed. Please check your internet connection try again later.");
+		});
+	}catch(err)
+	{
+
+		refusesignupsubmission();
+		alertify.error(""+err);
+		//$("#input-password").val("");
+		//$("#input-passwordc").val("");
+		$(".sigupemail").focus();
+		//$("#input-passwordcheck").val("");
+	}
+	//createusercancelbtn
+}
+
+var localloginsubmit = function(){
+	let email = $(".localloginemail").val()
+	let pwd = $(".localloginpwd").val()
+
+	try{
+		if(email == "")throw new Error("Please enter email");
+		if(pwd == "")throw new Error("Please enter password");
+
+		let pwdlen = 6;
+		if(pwd.length < pwdlen)
+			throw new Error("Password is shorter than "+pwdlen+" characters");
+		let tmpdata = "email="+email+"&password="+pwd;
+		console.log(tmpdata);
+		let tmpurlipcsubmit = "auth/signininside"+"?"+tmpdata;
+		console.log(tmpurlipcsubmit)
+		$.post(tmpurlipcsubmit).done(function(innerdata){
+  			let datapi;
+  			console.log(innerdata)
+  			try{
+  				if(typeof innerdata != "object")
+					datapi = JSON.parse(innerdata);
+				else datapi = innerdata;
+  				if(datapi.err != undefined)
+  					{
+  						refusesignupsubmission();
+  						alertify.error(""+datapi.err)}
+  				else{
+  					alertify.success(""+datapi.msg)
+  					$(".localloginemail").val("")
+  					$(".localloginpwd").val("");
+  					if(datapi.redirect)
+  						window.top.location.href = datapi.redirect;
+  					// addtostack(".")
+  					// loadlastpage();
+  				}
+			}catch(error)
+			{
+				alertify.error("Unknown error. Please try again later")
+			}
+			  			
+		}).fail(function(){
+			refusesignupsubmission();
+			alertify.error("Failed. Please check your internet connection try again later.");
+		});
+	}catch(err)
+	{
+
+		refusesignupsubmission();
+		alertify.error(""+err);
+		//$("#input-password").val("");
+		//$("#input-passwordc").val("");
+		$(".sigupemail").focus();
+		//$("#input-passwordcheck").val("");
+	}
+	//createusercancelbtn
+}
+
+var whichmodal;
+var refusesignupsubmission = function()
+{
+	var fx = "wobble";
+	$("#modal-custom").addClass(fx);
+	setTimeout(function(){$("#modal-custom").removeClass(fx)},1500);
+}
+
+
+
+var postchangeusername = function(){
+	let fname = $("#input-first-name").val();
+	let mname = $("#input-middle-name").val();
+	let lname = $("#input-last-name").val();
+	let lang = $("#input-locale").val();
+	let gender = $("#input-gender").val();
+
+	try{
+		if(fname == "" && mname == "" && lname == "" )throw new Error("Atleast one name is required");
+		}catch(err)
+	{
+		alertify.error(""+err);
+		$("#input-first-name").focus();
+	}
+	
+	let data = "fname="+fname+"&mname="+mname+"&lname="+lname+"&lang="+lang+"&gender="+gender;
+	console.log(data);
+	let tmpurlipc = "/auth/profile"+"?"+data;	//rq rooturl
+	console.log(tmpurlipc)
+	$.post(tmpurlipc).done(function(innerdata){
+		let datapi;
+		console.log(innerdata)
+		try{
+			datapi = JSON.parse(innerdata);
+			if(datapi.err != undefined)alertify.error(""+datapi.err)
+			else alertify.success(""+datapi.msg)
+		}catch(error)
+		{
+			alertify.error("Unknown error. Please try again later")
+		}
+		  			
+	}).fail(function(){
+		alertify.error("Failed. Please check your internet connection try again later.");
+	});
+
+	
+}
+
+var deleteaccount = function(whichaccount)
+{
+	whichaccount = whichaccount || 0;
+	console.log("deleting account...")
+	let pronoun = whichaccount===0? "Your":"This";
+	let pronounsmall = whichaccount===0? "your":"this";
+	alertify.prompt("Delete Account","Are you sure you want to delete "+pronounsmall+" account?(Yes/No)", "No",
+	  function(evt, value ){
+	    //alertify.success('Ok: ' + value);
+	    if(value.toLowerCase()  != 'yes' && value.toLowerCase()  != 'y')
+	    	alertify.success(pronoun+' account stays safe');
+		else
+	    {
+	    	alertify.confirm("Delete Account",pronoun+" account is set to be removed. Click Cancel to cancel this operation",
+			function(){
+
+				alertify.warning('Deleting account');
+				let url = "auth/drop/"+whichaccount
+				postrequest(url, false, function(err){})
+			},
+			function(){
+
+				 alertify.success(pronoun+' account stays safe');
+			});
+	    }
+	  },
+	  function(){
+	    alertify.success(pronoun+' account stays safe');
+	});
+}
+
+
+var disableaccount = function(whichaccount, disable)
+{
+
+	let status = disable===undefined?"0":"1";
+	whichaccount = whichaccount || 0;
+	let url = "auth/disable/"+whichaccount+"/"+status
+	postrequest(url, false, function(err){	})
+}
+
+var postchangepwd = function(){
+	var pwd = $("#input-password").val();
+	var pwdc = $("#input-passwordc").val();
+	var oldpwd = $("#input-passwordcheck").val();
+	var csrf_name = $("#csrf_name").val();
+	var csrf_value = $("#csrf_value").val();
+	
+	try{
+		if(pwd == "" || pwdc == "" || oldpwd == "" )throw new Error("Password not entered");
+		if(pwd != pwdc)throw new Error("Password's don't match");
+		let pwdlen = 6;
+		if(pwd.length < pwdlen ||pwdc.length < pwdlen ||oldpwd.length < pwdlen)
+			alertify.warning("Warning: Password seems shorter than expected.");
+		let tmpdata = "password="+pwd+"&confirmPassword="+pwdc+"&passwordOld="+oldpwd+"&csrf_name="+csrf_name+"&csrf_value="+csrf_value;
+		let tmpurlipc = "auth/password/"+pwd+"/"+pwdc+"/"+oldpwd;
+		console.log(tmpurlipc)
+		postrequest(tmpurlipc, false, function(err){})
+	
+	}catch(err)
+	{
+		alertify.error(""+err);
+		$("#input-password").val("");
+		$("#input-passwordc").val("");
+		$("#input-password").focus();
+		$("#input-passwordcheck").val("");
+	}
+}	
+
+let ouid;
+var postchangepwdinside = function(){
+	
+	var pwd = $("#password").val();
+	var pwdc = $("#confirmPassword").val();
+	
+	try{
+		if(pwd == "" || pwdc == "")throw new Error("Password not entered");
+		if(pwd != pwdc)throw new Error("Password's don't match");
+		let pwdlen = 6;
+		if(pwd.length < pwdlen ||pwdc.length < pwdlen)
+			alertify.warning("Warning: Password seems shorter than expected.");
+		let tmpdata = "password="+pwd+"&confirmPassword="+"&passwordOld="+pwdc+"&id="+ouid;//passwordOld is just a placeholder
+		let tmpurlipc = "auth/password/"+pwd+"/"+pwdc+"/"+pwdc+"/"+ouid;
+		console.log(tmpurlipc)
+		postrequest(tmpurlipc, false, function(err){
+			if(err === false || !err)$(".signupcancel").click();		//get this to work
+		})
+	
+	}catch(err)
+	{
+		alertify.error(""+err);
+		$("#input-password").val("");
+		$("#input-passwordc").val("");
+		$("#input-password").focus();
+		$("#input-passwordcheck").val("");
+	}
+}	
+
+
+$('.tour-btn').click(function(){
+		setTimeout(function(){
+			$("#modal").iziModal({
+				openFullscreen: true,
+				iframe: true,
+				zindex: 2000,
+				closeOnEscape: false,
+				iframeHeight: 800, 
+				bodyOverflow: true,
+				iframeURL: "/csyma/page/csymaconstruction/csymatour?headless=true",
+				// headerColor: '#000',
+			    title: 'CSYMA Tour',
+			    // subtitle: '...',
+			    // icon: 'icon-settings_system_daydream',
+			    overlayClose: true,
+			    fullscreen: true,
+			    borderBottom: false,
+			    group: 'grupo1',
+			    navigateArrows: false,
+			    onFullscreen: function(modal){
+			        console.log(modal.isFullscreen);
+			    }
+			});
+			$('#modal').iziModal('open');
+			$("#modal").iziModal();
+		},250)
+})
+
+
+$(".homebtn").click(function(){
+	loadapp($(this).attr("href"), true);
+})
+
+
+let handlers  = {};
+
+let createuser = function()
+{
+	presignupbtnfunc1("user");
+}
+let createorg = function()
+{
+	presignupbtnfunc1("organization");
+}
+
+let changeinnerpwd =function(section, ouidval)
+{
+	ouid = ouidval;
+	switch(section)
+	{
+		case "user":
+			presignupbtnfunc1("changepwduser");
+			break;
+		default: //org
+			presignupbtnfunc1("changepwdorg");
+			break;
+	}
+	
+}
+
+
+let appaction = function(appaction, appid, uid, group)
+{
+	let url = "csyma/app/"+appaction+"/"+appid+"/"+uid+"/"+group
+	postrequest(url, false, function(err){})
+}
+
+let appactionsys = function(appaction, appid)
+{
+	let url = "csyma/app/"+appaction+"/"+appid
+	postrequest(url, false, function(err){})
+}
+ 
+
+$('.anch').click(function(event){
+    event.preventDefault();
+  });
+
+// $('.content').on("click", ".pgload", function(event){
+//     event.preventDefault();
+//     loadpage($(this).attr("href"), true)
+//     return;
+//   });
+// $('.content').on("click", ".backbtn", function(event){
+//     event.preventDefault();
+//     loadpage($(this).data("href"), true)
+//     return;
+// });

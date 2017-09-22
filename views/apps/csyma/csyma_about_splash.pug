@@ -1,0 +1,202 @@
+doctype html
+html(lang='en')
+  // overflow-hidden  ||  iziModal-isOverflow
+  head
+    meta(charset='UTF-8')
+    |     
+    meta(name='viewport', content='width=device-width, height=device-height, initial-scale=1')
+    |     
+    title iziModal.js
+    |     
+    link(rel='stylesheet', href='/assets/izi/css/iziModal.css%3Fv=150g.css')
+    |     
+    link(rel='stylesheet', href='/assets/izi/css/demo.css%3Fv=150g.css')
+    |     
+    link(href='/assets/izi/css/shCore.css', rel='stylesheet', type='text/css')
+    |     
+    link(href='/assets/izi/css/shThemeDefault.css', rel='stylesheet', type='text/css')
+    |
+    link(href='/assets-raw/core/assets/vendor/font-awesome/css/font-awesome.css', rel='stylesheet', type='text/css')
+    |     
+    link(href='https://fonts.googleapis.com/css?family=Lato:400,300,700', rel='stylesheet', type='text/css')
+    |     
+    script(type='text/javascript', src='/assets/izi/js/vendor/shCore.js')
+    |     
+    script(type='text/javascript', src='/assets/izi/js/vendor/shBrushJScript.js')
+    |     
+    script(type='text/javascript', src='/assets/izi/js/vendor/shBrushXml.js')
+    |     
+    script(type='text/javascript', src='/assets/izi/js/vendor/shBrushBash.js')
+    |     
+    script(src='/assets/izi/js/vendor/modernizr.js')
+    // Modernizr
+    link(rel='canonical', href='index.html')
+    |     
+    meta(name='author', content='Marcelo Dolce')
+    |     
+    meta(name='description', content='Elegant, responsive, flexible and lightweight modal plugin with jQuery. by Marcelo Dolce.')
+    |     
+    meta(name='theme-color', content='#1c307d')
+  body
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-43600147-3', 'auto');
+      ga('send', 'pageview');
+    |     
+    script.
+      window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      t._e = [];
+      t.ready = function(f) {
+      t._e.push(f);
+      };
+      return t;
+      }(document, "script", "twitter-wjs"));
+    |     
+    nav#cd-vertical-nav
+      ul
+        li
+          a(href='index.html#Welcome', data-number='1')
+            span.cd-dot
+            |                     
+            span.cd-label Welcome
+        |             
+        li
+          a(href='index.html#Changelog', data-number='2')
+            span.cd-dot
+            |                     
+            span.cd-label Changelog
+        |             
+        li
+          a(href='index.html#Start', data-number='3')
+            span.cd-dot
+            |                     
+            span.cd-label Start
+        |             
+        li
+          a(href='index.html#Iframe', data-number='4')
+            span.cd-dot
+            |                     
+            span.cd-label Iframe
+        |             
+        li
+          a(href='index.html#Ajax', data-number='5')
+            span.cd-dot
+            |                     
+            span.cd-label Ajax
+        |             
+        li
+          a(href='index.html#DataAttributes', data-number='6')
+            span.cd-dot
+            |                     
+            span.cd-label Data Attributes
+        |             
+        li
+          a(href='index.html#Options', data-number='7')
+            span.cd-dot
+            |                     
+            span.cd-label Options
+        |             
+        li
+          a(href='index.html#Methods', data-number='8')
+            span.cd-dot
+            |                     
+            span.cd-label Methods
+        |             
+        li
+          a(href='index.html#Events', data-number='9')
+            span.cd-dot
+            |                     
+            span.cd-label Events
+    |     
+    a.cd-nav-trigger.cd-img-replace
+      | Open navigation
+      span
+    |     
+    main
+      section#Welcome.cd-section
+        .highlight.bg
+          //header
+          //  a.right.github(href='https://github.com/dolce/iziModal', target='blank')
+          //  |                     
+          //  a.right.documentation(href='index.html#documentation', data-target-scroll='#documentation') Documentation
+          //  |                     
+          //  a.right.documentation(href='https://izitoast.marcelodolce.com/', target='blank')
+          //    | See also 
+          //    i.icon.icon-star(style='color:yellow')
+          //    |  
+          //    b iziToast
+          //    | .js
+          |                 
+          .core
+            p This site is powered by: 
+            h1
+              | 
+              strong
+                | C
+              span syber
+              | 
+              strong
+                | SY
+              span stems
+              | 
+              strong
+                | M
+              span other
+              | 
+              strong
+                | A
+              span pplication
+              |  
+              span Version #{version}
+            |   
+            p You are seeing this page because the owner of this site is still hard at work.
+            p
+              h1
+                i.fa.fa-cog.spin
+                  |               
+            p You can take a tour of CSYMA as you wait
+            |                     
+            |                     
+            div
+              p.examples Get Started
+            |                     
+            ul.buttons
+              li
+                a.btn.btn-default(href='index.html') Learn
+              |                         
+              li(style='visibility: hidden')
+                a.trigger-custom(href='index.html') Empty
+              |                         
+              li(style='visibility: hidden')
+                a.trigger-custom(href='index.html') Empty
+              |                         
+              li
+                a.trigger-large(href='index.html') Download
+              |                         
+              li.lava
+            |                     
+            div
+              // <a href="https://codepen.io/search/collections/?q=izimodal" class="download" target="blank">Others examples</a>
+              a.github-button(href='https://github.com/dolce/iziModal', data-icon='octicon-star', data-count-href='/dolce/iziModal/stargazers', data-count-api='/repos/dolce/iziModal#stargazers_count', data-count-aria-label='# stargazers on GitHub', aria-label='Star dolce/iziModal on GitHub') Star
+              |                         
+              a.github-button(href='https://github.com/dolce/iziModal/archive/master.zip', data-icon='octicon-cloud-download', aria-label='Download dolce/iziModal on GitHub') Download
+              // Tweet button
+              a.twitter-share-button(href='https://twitter.com/intent/tweet?text=#IZIMODAL - Elegant, responsive, flexible and lightweight modal #plugin with #jQuery.') Tweet
+              // Like button
+              iframe(src='https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fizimodal.marcelodolce.com%2F&width=170&layout=button_count&action=like&size=small&show_faces=false&share=true&height=20&appId', width='170', style='/* border:none; */overflow:hidden;', scrolling='no', frameborder='0', allowtransparency='true', height='20')
+              |                         
+              a.github-button(href='index.html', data-icon='octicon-star') Learn
+          |                 
+          .modal
+
+include ../csyma/csyma_about

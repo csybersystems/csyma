@@ -105,7 +105,7 @@
     {
         var base = this;
 
-        // See http://stackoverflow.com/a/1232046/2970321
+        // See https://stackoverflow.com/a/1232046/2970321
         base.messages.length = 0;
 
         // Also, turn off all alert styling in agglomerate container

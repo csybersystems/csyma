@@ -35,6 +35,9 @@ passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, don
     if (!user) {
       return done(null, false, { msg: `Email ${email} not found.` });
     }
+    let isActive = user.isActive
+    if(isActive === false)
+      return done(null, false, { msg: `Email ${email} not Active. Please activate.` });
     user.comparePassword(password, (err, isMatch) => {
       if (err) { return done(err); }
       if (isMatch) {
@@ -97,6 +100,7 @@ passport.use(new FacebookStrategy({
     User.findOne({ facebook: profile.id }, (err, existingUser) => {
       if (err) { return done(err); }
       if (existingUser) {
+        req.flash('success', { msg: 'Welcome. You have successfully logged in' });
         return done(null, existingUser);
       }
       User.findOne({ email: profile._json.email }, (err, existingEmailUser) => {
@@ -116,6 +120,7 @@ passport.use(new FacebookStrategy({
           user.profile.location = (profile._json.location) ? profile._json.location.name : '';
           //user.save((err) => { done(err, user);});
           csyberUser.socialcreate(JSON.parse(JSON.stringify(user)), function(err, id){
+              req.flash('info', { msg: 'Facebook account has been linked.' });
               User.findById(id, done);
           });
         }
@@ -157,8 +162,10 @@ passport.use(new GitHubStrategy({
     });
   } else {
     User.findOne({ github: profile.id }, (err, existingUser) => {
+      console.log(existingUser)
       if (err) { return done(err); }
       if (existingUser) {
+        req.flash('success', { msg: 'Welcome. You have successfully logged in' });
         return done(null, existingUser);
       }
       User.findOne({ email: profile._json.email }, (err, existingEmailUser) => {
@@ -178,6 +185,7 @@ passport.use(new GitHubStrategy({
           user.profile.website = profile._json.blog;
           //user.save((err) => { done(err, user);});
           csyberUser.socialcreate(JSON.parse(JSON.stringify(user)), function(err, id){
+              req.flash('info', { msg: 'GitHub account has been linked.' });
               User.findById(id, done);
           });
         }
@@ -221,6 +229,7 @@ passport.use(new TwitterStrategy({
     User.findOne({ twitter: profile.id }, (err, existingUser) => {
       if (err) { return done(err); }
       if (existingUser) {
+        req.flash('success', { msg: 'Welcome. You have successfully logged in' });
         return done(null, existingUser);
       }
       const user = new User();
@@ -236,6 +245,7 @@ passport.use(new TwitterStrategy({
       user.profile.picture = profile._json.profile_image_url_https;
       //user.save((err) => { done(err, user);});
       csyberUser.socialcreate(JSON.parse(JSON.stringify(user)), function(err, id){
+              req.flash('info', { msg: 'Twitter account has been linked.' });
               User.findById(id, done);
           });
     });
@@ -278,6 +288,7 @@ passport.use(new GoogleStrategy({
     User.findOne({ google: profile.id }, (err, existingUser) => {
       if (err) { return done(err); }
       if (existingUser) {
+        req.flash('success', { msg: 'Welcome. You have successfully logged in' });
         return done(null, existingUser);
       }
       User.findOne({ email: profile.emails[0].value }, (err, existingEmailUser) => {
@@ -296,6 +307,7 @@ passport.use(new GoogleStrategy({
           user.profile.picture = profile._json.image.url;
           //user.save((err) => { done(err, user);});
           csyberUser.socialcreate(JSON.parse(JSON.stringify(user)), function(err, id){
+              req.flash('info', { msg: 'Google account has been linked.' });
               User.findById(id, done);
           });
         }
@@ -342,6 +354,7 @@ passport.use(new LinkedInStrategy({
     User.findOne({ linkedin: profile.id }, (err, existingUser) => {
       if (err) { return done(err); }
       if (existingUser) {
+        req.flash('success', { msg: 'Welcome. You have successfully logged in' });
         return done(null, existingUser);
       }
       User.findOne({ email: profile._json.emailAddress }, (err, existingEmailUser) => {
@@ -361,6 +374,7 @@ passport.use(new LinkedInStrategy({
           user.profile.website = profile._json.publicProfileUrl;
           //user.save((err) => { done(err, user);});
           csyberUser.socialcreate(JSON.parse(JSON.stringify(user)), function(err, id){
+              req.flash('info', { msg: 'LinkedIn account has been linked.' });
               User.findById(id, done);
           });
         }
@@ -404,6 +418,7 @@ passport.use(new InstagramStrategy({
     User.findOne({ instagram: profile.id }, (err, existingUser) => {
       if (err) { return done(err); }
       if (existingUser) {
+        req.flash('success', { msg: 'Welcome. You have successfully logged in' });
         return done(null, existingUser);
       }
       const user = new User();
@@ -418,6 +433,7 @@ passport.use(new InstagramStrategy({
       user.profile.picture = profile._json.data.profile_picture;
       //user.save((err) => { done(err, user);});
           csyberUser.socialcreate(JSON.parse(JSON.stringify(user)), function(err, id){
+              req.flash('info', { msg: 'Instagram account has been linked.' });
               User.findById(id, done);
           });
     });

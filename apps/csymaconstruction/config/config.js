@@ -20,7 +20,7 @@ const config = {
         15:"Group has been removed"
     },
     name:"csymaconstruction",
-    displayname:"csyma construction",       // || or false failse if it should not be shown in app list
+    displayname:false,//"csyma construction",       // || or false failse if it should not be shown in app list
 	url:"csymaconstruction/app/elements",
 	enabled: {
         root:"restricted",
@@ -94,47 +94,28 @@ const config = {
 
     	}
     },
-    dashboards:{
-    	"root":{
-    		dashboards: {
-            class: "fa fa-dashboard",
-            dashboards: {
-                users:{
-                    name: "Users",
-                    url: "#csyber/dashboards/home",
-                    application:"Users"
-                },
-                profile:{
-                    name: "Profile",
-                    url: "#csyber/dashboards/home",
-                    application:"profile"
-                },
-                applications:{
-                    name: "Applications",
-                    url: "#csyber/dashboards/home",
-                    application:"Applications"
-                }
-            },
+    elements:{
+         
+        others:{
+                about:
+                    {
+                        class:"fa fa-book",
+                        url: "/hymnal/home/h/k",
+                        name:"About",
+                    },
+                getstarted:
+                    {
+                        class:"fa fa-book",
+                        url: "/hymnal/home/h/e",
+                        name:"Get Started",
+                        
+                    },
         },
-    	},
-    	"user":{
-    		dashboards: {
-            class: "fa fa-dashboard",
-            dashboards: {
-                profile:{
-                    name: "Profile",
-                    url: "#csyber/dashboards/home",
-                    application:"Profile"
-                },
-                applications:{
-                    name: "Applications",
-                    url: "#csyber/dashboards/home",
-                    application:"applications"
-                }
-            },
-        },
-    	}
-    },
+        
+        defaultpage: "apps/csymaconstruction/csymaconstruction", 
+        keywords:"keywords...",
+        description:"description...is description"
+    }
 
 };
 

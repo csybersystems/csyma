@@ -13,13 +13,13 @@ class errohandler extends csystem
 		let queryparts = query.split(".");
 		if(queryparts.length >= 2) 				//looking for a resource that does not exist
 		{
-			console.log(queryparts.length)
+			//console.log(queryparts.length)
 			res.status(404).send('');
 			return;
 		}
 
 		let headless = req.query.headless || false;
-		// console.log(headless)
+		// //console.log(headless)
 		if (! req.accepts('html')) {    //if (req.accepts('json'))
 	      res.status(404).send({ error: 'Not found', code: '404' });
 	      return;
@@ -35,7 +35,7 @@ class errohandler extends csystem
 
 	static error500(err, req, res, env, next)
 	{
-		 console.log(err)
+		 //console.log(err)
 		let headless = req.query.headless || false;
 		if(env === 'developmente')
 		{

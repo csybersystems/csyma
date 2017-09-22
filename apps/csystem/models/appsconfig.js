@@ -44,7 +44,7 @@ class appsConfig extends MongoModels
     {
         let self = this;
         let _root = __dirname+"/../../";
-        console.log("setting up all apps")
+        //console.log("setting up all apps")
 
         self.collection = 'allapps';
         self.schema = allappsSchema;
@@ -56,6 +56,54 @@ class appsConfig extends MongoModels
             },
             create:["drop", function(results, done){
                 let items = fse.readdirSync(_root);
+                Async.eachSeries(Object.keys(items), function (i, next){ 
+                    if(items[i] == "." || items[i] == "..")next();
+                    if(items[i].split(".").length > 1)next();
+                    let appname = items[i];
+
+                    let thisappconfig = require(_root + appname+"/config/config.js")
+                    let enabled = thisappconfig.get("/enabled")
+                    let displayname = thisappconfig.get("/displayname")
+                    const document = {
+                            appname: appname,
+                            enabled: enabled,
+                            timeCreated: new Date()
+                        };
+                    self.insertOne(document, function(err, results){
+                        next()
+                    });
+                 }, function(err) {
+                   done();
+                }); 
+            }]
+        }, (err, results) => {
+            if (err) {
+                return callback(err);
+            }
+
+            callback(null);
+        });
+
+        
+    }
+    
+    static setuponeapps(app, callback)
+    {
+        let self = this;
+        let _root = __dirname+"/../../";
+
+        self.collection = 'allapps';
+        self.schema = allappsSchema;
+
+
+        Async.auto({//
+            drop: function(done){
+               done()
+            },
+            create:["drop", function(results, done){
+                let items = fse.readdirSync(_root);
+                while(items.pop());
+                items.push(app)
                 Async.eachSeries(Object.keys(items), function (i, next){ 
                     if(items[i] == "." || items[i] == "..")next();
                     if(items[i].split(".").length > 1)next();

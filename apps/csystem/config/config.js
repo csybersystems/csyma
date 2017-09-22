@@ -21,7 +21,7 @@ const config = {
     },
     name:"csystem",
     displayname:false,      // || or false failse if it should not be shown in app list
-	url:"#!csystem/app/elements",
+	url:"csystem/app/elements",
 	enabled: {
         root:"restricted",
         user:"free",

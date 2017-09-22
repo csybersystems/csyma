@@ -5,21 +5,30 @@ const Promptly = require('promptly');
 var mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 const crypto = require('crypto');
-const Config = require('../config/config');
 var validator = require('validator');
 const bluebird = require('bluebird');
 const nodemailer = require('nodemailer');
 const passport = require('passport');
+const fse = require('fs-extra');
+const dotenv = require('dotenv');
+
+
+//load enviroment variables before config
+if (fse.existsSync('../.env'))
+  dotenv.load({ path: '../.env' });
+else
+  dotenv.load({ path: '.env.example' });
+
+const Config = require('../config/config');
 const csyberUser = require('../apps/csystem/models/csyberuser');
 
 mongoose.Promise = global.Promise;
 
 var Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId;
-
 Async.auto({
     testMongo:  (done) => {
-        const db = 'mongodb://localhost:27017/'+Config.get("/database/name");
+        const db = Config.get("/database/uri");
         Mongodb.MongoClient.connect(db, {}, (err, db) => {
 
             if (err) {

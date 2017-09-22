@@ -84,8 +84,8 @@ class User extends MongoModels {
                         
                         }
                     };    
-                console.log("........=========================================1111111111111111111111111111")
-                console.log(apps)
+                //console.log("........=========================================1111111111111111111111111111")
+                //console.log(apps)
                 self.findByIdAndUpdate(id, updateObj,{new:true},done);
            }]},   (err, results) => {
 
@@ -106,15 +106,15 @@ class User extends MongoModels {
     }
     static installallapps(id, perm, callback){
         appsConfig.getallapps(function(err, allapps){
-            console.log("............................................all apps")
+            //console.log("............................................all apps")
 
-            console.log(allapps)
-            console.log(allapps)
+            //console.log(allapps)
+            //console.log(allapps)
             let app;
             let self = this;
             Async.eachSeries(Object.keys(allapps), function (app, next){ 
-                console.log("is appt")
-                console.log(app)
+                //console.log("is appt")
+                //console.log(app)
                // self.installapp(id, app, perm, next)
             }, function(err) {
                 callback();
@@ -158,7 +158,7 @@ class User extends MongoModels {
                 };
 
                 self.insertOne(document, function(err, results){
-                    console.log(results)
+                    //console.log(results)
                     done(null, results)
                 });
             }]
@@ -291,10 +291,10 @@ class User extends MongoModels {
         size = 200;
       }
       if (!this.email) {
-        return `https://gravatar.com/avatar/?s=${size}&d=retro`;
+        return `httpss://gravatar.com/avatar/?s=${size}&d=retro`;
       }
       const md5 = crypto.createHash('md5').update(this.email).digest('hex');
-      return `https://gravatar.com/avatar/${md5}?s=${size}&d=retro`;
+      return `httpss://gravatar.com/avatar/${md5}?s=${size}&d=retro`;
     };
 
     constructor(attrs) {
@@ -406,7 +406,7 @@ User.indexes = [
     { key: { email: 1, unique: 1 } }
 ];
 
-User.db = 'mongodb://localhost:27017/'+Config.get("/database/name");
+User.db = Config.get("/database/uri") ;
 Mongodb.MongoClient.connect(User.db, function(err, db) {
   User.db = db;
   MongoModels.db = db;

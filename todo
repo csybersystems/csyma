@@ -36,3 +36,450 @@ Rq
 
 Help
 	See how to set defaultapp
+
+
+Tuesday
+	finish csyma applications
+		profile man
+		user man
+		etc....
+		Build apps...
+			upload code and build... and restart application
+	Add menu items also...
+
+	More systems applications
+		User manual
+		developper manual
+		Introduction...explanation
+
+	When application is first installed....
+		Which page comes up first?....construction
+
+		Then csyma learn
+			user
+			developer
+
+		then csyma
+			all elements...
+
+		combine csyma with csyma learn
+		dont load csyma construction
+
+working with it...........................
+In Jspanel.js
+	change z-base and z-counter to 2000
+
+............................................
+	When happens when dashboard/equivalent is selected? is clicked????..load page...
+
+		have functions to handle these...
+
+.................................................
+	continuing with csyma
+		...
+
+
+ord
+	csyma components
+		log in
+		log out
+		profile
+
+		apps
+			users
+
+
+Wednesday
+	Loading exact previous app
+
+--------------------------------TODO-------------------------------------------------------------------------
+Construction page....
+
+--------------------------------------------------------------------------------------------------------------
+DESIRED
+	Go to exact page when reloading
+
+
+
+..............................................................................................................
+	1. Sign Up
+	2. Log in
+	3. Log out
+	More________
+
+
+.......................................Ord....................................................................
+Account management..............................See what Aqua has to say, and userfrosting also...............
+	Personal
+		Login/logout buttons + sign up buttons........................*
+		sign up 
+		log in 
+		log out
+	Admin account management
+
+App management...
+
+
+Docs
+	Check Aqua, userfrosting, odoo, odoo equivalents....
+
+
+Ord
+	Add rooturl to all rqs
+	Form is dropping......................................1.....................*
+	
+	Sign up...............................................2.....................
+		local sign up..............................................................*
+		local sign up from inside....
+	Account management
+		link accounts
+		Manage personal account
+			change pwd
+			drop social, local, etc
+			change name,,,
+		Modify other accounts...
+
+
+
+	csyma
+		home --- load home page
+		users --- (inclusing self)
+			list users
+			Add more users
+			Remove users
+			Change your account
+		Apps
+			list apps
+			Install
+			Enable
+			Disable
+			Add to users
+
+
+Issues
+	There are pages that an outsider is not allowed to see. Page permissions...,,,
+	Finish profile data...
+
+
+ORD
+	fix headers issue..........................*
+	fix firefox issues.........................*
+
+
+----------------------------------
+	Profile
+		Change profile..............*
+		Change pwd
+		Link accounts..*
+		Unlink accounts..*
+		Drop accounts..*
+				signup....remove emails from pwd...........*
+				change pwd,,check,,,,
+						.......................some funny thing happens so that the password is not saved as given, but change in some way. Find out why in csyberuser.js 395
+
+
+		More function
+			sign up from inside...
+			drop from inside......
+			change from inside....
+
+
+	Applications
+
+
+
+	CSRF
+
+Ord
+	Sort out layout of things in left side bar.....................*
+	Dashboards icon showing even when there are no dashboards
+	Build applications
+	Build pages.....
+	Test application so far.... root url...
+
+
+Thursday
+	=> Permissions for others.................................*
+	=> Move dashboards to others..............................*
+	=> Add more items for each applications...
+		csyma
+			sections
+				site
+				About
+				documentation
+					subsections
+						Check user frosting....
+			pages
+
+
+
+			Dashboards
+
+
+			Application default page.........................1
+			Load Section
+				Section elements... 
+				Section default page....
+
+Friday
+	Finish sorting the sidebar
+		How they look,
+		What they do,
+
+
+Monday
+	Have home point to home...................................................*
+
+	Applications
+		Csyma
+			and childrens
+		apps
+			apps/app/api
+				each app has it's own api
+		api
+			system api
+		site...
+			if there is a site
+				..how to build the whole site and load the various components...
+		blog...
+			if there is a blog
+		docs...
+			docs
+			docs/app/section
+				____enable search____
+
+
+				-> tour
+				-> user
+				-> developer
+		SEO
+
+
+	Ord...
+		Build rest of csyma core
+			user management & co...
+		Build csyma tour page
+			locate in in some good place
+		Build docs app
+			how to put it all together
+
+
+
+Sunday 
+	1. relative and absolute paths (harmonize).......................MORE...............
+	2. csyma construction
+		Where should csyma tour lead us??????????
+	3. csyma main
+		design system modules
+			user management
+			api
+			site
+			blog
+			docs
+			etc...
+		with user_management...
+	4. Applications
+
+		_+application modules...
+
+		+++++remote control...
+
+
+
+		
+
+TASKS
+	build the tour page
+		enable explore (going to main app from it)
+		go to docs from it
+		go to csyma page from it
+		goto github page from it
+
+
+
+ORD
+	loading stuff on left side bar
+		There are some things that are reloading...
+		loading sections.............................................................................*
+			Put levels into various sections
+				A level one section removes all other level 1 sections and loads its children
+				A level x section removes all other level x sections and loads its children
+	user management
+		create new users
+		remove old users
+		edit existing users
+	organizations................................1
+		creating organizations...
+		Organization -> app -> user...
+	app management
+		install apps
+		remove apps
+	system management
+		build apps
+		disable apps
+		restart system
+
+	NEW:
+		ORGANIZATIONS
+			Organizations
+				Kuhne Nagel
+					has apps
+				Van der Berg
+					has apps
+				Telkom
+					has apps
+
+					
+			Users
+				Has apps
+				Can create organizations
+				Can create users
+					Users and organizations are basically the same type of thing...
+					Can install apps(and remove)
+						for self,
+						for others
+					Can remove accounts
+						which he created.......
+					Can add users to self
+					Can add users to others......
+
+					Rq::::app instances..........
+						Whenever working with an app, I require to have an instance......
+			Ord
+				User owners
+					create users
+						sign up inside...............................................*
+							users
+							organizations
+						list these...................................................* 
+							users
+							organizations
+						drop users
+							Users
+							Organizations
+						install apps
+							own
+							for other users
+							change user groups for other
+						Manage organizations
+							Mine 
+							Users under me
+					install user apps
+						change permissions for users for various apps
+					remove user apps
+
+
+				test user management
+					Dashboards
+					create
+					delete
+					etc...
+
+-------------start-----------------
+	Top bar
+	Side bar
+	etc...
+
+===========================================================
+Tables
+Page contents
+Header......name of page in the header.....
+
+
+Delete account with all children
+Change password
+Manage user
+	apps
+	permissions
+
+Permissions for performing these actions,,,
+Social integration
+
+Bulding apps
+	Fetching.......
+	Compiling......
+	Enabling.......
+	Disabling......
+
+Ord
+	Change pwd
+	...................................................
+	1. Manage user
+		apps
+			remove apps
+			add apps
+				app groups....
+		permissions
+
+
+		Rq
+			list all apps
+			list all app groups
+
+			list my apps
+			list his apps
+
+
+		list apps his apps in table
+
+			csystem
+				Uninstall
+					root remove
+					user remove
+					nobody add
+
+			New Apps
+				List all apps
+					Install
+
+			Ord
+				remove group...................*
+				add group......................*
+
+				........................................................
+				uninstall app.............start.........................*
+				install app.............................................*
+
+				Apps information
+					help...........................
+
+
+
+	2. Managing apps(think real hard about this......)
+		....
+			download from github...
+			Meaning that we need a store......
+				read from store....
+
+		build
+		disable
+		install for all users
+		groups...
+
+
+		Apps
+			Dev -> fork
+			Update list...
+
+
+		Ord:
+			Put in /apps
+			Then update apps...
+
+	3. Permissions for performing stuff
+
+	4. Get down to building apps
+		vipimo
+		school
+		ssb
+		Farmbot
+		More:
+
+	Tmp
+		Apps
+			hymnal1___m.karibusda
+			hymnal2___#__________
+			vipimo
+			school
+			ssb
+			farmbot

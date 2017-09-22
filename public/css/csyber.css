@@ -29,3 +29,13 @@
 	display:none !important;
 	
 }
+
+.jsPanel
+{
+	z-index:10000;
+}
+
+.linkbtn
+{
+	 color:"#fff";
+}

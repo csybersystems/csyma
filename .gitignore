@@ -30,3 +30,9 @@ bower_components
 # OS metadata
 .DS_Store
 Thumbs.db
+tmp
+todo
+config/config.js
+try/
+*.bac
+/*.bac

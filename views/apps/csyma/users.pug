@@ -1,0 +1,189 @@
+- var users = fromchild.users
+.row
+  .col-lg-3.col-xs-6
+    // small box
+    .small-box.bg-yellow
+      .inner
+        h3 #{fromchild.numusers}
+        |               
+        if fromchild.numusers > 1
+          p  Users
+        else
+          if fromchild.numusers < 1
+            p  Users
+          else 
+            p User
+        |  
+      |             
+      .icon
+        i.ion.ion-person-add.tocreateuser
+      |             
+      a.small-box-footer.tocreateuser.anch(href='#')
+        | Create New User 
+        i.fa.fa-arrow-circle-right
+  // ./col
+  //apps
+  // ./col
+.row
+  .col-lg-12
+    .box.box-primary
+      .box-header.ui-sortable-handle(style='cursor: move;')
+        i.fa.fa-user.fa-fw
+        |               
+        h3.box-title Manage Users
+        |               
+        .box-tools.pull-right
+          button.btn.bg-teal.btn-sm(type='button', data-widget='collapse')
+            i.fa.fa-minus
+          |                 
+          button.btn.bg-teal.btn-sm(type='button', data-widget='remove')
+            i.fa.fa-times   
+      .box-body 
+        table#userstable.table.table-striped.table-bordered.table-condensed.hover.order-column.stripe.compact(cellspacing='0', width='100%')
+          thead
+            tr
+              th #
+              |                   
+              th Name
+              |                   
+              th Email
+              |                   
+              th Gender
+              |
+              th Status
+          tfoot
+            tr
+              th 
+              |                   
+              th Name
+              |                   
+              th Email
+              |                   
+              th Gender
+              |
+              th Status
+            | 
+          tbody
+            each singleuser in users
+              - var userscl
+              if(singleuser.isActive===true) 
+                - var userscl="text-success"
+              else
+                - var userscl="text-danger"
+              endif
+              tr(id=singleuser._id class=userscl)
+                td
+                if(singleuser.profile.name)
+                  td
+                    .tomoduser.usertr(chref=singleuser._id href="#") #{singleuser.profile.name}
+                  |
+                else
+                  td 
+                    .tomoduser.usertr(chref=singleuser._id href="#") #{singleuser.name.first}
+                  |
+                if(singleuser.email)
+                  td
+                    .tomoduser.usertr(chref=singleuser._id href="#") #{singleuser.email}
+                  |
+                else
+                  td 
+                    a.tomoduser(chref=singleuser._id href="#")
+                  |
+                |                   
+                
+                | 
+                td=singleuser.profile.gender || singleuser.gender || '...'
+                if(singleuser.isActive===true) 
+                  td
+                    .btn-group
+                      button.btn.btn-primary.dropdown-toggle(type='button', data-toggle='dropdown', aria-expanded='false')
+                        | Active 
+                        span.caret
+                      ul.dropdown-menu.dropdown-menu-right(role='menu')
+                        li
+                          a.js-user-manage.pgload(href='#!/csyma/page/csyma/manageuser', data-uid=singleuser._id class="anch")
+                            i.fa.fa-edit
+                            |  Manage user
+                        li
+                          a.js-user-password(href='#', data-uid=singleuser._id class="anch")
+                            i.fa.fa-key
+                            |  Change user Password
+                        li
+                          a.js-user-disable(href='#', data-uid=singleuser._id class="anch")
+                            i.fa.fa-minus-circle
+                            |  Disable user
+                        li
+                          a.js-user-delete(href='#', data-uid=singleuser._id class="anch")
+                            i.fa.fa-trash-o
+                            |  Delete user
+                else
+                  td
+                    .btn-group
+                      button.btn.btn-danger.dropdown-toggle(type='button', data-toggle='dropdown', aria-expanded='false')
+                        | Disabled 
+                        span.caret
+                      ul.dropdown-menu.dropdown-menu-right(role='menu')
+                        li
+                          a.js-user-manage.pgload(href='#!/csyma/page/csyma/manageuser', data-uid=singleuser._id class="anch")
+                            i.fa.fa-edit
+                            |  Manage user
+                        li
+                          a.js-user-password(href='#', data-uid=singleuser._id class="anch")
+                            i.fa.fa-key
+                            |  Change user Password
+                        li
+                          a.js-user-enable(href='#', data-uid=singleuser._id class="anch")
+                            i.fa.fa-minus-circle
+                            |  Enable user
+                        li
+                          a.js-user-delete(href='#', data-uid=singleuser._id class="anch")
+                            i.fa.fa-trash-o
+                            |  Delete user
+                |                   
+                |                  
+            |                 
+      // /.box-body
+  
+    //.box
+
+script.
+  $(".tocreateuser").click(function(){createuser();})
+  $(".tomoduser").click(function(){moduser($(this).attr("chref"));})
+  $(".tomanageapp").click(function(){manageapp();})
+  $(".applistman").click(function(){manageapp();})
+
+  var t = $('#userstable').DataTable( {
+      "columnDefs": [ {
+          "searchable": false,
+          "orderable": false,
+          "targets": 0
+      } ],
+      "order": [[ 1, 'asc' ]]
+  } );
+
+  t.on( 'order.dt search.dt', function () {
+      t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+          cell.innerHTML = i+1;
+      } );
+  } ).draw();
+
+  $('.anch').click(function(event){
+    event.preventDefault();
+    return;
+  });
+
+  $("[data-uid]").on('click', function () {
+    if($(this).hasClass("js-user-password"))
+      changeinnerpwd("org", $(this).data('uid'))
+    if($(this).hasClass("js-user-disable"))
+      disableaccount($(this).data('uid'))
+    if($(this).hasClass("js-user-enable"))
+      disableaccount($(this).data('uid'), true)
+    if($(this).hasClass("js-user-delete"))
+      deleteaccount($(this).data('uid'))
+  });
+  $('.content').on("click", ".pgload", function(event){
+    event.preventDefault();
+    loadpage($(this).attr("href")+"/get/"+$(this).data('uid'), true)
+    return;
+  });
