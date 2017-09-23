@@ -480,6 +480,69 @@ Ord
 			hymnal1___m.karibusda
 			hymnal2___#__________
 			vipimo
+				server
+				viewer
+				forwarders
+				dashboards...
+
+				registering devices
 			school
 			ssb
 			farmbot
+			church
+			estate
+			school
+			projector assistant...
+			csynergy...
+
+	Next:
+		10:30am on Friday. Must needs close for Sabbath preparation.
+
+		Next: in userman, allow user to ask to join another organization/user so that he is owned (partly) by that organization or user. How will this affect the work done so far?
+
+		There are going to be fundamental changes in design
+
+
+		Great grandparent
+			csystem
+
+		Grandparent
+			Super Admin
+
+		Parent Account
+			Guest
+			Any other independent account
+
+		Child accounts
+			Opened by any parent/child account
+
+
+		Step Child
+			Any account that requests to join any other account. It belongs to another parent, but also to you.
+			Account1 -> Organization1 (Join request)
+			Account2 -> Organization2 (Join request)
+			Account3 -> Organization3 (Join request)
+
+		Guardian accounts
+			Any other account that is caused to co-own a child/step-child account
+
+
+
+		Continue from here...
+		Each account has
+			Parents
+			Step-Parents(Optional)
+			Guardian accounts
+
+			
+
+
+
+
+
+
+
+
+
+
+		Help buttons for pages and items on pages.

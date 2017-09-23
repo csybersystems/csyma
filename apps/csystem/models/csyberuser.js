@@ -265,6 +265,18 @@ class User extends MongoModels {
         });
        // callback();
     }
+    
+    static setupallapps(app, callback)
+    {
+        appsConfig.setupallapps(app, function(){
+
+            callback()
+        });
+       // callback();
+    }
+    
+
+
     static sysinstallnewapps(callback)
     {
         appsConfig.sysinstallnewapps(function(){

@@ -22,7 +22,9 @@ class csystem extends csyberUser
 			////console.log(self.collection)
 			self.collection = "users"
 			self.findOne({email:Config.get("/guestemail")}, function(err, docs){
+				console.log(docs)
 				self.user = docs;	//Assume to error
+				console.log("using guest user...")
 				Async.auto({
 			      loadconfig: function (dones) {
 			        self.loadconfig(function(err, _results){
@@ -80,12 +82,10 @@ class csystem extends csyberUser
 				try
 				{
 					self.config = require(path);
-					return dones(null, true);
+					return callback(null, true);
 				}catch(err){
 
 					console.log(err)
-					//throw new Error(err)
-					//dones(err)
 				}
             },
             csyberconfig: ["start",function (results, dones) {
@@ -94,15 +94,9 @@ class csystem extends csyberUser
             	
 				try
 				{
-					// let path = "../"+"csystem"+"/config/config.js";
-     //        	//console.log("is path  "+path)
-					// //console.log("///in here,,,,,,,,,,")
-					// //console.log("is path  "+path)
 					self.csyberconfig = require(path);
-            		// path = "../"+self.app+"/config/config.js";
 					dones();
 				}catch(err){
-					//self.send(err)
 					dones(err)
 				}
             }]
