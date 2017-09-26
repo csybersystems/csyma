@@ -6,6 +6,9 @@ main()
 		cp .env_sample ../.env
    		echo "..."
 	fi
+
+	cp ../config/config.example.js ../config/config.js
+
 	oldname="vipimo"
 	echo "Todo: still not looking recursively in files..."
 	

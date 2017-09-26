@@ -24,7 +24,9 @@ const csyberUser = require('../apps/csystem/models/csyberuser');
 
 mongoose.Promise = global.Promise;
 
-var Schema = mongoose.Schema,
+let email = "surgbcx@gmail.com";
+
+let Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId;
 Async.auto({
     testMongo:  (done) => {
@@ -41,7 +43,11 @@ Async.auto({
         });
     },
     rootEmail: ['testMongo', (results, done) => {
-        done(null ,"surgbcx@gmail.com")
+        if(process.env.ENV === "development")
+        {
+            console.log("Setting up using: "+ email)
+            return done(null ,email)
+        }
         Promptly.prompt('Root user email:', function(err,docs)
             {
                 if (validator.isEmail(docs) === false) {
@@ -52,7 +58,7 @@ Async.auto({
             });
     }],
     rootPassword: ['rootEmail', (results, done) => {
-        done(null ,"surgbcx@gmail.com")
+        return done(null ,email)
         Promptly.password('Root user password(atleast 5 characters):', function(err,docs){
             if(err)done(err);
             else if(docs.length < 5){done("Password must be atleast 5 characters")}
@@ -61,7 +67,7 @@ Async.auto({
     
     }],
     confirmrootPassword: ['rootPassword', (results, done) => {
-        done(null ,"surgbcx@gmail.com")
+        return done(null ,email)
         Promptly.password('confirm password:', function(err,docs){
             if(err)done(err);
             else if(results.rootPassword != docs){done("Passwords don't match")}
@@ -175,6 +181,6 @@ Async.auto({
         return process.exit(1);
     }
 
-    // console.log('Setup complete.');
+    console.log('Setup complete.');
     process.exit(0);
 });
