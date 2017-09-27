@@ -1,5 +1,5 @@
 const passport = require('passport');
-const userController = require(__dirname+'/auth/../apps/csystem/controllers/user');
+const userController = require(__dirname+'/../../apps/csystem/controllers/user');
 
 
 class authroutes
@@ -18,7 +18,7 @@ class authroutes
     app.post('/auth/disable/:uid/:status', userController.postDisableAccountInside);
     app.post('/auth/password/:password/:confirmpassword/:oldpassword/:id?', userController.postUpdatePassword);
 
-    app.post('/auth/profile', passportConfig.isAuthenticated, userController.postUpdateProfile);
+    // app.post('/auth/profile', passportConfig.isAuthenticated, userController.postUpdateProfile);
 
     app.get('/auth/instagram', passport.authenticate('instagram'));
     app.get('/auth/instagram/callback', passport.authenticate('instagram', { failureRedirect: '/auth/' }), (req, res) => {

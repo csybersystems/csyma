@@ -1,6 +1,6 @@
-const csystem = require(__dirname+"/../apps/csystem/index");
-const Config = require(__dirname+'/hymnal/../config/config');
-const csyma = require(__dirname+"/../apps/hymnal/index");
+const csystem = require(__dirname+"/../../apps/csystem/index");
+const Config = require(__dirname+'/../../config/config');
+const csyma = require(__dirname+"/../../apps/hymnal/index");
 
 class hymnalroutes
 {

@@ -1,6 +1,6 @@
-const csystem = require(__dirname+"/../apps/csystem/index");
-const Config = require(__dirname+'/csymaconstruction/../config/config');
-const csymaconstruction = require(__dirname+"/../apps/csymaconstruction/index");
+const csystem = require(__dirname+"/../../apps/csystem/index");
+const Config = require(__dirname+'/../../config/config');
+const csymaconstruction = require(__dirname+"/../../apps/csymaconstruction/index");
 
 class csymaconstructionroutes
 {

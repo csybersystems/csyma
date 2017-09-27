@@ -1,5 +1,5 @@
-const csystem = require(__dirname+"/../apps/csystem/index");
-const Config = require(__dirname+'/../config/config');
+const csystem = require(__dirname+"/../../apps/csystem/index");
+const Config = require(__dirname+'/../../config/config');
 
 class csystemroutes
 {

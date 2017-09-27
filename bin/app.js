@@ -19,7 +19,7 @@ const expressValidator = require('express-validator');
 const expressStatusMonitor = require('express-status-monitor');
 const sass = require('node-sass-middleware');
 const fse = require('fs-extra');
-
+const Async = require('async');
 /**
  *  More Modules.
  */
@@ -68,33 +68,85 @@ const passportConfig = require('../config/passport');
  * Express configuration.
  */
 app.set('port', process.env.PORT || 3000);
-
-                                                                //require app views...
-app.set('views', path.join(__dirname, '../views'));
 /**
  * Load routes from all files in routes dir
  */
 {
   let routes = {};
-  let items = fse.readdirSync("./routes");
   console.log("Loading routes...")
-  for (let i=0; i<items.length; i++) {
-    if(items[i] == "." || items[i] == "..")continue;
-    let checkjs = items[i].split('.');
-    if(checkjs[checkjs.length -1] != 'js')continue;
-    let routename = items[i].split(".")[0];
-    console.log("%s %s", chalk.green('✓'), routename)
-    routes[routename] = items[i];
-  }
 
-  for(let route in routes)
+  let routesbase = __dirname+"/../routes"
+
+  Async.auto({
+    checkdirs: function(done){
+      console.log(routesbase)
+      fse.readdir(routesbase, function(err, items){
+        done(null, items)
+      })
+    },
+    loaddirs: ["checkdirs", function (results, done) {
+      let dirs = [routesbase];
+      let items = results.checkdirs
+      Async.each(items, function (path, next){ 
+        path = routesbase+"/"+path;
+        // console.log(`path: ${path}`)
+        fse.lstat(path, (err, stats) => {
+          if(stats.isDirectory() === true)
+          {
+              dirs.push(path)
+          }
+          next();
+        })
+      }, function(err) {
+
+          done(null, dirs)
+      }); 
+    }],
+    routes:  ["loaddirs", function (results, done) {
+      let dirs = results.loaddirs;
+      Async.each(dirs, function (dir, next){ 
+          fse.readdir(dir, function(err, items){
+            for (let i=0; i<items.length; i++) {
+            if(items[i] == "." || items[i] == "..")continue;
+            let checkjs = items[i].split('.');
+            if(checkjs[checkjs.length -1] != 'js')continue;
+            let routename = items[i].split(".")[0];
+            console.log("%s %s", chalk.green('✓'), routename)
+            routes[routename] = dir+"/"+items[i];
+          }
+
+              next();
+          })
+      }, function(err) {
+
+          done()
+      }); 
+    }],
+
+  }, (err, _results) => {
+
+  })
+
+  /*
+   * There is a scope problem if the routes are loaded in async block.
+   * So wait here some period load enough for the route files to be pushed to routes, then require them.
+   */
+  const sleep = require('system-sleep');
+  sleep(100); 
+  for(let ind in routes)
   {
-    if(route == 'csystem')new (require("../routes/"+routes[route])) (app, passport)
-    if(route == 'csyma')new (require("../routes/"+routes[route])) (app, passport)
-  }
+    // try
+    // {
+      let route = routes[ind]
+      console.log(route)
+      new (require(route)) (app, passport)
+    // }catch(err){}
+  } 
+  console.log("EO routes")
 }
 
 app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, '../views'));
 app.use(expressStatusMonitor());
 app.use(compression());
 app.use(sass({
