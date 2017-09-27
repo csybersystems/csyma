@@ -21,6 +21,7 @@ else
 
 const Config = require('../config/config');
 const csyberUser = require('../apps/csystem/models/csyberuser');
+const csystem = require('../apps/csystem');
 
 mongoose.Promise = global.Promise;
 
@@ -29,12 +30,16 @@ let email = "surgbcx@gmail.com";
 let Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId;
 Async.auto({
+    compile:  (done) => {
+        csystem.compile("all", function(){
+            done();
+        })
+    },
     testMongo:  (done) => {
         const db = Config.get("/database/uri");
         Mongodb.MongoClient.connect(db, {}, (err, db) => {
 
             if (err) {
-                // console.error('Failed to connect to Mongodb.');
                 return done(err);
             }
 
@@ -42,7 +47,7 @@ Async.auto({
             done(null, true);
         });
     },
-    rootEmail: ['testMongo', (results, done) => {
+    rootEmail: ['testMongo','compile', (results, done) => {
         if(process.env.ENV === "development")
         {
             console.log("Setting up using: "+ email)
