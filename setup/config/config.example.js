@@ -38,8 +38,8 @@ const config = {
     },
     appwebsite: '#',
     appname: 'CSYBER',
-    defaulpageloggedout: 'apps/csystem/welcome',
-    defaulpageloggedin: 'apps/csystem/welcome',//'/auth/login',
+    defaulpageloggedout: 'csystem/welcome',
+    defaulpageloggedin: 'csystem/welcome',//'/auth/login',
     
     displayappname: 'CSYMA Apps',      //appears on login page
     year: year,

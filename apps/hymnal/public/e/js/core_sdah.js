@@ -75,7 +75,7 @@
 				{
 					$.get
 					(
-						'/apps/hymnal/e/data/' + $(this).data('url'),
+						'/hymnal/e/data/' + $(this).data('url'),
 						function( data )
 						{
 							$('<div/>',{'data-role':'page','id':app.catpg}).html
@@ -122,7 +122,7 @@
 			app.loadSong = function( options )
 			{
 				app.catpg = ( $('#' + app.catpg).length === 0 ) ? 'home' : app.catpg;
-				app.xmlfile = $.trim( ( options.xmlfile ) ? options.xmlfile : '/apps/hymnal/e/data/s' + $(this).data('url') );
+				app.xmlfile = $.trim( ( options.xmlfile ) ? options.xmlfile : '/hymnal/e/data/s' + $(this).data('url') );
 				app.vtrans[ 'reverse' ] = true;
 				app.currPage = app.xmlfile.split('.')[1].split('/s')[1];
 				app.nextURL  = app.xmlfile.replace(app.currPage + '.xml',(parseInt(app.currPage) + 1) + '.xml');
@@ -310,7 +310,7 @@
 			{
 				$.get
 				(
-					'/apps/hymnal/e/data/all_titles.xml',
+					'/hymnal/e/data/all_titles.xml',
 					function( data )
 					{
 						$( '<ul/>',

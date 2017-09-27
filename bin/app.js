@@ -13,7 +13,6 @@ const dotenv = require('dotenv');
 const MongoStore = require('connect-mongo')(session);
 const flash = require('express-flash');
 const path = require('path');
-// const mongoose = require('mongoose');
 const passport = require('passport');
 const expressValidator = require('express-validator');
 const expressStatusMonitor = require('express-status-monitor');
@@ -38,23 +37,24 @@ else
 /*
  * familyfe loaded here because it requires some environment variables
  */
-const familyfe = require('node-familyfe')
+// const familyfe = require('node-familyfe')
 /**
  * Connect to DB.
  */
-familyfe.connect();
+// familyfe.connect();
 
 
 /**
  * Connect to MongoDB.
  */
-// mongoose.Promise = global.Promise;
-// mongoose.connect(process.env.MONGODB_URI || process.env.MONGOLAB_URI);
-// mongoose.connection.on('error', (err) => {
-//   console.error(err);
-//   console.log('%s MongoDB connection error. Please make sure MongoDB is running.', chalk.red('✗'));
-//   process.exit();
-// });
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+mongoose.connect(process.env.MONGODB_URI || process.env.MONGOLAB_URI);
+mongoose.connection.on('error', (err) => {
+  console.error(err);
+  console.log('%s MongoDB connection error. Please make sure MongoDB is running.', chalk.red('✗'));
+  process.exit();
+});
 /**
  * API keys and Passport configuration.
  */
@@ -71,6 +71,78 @@ app.set('port', process.env.PORT || 3000);
 /**
  * Load routes from all files in routes dir
  */
+
+
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, '../views'));
+app.use(expressStatusMonitor());
+app.use(compression());
+app.use(sass({
+  src: path.join(__dirname, 'public'),
+  dest: path.join(__dirname, 'public')
+}));
+// log every request to the console
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(expressValidator());
+
+// required for passport
+app.use(session({
+  resave: true,
+  saveUninitialized: true,
+  secret: process.env.SESSION_SECRET, 
+  store: new MongoStore({       //need to check store...........
+    url: process.env.MONGODB_URI || process.env.MONGOLAB_URI,
+    autoReconnect: true,
+    clear_interval: 3600
+  })
+}));
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
+
+app.use((req, res, next) => {                           /////////////////////////////.....................check
+  if (req.path === '/api/upload') {
+    next();
+  } else 
+  if (req.path === '/auth/password' || req.path === "/auth/profile"  || req.path === "/account/delete" ||
+    req.path === "/auth/signupinside" || /*spoc*/req.path === "/auth/unlink/"  || req.path === "/spoc/uploadcsv"  || req.path === "/spoc/uploaddwg" /*spoc*/
+    ){
+     next();
+  }
+  else{
+   // lusca.csrf()(req, res, next);
+   next();
+  }
+});
+app.use(lusca.xframe('SAMEORIGIN'));
+app.use(lusca.xssProtection(true));
+app.use((req, res, next) => {
+  res.locals.user = req.user;
+  next();
+});
+app.use((req, res, next) => {                            /////////////////////////////.....................check
+  if (!req.user &&
+      req.path !== '/login' &&
+      req.path !== '/signup' &&
+      !req.path.match(/^\/auth/) &&
+      !req.path.match(/\./)) {
+    req.session.returnTo = req.path;
+  } else if (req.user &&
+      req.path == '/account') {
+    req.session.returnTo = req.path;
+  }
+  next();
+});
+//app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 })); /////////////////////////////.....................check
+app.use(express.static('public', { maxAge: 31557600000 }));
+app.use(express.static('uploads'));
+
+
 {
   let routes = {};
   console.log("Loading routes...")
@@ -145,75 +217,6 @@ app.set('port', process.env.PORT || 3000);
   console.log("EO routes")
 }
 
-app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, '../views'));
-app.use(expressStatusMonitor());
-app.use(compression());
-app.use(sass({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public')
-}));
-// log every request to the console
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(expressValidator());
-
-// required for passport
-app.use(session({
-  resave: true,
-  saveUninitialized: true,
-  secret: process.env.SESSION_SECRET, 
-  store: new MongoStore({       //need to check store...........
-    url: process.env.MONGODB_URI || process.env.MONGOLAB_URI,
-    autoReconnect: true,
-    clear_interval: 3600
-  })
-}));
-
-
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(flash());
-
-
-app.use((req, res, next) => {                           /////////////////////////////.....................check
-  if (req.path === '/api/upload') {
-    next();
-  } else 
-  if (req.path === '/auth/password' || req.path === "/auth/profile"  || req.path === "/account/delete" ||
-    req.path === "/auth/signupinside" || /*spoc*/req.path === "/auth/unlink/"  || req.path === "/spoc/uploadcsv"  || req.path === "/spoc/uploaddwg" /*spoc*/
-    ){
-     next();
-  }
-  else{
-   // lusca.csrf()(req, res, next);
-   next();
-  }
-});
-app.use(lusca.xframe('SAMEORIGIN'));
-app.use(lusca.xssProtection(true));
-app.use((req, res, next) => {
-  res.locals.user = req.user;
-  next();
-});
-app.use((req, res, next) => {                            /////////////////////////////.....................check
-  if (!req.user &&
-      req.path !== '/login' &&
-      req.path !== '/signup' &&
-      !req.path.match(/^\/auth/) &&
-      !req.path.match(/\./)) {
-    req.session.returnTo = req.path;
-  } else if (req.user &&
-      req.path == '/account') {
-    req.session.returnTo = req.path;
-  }
-  next();
-});
-//app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 })); /////////////////////////////.....................check
-app.use(express.static('public', { maxAge: 31557600000 }));
-app.use(express.static('uploads'));
-
 
 /**
  * 404
@@ -233,6 +236,7 @@ app.route('*')
  * Error Handler
  */
 app.use(function(err, req, res, next) {
+  console.log(err)
   csErroHandler.error500(err, req, res, app.get("env"), function(err){
     next(err);
   });

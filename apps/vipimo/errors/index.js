@@ -17,7 +17,7 @@ class errohandler extends csystem
 	    }
 	    //throw new Error( )
 
-	    this.showPage(headless, "404",404, "apps/csystem/errors/404", req, res, function(err, results){
+	    this.showPage(headless, "404",404, "csystem/errors/404", req, res, function(err, results){
 					return next()
 				})
 	    
@@ -40,7 +40,7 @@ class errohandler extends csystem
 				}
 				return next();
 			}
-			this.showPage(headless, "500",err.status || 500, "apps/csystem/errors/500", req, res, function(err, results){
+			this.showPage(headless, "500",err.status || 500, "csystem/errors/500", req, res, function(err, results){
 					return next()
 				})
 			
@@ -61,7 +61,7 @@ class errohandler extends csystem
 				}
 				return next();
 			}
-			this.showPage(headless, "500",err.status || 500, "apps/csystem/errors/500", req, res, function(err, results){
+			this.showPage(headless, "500",err.status || 500, "csystem/errors/500", req, res, function(err, results){
 					return next()
 				})
 		}

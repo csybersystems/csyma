@@ -34,8 +34,8 @@ class hymnalroutes
               //csyma.setheadless(true)
             }
           if(req.params.lang == "k")csyma.settitle("SDAH");
-          if(req.params.lang == "e")csyma.setpage("apps/hymnal/english1")
-          if(req.params.lang == "k")csyma.setpage("apps/hymnal/kiswahili")
+          if(req.params.lang == "e")csyma.setpage("hymnal/english1")
+          if(req.params.lang == "k")csyma.setpage("hymnal/kiswahili")
 
           if(req.params.lang == "e1")
           {
@@ -43,8 +43,8 @@ class hymnalroutes
             csyma.setheadless(true)
           }
           if(req.params.lang == "k1")csyma.settitle("SDAH");
-          if(req.params.lang == "e1")csyma.setpage("apps/hymnal/english1")
-          if(req.params.lang == "k1")csyma.setpage("apps/hymnal/kiswahili")
+          if(req.params.lang == "e1")csyma.setpage("hymnal/english1")
+          if(req.params.lang == "k1")csyma.setpage("hymnal/kiswahili")
           //csyma.setheadless(true)
          // console.log(csyma.page)
           //other head elements....

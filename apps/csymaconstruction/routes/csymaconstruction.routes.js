@@ -11,7 +11,7 @@ class csymaconstructionroutes
       csymaconstruction.init_child(req,res, function(err, results){
           csymaconstruction.settitle("Csyma| Site under construction");
           //other head elements....
-          csymaconstruction.setpage("apps/csymaconstruction/csymaconstruction");        //very important
+          csymaconstruction.setpage("csymaconstruction/csymaconstruction");        //very important
           csymaconstruction.setdescription("site under construction");
           csymaconstruction.setkeywords("site under construction");
           csymaconstruction.getelements(req,res, function(err, results){ })

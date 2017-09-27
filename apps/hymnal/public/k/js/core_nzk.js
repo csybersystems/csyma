@@ -50,7 +50,7 @@
 				{
 					$('<li/>').html
 					(
-						$('<a/>',{'data-url':'/apps/hymnal/k/data/' + $('id',this).text() + '.xml', 'class':'nzk'})
+						$('<a/>',{'data-url':'/hymnal/k/data/' + $('id',this).text() + '.xml', 'class':'nzk'})
 						.html( $('id',this).text() + '. ' + $('title',this).text() )
 						.append( ' ( ' )
 						.append( $('<i/>').html( $('englishTitle',this).text() ) )

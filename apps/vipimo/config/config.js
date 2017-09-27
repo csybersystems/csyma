@@ -192,7 +192,7 @@ const config = {
                     //     }
                     
                 },
-        defaultpage: "apps/hymnal/hymnalhome", 
+        defaultpage: "hymnal/hymnalhome", 
         keywords:"keywords"
     }
    

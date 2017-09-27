@@ -19,12 +19,12 @@ class csymaroutes
 
 
     app.get('/csyma/page/:app/:page/:action?/:uid?', function (req, res) {                 //loading static pages...
-        const app = require(__dirname+"/../apps/"+req.params.app+"/index");
+        const app = require(__dirname+"/../../apps/"+req.params.app+"/index");
         app.init_child(req,res, function(err, results){
           app.settitle(req.params.page);
           // app.setdescription("site under construction");
           // app.setkeywords("site under construction");
-          app.setpage("apps/"+req.params.app+"/"+req.params.page, req.params.page);
+          app.setpage(""+req.params.app+"/"+req.params.page, req.params.page);
           // console.log("apps/"+req.params.app+"/"+req.params.page);
           // console.log(req.params.page)
           app.setsections(req.params.page);     //load config values from elements.csections
@@ -35,12 +35,12 @@ class csymaroutes
     })
 
     app.get('/csyma/section/:app/:section', function (req, res) {                 //loading sections...
-        const app = require(__dirname+"/../apps/"+req.params.app+"/index");
+        const app = require(__dirname+"/../../apps/"+req.params.app+"/index");
         app.init_child(req,res, function(err, results){
           app.settitle(req.params.section);
           // app.setdescription("site under construction");
           // app.setkeywords("site under construction");
-          //app.setpage("apps/"+req.params.app+"/"+req.params.section);
+          //app.setpage(""+req.params.app+"/"+req.params.section);
           app.setpage(false, req.params.section);
           // console.log(req.params.section)
           app.setsections(req.params.section);

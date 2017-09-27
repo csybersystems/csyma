@@ -39,3 +39,4 @@ try/
 config/
 views/
 public/apps/
+routes/
