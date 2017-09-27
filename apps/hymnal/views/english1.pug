@@ -1,0 +1,67 @@
+doctype html
+html
+  head
+    title Seventh-day Adventist Hymnal
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='author', content='Peter Aganyo')
+    link(rel='stylesheet', href='/hymnal/e/css/jquery.mobile-1.3.0.min.css')
+    link(rel='stylesheet', href='/hymnal/e/css/core_sdah.css')
+    script(src='/hymnal/e/js/jquery-1.9.1.min.js')
+    script(src='/hymnal/e/js/jquery.mobile-1.3.0.min.js')
+    script(src='/hymnal/e/js/core_sdah.js')
+  body
+    #home(data-role='page', data-url='start')
+      div(data-role='header', data-theme='g', data-position='fixed')
+        h3 seventh-day adventist hymnal
+        //
+          <div data-role="controlgroup" data-type="horizontal" data-inline="true">
+          <a data-theme="a" data-mini="true" class="ct" data-role="button">A</a>
+          <a data-theme="b" data-mini="true" class="ct" data-role="button">B</a>
+          <a data-theme="c" data-mini="true" class="ct" data-role="button">C</a>
+          <a data-theme="d" data-mini="true" class="ct" data-role="button">D</a>
+          <a data-theme="e" data-mini="true" class="ct" data-role="button">E</a>
+          <a data-theme="f" data-mini="true" class="ct" data-role="button">F</a>
+          <a data-theme="g" data-mini="true" class="ct" data-role="button">G</a>
+          </div>
+      |         
+      div(data-role='content')
+        ul.cats(data-role='listview', data-filter='false', data-filter-placeholder='group', data-theme='b', data-inset='true')
+          li
+            a.groups(data-url='1-100.xml') 1 - 100
+          |                 
+          li
+            a.groups(data-url='1-200.xml') 101 - 200
+          |                 
+          li
+            a.groups(data-url='1-300.xml') 201 - 300
+          |                 
+          li
+            a.groups(data-url='1-400.xml') 301 - 400
+          |                 
+          li
+            a.groups(data-url='1-500.xml') 401 - 500
+          |                 
+          li
+            a.groups(data-url='1-600.xml') 501 - 600
+          |                 
+          li
+            a.groups(data-url='1-700.xml') 601 - 695
+          |                 
+          li
+            a.groups(data-url='readings.xml') Readings (696 - 844)
+          |             &#x9;
+          li
+            a.groups(data-url='a-c.xml') A - C
+          |                 
+          li
+            a.groups(data-url='d-g.xml') D - G
+          |                 
+          li
+            a.groups(data-url='h-k.xml') H - K
+          |                 
+          li
+            a.groups(data-url='l-o.xml') L - O
+          |                 
+          li
+            a.groups(data-url='p-z.xml') P - Z

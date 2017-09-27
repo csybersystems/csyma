@@ -112,7 +112,7 @@ const config = {
                     },
         },
         
-        defaultpage: "apps/csymaconstruction/csymaconstruction", 
+        defaultpage: "csymaconstruction/csymaconstruction", 
         keywords:"keywords...",
         description:"description...is description"
     }

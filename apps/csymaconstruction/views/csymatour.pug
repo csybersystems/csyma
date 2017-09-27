@@ -1,0 +1,184 @@
+doctype html
+html(lang='en')
+  // overflow-hidden  ||  iziModal-isOverflow
+  head
+    meta(charset='UTF-8')
+    |     
+    meta(name='viewport', content='width=device-width, height=device-height, initial-scale=1')
+    |     
+    title iziModal.js
+    |     
+    //buttons
+    //link(href='/assets/CreativeButtons/css/default.css', rel='stylesheet', type='text/css')
+    |
+    link(href='/assets/CreativeButtons/css/component.css', rel='stylesheet', type='text/css')
+    |     
+    //eo buttons
+    link(rel='stylesheet', href='/assets/izi/css/iziModal.css%3Fv=150g.css')
+    |     
+    link(rel='stylesheet', href='/assets/izi/css/demo.css%3Fv=150g.css')
+    |     
+    link(href='/assets/izi/css/shCore.css', rel='stylesheet', type='text/css')
+    |     
+    link(href='/assets/izi/css/shThemeDefault.css', rel='stylesheet', type='text/css')
+    |
+    link(href='https://fonts.googleapis.com/css?family=Lato:400,300,700', rel='stylesheet', type='text/css')
+    |   
+    link(href='/assets-raw/core/assets/vendor/font-awesome/css/font-awesome.css', rel='stylesheet', type='text/css')
+    |     
+    //electrode
+    link(href='/assets/electrode/css/electrode.css', rel='stylesheet', type='text/css')
+    link(href='/assets/electrode/css/electrode-icons.css', rel='stylesheet', type='text/css')
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+    //link(href='/assets/electrode/css/syntax.css', rel='stylesheet', type='text/css')
+    //electrode
+    script(type='text/javascript', src='/assets/izi/js/vendor/shCore.js')
+    |     
+    script(type='text/javascript', src='/assets/izi/js/vendor/shBrushJScript.js')
+    |     
+    script(type='text/javascript', src='/assets/izi/js/vendor/shBrushXml.js')
+    |     
+    script(type='text/javascript', src='/assets/izi/js/vendor/shBrushBash.js')
+    //button
+    //script(type='text/javascript', src='/assets/CreativeButtons/js/modernizr.custom.js')
+    //eo button
+    |     
+    script(src='/assets/izi/js/vendor/modernizr.js')
+    // Modernizr
+    link(rel='canonical', href='index.html')
+    |     
+    meta(name='author', content='Marcelo Dolce')
+    |     
+    meta(name='description', content='Elegant, responsive, flexible and lightweight modal plugin with jQuery. by Marcelo Dolce.')
+    |     
+    meta(name='theme-color', content='#1c307d')
+    |
+    script(src=rooturl+'AdminLTE/plugins/jQuery/jquery-2.2.3.min.js')
+  body
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-43600147-3', 'auto');
+      ga('send', 'pageview');
+    |     
+    script.
+      window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      t._e = [];
+      t.ready = function(f) {
+      t._e.push(f);
+      };
+      return t;
+      }(document, "script", "twitter-wjs"));
+    |    
+    //script(type='text/javascript', src='/assets/CreativeButtons/js/classie.js') 
+    nav#cd-vertical-nav
+      strong
+        ul
+          li
+            a(href='#Welcome', data-number='1')
+              span.cd-dot
+              |                     
+              span.cd-label(style="background:white;") Welcome
+          |             
+          li
+            a(href='#tour', data-number='2')
+              span.cd-dot
+              |                     
+              span.cd-label(style="background:white;") Tour
+          |             
+          li
+            a(href='#components', data-number='3')
+              span.cd-dot
+              |                     
+              span.cd-label(style="background:white;") Components
+          |             
+          li
+            a(href='#features', data-number='4')
+              span.cd-dot
+              |                     
+              span.cd-label(style="background:white;") Features
+          |             
+          li
+            a(href='#modules', data-number='5')
+              span.cd-dot
+              |                     
+              span.cd-label(style="background:white;") Modules
+          | 
+          li
+            a(href='#install', data-number='6')
+              span.cd-dot
+              |                     
+              span.cd-label(style="background:white;") Install
+          |             
+          li
+            a(href='#tools', data-number='7')
+              span.cd-dot
+              |                     
+              span.cd-label(style="background:white;") Tools
+          |             
+          |             
+    |     
+    a.cd-nav-trigger.cd-img-replace
+      | Open navigation
+      span
+    |     
+    main
+      section#Welcome.cd-section
+        .highlight.bg
+
+          |                 
+          .core
+            div This site is powered by____CSYMA TOUR______: 
+              h2(style="color:white")
+                | 
+                strong
+                  | C
+                span syber
+                | 
+                strong
+                  | SY
+                span stems
+                | 
+                strong
+                  | M
+                span other
+                | 
+                strong
+                  | A
+                span pplication
+                |  
+                span v #{version}
+              |   
+            p(style="color:white")
+              | You are seeing this page because the owner of this site is still hard at work.
+            p
+              h1
+                i.fa.fa-cog.fa-spin    
+                  i.fa.fa-cog    
+            div(style="color:white") 
+              | You can take a tour of CSYMA as you 
+              i.fa.fa-spinner.fa-pulse
+              |  wait
+            |   
+            p                  
+              a.tour-btn(href="#tour")
+                button.btn.btn-4.btn-4c
+                  p.examples Take Tour             
+            
+          |
+          .modalf#modal
+
+//include ../csyma/csyma_about
+script(src=rooturl+'assets/iziModal-1.5.0/js/iziModal.js')
+script(src=rooturl+'assets/izi/js/demo.js')
+script(src=rooturl+'alertifyjs/alertify.min.js')
+script(src=rooturl+'csystem/js/csystem.js')

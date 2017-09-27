@@ -188,7 +188,7 @@ const config = {
                         classi:"csectionp tocreateuser",
 
                     },
-                    defaultpage:"apps/csyma/sections/site/site_home",
+                    defaultpage:"csyma/sections/site/site_home",
                 },
                 "organizations":
                 {
@@ -200,7 +200,7 @@ const config = {
                         classi:"csectionp tocreateorg",
 
                     },
-                    defaultpage:"apps/csyma/sections/site/site_home",
+                    defaultpage:"csyma/sections/site/site_home",
                 },
                 "site":
                 {
@@ -213,7 +213,7 @@ const config = {
                         classi:"csection",
 
                     },
-                    defaultpage:"apps/csyma/sections/site/site_home",
+                    defaultpage:"csyma/sections/site/site_home",
                     pages:
                     {
                         name: "Pages",
@@ -261,7 +261,7 @@ const config = {
 
                 //     },
                 //     level:2,
-                //     defaultpage:"apps/csyma/sections/site/site_home",
+                //     defaultpage:"csyma/sections/site/site_home",
                 //     pages1:
                 //     {
                 //         name: "Pages1",
@@ -300,7 +300,7 @@ const config = {
 
             }
         },
-        defaultpage: "apps/csyma/csymahome_default",        //you should change this after installation 
+        defaultpage: "csyma/csymahome_default",        //you should change this after installation 
         keywords:"keywords...",
         description:"description...is description"
     }

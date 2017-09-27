@@ -3,6 +3,7 @@ const csyberUser = require('./models/csyberuser');
 const Config = require(__dirname+'/../../config/config');
 const Async = require('async');
 const  Objlen = require('object-length');
+const chalk = require('chalk');
 
 class csystem extends csyberUser
 {
@@ -57,6 +58,99 @@ class csystem extends csyberUser
 			 	}, (err, _results) => {done();})
 					
 		}
+	}
+
+	static compile(whichapp,callback)
+	{
+		let self = this;
+		let fse = require('fs-extra');
+		let appdirs = []
+
+		let rootpath = __dirname+"/../../"
+		let appsrootpath = rootpath+"apps/"
+		if(whichapp === "all")
+		{
+			appdirs = fse.readdirSync(appsrootpath);
+		}
+		else
+		{
+			appdirs.push(whichapp)
+		}
+
+		Async.auto({
+	      views: function (done) {
+	      	Async.each(appdirs, function (app, next){ 
+	      		console.log("Installing "+chalk.green(app))
+	      		let src = appsrootpath+app+"/views/"
+	      		let dest = rootpath+'views/'+app+"/"
+	      		fse.copy(src, dest, function(err){
+	      			if(err)
+	      			{
+	      				// console.log("unable to copy: "+ src+" to "+dest)
+	      				// console.log(" "+err)
+	      			}
+	      			next();
+	      		})
+	      	}, function(err) {
+	      		//assume error
+           		done()
+        	}); 
+	      },
+	      routes:  function (done) {
+	      	Async.each(appdirs, function (app, next){ 
+	      		let src = appsrootpath+app+"/routes/"
+	      		let dest = rootpath+'routes/'+app+"/"
+	      		fse.copy(src, dest, function(err){
+	      			if(err)
+	      			{
+	      				// console.log("unable to copy: "+ src+" to "+dest)
+	      				// console.log(" "+err)
+	      			}
+	      			next();
+	      		})
+	      	}, function(err) {
+           		done()
+        	}); 
+	      },
+	      public:  function (done) {
+	      	Async.each(appdirs, function (app, next){ 
+	      		let src = appsrootpath+app+"/public/"
+	      		let dest = rootpath+'public/apps/'+app+"/" //leave it as is to avoid conflicts with /${app}
+	      		fse.copy(src, dest, function(err){
+	      			if(err)
+	      			{
+	      				// console.log("unable to copy: "+ src+" to "+dest)
+	      				// console.log(" "+err)
+	      			}
+	      			next();
+	      		})
+	      	}, function(err) {
+
+           		done()
+        	}); 
+	      },
+		config:  function (done) {
+	      	Async.each(appdirs, function (app, next){ 
+	      		let src = appsrootpath+app+"/config/"
+	      		let dest = rootpath+'config/'+app+"/" //leave it as is to avoid conflicts with /${app}
+	      		fse.copy(src, dest, function(err){
+	      			if(err)
+	      			{
+	      				// console.log("unable to copy: "+ src+" to "+dest)
+	      				// console.log(" "+err)
+	      			}
+	      			next();
+	      		})
+	      	}, function(err) {
+
+           		done()
+        	}); 
+	      },
+
+	 	}, (err, _results) => {
+	 		callback();
+	 	})
+		
 	}
 
 	static setapp(app){

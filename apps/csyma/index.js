@@ -59,7 +59,7 @@ class csyma extends csystem
 	static listapps(callback)
 	{
 		let self = this;
-        let _root = __dirname+"/../";
+        let _root = __dirname+"/../../config/";
 
 
         Async.auto({//
@@ -71,22 +71,33 @@ class csyma extends csystem
                 let allapps = {}
                 let allappsind = 0;
                 let numapps = 0;
-                Async.eachSeries(Object.keys(items), function (i, next){ 
+                Async.each(Object.keys(items), function (i, next){ 
                     if(items[i] == "." || items[i] == "..")next();
                     if(items[i].split(".").length > 1)next();
                     let appname = items[i];
+					fse.lstat(_root + appname, (err, stats) => {
+						if(stats.isFile() === true)
+				        {
+				        	// next();
+				        }else
+				        {
 
-                    let thisappconfig = require(_root + appname+"/config/config.js")
-                    let enabled = thisappconfig.get("/enabled")
-                    let displayname = thisappconfig.get("/displayname")
+		                    let thisappconfig = require(_root + appname+"/config.js")
+		                    let enabled = thisappconfig.get("/enabled")
+		                    let displayname = thisappconfig.get("/displayname")
 
-                    if(appname !== "csyma" && appname !== "csystem")
-                    {
-                    	allapps[appname] = {enabled:enabled, ins:0};
-                    	numapps++;
-                    }
-                    // console.log(numapps)
-                    next();
+		                    if(appname !== "csyma" && appname !== "csystem")
+		                    {
+		                    	allapps[appname] = {enabled:enabled, ins:0};
+		                    	numapps++;
+		                    }
+		                    next();
+		                }
+	                    // console.log(numapps)
+	                    
+	                })
+	                
+					
                  }, function(err) {
                  	let collection = self.collection
                  	self.collection = 'allapps';
@@ -111,10 +122,12 @@ class csyma extends csystem
             }]
         }, (err, results) => {
             if (err) {
+            	console.log("was NOT called.................................")
                 return callback(err);
             }
 
             // console.log({listapps:results.create.allapps})
+            console.log("was arealdy called.................................")
             callback(null, {listapps:results.create});
         });
 	}

@@ -36,3 +36,7 @@ config/config.js
 try/
 *.bac
 /*.bac
+config/
+views/
+public/apps/
+routes/

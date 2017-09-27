@@ -43,7 +43,7 @@ class appsConfig extends MongoModels
     static setupallapps(callback)
     {
         let self = this;
-        let _root = __dirname+"/../../";
+        let _root = __dirname+"/../../../config/";
         //console.log("setting up all apps")
 
         self.collection = 'allapps';
@@ -56,25 +56,64 @@ class appsConfig extends MongoModels
             },
             create:["drop", function(results, done){
                 let items = fse.readdirSync(_root);
-                Async.eachSeries(Object.keys(items), function (i, next){ 
-                    if(items[i] == "." || items[i] == "..")next();
-                    if(items[i].split(".").length > 1)next();
-                    let appname = items[i];
 
-                    let thisappconfig = require(_root + appname+"/config/config.js")
-                    let enabled = thisappconfig.get("/enabled")
-                    let displayname = thisappconfig.get("/displayname")
-                    const document = {
-                            appname: appname,
-                            enabled: enabled,
-                            timeCreated: new Date()
-                        };
-                    self.insertOne(document, function(err, results){
-                        next()
-                    });
-                 }, function(err) {
-                   done();
+                Async.each(items, function (appname, next){ 
+                    let path = _root+appname;
+                    fse.lstat(path, (err, stats) => {
+                        // console.log(`path: ${path}  ${stats.isFile()}`)
+                      if(stats.isFile() === true)
+                      {
+                          next();
+                      }else
+                      {
+
+                            let thisappconfig = require(path+"/config.js")
+                            // console.log("thisappconfig")
+                            // console.log(appname)
+                            // console.log(_root + appname+"/config.js")
+                            let enabled = thisappconfig.get("/enabled")
+                            let displayname = thisappconfig.get("/displayname")
+                            const document = {
+                                    appname: appname,
+                                    enabled: enabled,
+                                    timeCreated: new Date()
+                                };
+                            self.insertOne(document, function(err, results){
+                                next()
+                            });
+                        }
+                    })
+                }, function(err) {
+
+                  done()
                 }); 
+
+                // Async.eachSeries(Object.keys(items), function (i, next){ 
+                //     console.log(items[i])
+                //     //skip it if it is a file.
+
+                //     if(items[i] == "." || items[i] == "..")next();
+                //     if(items[i].split(".").length > 1)next();
+                //     let appname = _root+items[i];
+
+                //     let thisappconfig = require(appname)
+                //     console.log("thisappconfig")
+                //     console.log(appname)
+                //     console.log(_root + appname+"/config.js")
+                //     let enabled = thisappconfig.get("/enabled")
+                //     let displayname = thisappconfig.get("/displayname")
+                //     const document = {
+                //             appname: appname,
+                //             enabled: enabled,
+                //             timeCreated: new Date()
+                //         };
+                //     self.insertOne(document, function(err, results){
+                //         next()
+                //     });
+                //  }, function(err) {
+                //     process.exit();
+                //    done();
+                // }); 
             }]
         }, (err, results) => {
             if (err) {
@@ -90,7 +129,7 @@ class appsConfig extends MongoModels
     static setuponeapps(app, callback)
     {
         let self = this;
-        let _root = __dirname+"/../../";
+        let _root = __dirname+"/../../../config/";
 
         self.collection = 'allapps';
         self.schema = allappsSchema;
@@ -109,7 +148,7 @@ class appsConfig extends MongoModels
                     if(items[i].split(".").length > 1)next();
                     let appname = items[i];
 
-                    let thisappconfig = require(_root + appname+"/config/config.js")
+                    let thisappconfig = require(_root + appname+"/config.js")
                     let enabled = thisappconfig.get("/enabled")
                     let displayname = thisappconfig.get("/displayname")
                     const document = {
