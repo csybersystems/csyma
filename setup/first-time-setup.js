@@ -47,7 +47,7 @@ Async.auto({
             done(null, true);
         });
     },
-    rootEmail: ['testMongo','compile', (results, done) => {
+    rootEmail: ['testMongo','compile', ( done, results) => {
         if(process.env.ENV === "development")
         {
             console.log("Setting up using: "+ email)
@@ -62,7 +62,7 @@ Async.auto({
                 ;
             });
     }],
-    rootPassword: ['rootEmail', (results, done) => {
+    rootPassword: ['rootEmail', ( done, results) => {
         return done(null ,email)
         Promptly.password('Root user password(atleast 5 characters):', function(err,docs){
             if(err)done(err);
@@ -71,7 +71,7 @@ Async.auto({
         });
     
     }],
-    confirmrootPassword: ['rootPassword', (results, done) => {
+    confirmrootPassword: ['rootPassword', (done, results) => {
         return done(null ,email)
         Promptly.password('confirm password:', function(err,docs){
             if(err)done(err);
@@ -80,7 +80,7 @@ Async.auto({
         });
     
     }],
-    setupRootUser: ['confirmrootPassword', (results, done) => {
+    setupRootUser: ['confirmrootPassword', ( done, results) => {
 
         Async.auto({
               connect: function (done) {
@@ -88,7 +88,7 @@ Async.auto({
                // mongoose.connect(db, {}, done);
                done()
             },
-             clean: ['connect', (dbResults, done) => {
+             clean: ['connect', ( done, dbResults) => {
                 Async.auto({
                     clean1:(dones) => { csyberUser.clear(function(err, result){dones(err, result) })},                                                        
                    //clean1:(dones) => { UserModel.remove().exec().then(function(docs, err){dones(err, docs)});},
@@ -97,19 +97,19 @@ Async.auto({
                 }, done);
 
             }],
-            User: ['clean', function (dbResults, done) {
+            User: ['clean', function ( done, dbResults) {
                         const username = results.rootEmail.toLowerCase();
                         const password = results.rootPassword;
                         const email = results.rootEmail.toLowerCase();
                         csyberUser.create(username, password, email,  function(err, result){done(err, result) });
                         //surgbc@gmail.com
             }],
-            AddUsertoRootUsers: ['User', function (dbResults, done) { //surgbcx@gmail.com
+            AddUsertoRootUsers: ['User', function ( done, dbResults) { //surgbcx@gmail.com
                 let app = "csyber";
                 const id = dbResults.User._id;
                 Async.auto({       //setupallapps
                     setupallapps:(dones) => { csyberUser.setupallapps(dones)},
-                    installcsyber: ['setupallapps', function (Results, dones) {
+                    installcsyber: ['setupallapps', function ( dones, Results) {
                                 csyberUser.installallapps(id, "restricted",dones)
                                    // dones(null, result) 
                                 //surgbc@gmail.com
@@ -120,14 +120,14 @@ Async.auto({
                 }, done);
                 
             }],
-            guestEmail: ['AddUsertoRootUsers', (results, done) => {
+            guestEmail: ['AddUsertoRootUsers', ( done, results) => {
                 done(null ,Config.get("/guestemail"))
             }],
-            guestPassword: ['guestEmail', (results, done) => {
+            guestPassword: ['guestEmail', ( done, results) => {
                 done(null ,Config.get("/guestemail"))
             
             }],
-            setupGuestUser: ['guestPassword', (results, done) => {
+            setupGuestUser: ['guestPassword', ( done, results) => {
 
                 Async.auto({
                       connect: function (done) {
@@ -135,18 +135,18 @@ Async.auto({
                         // mongoose.connect(db, {}, done);
                        done();
                     },
-                    User:  ["connect", function (dbResults, done) {
+                    User:  ["connect", function ( done, dbResults) {
                                 const username = results.guestEmail.toLowerCase();
                                 const password = results.guestPassword;
                                 const email = results.guestEmail.toLowerCase();
                                 csyberUser.create(username, password, {email:email,name:{first:"Guest", middle:""}},  function(err, result){done(err, result) });
                     }],
-                    AddUsertoRootUsers: ['User', function (dbResults, done) { 
+                    AddUsertoRootUsers: ['User', function ( done, dbResults) { 
                         let app = "csyber";
                         const id = dbResults.User._id;
                         Async.auto({
                             setupallapps:(dones) => { csyberUser.setupallapps(dones)},
-                            installcsyber: ['setupallapps', function (Results, dones) {
+                            installcsyber: ['setupallapps', function ( dones, Results) {
                                         csyberUser.installallapps(id, "free",dones)
                                           //  dones(null, Results)     
                             }],

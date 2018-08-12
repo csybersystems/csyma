@@ -49,7 +49,10 @@ else
  */
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || process.env.MONGOLAB_URI);
+mongoose.connect(process.env.MONGODB_URI || process.env.MONGOLAB_URI, {
+  useMongoClient: true,
+  /* other options */
+});
 mongoose.connection.on('error', (err) => {
   console.error(err);
   console.log('%s MongoDB connection error. Please make sure MongoDB is running.', chalk.red('✗'));
@@ -153,10 +156,14 @@ app.use(express.static('uploads'));
     checkdirs: function(done){
       console.log(routesbase)
       fse.readdir(routesbase, function(err, items){
+        console.log(items)
         done(null, items)
       })
     },
-    loaddirs: ["checkdirs", function (results, done) {
+    // loaddirs: ["checkdirs", function (results, done) {
+    loaddirs: ["checkdirs", function ( done, results) {
+      console.log('results...')
+      console.log(results.checkdirs)
       let dirs = [routesbase];
       let items = results.checkdirs
       Async.each(items, function (path, next){ 
@@ -174,7 +181,9 @@ app.use(express.static('uploads'));
           done(null, dirs)
       }); 
     }],
-    routes:  ["loaddirs", function (results, done) {
+    // routes:  ["loaddirs", function (results, done) {
+    routes:  ["loaddirs", function ( done, results) {
+      console.log('ROUTES')
       let dirs = results.loaddirs;
       Async.each(dirs, function (dir, next){ 
           fse.readdir(dir, function(err, items){

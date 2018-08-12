@@ -55,7 +55,7 @@ class User extends MongoModels {
 
                 Bcrypt.genSalt(10, done);
             },
-            hash: ['salt', function (results, done) {
+            hash: ['salt', function ( done, results) {
 
                 Bcrypt.hash(password, results.salt, done);
             }]
@@ -148,7 +148,7 @@ class User extends MongoModels {
                     done(null, gid);
             });
             },
-             update:  ['getappid', (results, done) => {
+             update:  ['getappid', ( done, results) => {
                 let gid = results.getappid;
                
                 let apps = {}
@@ -353,7 +353,7 @@ class User extends MongoModels {
 
         Async.auto({
             passwordHash: this.generatePasswordHash.bind(this, password),
-            newUser: ['passwordHash', function (results, done) {
+            newUser: ['passwordHash', function ( done, results) {
 
                 const document = {
                     isActive: true,
@@ -384,7 +384,7 @@ class User extends MongoModels {
                     done(null, results)
                 });
             }],
-            addowner: ['newUser', (results, done) => { 
+            addowner: ['newUser', ( done, results) => { 
               const id = results.newUser[0]._id;
               self.addowner(id,done) 
             }],

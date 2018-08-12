@@ -54,7 +54,7 @@ class appsConfig extends MongoModels
             drop: function(done){
                self.deleteMany(done);
             },
-            create:["drop", function(results, done){
+            create:["drop", function( done, results){
                 let items = fse.readdirSync(_root);
 
                 Async.each(items, function (appname, next){ 

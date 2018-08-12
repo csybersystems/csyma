@@ -32,7 +32,7 @@ class csystem extends csyberUser
 			          dones(err);
 			        });
 			      },
-			      whoami: ['loadconfig', function (_results, dones) {
+			      whoami: ['loadconfig', function ( dones, _results) {
 			        self.whoami(function(err, _results){
 			          dones(err, _results);
 			        });
@@ -344,14 +344,14 @@ class csystem extends csyberUser
 						  done(err);
 						});
 						},
-						whoami: ['loadconfig', function (_results, done) {
+						whoami: ['loadconfig', function ( done, _results) {
 						self.whoami(function(err, _results){
 							// //console.log("EO whomi")
 							// //console.log("showing page...")
 						  done(err, _results);
 						});
 						}],
-						checkenabled:["whoami", function(_results, done){
+						checkenabled:["whoami", function( done, _results){
 							// //console.log("are groups")
 							// //console.log(self.mygroups)
 						let tmpstack = []
